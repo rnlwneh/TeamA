@@ -167,7 +167,7 @@
     <div class="container">
       <div class="row">
         <div class="col-lg-3 col-md-4 col-sm-6">
-          <a routerLink="/recipe-archive" class="ct-category">
+          <a href="recipe_detail" class="ct-category">
             <div class="ct-category-img">
               <img src="./resources/image/main/product_01.png" alt="category">
               <span>17 Recipes</span>
