@@ -106,7 +106,7 @@
 						_ngcontent-efm-c6="" routerlink="/contactus"
 						href="contact_us">Contact Us</a></li>
 					<li _ngcontent-efm-c6="" class="menu-item">
-					<a ngcontent-efm-c6="" href="signup" class="loginBT"> <img src="./resources/image/main/signup_off.png"></a>
+					<a ngcontent-efm-c6="" href="login" class="loginBT"> <img src="./resources/image/main/signup_off.png"></a>
 						<ul _ngcontent-efm-c6="" class="submenu">
 							<li _ngcontent-efm-c6="" class="menu-item"><a
 								_ngcontent-efm-c6="" href="Mypage">MyPage</a></li>

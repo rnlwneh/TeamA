@@ -95,24 +95,24 @@
           <a href="ranking">Ranking</a>          
         </li>
         <li class="menu-item">
-          <a routerLink="shop_component">Shop</a>
+          <a href="shop_component">Shop</a>
         </li>
         <li class="menu-item">
-          <a routerLink="">Contact Us</a>
+          <a href="contact_us">Contact Us</a>
         </li>
         <li class="menu-item">
-          <a routerLink="/contactus" class="loginBT"> <img src="./resources/image/main/signup_off.png"> 
+          <a href="login" class="loginBT"> <img src="./resources/image/main/signup_off.png"> 
           </a>
            <ul class="submenu">
-                <li class="menu-item"> <a routerLink="Mypage">My Page</a> </li>
+                <li class="menu-item"> <a href="Mypage">My Page</a> </li>
             </ul>
         </li>
          <li class="menu-item">
-          <a routerLink="class_write" class="loginBT"> <img src="./resources/image/main/class_writeBT.png">                    
+          <a href="class_write" class="loginBT"> <img src="./resources/image/main/class_writeBT.png">                    
           </a>
          <ul class="submenu">
-          	<li class="menu-item"> <a routerLink="recipe_upload">Normal_Write</a> </li>
-                <li class="menu-item"> <a routerLink="chef_recipe_upload">Chef_Write</a> </li>
+          	<li class="menu-item"> <a href="recipe_upload">Normal_Write</a> </li>
+                <li class="menu-item"> <a href="chef_recipe_upload">Chef_Write</a> </li>
                 <li class="menu-item"> <a href="class_write">Class_Write</a> </li>
               </ul>
         </li>
@@ -129,7 +129,7 @@
     <nav class="navbar">
       <div class="container">
         <!-- Logo -->
-        <a class="navbar-brand" routerLink="index"> <img src="./resources/image/main/logo.png"> </a>
+        <a class="navbar-brand" href="index"> <img src="./resources/image/main/logo.png"> </a>
         <!-- Menu -->
         <ul class="navbar-nav">
           <li class="menu-item menu-item-has-children">
@@ -148,17 +148,17 @@
             <a href="ranking">Ranking</a>       
           </li>
           <li class="menu-item">
-            <a routerLink="shop_component">Shop</a>
+            <a href="shop_component">Shop</a>
           </li>
           <li class="menu-item">
-            <a routerLink="">Contact Us</a>
+            <a href="contact_us">Contact Us</a>
           </li>
           
            <li class="menu-item">
-          <a routerLink="login" class="loginBT"> <img src="./resources/image/main/signup_off.png">          
+          <a href="login" class="loginBT"> <img src="./resources/image/main/signup_off.png">          
           </a>
             <ul class="submenu">
-                <li class="menu-item"> <a routerLink="Mypage">My Page</a> </li>
+                <li class="menu-item"> <a href="Mypage">My Page</a> </li>
             </ul>
          </li>
         
@@ -171,7 +171,7 @@
           <a href="class_write" class="loginBT"> <img src="./resources/image/main/class_writeBT.png">          
           </a>
           <ul class="submenu">
-                <li class="menu-item"> <a routerLink="chef_recipe_upload">Chef_Write</a> </li>
+                <li class="menu-item"> <a href="chef_recipe_upload">Chef_Write</a> </li>
                 <li class="menu-item"> <a href="class_write">Class_Write</a> </li>
               </ul>
         </li>
@@ -203,8 +203,8 @@
                   <p> <strong>Subtotal: </strong> 54.25$</p>
                 </li>
                 <li class="cart-buttons">
-                  <a routerLink="checkOut" class="btn-custom primary btn-sm shadow-none">Checkout</a>
-                  <a routerLink="storeCart" class="btn-custom secondary btn-sm shadow-none">View Cart</a>
+                  <a href="checkOut" class="btn-custom primary btn-sm shadow-none">Checkout</a>
+                  <a href="storeCart" class="btn-custom secondary btn-sm shadow-none">View Cart</a>
                 </li>
               </ul>
             </li>
