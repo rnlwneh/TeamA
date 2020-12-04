@@ -20,18 +20,6 @@
 <link rel="stylesheet" type="text/css" href="./resources/css/plugins/slick.css" media="all" />
 <link rel="stylesheet" type="text/css" href="./resources/css/plugins/slick-theme.css" media="all" />
 
-<!-- 
-<link rel="stylesheet" type="text/css" href="./resources/css/primary-skin.css" media="all" />
-<link rel="stylesheet" type="text/css" href="./resources/css/plugins/bootstrap.min.css" media="all" /> 
-<link rel="stylesheet" type="text/css" href="./resources/css/plugins/animate.min.css" media="all" />
-
-
-<link rel="stylesheet" type="text/css" href="./resources/css/plugins/magnific-popup.css" media="all" />
-<link rel="stylesheet" type="text/css" href="./resources/css/plugins/slick.css" media="all" />
-<link rel="stylesheet" type="text/css" href="./resources/css/plugins/slick-theme.css" media="all" />
-<!--
-
--->
 
 
   
@@ -43,7 +31,7 @@
 
 <script src="./resources/js/plugins/bootstrap.min.js" type="text/javascript" charset="utf-8"></script>
 
-
+<!-- 
 
 <script src="./resources/js/plugins/isotope.pkgd.min.js" type="text/javascript" charset="utf-8"></script>
 <script src="./resources/js/plugins/jquery.countdown.min.js" type="text/javascript" charset="utf-8"></script>
@@ -53,12 +41,9 @@
 <script src="./resources/js/plugins/jquery-3.4.1.min.js" type="text/javascript" charset="utf-8"></script>
 <script src="./resources/js/plugins/popper.min.js" type="text/javascript" charset="utf-8"></script>
 <script src="./resources/js/plugins/slick.min.js" type="text/javascript" charset="utf-8"></script>
-<script src="./resources/js/plugins/waypoint.js" type="text/javascript" charset="utf-8"></script>
+<script src="./resources/js/plugins/waypoint.js" type="text/javascript" charset="utf-8"></script> -->
   
-  
-<!--  
-  -->
-  
+ 
   
 </head>
 <body>
@@ -243,7 +228,7 @@
 
 
 
-
+<!--   ------------------------------클래스 메인 부분 -------------------------------   -->
 
 <!-- Subheader Start -->
 <div class="subheader bg-cover dark-overlay dark-overlay-2" style="background-image: url('./resources/image/class_main/class_main_header.png')">
@@ -253,13 +238,13 @@
     <div class="container">
       <div class="subheader-inner">
         <h1>Class_Main</h1>
-        <nav aria-label="breadcrumb">
+       <!--  <nav aria-label="breadcrumb">
           <ol class="breadcrumb">
             <li class="breadcrumb-item"><a routerLink="/recipe-archive">Home</a></li>
             <li class="breadcrumb-item"><a routerLink="/recipe-archive">Recipes</a></li>
             <li class="breadcrumb-item active" aria-current="page">Recipe Archive</li>
           </ol>
-        </nav>
+        </nav> -->
       </div>
     </div>
   </div>
@@ -274,10 +259,13 @@
       <div class="row">
         <!-- Recipes Start -->
         <div class="col-lg-8">
+        
+        
+        <!--    section    -->
           <div class="recipe recipe-list">
             <div class="recipe-thumbnail">
               <a href="class_detail">
-                <img src="./resources/image/class_main/class_main_produce01.png" alt="blog post">
+                <img src="./resources/image/food_Product/foodProduce_01.png" alt="blog post">
               </a>
             </div>
             <div class="recipe-body">
@@ -291,10 +279,7 @@
                     <span></span>
                   </div>
                   <span>Chef Name</span>
-                </div>
-                <div class="recipe-steps">
-                  <span><i class="fas fa-concierge-bell"></i> 24 Steps</span>
-                </div>
+                </div>               
                 <div class="recipe-duration">
                   <span><i class="fas fa-stopwatch"></i> 40 mins</span>
                 </div>
@@ -302,16 +287,17 @@
             </div>
           </div>
 
+
+	<!--    section    -->
           <div class="recipe recipe-list">
             <div class="recipe-thumbnail">
              <a href="class_detail">
-                <img src="./resources/img/blog/11.jpg" alt="blog post">
+                <img src="./resources/image/food_Product/foodProduce_02.png" alt="blog post">
               </a>
             </div>
             <div class="recipe-body">
-              <h5 class="recipe-title"> <a routerLink="/recipe-detail">Fig and Raspberry Cake With Sugar Filling and Coating </a> </h5>
-              <p class="recipe-text">Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s...</p>
-              <div class="recipe-meta">
+              <h5 class="recipe-title"> <a routerLink="/recipe-detail">Class Name  클래스 제목</a> </h5>
+              <p class="recipe-text">클래스 소개글, Dumy Text </p>  <div class="recipe-meta">
                 <div class="recipe-difficulty">
                   <div class="recipe-difficulty-inner">
                     <span class="active"></span>
@@ -319,10 +305,7 @@
                     <span class="active"></span>
                   </div>
                   <span>Chef</span>
-                </div>
-                <div class="recipe-steps">
-                  <span><i class="fas fa-concierge-bell"></i> 66 Steps</span>
-                </div>
+                </div>              
                 <div class="recipe-duration">
                   <span><i class="fas fa-stopwatch"></i> 120 mins</span>
                 </div>
@@ -330,141 +313,184 @@
             </div>
           </div>
 
-          <div class="recipe recipe-list">
-            <div class="recipe-thumbnail">
-               <a href="class_detail">
-                <img src="./resources/img/blog/9.jpg" alt="blog post">
-              </a>
-            </div>
-            <div class="recipe-body">
-              <h5 class="recipe-title"> <a routerLink="/recipe-detail">Rare Tenderloine With Gravy, Tomatoes and Parsley </a> </h5>
-              <p class="recipe-text">Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s...</p>
-              <div class="recipe-meta">
-                <div class="recipe-difficulty">
-                  <div class="recipe-difficulty-inner">
-                    <span class="active"></span>
-                    <span class="active"></span>
-                    <span></span>
-                  </div>
-                  <span>Home Cook</span>
-                </div>
-                <div class="recipe-steps">
-                  <span><i class="fas fa-concierge-bell"></i> 42 Steps</span>
-                </div>
-                <div class="recipe-duration">
-                  <span><i class="fas fa-stopwatch"></i> 50 mins</span>
-                </div>
-              </div>
-            </div>
-          </div>
-
-          <div class="recipe recipe-list">
-            <div class="recipe-thumbnail">
-               <a href="class_detail">
-                <img src="./resources/img/blog/8.jpg" alt="blog post">
-              </a>
-            </div>
-            <div class="recipe-body">
-              <h5 class="recipe-title"> <a routerLink="/recipe-detail">Oat Pancakes with Strawberries and Blueberries</a> </h5>
-              <p class="recipe-text">Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s...</p>
-              <div class="recipe-meta">
-                <div class="recipe-difficulty">
-                  <div class="recipe-difficulty-inner">
-                    <span class="active"></span>
-                    <span class="active"></span>
-                    <span></span>
-                  </div>
-                  <span>Home Cook</span>
-                </div>
-                <div class="recipe-steps">
-                  <span><i class="fas fa-concierge-bell"></i> 42 Steps</span>
-                </div>
-                <div class="recipe-duration">
-                  <span><i class="fas fa-stopwatch"></i> 50 mins</span>
-                </div>
-              </div>
-            </div>
-          </div>
-
+          
+        <!--    section    -->
           <div class="recipe recipe-list">
             <div class="recipe-thumbnail">
               <a href="class_detail">
-                <img src="./resources/img/blog/7.jpg" alt="blog post">
+                <img src="./resources/image/food_Product/foodProduce_03.png" alt="blog post">
               </a>
             </div>
             <div class="recipe-body">
-              <h5 class="recipe-title"> <a routerLink="/recipe-detail">Sugary Pancake toped with Raspberries, Mint and Cream</a> </h5>
-              <p class="recipe-text">Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s...</p>
+              <h5 class="recipe-title"> <a routerLink="/recipe-detail">Class Name  클래스 제목</a> </h5>
+              <p class="recipe-text">클래스 소개글, Dumy Text </p>
               <div class="recipe-meta">
                 <div class="recipe-difficulty">
                   <div class="recipe-difficulty-inner">
                     <span class="active"></span>
-                    <span class="active"></span>
+                    <span></span>
                     <span></span>
                   </div>
-                  <span>Home Cook</span>
-                </div>
-                <div class="recipe-steps">
-                  <span><i class="fas fa-concierge-bell"></i> 42 Steps</span>
-                </div>
+                  <span>Chef Name</span>
+                </div>               
                 <div class="recipe-duration">
-                  <span><i class="fas fa-stopwatch"></i> 50 mins</span>
+                  <span><i class="fas fa-stopwatch"></i> 40 mins</span>
                 </div>
               </div>
             </div>
           </div>
 
+
+           
+        <!--    section    -->
           <div class="recipe recipe-list">
             <div class="recipe-thumbnail">
               <a href="class_detail">
-                <img src="./resources/img/blog/5.jpg" alt="blog post">
+                <img src="./resources/image/food_Product/foodProduce_04.png" alt="blog post">
               </a>
             </div>
             <div class="recipe-body">
-              <h5 class="recipe-title"> <a routerLink="/recipe-detail">Medium Rare Steak Garnished With Gravy, Tomatoes and Parsley</a> </h5>
-              <p class="recipe-text">Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s...</p>
+              <h5 class="recipe-title"> <a routerLink="/recipe-detail">Class Name  클래스 제목</a> </h5>
+              <p class="recipe-text">클래스 소개글, Dumy Text </p>
               <div class="recipe-meta">
                 <div class="recipe-difficulty">
                   <div class="recipe-difficulty-inner">
                     <span class="active"></span>
-                    <span class="active"></span>
+                    <span></span>
                     <span></span>
                   </div>
-                  <span>Home Cook</span>
-                </div>
-                <div class="recipe-steps">
-                  <span><i class="fas fa-concierge-bell"></i> 42 Steps</span>
-                </div>
+                  <span>Chef Name</span>
+                </div>               
                 <div class="recipe-duration">
-                  <span><i class="fas fa-stopwatch"></i> 50 mins</span>
+                  <span><i class="fas fa-stopwatch"></i> 40 mins</span>
+                </div>
+              </div>
+            </div>
+          </div>
+
+
+          
+        <!--    section    -->
+          <div class="recipe recipe-list">
+            <div class="recipe-thumbnail">
+              <a href="class_detail">
+                <img src="./resources/image/food_Product/foodProduce_05.png" alt="blog post">
+              </a>
+            </div>
+            <div class="recipe-body">
+              <h5 class="recipe-title"> <a routerLink="/recipe-detail">Class Name  클래스 제목</a> </h5>
+              <p class="recipe-text">클래스 소개글, Dumy Text </p>
+              <div class="recipe-meta">
+                <div class="recipe-difficulty">
+                  <div class="recipe-difficulty-inner">
+                    <span class="active"></span>
+                    <span></span>
+                    <span></span>
+                  </div>
+                  <span>Chef Name</span>
+                </div>               
+                <div class="recipe-duration">
+                  <span><i class="fas fa-stopwatch"></i> 40 mins</span>
+                </div>
+              </div>
+            </div>
+          </div>
+
+
+          
+        <!--    section    -->
+          <div class="recipe recipe-list">
+            <div class="recipe-thumbnail">
+              <a href="class_detail">
+                <img src="./resources/image/food_Product/foodProduce_06.png" alt="blog post">
+              </a>
+            </div>
+            <div class="recipe-body">
+              <h5 class="recipe-title"> <a routerLink="/recipe-detail">Class Name  클래스 제목</a> </h5>
+              <p class="recipe-text">클래스 소개글, Dumy Text </p>
+              <div class="recipe-meta">
+                <div class="recipe-difficulty">
+                  <div class="recipe-difficulty-inner">
+                    <span class="active"></span>
+                    <span></span>
+                    <span></span>
+                  </div>
+                  <span>Chef Name</span>
+                </div>               
+                <div class="recipe-duration">
+                  <span><i class="fas fa-stopwatch"></i> 40 mins</span>
+                </div>
+              </div>
+            </div>
+          </div>
+          
+            <!--    section    -->
+          <div class="recipe recipe-list">
+            <div class="recipe-thumbnail">
+              <a href="class_detail">
+                <img src="./resources/image/food_Product/foodProduce_07.png" alt="blog post">
+              </a>
+            </div>
+            <div class="recipe-body">
+              <h5 class="recipe-title"> <a routerLink="/recipe-detail">Class Name  클래스 제목</a> </h5>
+              <p class="recipe-text">클래스 소개글, Dumy Text </p>
+              <div class="recipe-meta">
+                <div class="recipe-difficulty">
+                  <div class="recipe-difficulty-inner">
+                    <span class="active"></span>
+                    <span></span>
+                    <span></span>
+                  </div>
+                  <span>Chef Name</span>
+                </div>               
+                <div class="recipe-duration">
+                  <span><i class="fas fa-stopwatch"></i> 40 mins</span>
+                </div>
+              </div>
+            </div>
+          </div>
+
+            <!--    section    -->
+          <div class="recipe recipe-list">
+            <div class="recipe-thumbnail">
+              <a href="class_detail">
+                <img src="./resources/image/food_Product/foodProduce_08.png" alt="blog post">
+              </a>
+            </div>
+            <div class="recipe-body">
+              <h5 class="recipe-title"> <a routerLink="/recipe-detail">Class Name  클래스 제목</a> </h5>
+              <p class="recipe-text">클래스 소개글, Dumy Text </p>
+              <div class="recipe-meta">
+                <div class="recipe-difficulty">
+                  <div class="recipe-difficulty-inner">
+                    <span class="active"></span>
+                    <span></span>
+                    <span></span>
+                  </div>
+                  <span>Chef Name</span>
+                </div>               
+                <div class="recipe-duration">
+                  <span><i class="fas fa-stopwatch"></i> 40 mins</span>
                 </div>
               </div>
             </div>
           </div>
           
           
-          
-          
-          
-<!--   ------------------------- 페이지 많아지면 번호 생김       -->
+<!--   ---- 페이지 많아지면 번호 생김   ----    -->
 
 
 
-          <!-- Pagination Start 
+          <!-- Pagination Start -->
           
           
             <ul class="pagination">
               <li class="page-item"><a class="page-link" routerLink="/recipe-archive">1</a></li>
-              <li class="page-item active">
-                <a class="page-link" routerLink="/recipe-archive">2 <span class="sr-only">(current)</span></a>
-              </li>
-              <li class="page-item"><a class="page-link" routerLink="/recipe-archive">3</a></li>
+              <li class="page-item"><a class="page-link" routerLink="/recipe-archive">2</a></li>             
+         
             </ul>
-            
-            
+                        
           <!-- Pagination End -->
-
-
 
         </div>    <!-- Recipes End -->
 
@@ -472,8 +498,8 @@
 
 
 
+<!--   ------------------------------오른쪽 부분  -------------------------------   -->
 
-<!--        오른쪽 사이드 부분            -->
 
         <!-- Sidebar Start -->
         <div class="col-lg-4">
@@ -485,36 +511,49 @@
   <div class="sidebar">
 
             <div class="sidebar-widget">
-              <h5>Recent View(최근본 클래스)</h5>
+              <h5>나에게 맞는 클래스</h5>
+              
+              <!--  section  -->
               <article class="media">
-                <a href="class_detail"><img src="./resources/image/class_main/class_main_produce02.png" alt="post"></a>
+                <a href="class_detail"><img src="./resources/image/food_Product/foodProduce_08.png" alt="post"></a>
                 <div class="media-body">
                   <h6> <a routerLink="/blog-single-v2">Class Name</a> </h6>
-                  <p>January 22, 2020</p>
+                  <p>Chef ID</p>
                 </div>
               </article>
+
+              
+              <!--  section  -->
               <article class="media">
-                <a href="class_detail"><img src="./resources/img/blog/4.jpg" alt="post"></a>
+                <a href="class_detail"><img src="./resources/image/food_Product/foodProduce_02.png" alt="post"></a>
                 <div class="media-body">
-                  <h6> <a routerLink="/blog-single-v2">Pasta With Pesto Sauce, Topped With Grated Cheese</a> </h6>
-                  <p>January 24, 2020</p>
+                  <h6> <a routerLink="/blog-single-v2">Class Name</a> </h6>
+                  <p>Chef ID</p>
                 </div>
               </article>
+
+              
+              <!--  section  -->
               <article class="media">
-                <a href="class_detail"><img src="./resources/img/blog/7.jpg" alt="post"></a>
+                <a href="class_detail"><img src="./resources/image/food_Product/foodProduce_10.png" alt="post"></a>
                 <div class="media-body">
-                  <h6> <a routerLink="/blog-single-v2">Sugary Pancakes Dressed With Cream</a> </h6>
-                  <p>January 26, 2020</p>
+                  <h6> <a routerLink="/blog-single-v2">Class Name</a> </h6>
+                  <p>Chef ID</p>
                 </div>
               </article>
+
+              
+              <!--  section  -->
               <article class="media">
-                 <a href="class_detail"><img src="./resources/img/blog/5.jpg" alt="post"></a>
+                 <a href="class_detail"><img src="./resources/image/food_Product/foodProduce_11.png" alt="post"></a>
                 <div class="media-body">
-                  <h6> <a routerLink="/blog-single-v2">Rare Tenderloine With Gravy, Tomatoes and Parsley</a> </h6>
-                  <p>January 28, 2020</p>
+                  <h6> <a routerLink="/blog-single-v2">Class Name</a> </h6>
+                  <p>Chef ID</p>
                 </div>
               </article>
+              
             </div>
+
 
 
 
@@ -523,12 +562,12 @@
 
 
             <div class="sidebar-widget">
-              <h5>Featured Class(추천 클래스)</h5>
+              <h5>Popular Class</h5>
 
               <div class="recipe featured-recipe">
                 <div class="recipe-thumbnail">
                   <a href="class_detail">
-                    <img src="./resources/image/class_main/class_main_produce03.png" alt="blog post">
+                    <img src="./resources/image/food_Product/foodProduce_01.png" alt="blog post">
                   </a>
                 </div>
                 <div class="recipe-body">
@@ -552,11 +591,11 @@
               <div class="recipe featured-recipe">
                 <div class="recipe-thumbnail">
                   <a href="class_detail">
-                    <img src="./resources/img/blog/11.jpg" alt="blog post">
+                    <img src="./resources/image/food_Product/foodProduce_05.png" alt="blog post">
                   </a>
                 </div>
                 <div class="recipe-body">
-                  <h6 class="recipe-title"> <a routerLink="/recipe-detail">Fig and Raspberry Cake With Sugar Filling and Coating</a> </h6>
+                 <h6 class="recipe-title"> <a routerLink="/recipe-detail">Class Name</a> </h6>
                   <div class="recipe-meta">
                     <div class="recipe-difficulty">
                       <div class="recipe-difficulty-inner">
@@ -577,14 +616,13 @@
 
             <div class="sidebar-widget tags">
               <h5>Popular Tags</h5>
-              <a href="javascript:void(0)">Food</a>
-              <a href="javascript:void(0)">Foodie</a>
-              <a href="javascript:void(0)">Chicken</a>
-              <a href="javascript:void(0)">Meat</a>
-              <a href="javascript:void(0)">Health</a>
+              <a href="javascript:void(0)">한식</a>
+              <a href="javascript:void(0)">돼지고기</a>
+              <a href="javascript:void(0)">해산물</a>
+              <a href="javascript:void(0)">양식</a>
+              <a href="javascript:void(0)">소고기</a>
               <a href="javascript:void(0)">Vegan</a>
-              <a href="javascript:void(0)">Fit</a>
-              <a href="javascript:void(0)">Fruit</a>
+              <a href="javascript:void(0)">Quick Food</a>             
             </div>
 
           </div>

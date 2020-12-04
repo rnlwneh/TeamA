@@ -90,12 +90,12 @@ function openCloseToc() {
 
 function openComment() {
 	if (document.getElementById('coment_write').style.display === 'block') {
-		document.getElementById('coment_write').style.display = 'none';
+		document.getElementById('coment_write').style.display = 'none';		
 		event.preventDefault ? event.preventDefault()
 				: (event.returnValue = false);
 
 	} else {
-		document.getElementById('coment_write').style.display = 'block';
+		document.getElementById('coment_write').style.display = 'block';		
 		event.preventDefault ? event.preventDefault()
 				: (event.returnValue = false);
 
@@ -196,6 +196,13 @@ function openComment() {
         $('#insFrm').submit();            
         
     }
+    
+    
+    
+    
+    
+    
+    
 </script>
   
   
@@ -299,10 +306,6 @@ function openComment() {
   
   
   
-  
-  
-  
-  
 </head>
 <body>
  
@@ -310,16 +313,12 @@ function openComment() {
 <app-root>
 
 
-
-  
-
 <app-header2> 
-
 
 
 <!-- Aside (Mobile Navigation) -->
   <aside class="main-aside">
-    <a class="navbar-brand" href="index"> <img src="./resources/image/main/logo.png"> </a>
+  <!--   <a class="navbar-brand" href="index"> <img src="./resources/image/main/logo.png"> </a> -->
 
     <div class="aside-scroll">
       <ul>
@@ -492,6 +491,8 @@ function openComment() {
 
 
 
+<!--  --------------------------  클래스 디테인  메일  ---------------------------  -->
+
 
 
 
@@ -506,7 +507,8 @@ function openComment() {
 
 
 			<div class="detail_img">
-				<img src="./resources/image/detail_img/class_detail_01.jpg">
+				<img src="./resources/image/food_Product/foodProduce_01.png" class="classProduct">
+			<!-- 	<img src="./resources/image/detail_img/class_detail_01.jpg"> -->
 			</div>
 
 
@@ -525,7 +527,7 @@ function openComment() {
 			<p class="lead">클래스 설명. 클래스 설명. 레시피 가르칠 것 설명</p>
 
 			<p class="class_price">
-				1,100<small>원</small>
+				<p4>1,100</p4><small>원</small>
 			</p>
 
 			<hr>
@@ -533,9 +535,9 @@ function openComment() {
 			<div class="detail_time">
 				<div class="detail_icon_img">
 					<span> <img src="./resources/image/detail_img/clock.png">
-						<p1> 강의 시간 </p1> <p2> 10 분 </p2>
+						<p1> 강의 시간 </p1> <p2> 10 </p2> <p3>분 </p3>
 					</span> <span> <img src="./resources/image/detail_img/calendar.png">
-						<p1> 수강 기간 </p1> <p2> 100 일 </p2>
+						<p1> 수강 기간 </p1> <p2> 100  </p2>  <p3>일</p3>
 					</span>
 				</div>
 
@@ -568,16 +570,36 @@ function openComment() {
 
 			<!--   ------------     section  ------------     -->
 			<div class="show_class_secction">
+			
 				<div class="show_class_content">
 					<b>클래스 소개</b> <span>/ 05분이내</span>
 				</div>
 
 				<div class="show_class_content_move">
 					<p4>
-					<a href="#">무료 보기</a></p4>
-				</div>
+					<span class="starFree">
+					무료 보기</p4>
+					</span>
+				</div>		
 			</div>
+			
+			
+				<div id="show_class_content_video">
+			
+					<div class="show_freeVideo"> 					
+					
+						<span class="video_cn"> 
+							<iframe width="560" height="315"
+									src="https://www.youtube.com/embed/rL-Po0VnjXk" frameborder="0"
+									allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+									allowfullscreen></iframe>
+						</span>
+					
+					</div> <!-- show_freeVideo  -->
+										
+				</div>  <!--   show_class_content_video   -->
 
+		
 
 			<!--   ------------     section  ------------     -->
 
@@ -588,14 +610,33 @@ function openComment() {
 
 				<div class="show_class_content_move">
 					<p4>
-					<a href="#">무료 보기</a></p4>
+					<span class="starProp">
+					무료 보기</p4>
+					</span>
 				</div>
 			</div>
 
-
+			
+			
+			<div id="show_class_content_prop">
+			
+					<div class="show_freeProp"> 					
+					
+						<span class="video_cn"> 
+							<iframe width="560" height="315"
+							src="https://www.youtube.com/embed/zNwnQxqg1yA" frameborder="0"
+							allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+							allowfullscreen></iframe>
+					</span>
+					
+					</div> <!-- show_freeVideo  -->
+										
+				</div>  <!--   show_class_content_video   -->
+			
 
 
 <!--   ------------     section  ------------     -->
+
 
 
 			<div class="show_class_secction">
@@ -607,18 +648,7 @@ function openComment() {
 					<li><p4>
 						<a href="#" class="start_icon"><img
 							src="./resources/image/detail_img/detailstart_on.png"></a></p4>
-					</li>
-					
-					
-					<li class="show_video">
-					<span class="videoClose"><h1>X</h1></span>
-					<span class="video_cn">							
-					<iframe width="700" height="450"
-								src="https://www.youtube.com/embed/fXZsiXreVV4" frameborder="0"
-								allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
-								allowfullscreen></iframe>
-					</span></li>
-
+					</li>		
 
 				</div>
 				<div class="show_class_content_menu">
@@ -630,7 +660,22 @@ function openComment() {
 				
 				
 				
+				<div id ="show_classVideo">
 				
+				<div class="show_Video"> 					
+					
+						<span class="video_cn"> 
+							<iframe width="560" height="315"
+							src="https://www.youtube.com/embed/zNwnQxqg1yA" frameborder="0"
+							allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+							allowfullscreen></iframe>
+					</span>
+					
+					</div> <!-- show_freeVideo  -->
+					
+				</div> <!--  show_classVideo   -->
+				
+	
 				
 
 				<!--     재료 소개       -->
@@ -699,15 +744,8 @@ function openComment() {
 					</div>
 
 				</div>   <!--    show_class_prop    -->
-
-			</div>
-
-
-
-
-
-
-
+			
+</div>
 
 
 
@@ -1073,8 +1111,8 @@ function openComment() {
 																<img src="./resources/image/detail_img/star.png">
 																<img src="./resources/image/detail_img/star.png">
 															</div>
-															
-															<span class="caret"></span>
+															<!-- 
+															<span class="caret"></span> -->
 															
 													</a>
 														<ul id="menu3" class="dropdown-menu" role="menu"
@@ -1177,10 +1215,6 @@ function openComment() {
 								framespacing=0 marginheight=0 marginwidth=0 scrolling=yes
 								vspace=0></iframe>
 
-							<!-- 	<iframe src="#" name="epBootstrapIframe_i0kjn" style="" width="100%"
-				height="100%" frameborder="0" scrolling="auto"></iframe> -->
-
-
 
 						</form>
 						<!--   commentFrom     -->
@@ -1190,7 +1224,6 @@ function openComment() {
 
 				</div>
 				<!--  coment_write   -->
-
 
 
 			</div>
@@ -1213,12 +1246,10 @@ function openComment() {
   
 <!-- Newsletter start  -->
   <app-footer1>
-  
-  
+    
   																<!--    이미지 변경하고 싶으면 footBackImg_06.png <--여기를 01~06중 골라쓰세요  -->
   <section class="section light-bg bg-cover" style="background-image:url('./resources/image/main/footBackImg_05.png')">
-  
-  
+    
     <div class="container">
       <div class="section-title-wrap section-header text-center">
         <d1 class="foot_title">Recipe Search</d1>       
@@ -1231,8 +1262,7 @@ function openComment() {
 
     </div>
   </section>
- 
- 
+  
   <!-- Footer Start -->
   <footer class="ct-footer footer-2">
   
@@ -1274,8 +1304,7 @@ function openComment() {
                     </div>
                 </div>
             </div>
-  
-    
+      
     
   </footer>
   <!-- Footer End -->

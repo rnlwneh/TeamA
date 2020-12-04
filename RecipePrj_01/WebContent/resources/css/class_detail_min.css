@@ -394,15 +394,21 @@ template {
 
 
 
-/*            -------------------------      수고  ----------------------    */
+/*            -------------------------      수정  ----------------------    */
 
 
 
 .display-3 {
 	font-size: 2.7rem;
 	font-weight: 700;
-	line-height: 1.2
+	line-height: 1.2;
+	margin-left: 35%;
 }
+
+
+
+
+
 
 .display-4 {
 	font-size: 3.5rem;
@@ -3176,11 +3182,16 @@ input[type=button].btn-block, input[type=reset].btn-block, input[type=submit].bt
 }
 
 
+/* --------------------------수정------------------ */
+
+
+
 .dropdown-toggle::after {
 	display: inline-block;
 	width: 0;
 	height: 0;
-	margin-left: .255em;
+	margin-left: 28.255em;
+	
 	vertical-align: .255em;
 	content: "";
 	border-top: .3em solid;

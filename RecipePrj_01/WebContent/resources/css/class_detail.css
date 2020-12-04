@@ -5,29 +5,7 @@
  * Licensed under MIT (https://github.com/twbs/bootstrap/blob/main/LICENSE)
  */
  
- @font-face {
-    font-family: 'GmarketSansBold';
-    src: url('https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_2001@1.1/GmarketSansBold.woff') format('woff');
-    font-weight: normal;
-    font-style: normal;
-}
  
- 
- @font-face {
-    font-family: 'GmarketSansLight';
-    src: url('https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_2001@1.1/GmarketSansLight.woff') format('woff');
-    font-weight: normal;
-    font-style: normal;
-}
-
-
-@font-face {
-    font-family: 'GmarketSansMedium';
-    src: url('https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_2001@1.1/GmarketSansMedium.woff') format('woff');
-    font-weight: normal;
-    font-style: normal;
-}
-
 
  
 :root { -
@@ -597,14 +575,17 @@ pre code {
 /*  ----------------------------  디테일 상단  ClasS_title 부분  ----------------------------   */
 
 
-/*font-family: 'GmarketSansBold';
 
- font-family: 'GmarketSansLight';
+.classProduct{
+	
+  max-width: 830px;
+  max-height: 480px;
+  height: auto;
+  border-radius: 20px;
+  margin-left: 3%;
+  
+}
 
-font-family: 'GmarketSansMedium';
-
-
-*/
 
 
 .detail_img{
@@ -649,6 +630,13 @@ font-family: 'GmarketSansMedium';
 }
 
 
+.class_price p4{
+	
+	color: #85B72C;;
+	
+}
+
+
 
 .detail_time{
 	
@@ -678,7 +666,7 @@ font-family: 'GmarketSansMedium';
 .detail_icon_img p1{
 	
 	font-family: 'Playfair Display', serif;
-	font-size: 18px;
+	font-size: 23px;
 	padding: 10px;
 	
 	
@@ -689,8 +677,20 @@ font-family: 'GmarketSansMedium';
 	
 	font-family: 'Playfair Display', serif;
 	padding: 15px;
-	font-size: 17px;
+	font-size: 22px;
+	color: #85B72C;;
 }
+
+
+
+.detail_icon_img p3{
+	
+	font-family: 'Playfair Display', serif;
+	padding: 8px;
+	font-size: 19px;
+}
+
+
 
 .detail_icon_img span{
 	padding: 15px;
@@ -708,8 +708,8 @@ font-family: 'GmarketSansMedium';
 figure.snip1425 {
   font-family: 'Raleway', Arial, sans-serif;
   position: absolute;
-  top: 520px;
-  left: 44%;
+  top: 650px;
+  left: 46%;
   overflow: hidden;
   margin: 10px;
   min-width: 110px;
@@ -846,9 +846,41 @@ figure.snip1425.hover:after {
 	border-left:1px solid #d2d4d6;
 	border-right:1px dashed #d2d4d6;
 	padding: 17px;	
-	text-aling: center;
+	text-aling: center;	
 	
+}
+
+
+#show_class_content_video, #show_class_content_prop{
 	
+	display: table-cell;
+	background:white;	
+	height: auto;
+	width: auto;
+	max-height: auto;
+ 	max-width: 1050px; 
+	border-radius: 10px;	
+	border:1px solid #d2d4d6;
+	padding: 12px;	
+	text-aling: center;		
+	
+}
+
+#show_classVideo{
+	
+/* 
+display: table-cell; */
+	background:white;	
+	height: auto;
+	width: auto;
+	max-height: auto;
+ /* 	max-width: 1050px;  */
+	border-radius: 10px;	
+	border:1px solid #d2d4d6;
+	padding: 12px;	
+	text-aling: center;		
+
+
 }
 
 
@@ -883,7 +915,7 @@ figure.snip1425.hover:after {
 	border-top:1px solid #d2d4d6;
 	border-bottom:1px solid #d2d4d6;
 	border-right:1px solid #d2d4d6;
-	 text-aling: center;
+	text-aling: center;
 		
 }
 
@@ -983,6 +1015,9 @@ figure.snip1425.hover:after {
 }
 
 
+
+
+
 .show_video{
 			
 	position: absolute;	
@@ -990,10 +1025,10 @@ figure.snip1425.hover:after {
 	height: auto;
     width: auto;
 	padding: 20px;
-	border-left: 1px solid #c3d0e3;
-	border-right: 1px solid #c3d0e3;
-	border-bottom: 1px solid #c3d0e3;	
-	transform: translate(-85%, -45%);
+	border-left: 1px solid #ebe9e1;
+	border-right: 1px solid #ebe9e1;
+	border-bottom: 1px solid #ebe9e1;	
+	/* transform: translate(-85%, -45%); */
 	
 }
 
@@ -1002,18 +1037,19 @@ figure.snip1425.hover:after {
 	
 	height: 30px;
     width: 30px;
-    background:#e4eaed;
+    background:#edebe4;
 	position: absolute;	
 	transform: translate(-50px, -20px);
-	border:1px solid #c3d0e3;
+	border:1px solid #ebe9e1;
 	text-aling:center;	
 	
 }
 
 
-.videoClose h1{	
+.videoClose h1, .freevideoClose h1{	
 	font-size: 17px;
 	color: #8798a1;
+	margin-top:-5px
 	
 }
 
@@ -1037,6 +1073,8 @@ figure.snip1425.hover:after {
 	
 	
 } 
+
+
 
 #show_class_prop_1 a{
  	
@@ -4336,24 +4374,42 @@ input[type=button].btn-block, input[type=reset].btn-block, input[type=submit].bt
 	position: relative
 }
 
+
+/*------------------------------별 버튼 ----------------------*/
+
+
+/* 
+
+
 .dropdown-toggle {
 	white-space: nowrap
 }
+
+
+
 
 .dropdown-toggle::after {
 	display: inline-block;
 	margin-left: .255em;
 	vertical-align: .255em;
-	/* content: ""; */
+	content: "";
 	border-top: .3em solid;
 	border-right: .3em solid transparent;
 	border-bottom: 0;
 	border-left: .3em solid transparent
 }
 
+
+
+
 .dropdown-toggle:empty::after {
 	margin-left: 0
 }
+
+ */
+
+
+
 
 .dropdown-menu {
 	position: absolute;

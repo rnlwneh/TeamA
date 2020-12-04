@@ -1952,12 +1952,19 @@ table img{
   display: none;
 }
 
+
+
+
 /*======================
 3. Footer
 ========================*/
 .ct-footer {
-  padding: 80px 0 0;
+  padding: 20px 0 0;
 }
+
+
+
+
 .ct-footer p{
   margin-bottom: 20px;
   color: #515151;
@@ -3859,15 +3866,25 @@ table img{
   padding: 15px 20px;
   margin-left: 15px;
 }
+
+
+
+/* ---------------------버튼 색깔 ---------------- */
+
 .pagination .page-item.active .page-link{
-  background-color: #85B72C;
+ /*  background-color: #85B72C; */
 }
+
+
+
+
 .pagination .page-item .page-link:hover,
 .pagination .page-item .page-link:focus{
   color: #85B72C;
   outline: none;
   -webkit-box-shadow: none;
           box-shadow: none;
+           background-color: #85B72C;
 }
 
 
