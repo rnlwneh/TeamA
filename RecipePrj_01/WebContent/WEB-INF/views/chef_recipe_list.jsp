@@ -7,7 +7,7 @@
   <title>Cookiteer</title>
   <!-- <base href="/"> -->
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <link rel="icon" type="image/x-icon" >
+  <link rel="icon" type="image/x-icon">
 
 <link rel="stylesheet" type="text/css" href="${pageContext.request.contextPath}/resources/css/chef_recipe_list_header.css" media="all" />
 <link rel="stylesheet" type="text/css" href="${pageContext.request.contextPath}/resources/css/chef_recipe_list_main.css" media="all" />
@@ -19,7 +19,7 @@
   
  <style type="text/css">
  
- #id_search_category_text{
+ #chef_search_category_text{
  
  	margin: 0 0 0 85%;
  
@@ -106,6 +106,22 @@
         {
             $('#id_search_category_text').text('카테고리 열기');
             $('#id_search_category_img').attr("src",'https://recipe1.ezmember.co.kr/img/icon_arrow9_down.gif');
+        }
+
+    }
+
+    function ChefCategory()
+    {
+        $('#chef_search_category').toggle();
+        if ($('#chef_search_category').is(":visible"))
+        {
+            $('#chef_search_category_text').text('close');
+            $('#chef_search_category_img').attr("src",'https://recipe1.ezmember.co.kr/img/icon_arrow9_up.gif');
+        }
+        else
+        {
+            $('#chef_search_category_text').text('open');
+            $('#chef_search_category_img').attr("src",'https://recipe1.ezmember.co.kr/img/icon_arrow9_down.gif');
         }
 
     }
@@ -309,102 +325,39 @@
   <!-- Recipes Start -->
   <section class="section">
     <div class="container">
-    <div id="id_search_category" style="display: block;" class="rcp_m_cate">
-    <table width="100%" cellspacing="0" cellpadding="0">
-        <colgroup>
-            <col width="100px">
-            <col>
-        </colgroup>
-        <tbody>
-        <tr>
-            <th style="padding-top: 10px;">
-                <span>종류별</span><br/>
-                <span>상황별</span><br/>
-                <span>재료별</span><br/>
-                <span>방법별</span>
-            </th>
-            <td>
-                <div class="rcp_cate st3">
-                    <div class="cate_list">
-                <a href="javascript:goSearchRecipe('cat4','')" class="active">전체</a>&ensp;
-                <a href="javascript:goSearchRecipe('cat4','63')">밑반찬</a>&ensp;
-                <a href="javascript:goSearchRecipe('cat4','56')">메인반찬</a>&ensp;
-                <a href="javascript:goSearchRecipe('cat4','54')">국/탕/찌개</a>&ensp;
-                <a href="javascript:goSearchRecipe('cat4','53')">면/만두</a>&ensp;
-                <a href="javascript:goSearchRecipe('cat4','52')">밥/죽/떡</a>&ensp;
-                <a href="javascript:goSearchRecipe('cat4','57')">김치/젓갈/장류</a>&ensp;
-                <a href="javascript:goSearchRecipe('cat4','58')">양념/소스/잼</a>&ensp;
-                <a href="javascript:goSearchRecipe('cat4','65')">양식</a>&ensp;
-                <a href="javascript:goSearchRecipe('cat4','66')">빵/과자/디저트</a>&ensp;
-                <a href="javascript:goSearchRecipe('cat4','59')">차/음료/술</a>&ensp;
-                <a href="javascript:goSearchRecipe('cat4','62')">기타</a>            
-                    </div>
-                    
-                        <div class="cate_list">
-                <a href="javascript:goSearchRecipe('cat2','')" class="active">전체</a>&ensp;
-                <a href="javascript:goSearchRecipe('cat2','12')">일상</a>&ensp;
-                <a href="javascript:goSearchRecipe('cat2','18')">초스피드</a>&ensp;
-                <a href="javascript:goSearchRecipe('cat2','13')">손님접대</a>&ensp;
-                <a href="javascript:goSearchRecipe('cat2','19')">술안주</a>&ensp;
-                <a href="javascript:goSearchRecipe('cat2','21')">다이어트</a>&ensp;
-                <a href="javascript:goSearchRecipe('cat2','17')">간식</a>&ensp;
-                <a href="javascript:goSearchRecipe('cat2','45')">야식</a>&ensp;
-                <a href="javascript:goSearchRecipe('cat2','14')">이유식</a>&ensp;
-                <a href="javascript:goSearchRecipe('cat2','22')">기타</a>            
-                		</div>
-                		
-                        <div class="cate_list">
-                <a href="javascript:goSearchRecipe('cat3','')" class="active">전체</a>&ensp;
-                <a href="javascript:goSearchRecipe('cat3','70')">소고기</a>&ensp;
-                <a href="javascript:goSearchRecipe('cat3','71')">돼지고기</a>&ensp;
-                <a href="javascript:goSearchRecipe('cat3','72')">닭고기</a>&ensp;
-                <a href="javascript:goSearchRecipe('cat3','23')">육류</a>&ensp;
-                <a href="javascript:goSearchRecipe('cat3','28')">채소류/과일류</a>&ensp;
-                <a href="javascript:goSearchRecipe('cat3','24')">해물류</a>&ensp;
-                <a href="javascript:goSearchRecipe('cat3','50')">달걀/유제품</a>&ensp;
-                <a href="javascript:goSearchRecipe('cat3','33')">가공식품류</a>&ensp;
-                <a href="javascript:goSearchRecipe('cat3','47')">쌀/곡류/밀가루</a>&ensp;
-                <a href="javascript:goSearchRecipe('cat3','25')">건어물류</a>&ensp;
-                <a href="javascript:goSearchRecipe('cat3','34')">기타</a>
-                        </div>
-                        
-                        <div class="cate_list">
-                <a href="javascript:goSearchRecipe('cat1','')" class="active">전체</a>&ensp;
-                <a href="javascript:goSearchRecipe('cat1','6')">볶음/조림</a>&ensp;
-                <a href="javascript:goSearchRecipe('cat1','1')">끓이기</a>&ensp;
-                <a href="javascript:goSearchRecipe('cat1','7')">굽기/부침</a>&ensp;
-                <a href="javascript:goSearchRecipe('cat1','41')">무침/비빔</a>&ensp;
-                <a href="javascript:goSearchRecipe('cat1','8')">찜</a>&ensp;
-                <a href="javascript:goSearchRecipe('cat1','10')">절임</a>&ensp;
-                <a href="javascript:goSearchRecipe('cat1','9')">튀김</a>&ensp;
-                <a href="javascript:goSearchRecipe('cat1','38')">삶기/데치기</a>&ensp;
-                <a href="javascript:goSearchRecipe('cat1','37')">회</a>&ensp;
-                <a href="javascript:goSearchRecipe('cat1','11')">기타</a>
-                        </div>
-                </div>
-            </td>
-        </tr>
-        </tbody>
-    </table>
-</div>
-	<div class="rcp_cate_btn">
-		<a href="javascript:ToggleCategory()">
-			<span id="id_search_category_text">카테고리 닫기</span>
-			<span><img id="id_search_category_img" src="https://recipe1.ezmember.co.kr/img/icon_arrow9_up.gif"></span>
-		</a>
-	</div><br/>
+     <div class="sidebar-widget tags" id="chef_search_category">
+              <h5>Popular Tags</h5>
+              <a href="">Korean</a>
+              <a href="">Chinese</a>
+              <a href="">Japanese</a>
+              <a href="">French</a>
+              <a href="">Italian</a>
+              <a href="">Spanish</a>
+              <a href="">Mexican</a>
+              <a href="">American</a>
+              <a href="">Home Cook</a>
+              <a href="">Baking</a>
+              <a href="">Dessert</a>
+              <a href="">Vegan</a>
+     </div>
+     <a href="javascript:ChefCategory()">
+     <span id="chef_search_category_text">close</span>
+     <span><img id="chef_search_category_img" src="https://recipe1.ezmember.co.kr/img/icon_arrow9_up.gif"></span>
+     </a><br/><br/>
+		
+	
       <div class="row">
         <!-- Recipes Start -->
         <div class="col-lg-8">
           <div class="recipe recipe-list">
             <div class="recipe-thumbnail">
               <a routerLink="/recipe-detail">
-                <img src="${pageContext.request.contextPath}/resources/img/blog/10.jpg" alt="blog post">
+                <img src="${pageContext.request.contextPath}/resources/img/chef1.png" alt="blog post">
               </a>
             </div>
             <div class="recipe-body">
-              <h5 class="recipe-title"> <a href="/recipe-detail">버터와 타임을 이용한 구운 양고기</a> </h5>
-              <p class="recipe-text">Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s...</p>
+              <h5 class="recipe-title"> <a href="/recipe-detail">김양식</a> </h5>
+              <p class="recipe-text">이탈리아 음식 전문가 김양식 쉐프입니다 베네치아의 레스토랑에서 5년동안 헤드쉐프로.....어쩌고..저쩌고....</p>
               <div class="recipe-meta">
                 <div class="recipe-difficulty">
                   <div class="recipe-difficulty-inner">
@@ -412,13 +365,13 @@
                     <span></span>
                     <span></span>
                   </div>
-                  <span>Amateur</span>
+                  <span>Italian</span>
                 </div>
                 <div class="recipe-steps">
-                  <span><i class="fas fa-concierge-bell"></i> 24 Scrap</span>
+                  <span><i class="fas fa-concierge-bell"></i> 24 Posting</span>
                 </div>
                 <div class="recipe-duration">
-                  <span><i class="fas fa-stopwatch"></i> 40 mins</span>
+                  <span><i class="fas fa-stopwatch"></i> 400 Follows</span>
                 </div>
               </div>
             </div>
@@ -427,12 +380,12 @@
           <div class="recipe recipe-list">
             <div class="recipe-thumbnail">
               <a routerLink="/recipe-detail">
-                <img src="${pageContext.request.contextPath}/resources/img/blog/11.jpg" alt="blog post">
+                <img src="${pageContext.request.contextPath}/resources/img/chef2.png" alt="blog post">
               </a>
             </div>
             <div class="recipe-body">
-              <h5 class="recipe-title"> <a href="/recipe-detail">달콤함으로 코팅된 무화과 라즈베리 케이크 </a> </h5>
-              <p class="recipe-text">Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s...</p>
+              <h5 class="recipe-title"> <a href="/recipe-detail">지현맘</a> </h5>
+              <p class="recipe-text">집에서 쉽고 고급지게 만들수 있는 레시피 알려드릴께요~ </p>
               <div class="recipe-meta">
                 <div class="recipe-difficulty">
                   <div class="recipe-difficulty-inner">
@@ -440,13 +393,13 @@
                     <span class="active"></span>
                     <span class="active"></span>
                   </div>
-                  <span>Chef</span>
+                  <span>Home Cook</span>
                 </div>
                 <div class="recipe-steps">
-                  <span><i class="fas fa-concierge-bell"></i> 66 Scrap</span>
+                  <span><i class="fas fa-concierge-bell"></i> 66 Posting</span>
                 </div>
                 <div class="recipe-duration">
-                  <span><i class="fas fa-stopwatch"></i> 120 mins</span>
+                  <span><i class="fas fa-stopwatch"></i> 120 Follows</span>
                 </div>
               </div>
             </div>
@@ -455,12 +408,12 @@
           <div class="recipe recipe-list">
             <div class="recipe-thumbnail">
               <a routerLink="/recipe-detail">
-                <img src="${pageContext.request.contextPath}/resources/img/blog/9.jpg" alt="blog post">
+                <img src="${pageContext.request.contextPath}/resources/img/chef1.png" alt="blog post">
               </a>
             </div>
             <div class="recipe-body">
-              <h5 class="recipe-title"> <a href="/recipe-detail">Rare Tenderloine With Gravy, Tomatoes and Parsley </a> </h5>
-              <p class="recipe-text">Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s...</p>
+              <h5 class="recipe-title"> <a href="/recipe-detail">김민수 </a> </h5>
+              <p class="recipe-text">자취 5년차 직장인 김민수입니다 자취하는 분들을 위한 간편 레시피 알려드릴께요~</p>
               <div class="recipe-meta">
                 <div class="recipe-difficulty">
                   <div class="recipe-difficulty-inner">
@@ -471,10 +424,10 @@
                   <span>Home Cook</span>
                 </div>
                 <div class="recipe-steps">
-                  <span><i class="fas fa-concierge-bell"></i> 42 Scrap</span>
+                  <span><i class="fas fa-concierge-bell"></i> 42 Posting</span>
                 </div>
                 <div class="recipe-duration">
-                  <span><i class="fas fa-stopwatch"></i> 50 mins</span>
+                  <span><i class="fas fa-stopwatch"></i> 50 Follows</span>
                 </div>
               </div>
             </div>
@@ -483,12 +436,12 @@
           <div class="recipe recipe-list">
             <div class="recipe-thumbnail">
               <a routerLink="/recipe-detail">
-                <img src="${pageContext.request.contextPath}/resources/img/blog/8.jpg" alt="blog post">
+                <img src="${pageContext.request.contextPath}/resources/img/chef2.png" alt="blog post">
               </a>
             </div>
             <div class="recipe-body">
-              <h5 class="recipe-title"> <a href="/recipe-detail">Oat Pancakes with Strawberries and Blueberries</a> </h5>
-              <p class="recipe-text">Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s...</p>
+              <h5 class="recipe-title"> <a href="/recipe-detail">김윤정</a> </h5>
+              <p class="recipe-text">12년 경력의 파티쉐 김윤정 입니다. 달콤한 디저트 레시피 여러분에게 알려드려요~</p>
               <div class="recipe-meta">
                 <div class="recipe-difficulty">
                   <div class="recipe-difficulty-inner">
@@ -496,13 +449,13 @@
                     <span class="active"></span>
                     <span></span>
                   </div>
-                  <span>Home Cook</span>
+                  <span>Dessert</span>
                 </div>
                 <div class="recipe-steps">
-                  <span><i class="fas fa-concierge-bell"></i> 42 Scrap</span>
+                  <span><i class="fas fa-concierge-bell"></i> 42 Posting</span>
                 </div>
                 <div class="recipe-duration">
-                  <span><i class="fas fa-stopwatch"></i> 50 mins</span>
+                  <span><i class="fas fa-stopwatch"></i> 50 Follows</span>
                 </div>
               </div>
             </div>
@@ -511,7 +464,7 @@
           <div class="recipe recipe-list">
             <div class="recipe-thumbnail">
               <a routerLink="/recipe-detail">
-                <img src="${pageContext.request.contextPath}/resources/img/blog/7.jpg" alt="blog post">
+                <img src="${pageContext.request.contextPath}/resources/img/chef1.png" alt="blog post">
               </a>
             </div>
             <div class="recipe-body">
@@ -527,10 +480,10 @@
                   <span>Home Cook</span>
                 </div>
                 <div class="recipe-steps">
-                  <span><i class="fas fa-concierge-bell"></i> 42 Scrap</span>
+                  <span><i class="fas fa-concierge-bell"></i> 42 Posting</span>
                 </div>
                 <div class="recipe-duration">
-                  <span><i class="fas fa-stopwatch"></i> 50 mins</span>
+                  <span><i class="fas fa-stopwatch"></i> 50 Follows</span>
                 </div>
               </div>
             </div>
@@ -539,7 +492,7 @@
           <div class="recipe recipe-list">
             <div class="recipe-thumbnail">
               <a routerLink="/recipe-detail">
-                <img src="${pageContext.request.contextPath}/resources/img/blog/5.jpg" alt="blog post">
+                <img src="${pageContext.request.contextPath}/resources/img/chef2.png" alt="blog post">
               </a>
             </div>
             <div class="recipe-body">
@@ -555,10 +508,10 @@
                   <span>Home Cook</span>
                 </div>
                 <div class="recipe-steps">
-                  <span><i class="fas fa-concierge-bell"></i> 42 Scrap</span>
+                  <span><i class="fas fa-concierge-bell"></i> 42 Posting</span>
                 </div>
                 <div class="recipe-duration">
-                  <span><i class="fas fa-stopwatch"></i> 50 mins</span>
+                  <span><i class="fas fa-stopwatch"></i> 50 Follows</span>
                 </div>
               </div>
             </div>
@@ -583,39 +536,39 @@
           <div class="sidebar">
 
             <div class="sidebar-widget">
-              <h5>Recent Posts</h5>
+              <h5>나에게 추천하는 쉐프</h5>
               <article class="media">
-                <a href="/blog-single-v2"><img src="${pageContext.request.contextPath}/resources/img/blog/10.jpg" alt="post"></a>
+                <a href="/blog-single-v2"><img src="${pageContext.request.contextPath}/resources/img/chef3.png" alt="post"></a>
                 <div class="media-body">
-                  <h6> <a href="/blog-single-v2">Grilled Lamb Coated With Butter and Thyme</a> </h6>
-                  <p>January 22, 2020</p>
+                  <h6> <a href="/blog-single-v2">애슐리 킴</a> </h6>
+                  <p>Italian</p>
                 </div>
               </article>
               <article class="media">
-                <a href="/blog-single-v2"><img src="${pageContext.request.contextPath}/resources/img/blog/4.jpg" alt="post"></a>
+                <a href="/blog-single-v2"><img src="${pageContext.request.contextPath}/resources/img/chef4.png" alt="post"></a>
                 <div class="media-body">
-                  <h6> <a href="/blog-single-v2">Pasta With Pesto Sauce, Topped With Grated Cheese</a> </h6>
-                  <p>January 24, 2020</p>
+                  <h6> <a href="/blog-single-v2">김양식</a> </h6>
+                  <p>Italian</p>
                 </div>
               </article>
               <article class="media">
-                <a href="/blog-single-v2"><img src="${pageContext.request.contextPath}/resources/img/blog/7.jpg" alt="post"></a>
+                <a href="/blog-single-v2"><img src="${pageContext.request.contextPath}/resources/img/chef3.png" alt="post"></a>
                 <div class="media-body">
-                  <h6> <a href="/blog-single-v2">Sugary Pancakes Dressed With Cream</a> </h6>
-                  <p>January 26, 2020</p>
+                  <h6> <a href="/blog-single-v2">Sophia Loren</a> </h6>
+                  <p>French</p>
                 </div>
               </article>
               <article class="media">
-                <a href="/blog-single-v2"><img src="${pageContext.request.contextPath}/resources/img/blog/5.jpg" alt="post"></a>
+                <a href="/blog-single-v2"><img src="${pageContext.request.contextPath}/resources/img/chef4.png" alt="post"></a>
                 <div class="media-body">
-                  <h6> <a href="/blog-single-v2">Rare Tenderloine With Gravy, Tomatoes and Parsley</a> </h6>
-                  <p>January 28, 2020</p>
+                  <h6> <a href="/blog-single-v2">Robert kim</a> </h6>
+                  <p>French</p>
                 </div>
               </article>
             </div>
 
             <div class="sidebar-widget">
-              <h5>Featured Recipes</h5>
+              <h5>인기 쉐프</h5>
 
               <div class="recipe featured-recipe">
                 <div class="recipe-thumbnail">
@@ -667,17 +620,7 @@
 
             </div>
 
-            <div class="sidebar-widget tags">
-              <h5>Popular Tags</h5>
-              <a href="javascript:void(0)">Food</a>
-              <a href="javascript:void(0)">Foodie</a>
-              <a href="javascript:void(0)">Chicken</a>
-              <a href="javascript:void(0)">Meat</a>
-              <a href="javascript:void(0)">Health</a>
-              <a href="javascript:void(0)">Vegan</a>
-              <a href="javascript:void(0)">Fit</a>
-              <a href="javascript:void(0)">Fruit</a>
-            </div>
+            
 
           </div>
           </app-recipe-sidebar>
@@ -689,97 +632,75 @@
     </div>
   </section>
   <!-- Recipes End -->
+  <!-- Newsletter start  -->
   <app-footer1>
   
   
-
-
-
-<!-- Newsletter start -->
-  <section class="section light-bg bg-cover" style="background-image:url('${pageContext.request.contextPath}/resources/img/bg/1.jpg')">
+  																<!--    이미지 변경하고 싶으면 footBackImg_06.png <--여기를 01~06중 골라쓰세요  -->
+  <section class="section light-bg bg-cover" style="background-image:url('./resources/image/main/footBackImg_05.png')">
+  
+  
     <div class="container">
       <div class="section-title-wrap section-header text-center">
-        <h2 class="title">Subscribe to My Newsletter</h2>
-        <p class="subtitle">
-          Get access to my latest recipes by joining the weekly newsletter
-        </p>
+        <d1 class="foot_title">Recipe Search</d1>       
       </div>
 
       <form class="ct-newsletter" method="post">
-        <input type="email" class="form-control" placeholder="Enter your email address" value="">
-        <button type="button" class="btn-custom primary" name="button"> Submit <i class="far fa-paper-plane"></i> </button>
+        <input type="email" class="form-control" placeholder="Search the recipe" value="">
+        <button type="button" class="btn-custom primary" name="button"> Search <i class="far fa-paper-plane"></i> </button>
       </form>
 
     </div>
   </section>
-  <!-- Newsletter End -->
-
-  <!-- Instagram Start -->
-  <div class="row no-gutters">
-    <div class="col-lg-2 col-md-4 col-sm-4 col-6 p-0">
-      <a href="javascript:void(0)" class="ct-ig-item">
-        <img src="${pageContext.request.contextPath}/resources/img/ig/1.jpg" alt="ig">
-      </a>
-    </div>
-    <div class="col-lg-2 col-md-4 col-sm-4 col-6 p-0">
-      <a href="javascript:void(0)" class="ct-ig-item">
-        <img src="${pageContext.request.contextPath}/resources/img/ig/2.jpg" alt="ig">
-      </a>
-    </div>
-    <div class="col-lg-2 col-md-4 col-sm-4 col-6 p-0">
-      <a href="javascript:void(0)" class="ct-ig-item">
-        <img src="${pageContext.request.contextPath}/resources/img/ig/3.jpg" alt="ig">
-      </a>
-    </div>
-    <div class="col-lg-2 col-md-4 col-sm-4 col-6 p-0">
-      <a href="javascript:void(0)" class="ct-ig-item">
-        <img src="${pageContext.request.contextPath}/resources/img/ig/4.jpg" alt="ig">
-      </a>
-    </div>
-    <div class="col-lg-2 col-md-4 col-sm-4 col-6 p-0">
-      <a href="javascript:void(0)" class="ct-ig-item">
-        <img src="${pageContext.request.contextPath}/resources/img/ig/5.jpg" alt="ig">
-      </a>
-    </div>
-    <div class="col-lg-2 col-md-4 col-sm-4 col-6 p-0">
-      <a href="javascript:void(0)" class="ct-ig-item">
-        <img src="${pageContext.request.contextPath}/resources/img/ig/6.jpg" alt="ig">
-      </a>
-    </div>
-  </div>
-  <!-- Instagram End -->
-
+ 
+ 
   <!-- Footer Start -->
   <footer class="ct-footer footer-2">
-    <div class="container">
-      <div class="footer-widget">
-        <ul class="social-media">
-          <li> <a href="javascript:void(0)">a <i class="fab fa-facebook-f"></i> </a> </li>
-          <li> <a href="javascript:void(0)"> <i class="fab fa-twitter"></i> </a> </li>
-          <li> <a href="javascript:void(0)"> <i class="fab fa-pinterest-p"></i> </a> </li>
-          <li> <a href="javascript:void(0)"> <i class="fab fa-linkedin-in"></i> </a> </li>
-        </ul>
-      </div>
-      <div class="footer-widget">
-        <ul>
-          <li> <a href="javascript:void(0)">Breakfast</a> </li>
-          <li> <a href="javascript:void(0)">Desserts</a> </li>
-          <li> <a href="javascript:void(0)">Dinner</a> </li>
-          <li> <a href="javascript:void(0)">Dairy</a> </li>
-        </ul>
-      </div>
-      <div class="footer-bottom">
-        <div class="container">
-          <p class="m-0">&copy; Copyright 2020 - <a href="javascript:void(0)">AndroThemes</a> All Rights Reserved.</p>
-        </div>
-      </div>
-    </div>
+  
+  
+   <div class="row align-items-center mt-70">
+                <!-- Single Cool Fact -->
+                <div class="col-12 col-sm-6 col-lg-3">
+                    <div class="single-cool-fact">
+                        <img src="./resources/image/core-img/salad.png" alt="">
+                        <h3><span class="counter">1287</span></h3>
+                        <h6>Recipe</h6>
+                    </div>
+                </div>
+
+                <!-- Single Cool Fact -->
+                <div class="col-12 col-sm-6 col-lg-3">
+                    <div class="single-cool-fact">
+                        <img src="./resources/image/core-img/hamburger.png" alt="">
+                        <h3><span class="counter">25</span></h3>
+                        <h6>Chef Recipe</h6>
+                    </div>
+                </div>
+
+                <!-- Single Cool Fact -->
+                <div class="col-12 col-sm-6 col-lg-3">
+                    <div class="single-cool-fact">
+                        <img src="./resources/image/core-img/rib.png" alt="">
+                        <h3><span class="counter">471</span></h3>
+                        <h6>Class</h6>
+                    </div>
+                </div>
+
+                <!-- Single Cool Fact -->
+                <div class="col-12 col-sm-6 col-lg-3">
+                    <div class="single-cool-fact">
+                        <img src="./resources/image/core-img/pancake.png" alt="">
+                        <h3><span class="counter">326</span></h3>
+                        <h6>Affiliates</h6>
+                    </div>
+                </div>
+            </div>
+  
+    
+    
   </footer>
   <!-- Footer End -->
 
-
-  
-  
   
   
   </app-footer1>
