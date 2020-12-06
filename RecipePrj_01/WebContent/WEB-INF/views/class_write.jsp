@@ -4,7 +4,7 @@
 <html lang="en">
 <head>
   <meta charset="utf-8">
-  <title>Cookiteer</title>
+  <title>Class Write</title>
 <!--   <base href="/"> -->
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <link rel="icon" type="image/x-icon" href="./resources/img/favicon.ico">
@@ -14,25 +14,14 @@
 
 <link rel="stylesheet" type="text/css" href="./resources/css/header.css" media="all" />
 <link rel="stylesheet" type="text/css" href="./resources/css/class_write.css" media="all" />
-<link rel="stylesheet" type="text/css" href="./resources/css/ranking_min.css" media="all" />
+<link rel="stylesheet" type="text/css" href="./resources/css/class_write_min.css" media="all" />
 <link rel="stylesheet" type="text/css" href="./resources/css/ranking_style.css" media="all" />
 
 <link rel="stylesheet" type="text/css" href="./resources/css/plugins/magnific-popup.css" media="all" />
 <link rel="stylesheet" type="text/css" href="./resources/css/plugins/slick.css" media="all" />
 <link rel="stylesheet" type="text/css" href="./resources/css/plugins/slick-theme.css" media="all" />
 
-<!-- 
-<link rel="stylesheet" type="text/css" href="./resources/css/primary-skin.css" media="all" />
-<link rel="stylesheet" type="text/css" href="./resources/css/plugins/bootstrap.min.css" media="all" /> 
-<link rel="stylesheet" type="text/css" href="./resources/css/plugins/animate.min.css" media="all" />
 
-
-<link rel="stylesheet" type="text/css" href="./resources/css/plugins/magnific-popup.css" media="all" />
-<link rel="stylesheet" type="text/css" href="./resources/css/plugins/slick.css" media="all" />
-<link rel="stylesheet" type="text/css" href="./resources/css/plugins/slick-theme.css" media="all" />
-<!--
-
--->
 
  <!-- Bootstrap core CSS -->
   <link href="./resources/css/ranking.css" rel="stylesheet">
@@ -55,91 +44,162 @@
 
 <script src="./resources/js/plugins/bootstrap.min.js" type="text/javascript" charset="utf-8"></script>
 
+<script src="./resources/js/class_wirte_video.js" type="text/javascript" charset="utf-8"></script>
 
-
-<script src="./resources/js/plugins/isotope.pkgd.min.js" type="text/javascript" charset="utf-8"></script>
-<script src="./resources/js/plugins/jquery.countdown.min.js" type="text/javascript" charset="utf-8"></script>
-<script src="./resources/js/plugins/jquery.magnific-popup.min.js" type="text/javascript" charset="utf-8"></script>
-<script src="./resources/js/plugins/jquery.slimScroll.min.js" type="text/javascript" charset="utf-8"></script>
-<script src="./resources/js/plugins/jquery.steps.min.js" type="text/javascript" charset="utf-8"></script>
-<script src="./resources/js/plugins/jquery-3.4.1.min.js" type="text/javascript" charset="utf-8"></script>
-<script src="./resources/js/plugins/popper.min.js" type="text/javascript" charset="utf-8"></script>
-<script src="./resources/js/plugins/slick.min.js" type="text/javascript" charset="utf-8"></script>
-<script src="./resources/js/plugins/waypoint.js" type="text/javascript" charset="utf-8"></script>
-  
-  
 
 
 <script>
 
-/*
-function add_div(){  
-	
-    $(".ui-sortable").append('<div class="radio"><label><input type="radio" name="optionsRadios" id="optionsRadios1" value="option1" checked><input type="text" class="form-control" placeholder="Type Question Here"></label></div>');  
-   
-   
-   
-    $(".ui-sortable").append('<li id="liMaterial_1_2" class="sectionAdd" style=""><a href="#" class="btn-lineup ui-sortable-handle" data-original-title="" title=""></a><input type="text" name="cok_material_nm_1[]" id="cok_material_nm_1_2" class="form-control"style="width: 330px;" placeholder="예) 재료이름"><input type="text" name="cok_material_amt_1[]" id="cok_material_amt_1_2" class="form-control" style="width: 280px;" placeholder="예) 1/2개 or 300g"><a id="btnMaterialDel_1_2" href="javascript:delMaterial(1,2)" class="btn-del" style="display: none;"></a></li>');  
-    */
+
+
+function addMaterialGroup(title,json,group_idx,isManualAdd) {
+	var is_exist_group = false;
+	if (group_idx && $("#divMaterialArea_"+group_idx).length) {
+		//존재함
+		is_exist_group = true;
+	} else {
+		if (!group_idx) group_idx = 0;
+		$("[id^=divMaterialArea_]").each(function() {
+            var idx = parseInt($(this).prop('id').replace('divMaterialArea_',''),10);
+            group_idx = Math.max(group_idx,idx);
+        });
+        group_idx++;
+	}
+	if (is_exist_group) {
+		var prev_title = $("#liMaterialGroup_"+group_idx+" [id=material_group_title_"+group_idx+"]").val();
+		if ((prev_title == '' || prev_title == '재료') && title != '') {
+			$("#liMaterialGroup_"+group_idx+" [id=material_group_title_"+group_idx+"]").val(title);
+		}
+	} else {
+		var title_width = ($("#cok_reg_type").val() == 'edit') ? 190 : 210;
+		var addbtn_style = ($("#cok_reg_type").val() == 'edit') ? 'padding:0 0 20px 240px; width:600px;' : 'padding:0 0 20px 470px; width:800px;';
+		var str = '';
+        str += '<li id="liMaterialGroup_'+group_idx+'">';
+        str += ($("#cok_reg_type").val() == 'edit') ? '<p class="cont_tit6">' : '<p class="cont_tit6 st2 mag_r_15">';
+        str += '<a href="#" class="btn-lineup"></a>';
+		str += '<input type="text" name="material_group_title_'+group_idx+'" id="material_group_title_'+group_idx+'" value="예>양념" class="form-control" style="font-weight:bold;font-size:18px;width:'+title_width+'px;">';
     
-    /* 
-    $(".ui-sortable").append('<input type="text" name="cok_material_nm_1[]" id="cok_material_nm_1_2" class="form-control" style="width: 330px;" placeholder="예) 재료이름"> <input type="text" name="cok_material_amt_1[]" id="cok_material_amt_1_2" class="form-control" style="width: 280px;" placeholder="예) 1/2개 or 300g"><a id="btnMaterialDel_1_2" href="javascript:delMaterial(1,2)" class="btn-del" style="display: none;"></a>') ;
- 
+		/*  
+		str += '<input type="text" name="material_group_title_'+group_idx+'" id="material_group_title_'+group_idx+'" value="'+title+'" class="form-control" style="font-weight:bold;font-size:18px;width:'+title_width+'px;">';
+    
+		str += '<span class="cont_tit_btn">';
+		str += '<button id="btnAutoMaterialModal" data-toggle="modal" data-target="#divAutoMaterialModal" type="button" data-group_idx="'+group_idx+'" class="btn-sm btn-default"><span class="glyphicon glyphicon-import"></span> 한번에 넣기</button>';
+		str += '<button type="button" onclick="delMaterialGroup('+group_idx+')" class="btn-sm btn-default"><span class="glyphicon glyphicon-remove"></span> 묶음삭제</button>';
+        str += '</span>';
+	 */	
+	 
+	 	str += '</p>';
+        str += '<ul id="divMaterialArea_'+group_idx+'"></ul>';
+        str += '<div class="btn_add" style="'+addbtn_style+'"><button type="button" onclick="addMaterial('+group_idx+')" class="btn btn-default"><span class="glyphicon glyphicon-plus-sign"></span>추가</button></div>';
+        str += '</li>';
 
-}  
+        $(str).appendTo("#divMaterialGroupArea");
+	}
 
-    */
+    for (var i=0; i<json.length; i++) {
+		addMaterial(group_idx,json[i],'');
+	}
+	if (group_idx == 1) {
+		if ($("#divMaterialArea_" + group_idx + " [id^=liMaterial_" + group_idx + "_]").length < 3) {
+			for (var j = i; j < 3; j++) {
+				addMaterial(group_idx, [], '');
+			}
+		}
+	} else {
+		if ($("#divMaterialArea_" + group_idx + " [id^=liMaterial_" + group_idx + "_]").length < 3) {
+			for (var j = i; j < 2; j++) {
+				addMaterial(group_idx, [], '');
+			}
+		}
+	}
+	$("#divMaterialGroupArea").sortable({
+        handle: $('.btn-lineup')
+    });
+	if (isManualAdd && isManualAdd == '1') {
+        $("#material_group_title_"+group_idx).focus();
+    }
 
+}
+function delMaterialGroup(group_idx) {
+	var cnt = 0;
+	$("#divMaterialArea_"+group_idx+" [id^=cok_material_nm_"+group_idx+"_]").each(function() {
+		if ($.trim($(this).val()) != '') {
+			cnt++;
+		}
+	});
+	var isOK = true;
+	if (cnt > 0) {
+		if(!confirm('['+$("#material_group_title_"+group_idx).val()+']을 삭제하시겠습니까?')) {
+			isOK = false;
+		}
+	}
+	if (isOK) {
+		if ($("#divMaterialGroupArea [id^=liMaterialGroup_]").length == 1) {
+            $("#liMaterialGroup_"+group_idx+" [id=material_group_title_"+group_idx+"]").val('');
+            $("#divMaterialArea_"+group_idx+" [id^=liMaterial_"+group_idx+"_]").each(function(idx,obj) {
+                var step = $(this).prop('id').replace('liMaterial_'+group_idx+'_','');
+                if (idx < 3) {
+                    $("#liMaterial_"+group_idx+"_"+step+" [id=cok_material_nm_"+group_idx+"_"+step).val('');
+                    $("#liMaterial_"+group_idx+"_"+step+" [id=cok_material_amt_"+group_idx+"_"+step).val('');
+                } else {
+                    $("#liMaterial_"+group_idx+"_"+step).remove();
+                }
+            });
+        } else {
+            $("#divMaterialGroupArea [id=liMaterialGroup_"+group_idx+"]").fadeOut(200,function() {
+                $(this).remove();
+            });
+        }
+	}
+}
+function addMaterial(group_idx, init_json, prev_step){
+    var step = 0;
+    $("#divMaterialArea_"+group_idx+" [id^=liMaterial_"+group_idx+"_]").each(function(){
+        var tmp = $(this).prop('id').replace('liMaterial_'+group_idx+'_', '');
+        var tmp_step = parseInt(tmp, 10);
+        step = Math.max(step, tmp_step);
+    });
+    step++;
+    //alert(step);
+    var w1 = ($("#cok_reg_type").val() == 'edit') ? 180 : 330;
+	var w2 = ($("#cok_reg_type").val() == 'edit') ? 140 : 280;
+    var str = '';
+	str += '<li id="liMaterial_'+group_idx+'_'+step+'"><a href="#" class="btn-lineup"></a>';
+    str += '<input type="text" name="cok_material_nm_'+group_idx+'[]" id="cok_material_nm_'+group_idx+'_'+step+'" class="form-control" style="width:'+w1+'px;">';
+    str += '<input type="text" name="cok_material_amt_'+group_idx+'[]" id="cok_material_amt_'+group_idx+'_'+step+'" class="form-control" style="width:'+w2+'px;">';
+    str += '<a id="btnMaterialDel_'+group_idx+'_'+step+'" href="javascript:delMaterial('+group_idx+','+step+')" class="btn-del" style="display:none"></a></li>';
 
-function add_div(){
-		
-	     var container = document.getElementById("divMaterialArea_1");
-	     var section = document.getElementById("liMaterial_1_2");
-	     container.appendChild(section.cloneNode(true));
-	
-	
+    if (typeof prev_step == 'undefined' || prev_step === null || prev_step == 0) {
+        $(str).appendTo('#divMaterialArea_'+group_idx);
+    }
+    else {
+        $(str).insertAfter("#liMaterial_"+group_idx+"_" + prev_step);
+    }
+
+    if (typeof init_json !== 'undefined' && init_json !== null && init_json['mat_nm_material']) {
+        $("#divMaterialArea_"+group_idx+" [id=cok_material_nm_" + group_idx + "_" + step + "]").val(init_json['mat_nm_material']);
+    } else {
+        $("#divMaterialArea_"+group_idx+" [id=cok_material_nm_" + group_idx + "_" + step + "]").attr('placeholder','예) '+_MATERIAL_SAMPLE[(step-1)%_MATERIAL_SAMPLE.length]['mat_nm_material']);
+    }
+    if (typeof init_json !== 'undefined' && init_json !== null && (init_json['mat_no_amount'] || init_json['mat_tx_amount'])) {
+		$("#divMaterialArea_"+group_idx+" [id=cok_material_amt_" + group_idx + "_" + step + "]").val((init_json['mat_no_amount'] ? init_json['mat_no_amount'] : '')+(init_json['mat_tx_amount'] ? init_json['mat_tx_amount'] : ''));
+    } else {
+        $("#divMaterialArea_"+group_idx+" [id=cok_material_amt_" + group_idx + "_" + step + "]").attr('placeholder','예) '+_MATERIAL_SAMPLE[(step-1)%_MATERIAL_SAMPLE.length]['mat_nm_amount']);
+    }
+
+    $("#divMaterialArea_"+group_idx+" [id=liMaterial_" + group_idx + "_" + step + "]").mouseover(function(){
+        $(this).find('.btn-del').show();
+    }).mouseout(function(){
+        $(this).find('.btn-del').hide();
+    });
+
+    $("#divMaterialArea_"+group_idx).sortable({
+        handle: $('.btn-lineup')
+    });
+    //$( "ul, li" ).disableSelection();
 }
 
 
-
-
-
-
-function addMaterialGroup(){
-		
-	     var container = document.getElementById("divMaterialWrap");
-	     var section = document.getElementById("divMaterialGroupArea");
-	     container.appendChild(section.cloneNode(true));
-	
-	
-}
-
-
-
-
-
-/*
-
-function add_div(){
-
-    var div = document.createElement('div');
-
-
-
-    div.innerHTML = document.getElementById('room_type').innerHTML;
-
-    document.getElementById('field').appendChild(div);
-
-}
-
-
-
-function remove_div(obj){
-
-document.getElementById('field').removeChild(obj.parentNode);
-
-}
-*/
 
 
 </script>
@@ -351,11 +411,7 @@ document.getElementById('field').removeChild(obj.parentNode);
 				 <p3>클래스 등록</p3>
 				 <hr>				
 		</div>
-		
-		
-	
 
-	
 
 			<div class="cont_box pad_l_60">
 			
@@ -372,11 +428,15 @@ document.getElementById('field').removeChild(obj.parentNode);
 					</div>
 					
 			
+			
 					<div id="divMainPhotoBox" is_over="0">
 						<img id="write_photo" onclick="document.getElementById('multifile_1').click();" src="./resources/image/class_write_img/photo_icon.png"
 							style=" cursor: pointer">
-					</div>
+					</div> 
+										
+					
 				</div>
+							
 				
 				
 				<!--    클래스 제목  -->				
@@ -384,11 +444,9 @@ document.getElementById('field').removeChild(obj.parentNode);
 				<div class="cont_line">
 					<p class="cont_tit4">클래스 제목</p>
 					<input type="text" name="cok_title" id="cok_title" value=""
-						class="form-control" placeholder="예) 이탈리아 음식 클래스"
-						style="width: 610px;">
+						class="form-control" placeholder="예) 이탈리아 음식 클래스">
 				</div>
-				
-				
+		
 				
 				<!--    클래스 소개  -->
 								
@@ -396,8 +454,7 @@ document.getElementById('field').removeChild(obj.parentNode);
 					<p class="cont_tit4">클래스 소개</p>
 					<textarea name="cok_intro" id="cok_intro"
 						class="form-control step_cont"
-						placeholder="이 클래스를 소개 해주세요. 예) 정통 이태리 파스타 조리법을 가르쳐드립니다!"
-						style="height: 100px; width: 610px; resize: none;"></textarea>
+						placeholder="이 클래스를 소개 해주세요. 예) 정통 이태리 파스타 조리법을 가르쳐드립니다!"></textarea>
 				</div>
 				
 
@@ -415,21 +472,7 @@ document.getElementById('field').removeChild(obj.parentNode);
 						class="form-control step_cont"  prev_url=""
 						placeholder="동영상이 있으면 주소를 입력하세요.(Youtube,네이버tvcast,다음tvpot 만 가능) 예)http://youtu.be/lA0Bxo3IZmM"
 						style="height: 100px; width: 380px; resize: none;"></textarea>
-		
-						
-					<div style="position: absolute; left: -3000px">
-						<input type="file" name="q_video_file" id="q_video_file"
-							file_gubun="video" accept="jpeg,png,gif"
-							style="display:; width: 0px; height: 0px; font-size: 0px;"
-							text="">
-					</div>
-					
-					<div id="divVideoPhotoBox" is_over="0" class="thumb_m">
-						<img id="videoPhotoHolder"
-							src="https://recipe1.ezmember.co.kr/img/pic_none5.gif"
-							style="width: 178px; height: 100px;">
-					</div>
-					
+
 					
 				</div>
 
@@ -475,7 +518,6 @@ document.getElementById('field').removeChild(obj.parentNode);
 
 
 
-
   <!-- ------------------- 재료 등록  ---------------------  -->
 
 
@@ -495,73 +537,65 @@ document.getElementById('field').removeChild(obj.parentNode);
 				<div class="cont_box pad_l_60">
 					<span class="guide mag_b_15" style="width: 100%;">재료가 남거나
 						부족하지 않도록 정확한 계량정보를 적어주세요.</span>
+
+
+
+
+
+						<div class="mag_b_25 ui-sortable" id="divMaterialGroupArea">
 						
-						
-				<!--   재료 양념 추가 했을시 이부분이 추가됨  -->		
-			<div id="divMaterialWrap">
-					<div class="mag_b_25 ui-sortable" id="divMaterialGroupArea">
-					<!-- 	<li id="liMaterialGroup_1">		 -->				
-							<p class="cont_tit6 st2 mag_r_15" id="propTitle">
-							<input type="text" name="material_group_title_1" id="material_group_title_1"
-									value="필수재료" class="form-control" style="font-weight: bold; font-size: 18px; width: 210px;">
-							</p>
-							
-							<ul id="divMaterialArea_1" class="ui-sortable">
-							
-							<!--    section  (추가 버튼 눌렀을때 이 부분이 추가됨)  -->
-								<li id="liMaterial_1_2" class="sectionAdd" style="">
-								<a href="#" class="btn-lineup ui-sortable-handle" data-original-title="" title=""></a>
-									<input type="text" name="cok_material_nm_1[]" id="cok_material_nm_1_2" class="form-control"
-										style="width: 330px;" placeholder="예) 재료이름">
-									<input type="text" name="cok_material_amt_1[]" id="cok_material_amt_1_2" class="form-control"
-										style="width: 280px;" placeholder="예) 1/2개 or 300g">
-										<a id="btnMaterialDel_1_2" href="javascript:delMaterial(1,2)" class="btn-del" style="display: none;"></a>
-										
-									 <button type="button" class="close_liMaterial"> <span class="closeMaterial"></span>X</button>
-										
-								</li>
+							<li id="liMaterialGroup_1">
+								<p class="cont_tit6 st2 mag_r_15">
 								
-								<!--    section  (추가 버튼 눌렀을때 이 부분이 추가됨)  
-								<li id="liMaterial_1_1">
-								<a href="#" class="btn-lineup ui-sortable-handle" data-original-title="" title=""></a>
-									<input type="text" name="cok_material_nm_1[]" id="cok_material_nm_1_1" class="form-control"
-									style="width: 330px;" placeholder="예) 재료이름">
-									<input type="text" name="cok_material_amt_1[]" id="cok_material_amt_1_1" class="form-control"
-									style="width: 280px;" placeholder="예) 1/2개 or 300g">
-									<a id="btnMaterialDel_1_1" href="javascript:delMaterial(1,1)" class="btn-del" style="display: none;"></a>
-								</li>
-															
-								-->
-							</ul>
-							
-					
-							<div class="btn_add" style="padding: 2% 0 0 45%; width: 800px;">							
-								<button type="button" onclick="add_div()" class="btn btn-default">
+										<a href="#" class="btn-lineup ui-sortable-handle" data-original-title="" title=""></a>
+										<input type="text" name="material_group_title_1" id="material_group_title_1"
+											value="재료" class="form-control"
+											style="font-weight: bold; font-size: 18px; width: 210px;">
+								</p>								
+								<ul id="divMaterialArea_1" class="ui-sortable">
+								
+									<li id="liMaterial_1_1">
+									<a href="#" class="btn-lineup ui-sortable-handle" data-original-title="" title=""></a>
+										<input type="text" name="cok_material_nm_1[]" id="cok_material_nm_1_1" class="form-control" style="width: 330px;" placeholder="예) 돼지고기">
+										<input type="text" name="cok_material_amt_1[]" id="cok_material_amt_1_1" class="form-control" style="width: 280px;" placeholder="예) 300g">
+										<a id="btnMaterialDel_1_1" href="javascript:delMaterial(1,1)" class="btn-del" style="display: none;"></a>
+									</li>
+									
+									<li id="liMaterial_1_2">
+										<a href="#" class="btn-lineup ui-sortable-handle" data-original-title="" title=""></a>
+										<input type="text" name="cok_material_nm_1[]" id="cok_material_nm_1_2" class="form-control" style="width: 330px;" placeholder="예) 양배추">
+										<input type="text" name="cok_material_amt_1[]" id="cok_material_amt_1_2" class="form-control" style="width: 280px;" placeholder="예) 1/2개">
+										<a id="btnMaterialDel_1_2" href="javascript:delMaterial(1,2)" class="btn-del" style="display: none;"></a>
+									</li>
+									
+									<li id="liMaterial_1_3">
+										<a href="#" class="btn-lineup ui-sortable-handle" data-original-title="" title=""></a>
+										<input type="text" name="cok_material_nm_1[]" id="cok_material_nm_1_3" class="form-control" style="width: 330px;" placeholder="예) 참기름">
+										<input type="text" name="cok_material_amt_1[]" id="cok_material_amt_1_3" class="form-control" style="width: 280px;" placeholder="예) 1T">
+										<a id="btnMaterialDel_1_3" href="javascript:delMaterial(1,3)" class="btn-del" style="display: none;"></a>
+									</li>
+								</ul>
+								<div class="btn_add" style="padding: 0 0 20px 470px; width: 800px;">
+									<button type="button" onclick="addMaterial(1)" class="btn btn-default">
+										<span class="glyphicon glyphicon-plus-sign"></span>추가
+									</button>
+								</div></li>
+						</div>
+
+
+						<div class="noti">
+							<hr>
+							<t2> ※ 양념, 양념장, 소스, 드레싱, 토핑, 시럽, 육수 밑간 등으로 구분해서 작성해주세요. </t2>
+							<div class="noti_btn">
+								<button type="button" onclick="addMaterialGroup('',[],null,'1')" class="btn-lg btn-default">				
 								<img src="./resources/image/class_write_img/head_icon04.png" >
-									<span class="glyphicon glyphicon-plus-sign"></span>추가
+									<span class="glyphicon glyphicon-plus"></span> 재료/양념 묶음 추가
 								</button>
 							</div>
-						<!-- 	</li> -->
+						</div>  <!--  noti    -->
+						
 				
-					</div>  <!--   재료 양념 추가 했을시 이부분이 추가됨  -->	
-				
-				</div>
-				
-				
-		
-				<div class="noti">
-					<hr>
-					<t2> ※ 양념, 양념장, 소스, 드레싱, 토핑, 시럽, 육수 밑간 등으로 구분해서 작성해주세요. </t2>
-						<div class="noti_btn">
-							<button type="button" onclick="addMaterialGroup('',[],null,'1')" class="btn-lg btn-default">
-					<!-- 		<button type="button" onclick="addMaterialGroup('',[],null,'1')" class="btn-lg btn-default"> -->
-							<img src="./resources/image/class_write_img/head_icon04.png" >
-								<span class="glyphicon glyphicon-plus"></span> 재료/양념 묶음 추가
-							</button>
-						</div>
-				</div>
-
-			</div>
+				</div>	
 
 	</form>  <!--    propFrom   -->
 	
@@ -587,20 +621,16 @@ document.getElementById('field').removeChild(obj.parentNode);
 		</div>
 		
 		
-				
-		
 		
 	<div class="cont_box pad_l_60">
 	
       <input type="file" name="file" id="multifile_1" file_gubun="step" style="display:none;" multiple="">
-      <p class="cont_tit3">클래스 정보 사진
-    	  <button type="button" onclick="document.getElementById('multifile_1').click();" class="btn-sm btn-default">
+      <p class="cont_tit3">클래스 상세 정보 
+    	<!--   <button type="button" onclick="document.getElementById('multifile_1').click();" class="btn-sm btn-default">
     	  <span class="glyphicon glyphicon-plus"></span> 
     	 	 <strong>+</strong>사진 한번에 넣기 
-    	  </button>
+    	  </button> -->
       </p>
-
-
 
 
 
@@ -608,10 +638,9 @@ document.getElementById('field').removeChild(obj.parentNode);
 				
 				<div class="cont_line pad_b_25">
 					<p class="cont_tit4">상세 제목</p>
-					<textarea name="cok_intro" id="cok_intro"
+					<textarea name="cok_intro_title" id="cok_intro_title"
 						class="form-control step_cont"
-						placeholder=" 예) 요리 내비게이션을 통해 어려운 요리를 쉽게 따라할 수 있어요.!"
-						style="height: 65px; width: 610px; resize: none;"></textarea>
+						placeholder=" 예) 요리 내비게이션을 통해 어려운 요리를 쉽게 따라할 수 있어요.!"></textarea>
 				</div>
 
 
@@ -626,8 +655,7 @@ document.getElementById('field').removeChild(obj.parentNode);
 						
 						<textarea name="info_cont_area" id="info_cont_area"
 						class="form-control step_cont"  prev_url=""
-						placeholder="클래스 설명 혹은 간단하 조리 순서를 적어주세요."
-						style="height: 200px; width: 650px; resize: none;"></textarea>
+						placeholder="클래스 설명 혹은 간단하 조리 순서를 적어주세요."></textarea>
 		
 						
 					<div style="position: absolute; left: -3000px">
@@ -640,7 +668,7 @@ document.getElementById('field').removeChild(obj.parentNode);
 					<div id="divInfoPhotoBox" is_over="0" class="thumb_m">
 						<img id="videoPhotoHolder"
 							src="./resources/image/class_write_img/photoAdd_icon.png"
-							style="width: 200px; height: 200px;" onclick="document.getElementById('multifile_1').click();">
+							 onclick="document.getElementById('multifile_1').click();">
 					</div>
 					
 					
@@ -648,8 +676,7 @@ document.getElementById('field').removeChild(obj.parentNode);
 
 
           </div>	
-		
-		
+				
 		
 				
 </div>      <!--    jumbotron my-4    -->
@@ -682,9 +709,12 @@ document.getElementById('field').removeChild(obj.parentNode);
 						<select name="tag_info_1"  text="종류">
 							<option value="info1">한식</option>
 							<option value="info2">양식</option>
-							<option value="info3">중식</option>
-							<option value="info4">일식</option>
+							<option value="info3">일식</option>
+							<option value="info4">중식</option>
 							<option value="info5">아시안</option>
+							<option value="info5">Vegan</option>
+							<option value="info5">Quick Food</option>
+							<option value="info5">Dessert</option>
 						</select>
 
 
@@ -692,7 +722,14 @@ document.getElementById('field').removeChild(obj.parentNode);
 						<select name="tag_info_2"  text="메인재료">
 							<option value="main_info1">돼지고기</option>
 							<option value="main_info2">소고기</option>
-							<option value="main_info3">해산물</option>						
+							<option value="main_info3">해산물</option>					
+						</select>
+						
+						<t1>부재료</t1>						
+						<select name="tag_info_2"  text="부재료">
+							<option value="second_info1">재료이름</option>
+							<option value="second_info2">재료이름</option>
+							<option value="second_info3">재료이름</option>					
 						</select>
 
 					</div>
@@ -739,11 +776,25 @@ document.getElementById('field').removeChild(obj.parentNode);
 
 
 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
  </div><!-- /.container -->
  
  
 </form> 
-
 
 
 

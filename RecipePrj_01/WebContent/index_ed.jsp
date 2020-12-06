@@ -17,25 +17,6 @@
 <link rel="stylesheet" type="text/css" href="./resources/css/style_main.css" media="all" />
 
 
- 
-
-<!-- 
-<link rel="stylesheet" type="text/css" href="./resources/css/plugins/bootstrap.min.css" media="all" /> 
-
- 
-<link rel="stylesheet" type="text/css" href="./resources/css/primary-skin.css" media="all" />
-
-<link rel="stylesheet" type="text/css" href="./resources/css/plugins/animate.min.css" media="all" />
-
-
-
-<link rel="stylesheet" type="text/css" href="./resources/css/plugins/magnific-popup.css" media="all" />
-<link rel="stylesheet" type="text/css" href="./resources/css/plugins/slick.css" media="all" />
-<link rel="stylesheet" type="text/css" href="./resources/css/plugins/slick-theme.css" media="all" />
-<!--
-
--->
-
 
   
   <!--********** 【 js 링크 걸기 】********** -->
@@ -46,18 +27,7 @@
  -->
 <script src="./resources/js/plugins/bootstrap.min.js" type="text/javascript" charset="utf-8"></script>
 
-<!-- 
 
-<script src="./resources/js/plugins/isotope.pkgd.min.js" type="text/javascript" charset="utf-8"></script>
-<script src="./resources/js/plugins/jquery.countdown.min.js" type="text/javascript" charset="utf-8"></script>
-<script src="./resources/js/plugins/jquery.magnific-popup.min.js" type="text/javascript" charset="utf-8"></script>
-<script src="./resources/js/plugins/jquery.slimScroll.min.js" type="text/javascript" charset="utf-8"></script>
-<script src="./resources/js/plugins/jquery.steps.min.js" type="text/javascript" charset="utf-8"></script>
-<script src="./resources/js/plugins/jquery-3.4.1.min.js" type="text/javascript" charset="utf-8"></script>
-<script src="./resources/js/plugins/popper.min.js" type="text/javascript" charset="utf-8"></script>
-<script src="./resources/js/plugins/slick.min.js" type="text/javascript" charset="utf-8"></script>
-<script src="./resources/js/plugins/waypoint.js" type="text/javascript" charset="utf-8"></script>
-   -->
 
 
  
@@ -66,12 +36,8 @@
   
   
   
-  
-  
-  
-  
-  
 </head>
+
 <body>
  
   
@@ -134,22 +100,13 @@
 					</li>	
 					
 				</ul>
-			<!-- 	
-				<div _ngcontent-efm-c6="" class="aside-toggler aside-trigger">
-					<span _ngcontent-efm-c6=""></span><span _ngcontent-efm-c6=""></span><span
-						_ngcontent-efm-c6=""></span>
-				</div> -->
+		
 			</div>
 		</nav>
 		
 		 
     <div class="container">
-    <!--   <div class="section-title-wrap section-header text-center">
-        <h2 class="title">Recipe Search</h2>
-        <p class="subtitle">
-          Recipe Search 
-        </p>
-      </div> -->
+   
 
       <form class="ct-newsletter" method="post">
         <input type="email" class="form-control" placeholder="Enter Recipe Name" value="">

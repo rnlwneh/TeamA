@@ -20,18 +20,7 @@
 <link rel="stylesheet" type="text/css" href="./resources/css/plugins/slick.css" media="all" />
 <link rel="stylesheet" type="text/css" href="./resources/css/plugins/slick-theme.css" media="all" />
 
-<!-- 
-<link rel="stylesheet" type="text/css" href="./resources/css/primary-skin.css" media="all" />
-<link rel="stylesheet" type="text/css" href="./resources/css/plugins/bootstrap.min.css" media="all" /> 
-<link rel="stylesheet" type="text/css" href="./resources/css/plugins/animate.min.css" media="all" />
 
-
-<link rel="stylesheet" type="text/css" href="./resources/css/plugins/magnific-popup.css" media="all" />
-<link rel="stylesheet" type="text/css" href="./resources/css/plugins/slick.css" media="all" />
-<link rel="stylesheet" type="text/css" href="./resources/css/plugins/slick-theme.css" media="all" />
-<!--
-
--->
 
  <!-- Bootstrap core CSS -->
   <link href="./resources/css/ranking.css" rel="stylesheet">
@@ -55,7 +44,7 @@
 <script src="./resources/js/plugins/bootstrap.min.js" type="text/javascript" charset="utf-8"></script>
 
 
-
+<!-- 
 <script src="./resources/js/plugins/isotope.pkgd.min.js" type="text/javascript" charset="utf-8"></script>
 <script src="./resources/js/plugins/jquery.countdown.min.js" type="text/javascript" charset="utf-8"></script>
 <script src="./resources/js/plugins/jquery.magnific-popup.min.js" type="text/javascript" charset="utf-8"></script>
@@ -64,7 +53,7 @@
 <script src="./resources/js/plugins/jquery-3.4.1.min.js" type="text/javascript" charset="utf-8"></script>
 <script src="./resources/js/plugins/popper.min.js" type="text/javascript" charset="utf-8"></script>
 <script src="./resources/js/plugins/slick.min.js" type="text/javascript" charset="utf-8"></script>
-<script src="./resources/js/plugins/waypoint.js" type="text/javascript" charset="utf-8"></script>
+<script src="./resources/js/plugins/waypoint.js" type="text/javascript" charset="utf-8"></script> -->
   
   
 <!--  
@@ -265,6 +254,7 @@
   
      <li class="tabMenu1"><a href="#" class="tabMN1">Recipe</a></li>
 	 <li class="tabMenu2"><a href="#" class="tabMN2">Chef</a></li>
+	 <li class="tabMenu3"><a href="#" class="tabMN3">월드컵</a></li>
 
     <div class="tab_line"></div>
 		
@@ -288,10 +278,10 @@
     <div class="ranking_form">
 	     <p class="ranking_num"><b>1</b></p>
 	    <figure class="snip1477">
-	    	<img src="./resources/image/rank_img/product06.jpg" alt="sample38" />
+	    	<img src="./resources/image/food_Product/foodProduce_01.png" alt="sample38" />
 	    	 <div class="title">
 		    	  <div>
-			    	  <h2>Title</h2><h4>Writer</h4>
+			    	<h2>Title</h2><h4>Writer</h4>
 		    	   </div>
 	    	    </div>
 	       <figcaption><p>레시피 설명 설명</p>
@@ -305,7 +295,7 @@
     <div class="ranking_form">
 	     <p class="ranking_num"><b>1</b></p>
 	    <figure class="snip1477">
-	    	<img src="./resources/image/rank_img/product06.jpg" alt="sample38" />
+	    	<img src="./resources/image/food_Product/foodProduce_02.png" alt="sample38" />
 	    	 <div class="title">
 		    	  <div>
 			    	  <h2>Title</h2><h4>Writer</h4>
@@ -322,7 +312,7 @@
     <div class="ranking_form">
 	     <p class="ranking_num"><b>1</b></p>
 	    <figure class="snip1477">
-	    	<img src="./resources/image/rank_img/product06.jpg" alt="sample38" />
+	    	<img src="./resources/image/food_Product/foodProduce_03.png" alt="sample38" />
 	    	 <div class="title">
 		    	  <div>
 			    	  <h2>Title</h2><h4>Writer</h4>
@@ -339,7 +329,7 @@
     <div class="ranking_form">
 	     <p class="ranking_num"><b>1</b></p>
 	    <figure class="snip1477">
-	    	<img src="./resources/image/rank_img/product06.jpg" alt="sample38" />
+	    	<img src="./resources/image/food_Product/foodProduce_04.png" alt="sample38" />
 	    	 <div class="title">
 		    	  <div>
 			    	  <h2>Title</h2><h4>Writer</h4>
@@ -356,7 +346,7 @@
     <div class="ranking_form">
 	     <p class="ranking_num"><b>1</b></p>
 	    <figure class="snip1477">
-	    	<img src="./resources/image/rank_img/product06.jpg" alt="sample38" />
+	    	<img src="./resources/image/food_Product/foodProduce_05.png" alt="sample38" />
 	    	 <div class="title">
 		    	  <div>
 			    	  <h2>Title</h2><h4>Writer</h4>
@@ -373,7 +363,7 @@
     <div class="ranking_form">
 	     <p class="ranking_num"><b>1</b></p>
 	    <figure class="snip1477">
-	    	<img src="./resources/image/rank_img/product06.jpg" alt="sample38" />
+	    	<img src="./resources/image/food_Product/foodProduce_06.png" alt="sample38" />
 	    	 <div class="title">
 		    	  <div>
 			    	  <h2>Title</h2><h4>Writer</h4>
@@ -391,7 +381,7 @@
     <div class="ranking_form">
 	     <p class="ranking_num"><b>1</b></p>
 	    <figure class="snip1477">
-	    	<img src="./resources/image/rank_img/product06.jpg" alt="sample38" />
+	    	<img src="./resources/image/food_Product/foodProduce_07.png" alt="sample38" />
 	    	 <div class="title">
 		    	  <div>
 			    	  <h2>Title</h2><h4>Writer</h4>
@@ -407,7 +397,7 @@
     <div class="ranking_form">
 	     <p class="ranking_num"><b>1</b></p>
 	    <figure class="snip1477">
-	    	<img src="./resources/image/rank_img/product06.jpg" alt="sample38" />
+	    	<img src="./resources/image/food_Product/foodProduce_08.png" alt="sample38" />
 	    	 <div class="title">
 		    	  <div>
 			    	  <h2>Title</h2><h4>Writer</h4>
@@ -423,7 +413,7 @@
     <div class="ranking_form">
 	     <p class="ranking_num"><b>1</b></p>
 	    <figure class="snip1477">
-	    	<img src="./resources/image/rank_img/product06.jpg" alt="sample38" />
+	    	<img src="./resources/image/food_Product/foodProduce_09.png" alt="sample38" />
 	    	 <div class="title">
 		    	  <div>
 			    	  <h2>Title</h2><h4>Writer</h4>
@@ -456,8 +446,9 @@
   <form class="Chef_Rank_Form">
   <div class="container">
   
-     <li class="tabMenu1"><a href="#" class="tabMN1">Recipe</a></li>
+      <li class="tabMenu1"><a href="#" class="tabMN1">Recipe</a></li>
 	 <li class="tabMenu2"><a href="#" class="tabMN2">Chef</a></li>
+	 <li class="tabMenu3"><a href="#" class="tabMN3">월드컵</a></li>
 
     <div class="tab_line"></div>
 		
@@ -471,9 +462,6 @@
           <!-- Pagination End -->
             
         
-        
-    
-<!--    --------------------------- 레시피   랭킹 --------------------------------     -->    
 
  <div class="row">
     
@@ -615,24 +603,16 @@
 	   	<a class="ranking_move" href="class.jsp"></a>	   	
 	</div>    <!--     ranking_form     -->   
 	
-	
-	
-  
-  
-  
-      
          
    </div>     <!--    row     --> 
-
    
 
   <hr>
   
-  
   </div> <!-- container -->
 
-</form> 
-   
+</form>    
+    
     
     
 <!--    --------------------------- 쉐프   랭킹 --------------------------------     -->    
@@ -640,6 +620,31 @@
   
   
   
+  
+  
+<!--    --------------------------- 월드컵   랭킹 --------------------------------     -->    
+  
+  
+<form class="worldCup_Rank_Form">
+
+  <div class="container">
+  
+  	 <li class="tabMenu1"><a href="#" class="tabMN1">Recipe</a></li>
+	 <li class="tabMenu2"><a href="#" class="tabMN2">Chef</a></li>
+	 <li class="tabMenu3"><a href="#" class="tabMN3">월드컵</a></li>
+  		
+  	
+  	<div>
+  	test 
+  	
+  	</div>
+  
+  
+  
+ </div> <!-- container -->
+
+</form>    
+     
   
 
   

@@ -544,7 +544,7 @@ function openComment() {
 			</div>
 
 			<ul class="pagination">
-              <li class="page-item"><a class="page-link" href="class-payment">Class 신청</a></li>
+              <li class="page-item"><a class="page-link" href="class_payment">Class 신청</a></li>
             </ul>
 
 

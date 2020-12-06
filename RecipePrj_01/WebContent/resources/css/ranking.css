@@ -10,7 +10,7 @@
 
 .ranking_form {
 	position: relative;
-	display: inline-block;
+	/* display: inline-block; */
 	-ms-flex-direction: column;
 	flex-direction: column;
 	min-width: 0;
@@ -28,20 +28,25 @@
 	position: absolute;	
 	width: 45px;
 	height: 45px;
-	top: -15px;
+	top: -18px;
 	left: -15px;
 	background: white;
 	border-radius: 25px;  
 	border: 1px solid #d5e0ed;	
-    z-index:300;
+    z-index:15;
 	
 }
 
+
+
+
+
 .ranking_num b{
-	font-size: 27px;
-	padding: 12px;
+	float: left;
+	font-size: 25px;
+	padding: 7px 0 0 14px;
 	font-family: 'MapoPeacefull';
-	color: #4d6685;
+	color: #85B72C;;
 	
 }
 
@@ -121,14 +126,27 @@ figure.snip1477 .title div:after {
   -webkit-transform: translateY(-100%);
   transform: translateY(-100%);
 }
-figure.snip1477 h2,
-figure.snip1477 h4 {
+
+
+figure.snip1477 h2, figure.snip1477 h4 {
   margin: 0;
   text-transform: uppercase;
 }
+
+
+/*          --------------수정  -----------------*/
+
+
 figure.snip1477 h2 {
   font-weight: 400;
+  color: #85B72C; 
+
+  
 }
+
+
+
+
 figure.snip1477 h4 {
   display: block;
   font-weight: 700;
@@ -147,9 +165,17 @@ figure.snip1477 figcaption {
   font-weight: 500;
   letter-spacing: 1.5px;
 }
+
+
+/*   ------------------수정---------------*/
 figure.snip1477 figcaption p {
   margin: 0;
+  color: #ebf0e4;
+  
 }
+
+
+
 figure.snip1477 a {
   position: absolute;
   top: 0;
@@ -235,7 +261,25 @@ figure.snip1477.hover figcaption {
 }
 
 
-.tabMenu1 a{ 	
+.tabMenu3{
+	display: inline-block;	 	
+	position:relative;	
+	padding: 10px;
+	background: transparent;	
+	width: 150px;
+	height: 50px;
+ 	border-radius: 5px;  
+	border-top: 1px solid #f7f4ee;	
+	border-left: 1px solid#f7f4ee;	
+	border-right: 1px solid #f7f4ee;		
+	margin: 20px 0px 0px 10px;	
+	z-index: 2;
+	
+}
+
+
+
+.tabMenu1 a, .tabMenu3 a{ 	
 	text-decoration:none ;
 	color: #4d6685; 
 	margin: 0px 0px 0px 30%;	
@@ -250,8 +294,7 @@ figure.snip1477.hover figcaption {
 
 
 
-
-.tabMenu1:hover, .tabMenu2:hover, .tabMenu1 a:hover, .tabMenu2 a:hover{
+.tabMenu1:hover, .tabMenu2:hover, .tabMenu3:hover, .tabMenu1 a:hover, .tabMenu2 a:hover, .tabMenu3 a:hover{
 	
 	background:#f7f4ee; 
 	color: white;
@@ -338,8 +381,9 @@ figure.snip1477.hover figcaption {
 }
 
 .ranking_chef_num b{
+	float: left;
 	font-size: 27px;
-	padding: 12px;
+	padding: 7px 0 0 14px;
 	font-family: 'MapoPeacefull';
 	color: #4d6685;
 	
