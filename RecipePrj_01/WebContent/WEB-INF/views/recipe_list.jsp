@@ -19,7 +19,7 @@
   
  <style type="text/css">
  
- #id_search_category_text{
+ #search_category_text{
  
  	margin: 0 0 0 85%;
  
@@ -94,18 +94,18 @@
         $("#srRecipeFrm").submit();
     }
 
-    function ToggleCategory()
+    function SearchCategory()
     {
-        $('#id_search_category').toggle();
-        if ($('#id_search_category').is(":visible"))
+        $('#search_category').toggle();
+        if ($('#search_category').is(":visible"))
         {
-            $('#id_search_category_text').text('카테고리 닫기');
-            $('#id_search_category_img').attr("src",'https://recipe1.ezmember.co.kr/img/icon_arrow9_up.gif');
+            $('#search_category_text').text('close');
+            $('#search_category_img').attr("src",'https://recipe1.ezmember.co.kr/img/icon_arrow9_up.gif');
         }
         else
         {
-            $('#id_search_category_text').text('카테고리 열기');
-            $('#id_search_category_img').attr("src",'https://recipe1.ezmember.co.kr/img/icon_arrow9_down.gif');
+            $('#search_category_text').text('open');
+            $('#search_category_img').attr("src",'https://recipe1.ezmember.co.kr/img/icon_arrow9_down.gif');
         }
 
     }
@@ -310,90 +310,52 @@
   <!-- Recipes Start -->
   <section class="section">
     <div class="container">
-    <div id="id_search_category" style="display: block;" class="rcp_m_cate">
-    <table width="100%" cellspacing="0" cellpadding="0">
-        <colgroup>
-            <col width="100px">
-            <col>
-        </colgroup>
-        <tbody>
-        <tr>
-            <th style="padding-top: 10px;">
-                <span>종류별</span><br/>
-                <span>상황별</span><br/>
-                <span>재료별</span><br/>
-                <span>방법별</span>
-            </th>
-            <td>
-                <div class="rcp_cate st3">
-                    <div class="cate_list">
-                <a href="javascript:goSearchRecipe('cat4','')" class="active">전체</a>&ensp;
-                <a href="javascript:goSearchRecipe('cat4','63')">밑반찬</a>&ensp;
-                <a href="javascript:goSearchRecipe('cat4','56')">메인반찬</a>&ensp;
-                <a href="javascript:goSearchRecipe('cat4','54')">국/탕/찌개</a>&ensp;
-                <a href="javascript:goSearchRecipe('cat4','53')">면/만두</a>&ensp;
-                <a href="javascript:goSearchRecipe('cat4','52')">밥/죽/떡</a>&ensp;
-                <a href="javascript:goSearchRecipe('cat4','57')">김치/젓갈/장류</a>&ensp;
-                <a href="javascript:goSearchRecipe('cat4','58')">양념/소스/잼</a>&ensp;
-                <a href="javascript:goSearchRecipe('cat4','65')">양식</a>&ensp;
-                <a href="javascript:goSearchRecipe('cat4','66')">빵/과자/디저트</a>&ensp;
-                <a href="javascript:goSearchRecipe('cat4','59')">차/음료/술</a>&ensp;
-                <a href="javascript:goSearchRecipe('cat4','62')">기타</a>            
-                    </div>
-                    
-                        <div class="cate_list">
-                <a href="javascript:goSearchRecipe('cat2','')" class="active">전체</a>&ensp;
-                <a href="javascript:goSearchRecipe('cat2','12')">일상</a>&ensp;
-                <a href="javascript:goSearchRecipe('cat2','18')">초스피드</a>&ensp;
-                <a href="javascript:goSearchRecipe('cat2','13')">손님접대</a>&ensp;
-                <a href="javascript:goSearchRecipe('cat2','19')">술안주</a>&ensp;
-                <a href="javascript:goSearchRecipe('cat2','21')">다이어트</a>&ensp;
-                <a href="javascript:goSearchRecipe('cat2','17')">간식</a>&ensp;
-                <a href="javascript:goSearchRecipe('cat2','45')">야식</a>&ensp;
-                <a href="javascript:goSearchRecipe('cat2','14')">이유식</a>&ensp;
-                <a href="javascript:goSearchRecipe('cat2','22')">기타</a>            
-                		</div>
-                		
-                        <div class="cate_list">
-                <a href="javascript:goSearchRecipe('cat3','')" class="active">전체</a>&ensp;
-                <a href="javascript:goSearchRecipe('cat3','70')">소고기</a>&ensp;
-                <a href="javascript:goSearchRecipe('cat3','71')">돼지고기</a>&ensp;
-                <a href="javascript:goSearchRecipe('cat3','72')">닭고기</a>&ensp;
-                <a href="javascript:goSearchRecipe('cat3','23')">육류</a>&ensp;
-                <a href="javascript:goSearchRecipe('cat3','28')">채소류/과일류</a>&ensp;
-                <a href="javascript:goSearchRecipe('cat3','24')">해물류</a>&ensp;
-                <a href="javascript:goSearchRecipe('cat3','50')">달걀/유제품</a>&ensp;
-                <a href="javascript:goSearchRecipe('cat3','33')">가공식품류</a>&ensp;
-                <a href="javascript:goSearchRecipe('cat3','47')">쌀/곡류/밀가루</a>&ensp;
-                <a href="javascript:goSearchRecipe('cat3','25')">건어물류</a>&ensp;
-                <a href="javascript:goSearchRecipe('cat3','34')">기타</a>
-                        </div>
-                        
-                        <div class="cate_list">
-                <a href="javascript:goSearchRecipe('cat1','')" class="active">전체</a>&ensp;
-                <a href="javascript:goSearchRecipe('cat1','6')">볶음/조림</a>&ensp;
-                <a href="javascript:goSearchRecipe('cat1','1')">끓이기</a>&ensp;
-                <a href="javascript:goSearchRecipe('cat1','7')">굽기/부침</a>&ensp;
-                <a href="javascript:goSearchRecipe('cat1','41')">무침/비빔</a>&ensp;
-                <a href="javascript:goSearchRecipe('cat1','8')">찜</a>&ensp;
-                <a href="javascript:goSearchRecipe('cat1','10')">절임</a>&ensp;
-                <a href="javascript:goSearchRecipe('cat1','9')">튀김</a>&ensp;
-                <a href="javascript:goSearchRecipe('cat1','38')">삶기/데치기</a>&ensp;
-                <a href="javascript:goSearchRecipe('cat1','37')">회</a>&ensp;
-                <a href="javascript:goSearchRecipe('cat1','11')">기타</a>
-                        </div>
-                </div>
-            </td>
-        </tr>
-        </tbody>
-    </table>
-</div>
-	<div class="rcp_cate_btn">
-		<a href="javascript:ToggleCategory()">
-			<span id="id_search_category_text">카테고리 닫기</span>
-			<span><img id="id_search_category_img" src="https://recipe1.ezmember.co.kr/img/icon_arrow9_up.gif"></span>
-		</a>
-	</div><br/>
+     <div class="sidebar-widget tags" id="search_category">
+              <h5>Popular Tags</h5>
+              <div id="kind">
+              <a href="">밑반찬</a>
+              <a href="">메인반찬</a>
+              <a href="">국/탕/찌개</a>
+              <a href="">면/만두</a>
+              <a href="">밥/죽/떡</a>
+              <a href="">김치/젓갈/장류</a>
+              <a href="">양념/소스/잼</a>
+              <a href="">양식</a>
+              <a href="">빵/과자/디저트</a>
+              <a href="">차/음료/술</a>
+              <a href="">기타</a>
+              </div>
+              <div id="situation">
+              <a href="">일상</a>
+              <a href="">초스피드</a>
+              <a href="">손님접대</a>
+              <a href="">술안주</a>
+              <a href="">다이어트</a>
+              <a href="">간식</a>
+              <a href="">야식</a>
+              <a href="">이유식</a>
+              <a href="">기타</a>
+              </div>
+              <div id="material">
+              <a href="">소고기</a>
+              <a href="">돼지고기</a>
+              <a href="">닭고기</a>
+              <a href="">육류</a>
+              <a href="">채소류/과일류</a>
+              <a href="">해물류</a>
+              <a href="">달걀/유제품</a>
+              <a href="">가공식품류</a>
+              <a href="">쌀/곡류/밀가루</a>
+              <a href="">건어물류</a>
+              <a href="">기타</a>
+              </div>
+     </div>
+     <a href="javascript:SearchCategory()">
+     <span id="search_category_text">close</span>
+     <span><img id="search_category_img" src="https://recipe1.ezmember.co.kr/img/icon_arrow9_up.gif"></span>
+     </a><br/><br/>
+    
+    
       <div class="row">
         <!-- Recipes Start -->
         <div class="col-lg-8">
@@ -584,7 +546,7 @@
           <div class="sidebar">
 
             <div class="sidebar-widget">
-              <h5>Recent Posts</h5>
+              <h5>추천 레시피</h5>
               <article class="media">
                 <a href="/blog-single-v2"><img src="${pageContext.request.contextPath}/resources/img/blog/10.jpg" alt="post"></a>
                 <div class="media-body">
@@ -616,7 +578,7 @@
             </div>
 
             <div class="sidebar-widget">
-              <h5>Featured Recipes</h5>
+              <h5>요즘 뜨는 인기 레시피</h5>
 
               <div class="recipe featured-recipe">
                 <div class="recipe-thumbnail">
@@ -666,18 +628,6 @@
                 </div>
               </div>
 
-            </div>
-
-            <div class="sidebar-widget tags">
-              <h5>Popular Tags</h5>
-              <a href="javascript:void(0)">Food</a>
-              <a href="javascript:void(0)">Foodie</a>
-              <a href="javascript:void(0)">Chicken</a>
-              <a href="javascript:void(0)">Meat</a>
-              <a href="javascript:void(0)">Health</a>
-              <a href="javascript:void(0)">Vegan</a>
-              <a href="javascript:void(0)">Fit</a>
-              <a href="javascript:void(0)">Fruit</a>
             </div>
 
           </div>
