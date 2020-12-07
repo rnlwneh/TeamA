@@ -609,10 +609,27 @@ h1 {
   font-size: 50px;
   line-height: 58px;
 }
+
+
+/*  ------------------Best class 글씨 타이틀  수정 --------*/
+
+
 h2 {
-  font-size: 40px;
+  font-size: 30px;
   line-height: 48px;
 }
+
+
+
+.title_2{
+	
+	font-size: 30px;
+  line-height: 48px;
+  color: #85B72C;
+}
+
+
+
 h3 {
   font-size: 35px;
   line-height: 43px;
@@ -751,9 +768,16 @@ blockquote p{
 /*======================
 1.2 Section Spacings
 ========================*/
+
+
+
+/*            --------------------------     수정  ----------------------  */
+
+
 .section {
   position: relative;
-  padding: 80px 0;
+  padding: 150px 0;
+ 
 }
 .section.section-padding{
   padding: 80px 0 50px;
@@ -762,7 +786,6 @@ blockquote p{
   background-color: #f8f9fa;
 }
 
-/*            --------------------------     수정  ----------------------  */
 
 
 
@@ -778,19 +801,22 @@ blockquote p{
 
 
 .section-title-wrap.section-header {
-  margin-bottom: 50px;
+  margin-bottom: 0px;
 }
+
 
 
 
 
 .section-title-wrap p {
   max-width: 600px;
-  margin-bottom: 20px;
+  margin-bottom: 0px;
+  margin-top: 10px;
   font-size: 18px;
   font-weight: bold;
       font-family: "Playfair Display", sans-serif;
 }
+
 
 
 .section-title-wrap.text-center p {
@@ -1906,9 +1932,17 @@ table img{
 /*======================
 3. Footer
 ========================*/
+
+
+/*     ---------------             수정   ---------------       */ 
+
+
 .ct-footer {
-  padding: 80px 0 0;
+  padding: 20px 0 0;
 }
+
+
+
 .ct-footer p{
   margin-bottom: 20px;
   color: #515151;
@@ -2151,10 +2185,13 @@ table img{
   font-weight: 400;
   margin-bottom: 25px;
 }
+
+
+
 .banner-inner{
   max-width: 700px;
   margin: 0 auto;
-  padding-top: 80px;
+  padding-top: 250px;
 }
 
 .banner .slick-arrow{
@@ -3307,25 +3344,43 @@ table img{
 }
 
 
+
+
+
+
+/*           -------------------서치박스  수정 -----------------  */
+
+
 /* 6.5. Newsletter */
+
 .ct-newsletter{
   max-width: 500px;
-  margin: 0 auto;
+  margin: 80px 0 0 27%;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
   -webkit-box-align: center;
-      -ms-flex-align: center;
-          align-items: center;
+  -ms-flex-align: center;
+   align-items: center;
 }
+
+
 .ct-newsletter .form-control{
 
 
           flex: 1;
 }
-.ct-newsletter .btn-custom{
-  margin-left: 15px;
+
+
+.btn-custom{
+	
+	  margin-left: 15px;
+	
 }
+
+
+
+
 
 /* 6.6. Instagram */
 .ct-ig-item{

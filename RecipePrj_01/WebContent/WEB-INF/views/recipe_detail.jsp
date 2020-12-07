@@ -6,6 +6,16 @@
   <meta charset="utf-8">
   <title>Cookiteer</title>
     <style type="text/css">
+    
+  .info_star img{
+	
+	width: 20px;
+	height: 20px;
+	margin-left: 1px;
+	margin-top: 1px;
+	display: inline-block;
+}
+	
   .rating .rate_radio {
     position: relative;
     display: inline-block;
@@ -31,9 +41,20 @@
     cursor: pointer;
     background-color: #f0f0f0;
 }
+
 .rating .rate_radio:checked + label {
-    background-color: #ff8;
+    background-color: #ffee00;
 }
+
+.reviewstar{    
+	position: relative;
+    margin-left: -4px;
+    z-index: 10;
+    width: 27px;
+    height: 27px;
+    background-image: url('./resources/img/starrate.png');
+    background-repeat: repeat-x;
+    background-size: 31px 31px;background-color: #ffee00;}
 
 .warning_msg {
     display: none;
@@ -99,6 +120,10 @@
 	  })
   });
   
+  function doStar(star) {
+      $('#score').val(star);
+      $('#star').html($('#star'+star).html())
+  }
   
   //별점 마킹 모듈 프로토타입으로 생성
   function Rating(){};
@@ -353,16 +378,17 @@
               </div>
             </div>
             <div class="post-categories">
-              <a routerLink="/recipe-detail">스크랩하기</a>
+              <a href="#">스크랩하기</a>
             </div>
             <h2 class="title">Puffy Pancakes Glazed With Caramel Topped With Fruits</h2>
             <span><h5> 폭신폭신 우리집이 브런치 카페! 부드러운 수플레 팬케이크 만들어 먹기 :)</h5></span>
             <div class="post-meta">
-              <span><i class="fas fa-concierge-bell"></i> 13 Scrap</span>
-              <span> <i class="far fa-user"></i> Posted by Fredrick Flow</span>
+              <span><i class="fas fa-concierge-bell"></i> 13 Scrap 스크랩수</span>
+              <span> <i class="far fa-user"></i> Posted by (글쓴이)</span>
               <div class="recipe-duration">
-                  <span><i class="fas fa-stopwatch"></i> 50 mins</span>
+                  <span><i class="fas fa-stopwatch"></i>요리시간 50 mins</span>
               </div>
+              <span> <i class="far fa-level"></i>난이도 Hard</span>
             </div>
             <div class="post-content">
               <div class="recipe-ingredients">
@@ -488,19 +514,21 @@
               <li class="comment-item">
                 <img src="${pageContext.request.contextPath}/resources/img/people/people-1.jpg" alt="comment author">
                 <div class="comment-body">
-                  <h5>John Doe</h5>
+                  <h5>닉네임 &nbsp;
+                  <div class="reviewstar"><img src="./resources/img/starrate.png"></div></h5>
                   <span>Posted on: January 13 2020</span>
-                  <p>Leverage agile frameworks to provide a robust synopsis for high level overviews. Iterative approaches to corporate strategy foster collaborative thinking to further the overall value proposition.</p>
-                  <a routerLink="/recipe-detail" class="reply-link"> Reply </a>
+                  <p>내용내용내용내용내용내용내용내용내용내용내용내용내용내용내용내용내용내용내용내용내용내용내용내용내용내용내용</p>
+                  <a href="#" class="reply-link"> Delete </a>
                 </div>
               </li>
               <li class="comment-item">
                 <img src="${pageContext.request.contextPath}/resources/img/people/people-2.jpg" alt="comment author">
                 <div class="comment-body">
-                  <h5>John Doe</h5>
+                  <h5>닉네임 &nbsp;
+                  <div class="reviewstar"><img src="./resources/img/starrate.png"></div></h5>
                   <span>Posted on: January 13 2020</span>
-                  <p>Leverage agile frameworks to provide a robust synopsis for high level overviews. Iterative approaches</p>
-                  <a routerLink="/recipe-detail" class="reply-link"> Reply </a>
+                  <p>내용내용내용내용내용내용내용내용내용내용내용내용내용내용내용내용내용내용내용내용내용내용내용내용내용내용내용내용내용내용내용내용내용내용내용내용내용내용내용내용내용내용</p>
+                  <a href="#" class="reply-link"> Delete </a>
                 </div>
               </li>
             </ul>
@@ -524,12 +552,6 @@
 		            </div>
         		</div>
               <div class="row">
-                <div class="col-md-6 form-group">
-                  <input type="text" class="form-control" placeholder="Full Name" name="fname" value="">
-                </div>
-                <div class="col-md-6 form-group">
-                  <input type="email" class="form-control" placeholder="Email Address" name="email" value="">
-                </div>
                 <div class="col-md-12 form-group">
                   <textarea class="form-control" id="comment" placeholder="Type your comment..." name="comment" rows="7"></textarea>
                 </div>

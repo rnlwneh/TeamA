@@ -92,7 +92,7 @@ ul{
 
 
 
-.cont_box input  {
+.cok_title  {
     height: 50px;
     padding: 8px 15px;
     border-radius: 8px;
@@ -106,7 +106,6 @@ ul{
     font-size: 15px;
     
 }
-
 
 
 .cont_box p {
@@ -197,67 +196,7 @@ button, input, optgroup, select, textarea {
 }
 
 
-
-/* 
-input {
-    -webkit-writing-mode: horizontal-tb !important;
-    text-rendering: auto;
-    color: -internal-light-dark(black, white);
-    letter-spacing: normal;
-    word-spacing: normal;
-    text-transform: none;
-    text-indent: 0px;
-    text-shadow: none;
-    display: inline-block;
-    text-align: start;
-    appearance: textfield;
-    background-color: -internal-light-dark(rgb(255, 255, 255), rgb(59, 59, 59));
-    -webkit-rtl-ordering: logical;
-    cursor: text;
-    margin: 0em;
-    font: 400 13.3333px Arial;
-    padding: 1px 2px;
-    border-width: 2px;
-    border-style: inset;
-    border-color: -internal-light-dark(rgb(118, 118, 118), rgb(133, 133, 133));
-    border-image: initial;
-} */
-
-/* 
-
-#cok_intro, #cok_video_url {
-	 background: #f5f5f5;
-    -webkit-writing-mode: horizontal-tb !important;
-    text-rendering: auto;
-    color: -internal-light-dark(black, white);
-    letter-spacing: normal;
-    word-spacing: normal;
-    text-transform: none;
-    text-indent: 0px;
-    text-shadow: none;
-    display: inline-block;
-    text-align: start;
-    appearance: textarea;
-    background-color: -internal-light-dark(rgb(255, 255, 255), rgb(59, 59, 59));
-    -webkit-rtl-ordering: logical;
-    flex-direction: column;
-    resize: auto;
-    cursor: text;
-    white-space: pre-wrap;
-    overflow-wrap: break-word;
-    margin: 0em;
-    font: 400 16px Arial; 
-    border-width: 1px;
-    border-style: solid;
-    border-color: -internal-light-dark(rgb(118, 118, 118), rgb(133, 133, 133));
-    border-image: initial;
-    padding: 2px;
-   
- } */
- 
-
-
-#cok_intro, #cok_video_url{
+#cok_intro {
 	
 	height: 150px;
     padding: 8px 15px;
@@ -272,9 +211,36 @@ input {
     letter-spacing: 0.1px;
     font-size: 15px;
      display: inline-block;
+}
+
+
+
+.cok_video_url{
 	
+		
+	height: 150px;
+    padding: 8px 15px;
+    border-radius: 8px;
+    border: 1px solid #efefef;
+    width: 100%;
+    max-width:610px;
+    min-width:450px;
+    min-height:150px;
+    color: #6e6e6e;
+    border-color: #e5e1dc;
+    background-color: #F5F5F5;
+    letter-spacing: 0.1px;
+    font-size: 15px;
+     display: inline-block;
 	
 }
+
+
+
+
+
+
+
 
 
 
@@ -310,13 +276,33 @@ input {
 
 t1{
 	
-	font-size:15px;
+	font-size:17px;
 	font-weight:bold;
 	color: #80929c;
-	padding: 10px;
+	padding: 8px;
+	margin-left: 12px;
 	
 }
 
+
+t3{
+	
+	color: #9db1bd;
+	
+}
+
+
+.cok_price {
+    background: #f5f5f5;
+    border: 1px solid #e1e1e1;
+    font-size: 16px;
+    padding: 8px 2px;  
+    border-radius: 4px;
+    width: 100%;
+    max-width:120px;
+    display: inline-block;
+    
+}
 
 
 /*  ------------------------- 재료 등록 ----------------------------  */
@@ -431,13 +417,6 @@ li{
 }
 
 
-/* 
-.cont_box ul, .cont_box li {
-    list-style: none;
-    margin: 0;
-    padding: 5px 0 0 0px;
-} */
-
 .cont_box ul {
     display: inline-block;
    
@@ -466,7 +445,7 @@ t2{
 	font-size:13px;
 	font-weight:bold;
 	color: red;
-	margin: 2% 0 0 20%;
+	margin: 2% 0 0 25%;
 	
 	
 }
@@ -492,6 +471,46 @@ t2{
 
 
 
+.recipe_step {
+	
+	height: 150px;
+    padding: 8px 15px;
+    border-radius: 8px;
+    border: 1px solid #efefef;
+    width: 100%;
+    max-width:610px;
+    min-width:510px;
+    min-height:150px;
+    color: #6e6e6e;
+    border-color: #e5e1dc;
+    background-color: #F5F5F5;
+    letter-spacing: 0.1px;
+    font-size: 15px;
+    display: inline-block;
+    margin-top: 50px;
+}
+
+
+
+
+
+
+.recipe_tit {
+    width: 140px;
+    display: inline-block; 
+    font-size: 20px;
+    font-weight: normal;
+    vertical-align: top;
+  /*   display: table-cell; */
+}
+
+
+
+#divGroupArea"{
+	
+	margin-left: 250px;
+	
+}
 
 
 

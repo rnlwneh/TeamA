@@ -18,27 +18,6 @@
   
   
   
-  
-<!-- <link rel="stylesheet" type="text/css" href="./resources/css/class_detail_heroic.css" media="all" />
-<link rel="stylesheet" type="text/css" href="./resources/css/class_detail_style.css" media="all" />
- -->
-
-
-
-<!-- 
-
-<link rel="stylesheet" type="text/css" href="./resources/css/class_detail.css" media="all" />
-<link rel="stylesheet" type="text/css" href="./resources/css/detail/class_detail_min.css" media="all" />
-
-<link rel="stylesheet" type="text/css" href="./resources/css/class_detail.css" media="all" />
-
-
-<link rel="stylesheet" type="text/css" href="./resources/css/plugins/magnific-popup.css" media="all" />
-<link rel="stylesheet" type="text/css" href="./resources/css/plugins/slick.css" media="all" />
-<link rel="stylesheet" type="text/css" href="./resources/css/plugins/slick-theme.css" media="all" />
- -->
-
-
 
   
   <!--********** 【 js 링크 걸기 】********** -->
@@ -996,7 +975,9 @@ function openComment() {
 							<d class="info_delete">
 							<a href="#">삭제</a></d>
 						</div>
-
+						
+						
+						
 						<div class="info_content">후기후기 내용내용 후기후기 내용내용 후기후기 내용내용</div>
 
 						<hr class="info_line">
@@ -1036,6 +1017,8 @@ function openComment() {
 							<d class="info_delete">
 							<a href="#">삭제</a></d>
 						</div>
+
+								
 
 						<div class="info_content">후기후기 내용내용 후기후기 내용내용 후기후기 내용내용</div>
 
@@ -1174,11 +1157,11 @@ function openComment() {
 									<!--    order_table_box     -->
 
 
-									<hr>
+								<!-- 	<hr>
+ -->
 
 
-
-									<div class="story_write_pic" style="padding: 0px 0px 0px;">
+								<!-- 	<div class="story_write_pic" style="padding: 0px 0px 0px;">
 
 										<div id="add_imgs" class="complete_pic">
 											<img src="https://recipe1.ezmember.co.kr/img/pic_none3.gif"
@@ -1194,7 +1177,7 @@ function openComment() {
 												width="150" height="150">
 										</div>
 									</div>
-									<!--    story_write_pic    -->
+									   story_write_pic    -->
 
 
 									<p style="text-align: center; border-top: 1px solid #e2e2e2">

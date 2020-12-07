@@ -473,7 +473,7 @@
 	    	<img src="./resources/image/rank_img/product07.jpg" alt="sample38" />
 	    	 <div class="title">
 		    	  <div>
-			    	  <h2>Title</h2><h4>Writer</h4>
+			    	 <h4>Writer</h4>
 		    	   </div>
 	    	    </div>
 	       <figcaption></figcaption>
@@ -490,7 +490,7 @@
 	    	<img src="./resources/image/rank_img/product07.jpg" alt="sample38" />
 	    	 <div class="title">
 		    	  <div>
-			    	  <h2>Title</h2><h4>Writer</h4>
+			    	  <h4>Writer</h4>
 		    	   </div>
 	    	    </div>
 	       <figcaption></figcaption>
@@ -507,25 +507,7 @@
 	    	<img src="./resources/image/rank_img/product07.jpg" alt="sample38" />
 	    	 <div class="title">
 		    	  <div>
-			    	  <h2>Title</h2><h4>Writer</h4>
-		    	   </div>
-	    	    </div>
-	       <figcaption></figcaption>
-	   	<a class="ranking_move" href="class.jsp"></a>	   	
-	</div>    <!--     ranking_form     -->   
-  
-  
-  
-  
-  <!--  -------  쉐프  섹션 --------    -->
-    
-    <div class="ranking_chef_form">
-	     <p class="ranking_chef_num"><b>1</b></p>
-	    <figure class="snip1478">
-	    	<img src="./resources/image/rank_img/product07.jpg" alt="sample38" />
-	    	 <div class="title">
-		    	  <div>
-			    	  <h2>Title</h2><h4>Writer</h4>
+			    	 <h4>Writer</h4>
 		    	   </div>
 	    	    </div>
 	       <figcaption></figcaption>
@@ -543,7 +525,25 @@
 	    	<img src="./resources/image/rank_img/product07.jpg" alt="sample38" />
 	    	 <div class="title">
 		    	  <div>
-			    	  <h2>Title</h2><h4>Writer</h4>
+			    	 <h4>Writer</h4>
+		    	   </div>
+	    	    </div>
+	       <figcaption></figcaption>
+	   	<a class="ranking_move" href="class.jsp"></a>	   	
+	</div>    <!--     ranking_form     -->   
+  
+  
+  
+  
+  <!--  -------  쉐프  섹션 --------    -->
+    
+    <div class="ranking_chef_form">
+	     <p class="ranking_chef_num"><b>1</b></p>
+	    <figure class="snip1478">
+	    	<img src="./resources/image/rank_img/product07.jpg" alt="sample38" />
+	    	 <div class="title">
+		    	  <div>
+			    	 <h4>Writer</h4>
 		    	   </div>
 	    	    </div>
 	       <figcaption></figcaption>
@@ -561,7 +561,7 @@
 	    	<img src="./resources/image/rank_img/product07.jpg" alt="sample38" />
 	    	 <div class="title">
 		    	  <div>
-			    	  <h2>Title</h2><h4>Writer</h4>
+			    	  <h4>Writer</h4>
 		    	   </div>
 	    	    </div>
 	       <figcaption></figcaption>
@@ -579,7 +579,7 @@
 	    	<img src="./resources/image/rank_img/product07.jpg" alt="sample38" />
 	    	 <div class="title">
 		    	  <div>
-			    	  <h2>Title</h2><h4>Writer</h4>
+			    	  <h4>Writer</h4>
 		    	   </div>
 	    	    </div>
 	       <figcaption></figcaption>
@@ -596,7 +596,7 @@
 	    	<img src="./resources/image/rank_img/product07.jpg" alt="sample38" />
 	    	 <div class="title">
 		    	  <div>
-			    	  <h2>Title</h2><h4>Writer</h4>
+			    	 <h4>Writer</h4>
 		    	   </div>
 	    	    </div>
 	       <figcaption></figcaption>
