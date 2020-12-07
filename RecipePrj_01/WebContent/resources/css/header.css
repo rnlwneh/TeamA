@@ -4,3 +4,51 @@
     align-items: center;
     justify-content: space-between;
 }
+
+
+
+
+.headText{
+	
+	font-size: 20px;
+}
+
+
+
+.footer-2{
+	
+	width: 50%;
+	margin: 0 0 0 25%;
+	
+}
+
+
+
+/*  footer부분의 Recipe Search 글씨 부분   */ 
+
+
+.foot_title{
+    font-size: 42px;
+    margin-bottom: 20px;
+    color: white;
+    font-family: 'Playfair Display', serif;
+}
+
+
+
+
+.mt-70 {
+ 
+  	
+    margin: 25px 0 0 auto;
+  
+}
+
+
+.single-cool-fact h3 {
+    font-size: 48px;
+    margin-bottom: 10px;
+    color: #40ba37;
+    font-weight: 700;
+}
+

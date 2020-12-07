@@ -4855,12 +4855,21 @@ input[type=button].btn-block, input[type=reset].btn-block, input[type=submit].bt
 	background-color: #1d2124
 }
 
+
+
+/*   ----------수정 -------------------*/
+
+
+
 .jumbotron {
 	padding: 2rem 1rem;
 	margin-bottom: 2rem;
 	background-color: #e9ecef;
 	border-radius: .3rem
 }
+
+
+
 
 @media ( min-width :576px) {
 	.jumbotron {

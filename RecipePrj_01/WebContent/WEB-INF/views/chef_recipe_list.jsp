@@ -352,7 +352,11 @@
           <div class="recipe recipe-list">
             <div class="recipe-thumbnail">
               <a routerLink="/recipe-detail">
+<<<<<<< HEAD
                 <img src="${pageContext.request.contextPath}/resources/img/chef1.png" alt="blog post">
+=======
+                <img src="${pageContext.request.contextPath}/resources/img/chef1.jpg" alt="blog post">
+>>>>>>> refs/remotes/origin/main
               </a>
             </div>
             <div class="recipe-body">
@@ -408,7 +412,11 @@
           <div class="recipe recipe-list">
             <div class="recipe-thumbnail">
               <a routerLink="/recipe-detail">
+<<<<<<< HEAD
                 <img src="${pageContext.request.contextPath}/resources/img/chef1.png" alt="blog post">
+=======
+                <img src="${pageContext.request.contextPath}/resources/img/chef1.jpg" alt="blog post">
+>>>>>>> refs/remotes/origin/main
               </a>
             </div>
             <div class="recipe-body">
@@ -464,7 +472,11 @@
           <div class="recipe recipe-list">
             <div class="recipe-thumbnail">
               <a routerLink="/recipe-detail">
+<<<<<<< HEAD
                 <img src="${pageContext.request.contextPath}/resources/img/chef1.png" alt="blog post">
+=======
+                <img src="${pageContext.request.contextPath}/resources/img/chef1.jpg" alt="blog post">
+>>>>>>> refs/remotes/origin/main
               </a>
             </div>
             <div class="recipe-body">

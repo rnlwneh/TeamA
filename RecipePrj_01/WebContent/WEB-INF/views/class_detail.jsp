@@ -5,7 +5,7 @@
 <head>
   <meta charset="utf-8">
   <title>Cookiteer</title>
-<!--   <base href="/"> -->
+
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <link rel="icon" type="image/x-icon" href="./resources/img/favicon.ico">
   
@@ -18,27 +18,6 @@
   
   
   
-  
-<!-- <link rel="stylesheet" type="text/css" href="./resources/css/class_detail_heroic.css" media="all" />
-<link rel="stylesheet" type="text/css" href="./resources/css/class_detail_style.css" media="all" />
- -->
-
-
-
-<!-- 
-
-<link rel="stylesheet" type="text/css" href="./resources/css/class_detail.css" media="all" />
-<link rel="stylesheet" type="text/css" href="./resources/css/detail/class_detail_min.css" media="all" />
-
-<link rel="stylesheet" type="text/css" href="./resources/css/class_detail.css" media="all" />
-
-
-<link rel="stylesheet" type="text/css" href="./resources/css/plugins/magnific-popup.css" media="all" />
-<link rel="stylesheet" type="text/css" href="./resources/css/plugins/slick.css" media="all" />
-<link rel="stylesheet" type="text/css" href="./resources/css/plugins/slick-theme.css" media="all" />
- -->
-
-
 
   
   <!--********** 【 js 링크 걸기 】********** -->
@@ -90,12 +69,12 @@ function openCloseToc() {
 
 function openComment() {
 	if (document.getElementById('coment_write').style.display === 'block') {
-		document.getElementById('coment_write').style.display = 'none';
+		document.getElementById('coment_write').style.display = 'none';		
 		event.preventDefault ? event.preventDefault()
 				: (event.returnValue = false);
 
 	} else {
-		document.getElementById('coment_write').style.display = 'block';
+		document.getElementById('coment_write').style.display = 'block';		
 		event.preventDefault ? event.preventDefault()
 				: (event.returnValue = false);
 
@@ -196,6 +175,13 @@ function openComment() {
         $('#insFrm').submit();            
         
     }
+    
+    
+    
+    
+    
+    
+    
 </script>
   
   
@@ -299,10 +285,6 @@ function openComment() {
   
   
   
-  
-  
-  
-  
 </head>
 <body>
  
@@ -310,16 +292,12 @@ function openComment() {
 <app-root>
 
 
-
-  
-
 <app-header2> 
-
 
 
 <!-- Aside (Mobile Navigation) -->
   <aside class="main-aside">
-    <a class="navbar-brand" href="index"> <img src="./resources/image/main/logo.png"> </a>
+  <!--   <a class="navbar-brand" href="index"> <img src="./resources/image/main/logo.png"> </a> -->
 
     <div class="aside-scroll">
       <ul>
@@ -492,6 +470,8 @@ function openComment() {
 
 
 
+<!--  --------------------------  클래스 디테인  메일  ---------------------------  -->
+
 
 
 
@@ -506,7 +486,8 @@ function openComment() {
 
 
 			<div class="detail_img">
-				<img src="./resources/image/detail_img/class_detail_01.jpg">
+				<img src="./resources/image/food_Product/foodProduce_01.png" class="classProduct">
+			<!-- 	<img src="./resources/image/detail_img/class_detail_01.jpg"> -->
 			</div>
 
 
@@ -525,7 +506,7 @@ function openComment() {
 			<p class="lead">클래스 설명. 클래스 설명. 레시피 가르칠 것 설명</p>
 
 			<p class="class_price">
-				1,100<small>원</small>
+				<p4>1,100</p4><small>원</small>
 			</p>
 
 			<hr>
@@ -533,16 +514,16 @@ function openComment() {
 			<div class="detail_time">
 				<div class="detail_icon_img">
 					<span> <img src="./resources/image/detail_img/clock.png">
-						<p1> 강의 시간 </p1> <p2> 10 분 </p2>
+						<p1> 강의 시간 </p1> <p2> 10 </p2> <p3>분 </p3>
 					</span> <span> <img src="./resources/image/detail_img/calendar.png">
-						<p1> 수강 기간 </p1> <p2> 100 일 </p2>
+						<p1> 수강 기간 </p1> <p2> 100  </p2>  <p3>일</p3>
 					</span>
 				</div>
 
 			</div>
 
 			<ul class="pagination">
-              <li class="page-item"><a class="page-link" href="class-payment">Class 신청</a></li>
+              <li class="page-item"><a class="page-link" href="class_payment">Class 신청</a></li>
             </ul>
 
 
@@ -568,16 +549,36 @@ function openComment() {
 
 			<!--   ------------     section  ------------     -->
 			<div class="show_class_secction">
+			
 				<div class="show_class_content">
 					<b>클래스 소개</b> <span>/ 05분이내</span>
 				</div>
 
 				<div class="show_class_content_move">
 					<p4>
-					<a href="#">무료 보기</a></p4>
-				</div>
+					<span class="starFree">
+					무료 보기</p4>
+					</span>
+				</div>		
 			</div>
+			
+			
+				<div id="show_class_content_video">
+			
+					<div class="show_freeVideo"> 					
+					
+						<span class="video_cn"> 
+							<iframe width="560" height="315"
+									src="https://www.youtube.com/embed/rL-Po0VnjXk" frameborder="0"
+									allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+									allowfullscreen></iframe>
+						</span>
+					
+					</div> <!-- show_freeVideo  -->
+										
+				</div>  <!--   show_class_content_video   -->
 
+		
 
 			<!--   ------------     section  ------------     -->
 
@@ -588,14 +589,33 @@ function openComment() {
 
 				<div class="show_class_content_move">
 					<p4>
-					<a href="#">무료 보기</a></p4>
+					<span class="starProp">
+					무료 보기</p4>
+					</span>
 				</div>
 			</div>
 
-
+			
+			
+			<div id="show_class_content_prop">
+			
+					<div class="show_freeProp"> 					
+					
+						<span class="video_cn"> 
+							<iframe width="560" height="315"
+							src="https://www.youtube.com/embed/zNwnQxqg1yA" frameborder="0"
+							allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+							allowfullscreen></iframe>
+					</span>
+					
+					</div> <!-- show_freeVideo  -->
+										
+				</div>  <!--   show_class_content_video   -->
+			
 
 
 <!--   ------------     section  ------------     -->
+
 
 
 			<div class="show_class_secction">
@@ -607,18 +627,7 @@ function openComment() {
 					<li><p4>
 						<a href="#" class="start_icon"><img
 							src="./resources/image/detail_img/detailstart_on.png"></a></p4>
-					</li>
-					
-					
-					<li class="show_video">
-					<span class="videoClose"><h1>X</h1></span>
-					<span class="video_cn">							
-					<iframe width="700" height="450"
-								src="https://www.youtube.com/embed/fXZsiXreVV4" frameborder="0"
-								allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
-								allowfullscreen></iframe>
-					</span></li>
-
+					</li>		
 
 				</div>
 				<div class="show_class_content_menu">
@@ -630,7 +639,22 @@ function openComment() {
 				
 				
 				
+				<div id ="show_classVideo">
 				
+				<div class="show_Video"> 					
+					
+						<span class="video_cn"> 
+							<iframe width="560" height="315"
+							src="https://www.youtube.com/embed/zNwnQxqg1yA" frameborder="0"
+							allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+							allowfullscreen></iframe>
+					</span>
+					
+					</div> <!-- show_freeVideo  -->
+					
+				</div> <!--  show_classVideo   -->
+				
+	
 				
 
 				<!--     재료 소개       -->
@@ -699,15 +723,8 @@ function openComment() {
 					</div>
 
 				</div>   <!--    show_class_prop    -->
-
-			</div>
-
-
-
-
-
-
-
+			
+</div>
 
 
 
@@ -958,7 +975,9 @@ function openComment() {
 							<d class="info_delete">
 							<a href="#">삭제</a></d>
 						</div>
-
+						
+						
+						
 						<div class="info_content">후기후기 내용내용 후기후기 내용내용 후기후기 내용내용</div>
 
 						<hr class="info_line">
@@ -998,6 +1017,8 @@ function openComment() {
 							<d class="info_delete">
 							<a href="#">삭제</a></d>
 						</div>
+
+								
 
 						<div class="info_content">후기후기 내용내용 후기후기 내용내용 후기후기 내용내용</div>
 
@@ -1073,8 +1094,8 @@ function openComment() {
 																<img src="./resources/image/detail_img/star.png">
 																<img src="./resources/image/detail_img/star.png">
 															</div>
-															
-															<span class="caret"></span>
+															<!-- 
+															<span class="caret"></span> -->
 															
 													</a>
 														<ul id="menu3" class="dropdown-menu" role="menu"
@@ -1136,11 +1157,11 @@ function openComment() {
 									<!--    order_table_box     -->
 
 
-									<hr>
+								<!-- 	<hr>
+ -->
 
 
-
-									<div class="story_write_pic" style="padding: 0px 0px 0px;">
+								<!-- 	<div class="story_write_pic" style="padding: 0px 0px 0px;">
 
 										<div id="add_imgs" class="complete_pic">
 											<img src="https://recipe1.ezmember.co.kr/img/pic_none3.gif"
@@ -1156,7 +1177,7 @@ function openComment() {
 												width="150" height="150">
 										</div>
 									</div>
-									<!--    story_write_pic    -->
+									   story_write_pic    -->
 
 
 									<p style="text-align: center; border-top: 1px solid #e2e2e2">
@@ -1177,10 +1198,6 @@ function openComment() {
 								framespacing=0 marginheight=0 marginwidth=0 scrolling=yes
 								vspace=0></iframe>
 
-							<!-- 	<iframe src="#" name="epBootstrapIframe_i0kjn" style="" width="100%"
-				height="100%" frameborder="0" scrolling="auto"></iframe> -->
-
-
 
 						</form>
 						<!--   commentFrom     -->
@@ -1192,33 +1209,11 @@ function openComment() {
 				<!--  coment_write   -->
 
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 			</div>
 			<!--   second_ct   -->
 
 		</div>
 		<!--    jumbotron my-4   -->
-
-
-
 
 
 
@@ -1229,97 +1224,71 @@ function openComment() {
 	<!-- /.container -->
 	
 
-
-
-
-
-
-
   
   
   
 <!-- Newsletter start  -->
   <app-footer1>
-  
-  
-  <section class="section light-bg bg-cover" style="background-image:url('./resources/img/bg/1.jpg')">
+    
+  																<!--    이미지 변경하고 싶으면 footBackImg_06.png <--여기를 01~06중 골라쓰세요  -->
+  <section class="section light-bg bg-cover" style="background-image:url('./resources/image/main/footBackImg_05.png')">
+    
     <div class="container">
       <div class="section-title-wrap section-header text-center">
-        <h2 class="title">Subscribe to My Newsletter</h2>
-        <p class="subtitle">
-          Get access to my latest recipes by joining the weekly newsletter
-        </p>
+        <d1 class="foot_title">Recipe Search</d1>       
       </div>
 
       <form class="ct-newsletter" method="post">
-        <input type="email" class="form-control" placeholder="Enter your email address" value="">
-        <button type="button" class="btn-custom primary" name="button"> Submit <i class="far fa-paper-plane"></i> </button>
+        <input type="email" class="form-control" placeholder="Search the recipe" value="">
+        <button type="button" class="btn-custom primary" name="button"> Search <i class="far fa-paper-plane"></i> </button>
       </form>
 
     </div>
   </section>
-  <!-- Newsletter End -->
-
-  <!-- Instagram Start  -->
-  <div class="row no-gutters">
-    <div class="col-lg-2 col-md-4 col-sm-4 col-6 p-0">
-      <a href="javascript:void(0)" class="ct-ig-item">
-        <img src="./resources/img/ig/1.jpg" alt="ig">
-      </a>
-    </div>
-    <div class="col-lg-2 col-md-4 col-sm-4 col-6 p-0">
-      <a href="javascript:void(0)" class="ct-ig-item">
-        <img src="./resources/img/ig/2.jpg" alt="ig">
-      </a>
-    </div>
-    <div class="col-lg-2 col-md-4 col-sm-4 col-6 p-0">
-      <a href="javascript:void(0)" class="ct-ig-item">
-        <img src="./resources/img/ig/3.jpg" alt="ig">
-      </a>
-    </div>
-    <div class="col-lg-2 col-md-4 col-sm-4 col-6 p-0">
-      <a href="javascript:void(0)" class="ct-ig-item">
-        <img src="./resources/img/ig/4.jpg" alt="ig">
-      </a>
-    </div>
-    <div class="col-lg-2 col-md-4 col-sm-4 col-6 p-0">
-      <a href="javascript:void(0)" class="ct-ig-item">
-        <img src="./resources/img/ig/5.jpg" alt="ig">
-      </a>
-    </div>
-    <div class="col-lg-2 col-md-4 col-sm-4 col-6 p-0">
-      <a href="javascript:void(0)" class="ct-ig-item">
-        <img src="./resources/img/ig/6.jpg" alt="ig">
-      </a>
-    </div>
-  </div>
-  <!-- Instagram End -->
-
+  
   <!-- Footer Start -->
   <footer class="ct-footer footer-2">
-    <div class="container">
-      <div class="footer-widget">
-        <ul class="social-media">
-          <li> <a href="javascript:void(0)"> <i class="fab fa-facebook-f"></i> </a> </li>
-          <li> <a href="javascript:void(0)"> <i class="fab fa-twitter"></i> </a> </li>
-          <li> <a href="javascript:void(0)"> <i class="fab fa-pinterest-p"></i> </a> </li>
-          <li> <a href="javascript:void(0)"> <i class="fab fa-linkedin-in"></i> </a> </li>
-        </ul>
-      </div>
-      <div class="footer-widget">
-        <ul>
-          <li> <a href="javascript:void(0)">Breakfast</a> </li>
-          <li> <a href="javascript:void(0)">Desserts</a> </li>
-          <li> <a href="javascript:void(0)">Dinner</a> </li>
-          <li> <a href="javascript:void(0)">Dairy</a> </li>
-        </ul>
-      </div>
-      <div class="footer-bottom">
-        <div class="container">
-          <p class="m-0">&copy; Copyright 2020 - <a href="javascript:void(0)">AndroThemes</a> All Rights Reserved.</p>
-        </div>
-      </div>
-    </div>
+  
+  
+   <div class="row align-items-center mt-70">
+                <!-- Single Cool Fact -->
+                <div class="col-12 col-sm-6 col-lg-3">
+                    <div class="single-cool-fact">
+                        <img src="./resources/image/core-img/salad.png" alt="">
+                        <h3><span class="counter">1287</span></h3>
+                        <h6>Recipe</h6>
+                    </div>
+                </div>
+
+                <!-- Single Cool Fact -->
+                <div class="col-12 col-sm-6 col-lg-3">
+                    <div class="single-cool-fact">
+                        <img src="./resources/image/core-img/hamburger.png" alt="">
+                        <h3><span class="counter">25</span></h3>
+                        <h6>Chef Recipe</h6>
+                    </div>
+                </div>
+
+                <!-- Single Cool Fact -->
+                <div class="col-12 col-sm-6 col-lg-3">
+                    <div class="single-cool-fact">
+                        <img src="./resources/image/core-img/rib.png" alt="">
+                        <h3><span class="counter">471</span></h3>
+                        <h6>Class</h6>
+                    </div>
+                </div>
+
+                <!-- Single Cool Fact -->
+                <div class="col-12 col-sm-6 col-lg-3">
+                    <div class="single-cool-fact">
+                        <img src="./resources/image/core-img/pancake.png" alt="">
+                        <h3><span class="counter">326</span></h3>
+                        <h6>Affiliates</h6>
+                    </div>
+                </div>
+            </div>
+      
+    
   </footer>
   <!-- Footer End -->
 

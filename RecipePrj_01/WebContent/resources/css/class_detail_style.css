@@ -472,10 +472,21 @@ body {
 hr{
   margin: 30px 0;
 }
+
+
+
+/*    -----------------       수정  ---------------------  */
+
+
+
 img {
   max-width: 100%;
   height: auto;
 }
+
+
+
+
 
 .cursor-pointer {
   cursor: pointer;
@@ -1297,11 +1308,18 @@ table img{
   background-color: #85B72C;
 }
 
+
+/* */
+
+
 .navbar-brand {
   width: 170px;
   margin: 0;
   padding: 0;
 }
+
+
+
 
 .navbar-nav {
   -webkit-box-orient: horizontal;
@@ -1923,12 +1941,23 @@ table img{
   display: none;
 }
 
+
+
+
+/*------------수정 값  -----------*/ 
+
 /*======================
 3. Footer
 ========================*/
+
+
 .ct-footer {
-  padding: 80px 0 0;
+  padding: 20px 0 0;
 }
+
+
+
+
 .ct-footer p{
   margin-bottom: 20px;
   color: #515151;
@@ -1940,6 +1969,10 @@ table img{
 .ct-footer a:hover{
   color: #85B72C;
 }
+
+
+
+
 .footer-widget {
   padding-bottom: 80px;
 }
@@ -2056,6 +2089,10 @@ table img{
   color: #515151;
 }
 
+
+
+
+
 /* Footer 2 */
 .ct-footer.footer-2{
   text-align: center;
@@ -2111,6 +2148,10 @@ table img{
   width: 50px;
   height: 50px;
 }
+
+
+
+
 
 /* Dark footer */
 .footer-dark{
