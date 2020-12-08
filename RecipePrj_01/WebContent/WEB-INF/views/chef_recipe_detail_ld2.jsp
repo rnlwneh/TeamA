@@ -4,7 +4,7 @@
 <html lang="en">
 <head>
   <meta charset="utf-8">
-  <title>Cookiteer</title>
+  <title>Chef Recipe_detail</title>
 
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <link rel="icon" type="image/x-icon" href="./resources/img/favicon.ico">
@@ -33,8 +33,8 @@
 
 <!-- Bootstrap core JavaScript -->
 <script src="./resources/js/jquery.min.js"></script>
-<script src="./resources/js/chef_recipe_detail_ld.js"></script>
-<script src="./resources/js/class_detail_bundle.js"></script>
+<script src="./resources/js/chef_recipe_detail.js"></script>
+<script src="./resources/js/recipe_detail_bundle.js"></script>
 
 
 
@@ -55,18 +55,6 @@
 
 <script>
 
-function openCloseToc() {
-	if (document.getElementById('toc-content').style.display === 'block') {
-		document.getElementById('toc-content').style.display = 'none';
-		document.getElementById("detail_more_IMG").src = "./resources/image/detail_img/detail_off.png";
-
-	} else {
-		document.getElementById('toc-content').style.display = 'block';
-		document.getElementById("detail_more_IMG").src = "./resources/image/detail_img/detail_on.png";
-
-	}
-}
-
 function openComment() {
 	if (document.getElementById('coment_write').style.display === 'block') {
 		document.getElementById('coment_write').style.display = 'none';		
@@ -81,77 +69,6 @@ function openComment() {
 	}
 }
 
-
-
-
-
-    function handlePhotoFiles(e){
-    
-        if (e.target.files.length == 0)
-            return;
-    
-        // 2MB보다 크면 제한
-        if (e.target.files[0].size > 10485760) {
-            alert("사진은 10MB까지만 허용됩니다.");
-            return false;
-        }
-        var il = e.target.id.replace("file_","");
-        var reader = new FileReader;
-        reader.onload = function(evt) {
-            var img = new Image();
-            img.src = reader.result;
-            img.onload = function () {
-                var finalFile = reader.result;
-                $.ajax({
-                    beforeSend: function(xhr){
-                        xhr.setRequestHeader('Content-Type', 'canvas/upload');
-                    },
-                    type: "POST",
-                    url: "/util/upload_mobile.html",
-                    data: "canvasData="+finalFile,
-                    dataType: "json",
-                    cache: "false",
-                    processData: false,
-                    success: function(json) {
-                        //console.log(json);
-                        if(json['result'] == "SUCCESS") {
-                            $("#add_imgs").hide();
-                            $("#img_dd").show();
-                            $("#attach_imgs").attr("src",json['url']);
-                            $("#image").val(json['url']);
-                        } else {
-                            alert("처리에 실패하였습니다.");
-                        }
-                    },
-                    error: function (request,status,error) {
-                        //alert('오류가 발생하였습니다.');
-                        alert("code:"+request.status+"\n"+"message:"+request.responseText+"\n"+"error:"+error);
-                    }
-                });
-            }
-        }
-        reader.readAsDataURL(e.target.files[0]);
-    }
-
-    function deleteImg()
-    {
-        if (confirm('이미지를 삭제하시겠습니까?')) {
-            $("#add_imgs").show();
-            $("#img_dd").hide();
-            $("#attach_imgs").attr("src",'about:blank');
-            $("#image").val('');
-            $("#old_image").val('');
-        }
-    }    
-
-    $(function() {
-        
-        $('#file_1').on('change', handlePhotoFiles);
-        
-                
-                
-    })        
-    
     function doStar(star) {
         $('#score').val(star);
         $('#star').html($('#star'+star).html())
@@ -175,8 +92,6 @@ function openComment() {
         $('#insFrm').submit();            
         
     }
-    
-    
     
     
     
@@ -482,12 +397,41 @@ function openComment() {
 
 		<!-- ------------------- Header content---------------------  -->
 		<header class="jumbotron my-4">
-			<h1 class="display-3">Class Title_제목</h1>
+				
+				<p class="popBT"><img src="./resources/image/detail_img/pop.png"></p>
+				
+				<p class="reportBT"> 
+					<a href="#"><img src="./resources/image/detail_img/report.png"></a>
+				</p>				
+			
+			
+			
+	
+		<!-- ------------------- 신고작성 디테일---------------------  -->
+						
+		<div class="report-content">
+		      <div class="report-header">
+		        <h4 class="report-title">Chef Recipe Title_제목</h4>
+		    <button type="button" class="reportXBT" data-dismiss="modal" aria-label="Close">X</button> 
+		      </div>
+		      <div class="report-body">
+		        <textarea id="errorCont" class="form-control" rows="3" placeholder="이런! 레시피에 문제가 있나요? 자세한 내용을 남겨주시면 신속하게 처리하겠습니다." style="height:260px;"></textarea>
+		      </div>
+		    <div class="report-footer">
+		        <button type="button" class="reportcloseBT" data-dismiss="modal">취소</button>
+		        <button type="button" class="reportsubmitBT" onclick="submitError()">전송</button>
+		      </div>   
+   		 </div> 
+		<!-- ------------------- 신고작성 디테일---------------------  -->
+						
+			
+			
+		
+			<h1 class="display-3">Chef Recipe Title_제목</h1>
 
 
 			<div class="detail_img">
-				<img src="./resources/image/food_Product/foodProduce_01.png" class="classProduct">
-			<!-- 	<img src="./resources/image/detail_img/class_detail_01.jpg"> -->
+				<img src="./resources/image/food_Product/foodProduce_01.png" class="classProduct">		
 			</div>
 
 
@@ -503,158 +447,45 @@ function openComment() {
 			</figure>
 
 
-			<p class="lead">클래스 설명. 클래스 설명. 레시피 가르칠 것 설명</p>
-
-			<p class="class_price">
-				<p4>1,100</p4><small>원</small>
-			</p>
+			<p class="lead">레시피 설명. 레시피 설명. 레시피 가르칠 것 설명</p>
 
 			<hr>
-
 			<div class="detail_time">
 				<div class="detail_icon_img">
 					<span> <img src="./resources/image/detail_img/clock.png">
-						<p1> 강의 시간 </p1> <p2> 10 </p2> <p3>분 </p3>
-					</span> <span> <img src="./resources/image/detail_img/calendar.png">
-						<p1> 수강 기간 </p1> <p2> 100  </p2>  <p3>일</p3>
+						<p1> 조리 시간 </p1> <p2> 10 </p2> <p3>분 </p3>
+					</span> <span> <img src="./resources/image/detail_img/level.png">
+						<p1> 난이도 </p1> <p2> Easy  </p2> 
 					</span>
-				</div>
-
-			</div>
-
-			<ul class="pagination">
-              <li class="page-item"><a class="page-link" href="class_payment">Class 신청</a></li>
-            </ul>
-
-
-		<!-- 	<a href="#" class="btn btn-primary btn-lg">Class 신청</a> -->
-
+					<span>
+						<p class="postBt"> 
+							<a routerlink="/recipe-detail">스크랩</a>
+						</p>
+					</span>
+					<span>
+						<p class="postBt"> 
+							<a routerlink="/recipe-detail">구독</a>
+						</p>
+					</span>
+						
+		
 		</header>
 
 
 		<!-- ------------------- Header content---------------------  -->
 
 
-		<!--       강의 보기      -->
+		<!--       재료 보기      -->
 
 		<div class="jumbotron my-4">
 
-
-			<!--       강의 보기  헤드      -->
+	<!--       재료 보기  헤드      -->
 			<div class="show_class">
 				<img src="./resources/image/detail_img/detail_icon_02.png">
-				<p3>클래스 보기</p3>
+				<p3>재료 보기</p3>
 				<hr>
 			</div>
 
-			<!--   ------------     section  ------------     -->
-			<div class="show_class_secction">
-			
-				<div class="show_class_content">
-					<b>클래스 소개</b> <span>/ 05분이내</span>
-				</div>
-
-				<div class="show_class_content_move">
-					<p4>
-					<span class="starFree">
-					무료 보기</p4>
-					</span>
-				</div>		
-			</div>
-			
-			
-				<div id="show_class_content_video">
-			
-					<div class="show_freeVideo"> 					
-					
-						<span class="video_cn"> 
-							<iframe width="560" height="315"
-									src="https://www.youtube.com/embed/rL-Po0VnjXk" frameborder="0"
-									allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
-									allowfullscreen></iframe>
-						</span>
-					
-					</div> <!-- show_freeVideo  -->
-										
-				</div>  <!--   show_class_content_video   -->
-
-		
-
-			<!--   ------------     section  ------------     -->
-
-			<div class="show_class_secction">
-				<div class="show_class_content">
-					<b>재료 소개</b> <span>/  05분이내</span>
-				</div>
-
-				<div class="show_class_content_move">
-					<p4>
-					<span class="starProp">
-					무료 보기</p4>
-					</span>
-				</div>
-			</div>
-
-			
-			
-			<div id="show_class_content_prop">
-			
-					<div class="show_freeProp"> 					
-					
-						<span class="video_cn"> 
-							<iframe width="560" height="315"
-							src="https://www.youtube.com/embed/zNwnQxqg1yA" frameborder="0"
-							allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
-							allowfullscreen></iframe>
-					</span>
-					
-					</div> <!-- show_freeVideo  -->
-										
-				</div>  <!--   show_class_content_video   -->
-			
-
-
-<!--   ------------     section  ------------     -->
-
-
-
-			<div class="show_class_secction">
-				<div class="show_class_content">
-					<b>푸팟퐁커리</b> <span>/ 10분이내</span>
-				</div>
-
-				<div class="show_class_content_start">
-					<li><p4>
-						<a href="#" class="start_icon"><img
-							src="./resources/image/detail_img/detailstart_on.png"></a></p4>
-					</li>		
-
-				</div>
-				<div class="show_class_content_menu">
-					<span id="show-toggle"> <p4>
-						<a href="#" class="prop_icon"><img
-							src="./resources/image/detail_img/detailmenu_on.png"></a></p4>
-					</span>
-				</div>
-				
-				
-				
-				<div id ="show_classVideo">
-				
-				<div class="show_Video"> 					
-					
-						<span class="video_cn"> 
-							<iframe width="560" height="315"
-							src="https://www.youtube.com/embed/zNwnQxqg1yA" frameborder="0"
-							allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
-							allowfullscreen></iframe>
-					</span>
-					
-					</div> <!-- show_freeVideo  -->
-					
-				</div> <!--  show_classVideo   -->
-				
-	
 				
 
 				<!--     재료 소개       -->
@@ -663,8 +494,7 @@ function openComment() {
 
 					<div id="c_recipe">
 						<div>
-							<span class="c_t1">재료</span>
-							<a href="#" id="closeProp">×</a>
+							<span class="c_t1">재료</span>							
 						</div>
 						<div>
 							<span class="c_st1">[필수재료]</span>
@@ -690,148 +520,147 @@ function openComment() {
 						<div id="c_ing">
 							<span class="ing_l">식용유</span> <span class="ing_r">4숟가락</span>
 						</div>
-						<div>
-							<span class="c_t2">조리순서</span>
-						</div>
-						
-						<div id="c_step">
-							<div class="c_s">
-								감자는 얇게 채 썰어 준비한다.<br> Tip) 감자는 약 0.2mm~0.3mm 정도로 잘라요. 너무
-								두꺼우면 익히는 시간도 오래걸려요.
-							</div>
-							<div class="c_s">
-								양파, 당근도 감자와 같은 크기로 채 썰어 준비한다.<br> Tip) 당근은 색감을 내기위해 사용하기도
-								하니 생략해도 좋아요.
-							</div>
-							<div class="c_s">감자는 찬물에 2~3번 헹궈내고 약 10분정도 담가 전분기를 제거한다.</div>
-							<div class="c_s">
-								물에 담가놓은 감자는 채반을 이용해 물기를 제거한다.<br> Tip) 키친타월을 이용해 물기를 더 닦아
-								주어도 좋아요.
-							</div>
-							<div class="c_s">
-								예열된 팬에 기름을 4숟가락 두르고 양파와 당근을 넣어 볶는다.<br> Tip) 센불로 약 1분간 볶아요.
-							</div>
-							<div class="c_s">
-								양파가 살짝 투명해 지면 감자를 넣어 볶는다.<br> Tip) 중불로 약 2분간 볶아요.
-							</div>
-							<div class="c_s">
-								소금, 후추로 간을 해 감자가 익을때 까지 약 2~3분간 더 볶는다.<br> Tip) 감자의 굵기에 따라
-								시간을 조절해 주세요.
-							</div>
-							<div class="c_s">마지막으로 깨소금을 뿌려 섞어 완성한다.</div>
-						</div>
-					</div>
-
+					</div> 
+					
+					
 				</div>   <!--    show_class_prop    -->
 			
 </div>
 
 
+	<!--       재료 보기      -->
+
+
+
+
+
+
+
+
+
+		<!-- ------------------- 영상---------------------  -->
+
+
+		<!--       영상 보기      -->
+
+		<div class="jumbotron my-4">
+
+	<!--       영상 보기  헤드      -->
+			<div class="show_class">
+				<img src="./resources/image/detail_img/detail_icon_03.png">
+				<p3>영상 보기</p3>
+				<hr>
+			</div>
+			
+			
+			<!--   ------------     section  ------------     -->
+		
+			
+			
+				<div id="show_class_content_video">
+			
+					<div class="show_freeVideo"> 					
+					
+						<span class="video_cn"> 
+							<iframe width="560" height="315"
+									src="https://www.youtube.com/embed/rL-Po0VnjXk" frameborder="0"
+									allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+									allowfullscreen></iframe>
+						</span>
+					
+					</div> <!-- show_freeVideo  -->
+										
+				</div>  <!--   show_class_content_video   -->
+			
+
+
 
 </div>
 
 
-<!--       강의 보기      -->
 
 
 
 
 
 
-		<!-- ------------------- 상세 정보 부분 ---------------------  -->
+
+		<!-- ------------------- 조리순서 ---------------------  -->
 
 		<div class="jumbotron my-4">
 			<div class="second_ct">
 
-
-				<!--     second hader   -->
+				<!--    second hader    --> 
 				<span id="toc-toggle" onclick="openCloseToc()">
 					<div class="second_header">
 						<img src="./resources/image/detail_img/detail_icon.png">
-						<p3>클래스 상세 정보</p3>
-						<p4>
-						<img src="./resources/image/detail_img/detail_on.png"
-							id="detail_more_IMG"></p4>
+						<p3>조리 순서</p3>
+						
 						<hr>
 					</div>
 				</span>
 
 
-
-				<ol id="toc-content">
-
-					<div class="second_body">
-						<div class="sc_body_title">
-							<p5>현지의 맛과 향이 느껴지는 </br>
-							</p5>
-							<p5>태국 요리 6가지를 배울 수 있어요.</p5>
-						</div>
-
-
-
-
-						<!--     second boby  secciton    -->
-						<div class="body_ct">
-							<div class="body_ct_img">
-								<span> <img
-									src="./resources/image/detail_img/detail_img_01.jpg">
-								</span>
-							</div>
-
-							<div class="body_ct_title">
-								<span> <p6>태국 대표 볶음 요리 <팟타이></p6>
-								</span>
-							</div>
-							<div class="body_ct_content">
-								<span> <p7>달걀, 새우와 숙주, 쌀국수를 볶은 태국 태표 요리인 팟타이 <팟타이></p7>
-								</span>
-							</div>
-						</div>
-
-
-
-						<!--     second boby  secciton   -->
-						<div class="body_ct">
-							<div class="body_ct_img">
-								<span> <img
-									src="./resources/image/detail_img/detail_img_02.jpg">
-								</span>
-							</div>
-
-							<div class="body_ct_title">
-								<span> <p6>태국 전통 스프 <똠얌꿍></p6>
-								</span>
-							</div>
-							<div class="body_ct_content">
-								<span> <p7>새우 육수와 똠양 페이스트로 만들어 새콤한 맛의 똠얌꿍<팟타이></p7>
-								</span>
-							</div>
-						</div>
-
-
-
-						<!--     second boby  secciton   -->
-						<div class="body_ct">
-							<div class="body_ct_img">
-								<span> <img src="./resources/image/detail_img/detail_img_03.jpg">
-								</span>
-							</div>
-
-							<div class="body_ct_title">
-								<span> <p6>태국가면 꼭 먹어야 할 요리 <푸팟퐁커리></p6>
-								</span>
-							</div>
-							<div class="body_ct_content">
-								<span> <p7>튀긴 게와 옐로우커리의 만남! 무조건 먹는 태국 여행 1순위 메뉴
-									푸팟퐁커리 <팟타이></p7>
-								</span>
+				<div class="show_class_prop_1" id="show_class_prop_1">
+				
+						<div id="c_step">
+						
+							<!--     조리 순서  section  -->						
+							<div class="c_s">
+								감자는 얇게 채 썰어 준비한다.<br> Tip) 감자는 약 0.2mm~0.3mm 정도로 잘라요. 너무
+								두꺼우면 익히는 시간도 오래걸려요.
 							</div>
 							
-							<hr>
+							<!--     조리 순서  section  -->	
+							<div class="c_s">
+								양파, 당근도 감자와 같은 크기로 채 썰어 준비한다.<br> Tip) 당근은 색감을 내기위해 사용하기도
+								하니 생략해도 좋아요.
+							</div>
 							
+							<!--     조리 순서  section  -->	
+							<div class="c_s">
+								감자는 찬물에 2~3번 헹궈내고 약 10분정도 담가 전분기를 제거한다.
+							</div>
 							
-						<!--  태그  -->	
-							<div class="body_tag">
+							<!--     조리 순서  section  -->	
+							<div class="c_s">
+								물에 담가놓은 감자는 채반을 이용해 물기를 제거한다.<br> Tip) 키친타월을 이용해 물기를 더 닦아
+								주어도 좋아요.
+							</div>
+							
+							<!--     조리 순서  section  -->	
+							<div class="c_s">
+								예열된 팬에 기름을 4숟가락 두르고 양파와 당근을 넣어 볶는다.<br> Tip) 센불로 약 1분간 볶아요.
+							</div>
+							
+							<!--     조리 순서  section  -->	
+							<div class="c_s">
+								양파가 살짝 투명해 지면 감자를 넣어 볶는다.<br> Tip) 중불로 약 2분간 볶아요.
+							</div>
+							
+							<!--     조리 순서  section  -->	
+							<div class="c_s">
+								소금, 후추로 간을 해 감자가 익을때 까지 약 2~3분간 더 볶는다.<br> Tip) 감자의 굵기에 따라
+								시간을 조절해 주세요.
+							</div>
+							
+							<!--     조리 순서  section  -->	
+							<div class="c_s">
+								마지막으로 깨소금을 뿌려 섞어 완성한다.
+							</div>
+						
+													
+						</div> <!--  c_step   -->
+						
+						
+					</div> <!--  show_class_prop_1   -->
+					
+					
+					
+					
+					<!--     태그        -->
+						 
+					<div class="body_tag">
 							<img src="./resources/image/detail_img/tag.png">
 								<li class="tag_text">
 									<a href="#" >
@@ -843,100 +672,21 @@ function openComment() {
 									<h7>#해산물</h7>									
 									</a>								
 								</li>
-							</div>
-							
-														
-							
-						</div>
-
-
-
-
-
-
-
-
-
 					</div>
-					<!--   second_body   -->
+							
+						 
+						 
+						 
+						 
+			</div> 	<!--    second_ct    -->
 
-				</ol>
-				<!--    toc-content    -->
-
-			</div>
-			<!--    second_ct    -->
-
-		</div>
-		<!--    jumbotron my-4    -->
+		</div> 	<!--    jumbotron my-4    -->
 
 
 
 
 
-
-
-
-		<!-- ------------------- 취소 환불 부분   ---------------------  -->
-
-		<div class="jumbotron my-4">
-			<div class="second_ct">
-
-
-				<!--     second hader   -->
-				<div class="second_header">
-					<img src="./resources/image/detail_img/detail_icon_03.png">
-					<p3>취소 / 환불 안내</p3>
-					<hr>
-				</div>
-				<p10>온라인 클래스</p10>
-				<table class="thired_table" width="100%" cellspacing="0"
-					cellpadding="0" radius="10">
-					<colgroup>
-						<col width="">
-						<col width="">
-						<col width="">
-					</colgroup>
-					<tbody>
-						<tr class="table_line1">
-							<th></th>
-							<th>클래스 이용 전</th>
-							<th>클래스 이용 후</th>
-						</tr>
-						<tr class="table_line2">
-							<td>클래스 신청 후,7일 이내</td>
-							<td>전액 환불</td>
-							<td>기이용분 차감 후, 환불 진행</td>
-						</tr>
-						<tr class="table_line2">
-							<td>클래스 신청 후,7일 초과</td>
-							<td>판매금액의 10% 수수료 차감 후 환불<br>(수강기간 종료 시, 환불 불가)
-							</td>
-							<td>환불 불가</td>
-						</tr>
-					</tbody>
-				</table>
-
-
-				<div class="info_policy_cont_i">
-					※ 기이용분 = 정상가 × (이용 유료 강의 수 / 전체 유료 강의 수) <br> ※ 유료 강의에 포함된
-					레시피를 보시는 경우, 해당 강의를 이용한 것으로 간주하여 기이용분에 포함됩니다.
-				</div>
-
-
-			</div>
-			<!--   second_ct   -->
-
-		</div>
-		<!--    jumbotron my-4   -->
-
-
-
-
-
-
-
-
-		<!-- -------------------  수강 후기  ---------------------  -->
+		<!-- -------------------   후기  ---------------------  -->
 
 		<div class="jumbotron my-4">
 			<div class="second_ct">
@@ -945,7 +695,7 @@ function openComment() {
 				<!--     second hader   -->
 				<div class="second_header">
 					<img src="./resources/image/detail_img/detail_icon_04.png">
-					<p3>클래스 후기</p3>
+					<p3>레시피 후기</p3>
 					<hr>
 				</div>
 
@@ -998,8 +748,10 @@ function openComment() {
 					<div class="afterWord_Wrap">
 
 						<div class="media-left">
-							<a href="#"> <img
-								src="./resources/image/detail_img/profile.png">
+							<a href="#">
+							
+							 <img
+								src="./resources/image/rank_img/product07.jpg">
 							</a> <b class="info_name_f"> 아이디 </b>
 
 							<c class="info_date">2020-11-25 23:56:08 </c>
@@ -1156,28 +908,6 @@ function openComment() {
 									</div>
 									<!--    order_table_box     -->
 
-
-								<!-- 	<hr>
- -->
-
-
-								<!-- 	<div class="story_write_pic" style="padding: 0px 0px 0px;">
-
-										<div id="add_imgs" class="complete_pic">
-											<img src="https://recipe1.ezmember.co.kr/img/pic_none3.gif"
-												alt="파일첨부" width="150" height="150"
-												onclick="document.getElementById('file_1').click();"
-												style="cursor: pointer;">
-										</div>
-
-
-										<div id="img_dd" class="complete_pic" style="display: none;">
-											<img id="attach_imgs"
-												src="data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7"
-												width="150" height="150">
-										</div>
-									</div>
-									   story_write_pic    -->
 
 
 									<p style="text-align: center; border-top: 1px solid #e2e2e2">

@@ -4,7 +4,7 @@
 <html lang="en">
 <head>
   <meta charset="utf-8">
-  <title>Class Write</title>
+  <title>Recipe Write</title>
 <!--   <base href="/"> -->
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <link rel="icon" type="image/x-icon" href="./resources/img/favicon.ico">
@@ -13,26 +13,11 @@
 
 
 <link rel="stylesheet" type="text/css" href="./resources/css/header.css" media="all" />
-<link rel="stylesheet" type="text/css" href="./resources/css/class_write.css" media="all" />
-<link rel="stylesheet" type="text/css" href="./resources/css/class_write_min.css" media="all" />
-<link rel="stylesheet" type="text/css" href="./resources/css/ranking_style.css" media="all" />
-
-<link rel="stylesheet" type="text/css" href="./resources/css/plugins/magnific-popup.css" media="all" />
-<link rel="stylesheet" type="text/css" href="./resources/css/plugins/slick.css" media="all" />
-<link rel="stylesheet" type="text/css" href="./resources/css/plugins/slick-theme.css" media="all" />
+<link rel="stylesheet" type="text/css" href="./resources/css/recipe_upload_ld.css" media="all" />
+<link rel="stylesheet" type="text/css" href="./resources/css/recipe_upload_ld_min.css" media="all" />
+<link rel="stylesheet" type="text/css" href="./resources/css/recipe_upload_ld_style.css" media="all" />
 
 
-
- <!-- Bootstrap core CSS -->
-  <link href="./resources/css/ranking.css" rel="stylesheet">
-
-  <!-- Custom styles for this template -->
-  <link href="./resources/css/basic.css" rel="stylesheet">
-
-
-  <!-- Bootstrap core JavaScript -->
-  <script src="./resources/js/jquery.min.js"></script>
-  <script src="./resources/js/class_write.js"></script>
 
 
   
@@ -41,11 +26,6 @@
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
 <script src="https://cdn.jsdelivr.net/bxslider/4.2.12/jquery.bxslider.min.js"></script>
 <script src="./resources/js/main.js" type="text/javascript" charset="utf-8"></script>
-
-<script src="./resources/js/plugins/bootstrap.min.js" type="text/javascript" charset="utf-8"></script>
-
-<script src="./resources/js/class_wirte_video.js" type="text/javascript" charset="utf-8"></script>
-
 
 
 <script>
@@ -260,25 +240,6 @@ function addRecipeMaterial(group_idx, init_json, prev_step){
 
 
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 </script>
 
   
@@ -475,7 +436,7 @@ function addRecipeMaterial(group_idx, init_json, prev_step){
 
 
 
-    <!-- ------------------- 클래스 등록  ---------------------  -->
+    <!-- ------------------- 레시피 등록  ---------------------  -->
     
    
 	
@@ -485,7 +446,7 @@ function addRecipeMaterial(group_idx, init_json, prev_step){
  
 		<div class="show_class">
 				<img src="./resources/image/class_write_img/head_icon01.png" >
-				 <p3>클래스 등록</p3>
+				 <p3>레시피 등록</p3>
 				 <hr>				
 		</div>
 
@@ -507,6 +468,7 @@ function addRecipeMaterial(group_idx, init_json, prev_step){
 			
 			
 					<div id="divMainPhotoBox" is_over="0">
+					  <input type="file" name="file" id="multifile_1" file_gubun="step" style="display:none;" multiple="">
 						<img id="write_photo" onclick="document.getElementById('multifile_1').click();" src="./resources/image/class_write_img/photo_icon.png"
 							style=" cursor: pointer">
 					</div> 
@@ -516,73 +478,24 @@ function addRecipeMaterial(group_idx, init_json, prev_step){
 							
 				
 				
-				<!--    클래스 제목  -->				
+				<!--    레시피 제목  -->				
 				
 				<div class="cont_line">
-					<p class="cont_tit4">클래스 제목</p>
+					<p class="cont_tit4">레시피 제목</p>
 					<input type="text" name="cok_title" class="cok_title" id="cok_title" value=""
-						class="form-control" placeholder="예) 이탈리아 음식 클래스">
+						class="form-control" placeholder="예) 뽀모도로 파스타 만들기">
 				</div>
 		
 				
-				<!--    클래스 소개  -->
+				<!--    레시피 소개  -->
 								
 				<div class="cont_line pad_b_25">
-					<p class="cont_tit4">클래스 소개</p>
+					<p class="cont_tit4">레시피 소개</p>
 					<textarea name="cok_intro" id="cok_intro"
 						class="form-control step_cont"
-						placeholder="이 클래스를 소개 해주세요. 예) 정통 이태리 파스타 조리법을 가르쳐드립니다!"></textarea>
+						placeholder="예) 집에서 쉽게 만드는 뽀모도로 파스타 입니다~"></textarea>
 				</div>
 				
-
-				<!--   동영상   -->
-				
-				<div class="cont_line pad_b_25">
-					<p class="cont_tit4" >소개 영상</p>
-					<!-- <input type="hidden" name="video_photo" class="intro_video"id="video_photo" value="">
-					<input type="hidden" name="new_video_photo" id="new_video_photo" value=""> 
-					<input type="hidden" name="del_video_photo" id="del_video_photo" value="1"> <input type="hidden"
-						name="cok_video_src" id="cok_video_src" value=""> -->
-						
-						
-						<textarea name="cok_video_url" class="cok_video_url" 
-						placeholder="클래스 소개 영상이 있으면 주소를 입력하세요.(Youtube,네이버tvcast,다음tvpot 만 가능) 예)http://youtu.be/lA0Bxo3IZmM"
-						style=" resize: none;"></textarea>
-
-					
-				</div>
-				
-				
-				<div class="cont_line pad_b_25">
-					<p class="cont_tit4" >재료 소개 영상</p>
-					<input type="hidden" name="video_photo" id="video_photo" value="">
-					<input type="hidden" name="new_video_photo" id="new_video_photo" value=""> 
-					<input type="hidden" name="del_video_photo" id="del_video_photo" value="1"> <input type="hidden"
-						name="cok_video_src" id="cok_video_src" value="">
-						
-						
-						<textarea name="cok_video_url" iclass="cok_video_url" prev_url=""
-						placeholder="재료소개 영상이 있으면 주소를 입력하세요.(Youtube,네이버tvcast,다음tvpot 만 가능) 예)http://youtu.be/lA0Bxo3IZmM"
-						style=" resize: none;"></textarea>
-
-					
-				</div>
-				
-				
-				<div class="cont_line pad_b_25">
-					<p class="cont_tit4" >클래스 동영상</p>
-					<input type="hidden" name="video_photo" id="video_photo" value="">
-					<input type="hidden" name="new_video_photo" id="new_video_photo" value=""> 
-					<input type="hidden" name="del_video_photo" id="del_video_photo" value="1"> <input type="hidden"
-						name="cok_video_src" id="cok_video_src" value="">
-						
-						
-						<textarea name="cok_video_url" class="cok_video_url"  prev_url=""
-						placeholder="조리법 영상 주소를 입력하세요.(Youtube,네이버tvcast,다음tvpot 만 가능) 예)http://youtu.be/lA0Bxo3IZmM"
-						style=" resize: none;"></textarea>
-
-					
-				</div>
 				
 				
 	
@@ -606,20 +519,14 @@ function addRecipeMaterial(group_idx, init_json, prev_step){
 						</select>
 
 
-						<t1>수강기간</t1>						
-						<select name="cok_day" id="cok_day" text="수강기간">
-							<option value="">일수</option>
-							<option value="5">50일</option>
-							<option value="10">100일</option>
-							<option value="15">150일</option>
-							<option value="20">200일</option>							
+						<t1>난이도</t1>						
+						<select name="cok_day" id="cok_day" text="난이도">
+							<option value="">난이도</option>
+							<option value="800">Easy</option>
+							<option value="900">Normal</option>
+							<option value="1000">Hard</option>						
 						</select>
 						
-							
-						<t1>가격</t1>						
-						<input type="text" class="cok_price" placeholder="예>1000" value="">
-						<t3>원</t3>
-					
 
 					</div>
 					
@@ -653,8 +560,6 @@ function addRecipeMaterial(group_idx, init_json, prev_step){
 				<div class="cont_box pad_l_60">
 					<span class="guide mag_b_15" style="width: 100%;">재료가 남거나
 						부족하지 않도록 정확한 계량정보를 적어주세요.</span>
-
-
 
 
 
@@ -753,89 +658,6 @@ function addRecipeMaterial(group_idx, init_json, prev_step){
 
 	
 		
-		
-	
-
-<!-- ------------------- 요리순서 등록  ---------------------  -->
-    
-   
-	
-	<div class="jumbotron my-4">
-		
-		
- 
-		<div class="show_class">
-				<img src="./resources/image/class_write_img/head_icon05.png" >
-				 <p3>상세 정보 등록</p3>
-				 <hr>				
-		</div>
-		
-		
-		
-	<div class="cont_box pad_l_60">
-	
-      <input type="file" name="file" id="multifile_1" file_gubun="step" style="display:none;" multiple="">
-      <p class="cont_tit3">클래스 상세 정보 
-    	<!--   <button type="button" onclick="document.getElementById('multifile_1').click();" class="btn-sm btn-default">
-    	  <span class="glyphicon glyphicon-plus"></span> 
-    	 	 <strong>+</strong>사진 한번에 넣기 
-    	  </button> -->
-      </p>
-
-
-
-		<!--   내용 쓰기   -->
-				
-				<div class="cont_line pad_b_25">
-					<p class="cont_tit4">상세 제목</p>
-					<textarea name="cok_intro_title" id="cok_intro_title"
-						class="form-control step_cont"
-						placeholder=" 예) 요리 내비게이션을 통해 어려운 요리를 쉽게 따라할 수 있어요.!"></textarea>
-				</div>
-
-
-				
-			<div class="cont_line pad_b_25">
-					<p class="cont_tit4" >상세 정보</p>
-					<input type="hidden" name="info_cont" id="info_cont" value="">
-					<input type="hidden" name="new_info_cont" id="new_info_cont" value=""> 
-					<input type="hidden" name="del_info_cont" id="del_info_cont" value="1">
-					 <input type="hidden" name="info_cont_src" id="info_cont_src" value="">
-						
-						
-						<textarea name="info_cont_area" id="info_cont_area"
-						class="form-control step_cont"  prev_url=""
-						placeholder="클래스 설명 혹은 간단하 조리 순서를 적어주세요."></textarea>
-		
-						
-					<div style="position: absolute; left: -3000px">
-						<input type="file" name="info_cont_file" id="info_cont_file"
-							file_gubun="video" accept="jpeg,png,gif"
-							style="display:; width: 0px; height: 0px; font-size: 0px;"
-							text="">
-					</div>
-					
-					<div id="divInfoPhotoBox" is_over="0" class="thumb_m">
-						<img id="videoPhotoHolder"
-							src="./resources/image/class_write_img/photoAdd_icon.png"
-							 onclick="document.getElementById('multifile_1').click();">
-					</div>
-					
-					
-				</div> 
-
-
-          </div>	
-				
-		
-				
-</div>      <!--    jumbotron my-4    -->
-		
-
-
-
-
-
 
 <!-- ------------------- 태그  등록  ---------------------  -->
     
@@ -891,7 +713,6 @@ function addRecipeMaterial(group_idx, init_json, prev_step){
 
 					</div>
 	
-
 
 
 	</div>  <!--   jumbotron my-4   -->
