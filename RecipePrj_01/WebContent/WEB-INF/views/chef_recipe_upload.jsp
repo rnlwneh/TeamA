@@ -368,14 +368,11 @@ $(function(){
 					</div>
 					
 			
-					<div id="divMainPhotoBox" is_over="0" align="right">
-<<<<<<< HEAD
-						<img id="write_photo" onclick="document.getElementById('q_main_file').click();" src="${pageContext.request.contextPath}/resources/image/class_write_img/photo_icon.png"
-=======
-						<img id="write_photo" onclick="document.getElementById('multifile_1').click();" src="${pageContext.request.contextPath}/resources/img/pic_none4.gif"
->>>>>>> refs/remotes/origin/main
-							style=" cursor: pointer; float: right;">
-					</div>
+					<div id="divMainPhotoBox" is_over="0">
+					  <input type="file" name="file" id="multifile_1" file_gubun="step" style="display:none;" multiple="">
+						<img id="write_photo" onclick="document.getElementById('multifile_1').click();" src="./resources/image/class_write_img/photo_icon.png"
+							style=" cursor: pointer">
+					</div> 
 				</div>
 				
 				
