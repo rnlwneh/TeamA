@@ -202,6 +202,83 @@ function addMaterial(group_idx, init_json, prev_step){
 
 
 
+
+
+
+
+function addRecipeMaterial(group_idx, init_json, prev_step){
+    var step = 0;
+    var stepR = 2;
+    $("#divRecipeArea_"+group_idx+" [id^=rcMaterial_"+group_idx+"_]").each(function(){
+        var tmp = $(this).prop('id').replace('rcMaterial_'+group_idx+'_', '');
+        var tmp_step = parseInt(tmp, 10);
+        var tmp_stepR = parseInt(tmp, 10);
+        step = Math.max(step, tmp_step);
+        stepR = Math.max(stepR+1, tmp_stepR);
+    });
+    step++;
+    stepR--;
+  
+    var w1 = ($("#cok_reg_type").val() == 'edit') ? 180 : 650;
+	var w2 = ($("#cok_reg_type").val() == 'edit') ? 180 : 150;
+    var str = '';
+/* 	str += '<p class="recipe_step'+'_'+stepR+'">Step'+stepR+'</p>'; */
+	str += '<li id="rcMaterial_'+group_idx+'_'+step+'"><a href="#" class="btn-lineup"></a>';
+    str += '<input type="text" name="cok_material_nm_'+group_idx+'[]" id="cok_material_nm_'+group_idx+'_'+step+'" class="form-control" style="width:'+w1+'px; height:'+w2+'px;"  placeholder="Step'+stepR+'">';   
+/*     str += '<input type="text" name="cok_material_nm_'+group_idx+'[]" id="cok_material_nm_'+group_idx+'_'+step+'" class="form-control" style="width:'+w1+'px; height:'+w2+'px;">';   */ 
+    str += '<a id="btnMaterialDel_'+group_idx+'_'+step+'" href="javascript:delMaterial('+group_idx+','+step+')" class="btn-del" style="display:none"></a></li>';
+
+    if (typeof prev_step == 'undefined' || prev_step === null || prev_step == 0) {
+        $(str).appendTo('#divRecipeArea_'+group_idx);
+    }
+    else {
+        $(str).insertAfter("#rcMaterial_"+group_idx+"_" + prev_step);
+    }
+
+    if (typeof init_json !== 'undefined' && init_json !== null && init_json['mat_nm_material']) {
+        $("#divRecipeArea_"+group_idx+" [id=cok_material_nm_" + group_idx + "_" + step + "]").val(init_json['mat_nm_material']);
+    } else {
+        $("#divRecipeArea_"+group_idx+" [id=cok_material_nm_" + group_idx + "_" + step + "]").attr('placeholder','예) '+_MATERIAL_SAMPLE[(step-1)%_MATERIAL_SAMPLE.length]['mat_nm_material']);
+    }
+    if (typeof init_json !== 'undefined' && init_json !== null && (init_json['mat_no_amount'] || init_json['mat_tx_amount'])) {
+		$("#divRecipeArea_"+group_idx+" [id=cok_material_amt_" + group_idx + "_" + step + "]").val((init_json['mat_no_amount'] ? init_json['mat_no_amount'] : '')+(init_json['mat_tx_amount'] ? init_json['mat_tx_amount'] : ''));
+    } else {
+        $("#divRecipeArea_"+group_idx+" [id=cok_material_amt_" + group_idx + "_" + step + "]").attr('placeholder','예) '+_MATERIAL_SAMPLE[(step-1)%_MATERIAL_SAMPLE.length]['mat_nm_amount']);
+    }
+
+    $("#divRecipeArea_"+group_idx+" [id=rcMaterial_" + group_idx + "_" + step + "]").mouseover(function(){
+        $(this).find('.btn-del').show();
+    }).mouseout(function(){
+        $(this).find('.btn-del').hide();
+    });
+
+    $("#divRecipeArea_"+group_idx).sortable({
+        handle: $('.btn-lineup')
+    });
+    //$( "ul, li" ).disableSelection();
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 </script>
 
   
@@ -443,7 +520,7 @@ function addMaterial(group_idx, init_json, prev_step){
 				
 				<div class="cont_line">
 					<p class="cont_tit4">클래스 제목</p>
-					<input type="text" name="cok_title" id="cok_title" value=""
+					<input type="text" name="cok_title" class="cok_title" id="cok_title" value=""
 						class="form-control" placeholder="예) 이탈리아 음식 클래스">
 				</div>
 		
@@ -461,21 +538,53 @@ function addMaterial(group_idx, init_json, prev_step){
 				<!--   동영상   -->
 				
 				<div class="cont_line pad_b_25">
-					<p class="cont_tit4" >동영상</p>
+					<p class="cont_tit4" >소개 영상</p>
+					<!-- <input type="hidden" name="video_photo" class="intro_video"id="video_photo" value="">
+					<input type="hidden" name="new_video_photo" id="new_video_photo" value=""> 
+					<input type="hidden" name="del_video_photo" id="del_video_photo" value="1"> <input type="hidden"
+						name="cok_video_src" id="cok_video_src" value=""> -->
+						
+						
+						<textarea name="cok_video_url" class="cok_video_url" 
+						placeholder="클래스 소개 영상이 있으면 주소를 입력하세요.(Youtube,네이버tvcast,다음tvpot 만 가능) 예)http://youtu.be/lA0Bxo3IZmM"
+						style=" resize: none;"></textarea>
+
+					
+				</div>
+				
+				
+				<div class="cont_line pad_b_25">
+					<p class="cont_tit4" >재료 소개 영상</p>
 					<input type="hidden" name="video_photo" id="video_photo" value="">
 					<input type="hidden" name="new_video_photo" id="new_video_photo" value=""> 
 					<input type="hidden" name="del_video_photo" id="del_video_photo" value="1"> <input type="hidden"
 						name="cok_video_src" id="cok_video_src" value="">
 						
 						
-						<textarea name="cok_video_url" id="cok_video_url"
-						class="form-control step_cont"  prev_url=""
-						placeholder="동영상이 있으면 주소를 입력하세요.(Youtube,네이버tvcast,다음tvpot 만 가능) 예)http://youtu.be/lA0Bxo3IZmM"
-						style="height: 100px; width: 380px; resize: none;"></textarea>
+						<textarea name="cok_video_url" iclass="cok_video_url" prev_url=""
+						placeholder="재료소개 영상이 있으면 주소를 입력하세요.(Youtube,네이버tvcast,다음tvpot 만 가능) 예)http://youtu.be/lA0Bxo3IZmM"
+						style=" resize: none;"></textarea>
 
 					
 				</div>
+				
+				
+				<div class="cont_line pad_b_25">
+					<p class="cont_tit4" >클래스 동영상</p>
+					<input type="hidden" name="video_photo" id="video_photo" value="">
+					<input type="hidden" name="new_video_photo" id="new_video_photo" value=""> 
+					<input type="hidden" name="del_video_photo" id="del_video_photo" value="1"> <input type="hidden"
+						name="cok_video_src" id="cok_video_src" value="">
+						
+						
+						<textarea name="cok_video_url" class="cok_video_url"  prev_url=""
+						placeholder="조리법 영상 주소를 입력하세요.(Youtube,네이버tvcast,다음tvpot 만 가능) 예)http://youtu.be/lA0Bxo3IZmM"
+						style=" resize: none;"></textarea>
 
+					
+				</div>
+				
+				
 	
 				<!--  정보   -->
 				
@@ -505,11 +614,18 @@ function addMaterial(group_idx, init_json, prev_step){
 							<option value="15">150일</option>
 							<option value="20">200일</option>							
 						</select>
+						
+							
+						<t1>가격</t1>						
+						<input type="text" class="cok_price" placeholder="예>1000" value="">
+						<t3>원</t3>
+					
 
 					</div>
+					
+					
 			</div>
 
-	
 
 </div>  <!--    jumbotron my-4    -->
 
@@ -579,12 +695,14 @@ function addMaterial(group_idx, init_json, prev_step){
 									<button type="button" onclick="addMaterial(1)" class="btn btn-default">
 										<span class="glyphicon glyphicon-plus-sign"></span>추가
 									</button>
-								</div></li>
+								</div>
+								
+								</li>
 						</div>
 
 
 						<div class="noti">
-							<hr>
+						
 							<t2> ※ 양념, 양념장, 소스, 드레싱, 토핑, 시럽, 육수 밑간 등으로 구분해서 작성해주세요. </t2>
 							<div class="noti_btn">
 								<button type="button" onclick="addMaterialGroup('',[],null,'1')" class="btn-lg btn-default">				
@@ -594,6 +712,38 @@ function addMaterial(group_idx, init_json, prev_step){
 							</div>
 						</div>  <!--  noti    -->
 						
+				
+				
+				
+				
+					<div class="mag_b_25 ui-sortable" id="divGroupArea">
+					
+						<hr>	
+					
+					
+							<li id="recipeGroup_1">
+							
+								<p class="recipe_tit">조리 순서</p>	
+								
+														
+								<ul id="divRecipeArea_1" class="ui-sortable">
+								
+									<li id="rcMaterial_1_1">
+									<a href="#" class="btn-lineup ui-sortable-handle" data-original-title="" title=""></a>
+										<input type="text" name="cok_material_nm_1[]" id="cok_material_nm_1_1" class="form-control" style="width: 650px; height: 150px;" placeholder="step1 &nbsp; &nbsp; 예) 감자를 얇게 썰어주세요">										
+										<a id="btnMaterialDel_1_1" href="javascript:delMaterial(1,1)" class="btn-del" style="display: none;"></a>
+									</li>
+									
+								</ul>
+								
+								<div class="btn_add" style="padding: 0 0 20px 470px; width: 800px;">
+									<button type="button" onclick="addRecipeMaterial(1)" class="btn btn-default">
+										<span class="glyphicon glyphicon-plus-sign"></span>추가
+									</button>
+								</div></li>
+						</div>
+				
+				
 				
 				</div>	
 
@@ -715,6 +865,7 @@ function addMaterial(group_idx, init_json, prev_step){
 							<option value="info5">Vegan</option>
 							<option value="info5">Quick Food</option>
 							<option value="info5">Dessert</option>
+							<option value="info5">기타</option>
 						</select>
 
 
@@ -722,14 +873,20 @@ function addMaterial(group_idx, init_json, prev_step){
 						<select name="tag_info_2"  text="메인재료">
 							<option value="main_info1">돼지고기</option>
 							<option value="main_info2">소고기</option>
+							<option value="main_info2">닭고기</option>
 							<option value="main_info3">해산물</option>					
+							<option value="main_info3">채소/과일류</option>					
+							<option value="main_info3">기타</option>					
 						</select>
 						
-						<t1>부재료</t1>						
-						<select name="tag_info_2"  text="부재료">
-							<option value="second_info1">재료이름</option>
-							<option value="second_info2">재료이름</option>
-							<option value="second_info3">재료이름</option>					
+						<t1>테마별</t1>						
+						<select name="tag_info_2"  text="테마별">
+							<option value="second_info1">일상</option>
+							<option value="second_info2">손님접대</option>
+							<option value="second_info3">술안주</option>					
+							<option value="second_info3">다이어트</option>					
+							<option value="second_info3">간식</option>					
+							<option value="second_info3">기타</option>					
 						</select>
 
 					</div>
@@ -776,21 +933,6 @@ function addMaterial(group_idx, init_json, prev_step){
 
 
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
  </div><!-- /.container -->
  
  
@@ -804,29 +946,27 @@ function addMaterial(group_idx, init_json, prev_step){
   <app-footer1>
   
   
-  																<!--    이미지 변경하고 싶으면 footBackImg_06.png <--여기를 01~06중 골라쓰세요  -->
-  <section class="section light-bg bg-cover" style="background-image:url('./resources/image/main/footBackImg_05.png')">
-  
-  
-    <div class="container">
-      <div class="section-title-wrap section-header text-center">
-        <d1 class="foot_title">Recipe Search</d1>       
-      </div>
 
-      <form class="ct-newsletter" method="post">
-        <input type="email" class="form-control" placeholder="Search the recipe" value="">
-        <button type="button" class="btn-custom primary" name="button"> Search <i class="far fa-paper-plane"></i> </button>
-      </form>
 
-    </div>
+
+
+
+
+<!--     ------------------   footer 영역    -------------------        -->
+
+<!-- Newsletter start -->
+  <section class="section light-bg bg-cover" style=" background-image:url('./resources/image/main/footBackImg_03.jpg')">
+
+
   </section>
- 
- 
+  <!-- Newsletter End -->
+  
+
   <!-- Footer Start -->
   <footer class="ct-footer footer-2">
   
   
-   <div class="row align-items-center mt-70">
+  	<div class="raw align-items-center mt-70">
                 <!-- Single Cool Fact -->
                 <div class="col-12 col-sm-6 col-lg-3">
                     <div class="single-cool-fact">
@@ -862,12 +1002,30 @@ function addMaterial(group_idx, init_json, prev_step){
                         <h6>Affiliates</h6>
                     </div>
                 </div>
+                
+                
+                <!-- Single Cool Fact -->
+                <div class="col-12 col-sm-6 col-lg-3">
+                    <div class="single-cool-fact">
+                    <a href="mailto:wandering_star@naver.com">
+                        <img src="./resources/image/core-img/mail.png" alt="">
+                    </a>                    
+                        <h6>쉐프등업</h6>
+                    </div>
+                </div>
+                
+                
+                
+                
+                
+                
+                
             </div>
   
     
-    
   </footer>
   <!-- Footer End -->
+  
 
   
   

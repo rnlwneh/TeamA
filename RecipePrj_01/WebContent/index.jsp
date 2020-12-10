@@ -4,7 +4,7 @@
 <html lang="en">
 <head>
   <meta charset="utf-8">
-  <title>Cookiteer</title>
+  <title>Recipe Site</title>
 
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <link rel="icon" type="image/x-icon" href="./resources/img/favicon.ico">
@@ -435,7 +435,7 @@
   <footer class="ct-footer footer-2">
   
   
-  	<div class="row align-items-center mt-70">
+  	<div class="raw align-items-center mt-70">
                 <!-- Single Cool Fact -->
                 <div class="col-12 col-sm-6 col-lg-3">
                     <div class="single-cool-fact">
@@ -471,6 +471,24 @@
                         <h6>Affiliates</h6>
                     </div>
                 </div>
+                
+                
+                <!-- Single Cool Fact -->
+                <div class="col-12 col-sm-6 col-lg-3">
+                    <div class="single-cool-fact">
+                    <a href="mailto:wandering_star@naver.com">
+                        <img src="./resources/image/core-img/mail.png" alt="">
+                    </a>                    
+                        <h6>쉐프등업</h6>
+                    </div>
+                </div>
+                
+                
+                
+                
+                
+                
+                
             </div>
   
     

@@ -15,16 +15,34 @@
 
 
 
+.raw{
+		
+	display: -ms-flexbox;
+	display: flex;
+/* 	-ms-flex-wrap: wrap; */
+/* 	flex-wrap: wrap; */
+/* 	margin-right: -15px;
+	margin-left: -15px
+ */
+ 	
+}
+	
+
+
 .footer-2{
 	
 	width: 50%;
-	margin: 0 0 0 25%;
+ 	margin: 0 0 0 15%; 
+	align-items: center;
 	
 }
+	
+/* 
 
+} */
+/* 
 
-
-/*  footer부분의 Recipe Search 글씨 부분   */ 
+ footer부분의 Recipe Search 글씨 부분    */
 
 
 .foot_title{
@@ -52,3 +70,4 @@
     font-weight: 700;
 }
 
+ 
