@@ -12,9 +12,9 @@
   
   
 <link rel="stylesheet" type="text/css" href="./resources/css/header.css" media="all" />
-<link href="./resources/css/class_detail.css" rel="stylesheet">
-<link rel="stylesheet" type="text/css" href="./resources/css/class_detail_min.css" media="all" /> 
-<link rel="stylesheet" type="text/css" href="./resources/css/class_detail_style.css" media="all" />
+<link href="./resources/css/chef_recipe_detail_ld.css" rel="stylesheet">
+<link rel="stylesheet" type="text/css" href="./resources/css/chef_recipe_detail_min_ld.css" media="all" /> 
+<link rel="stylesheet" type="text/css" href="./resources/css/chef_recipe_detail_style_ld.css" media="all" />
   
   
   
@@ -33,7 +33,7 @@
 
 <!-- Bootstrap core JavaScript -->
 <script src="./resources/js/jquery.min.js"></script>
-<script src="./resources/js/class_detail.js"></script>
+<script src="./resources/js/chef_recipe_detail_ld.js"></script>
 <script src="./resources/js/class_detail_bundle.js"></script>
 
 

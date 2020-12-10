@@ -12,10 +12,20 @@
   
 
 
-<link rel="stylesheet" type="text/css" href="./resources/css/header.css" media="all" />
-<link rel="stylesheet" type="text/css" href="./resources/css/class_write.css" media="all" />
-<link rel="stylesheet" type="text/css" href="./resources/css/class_write_min.css" media="all" />
-<link rel="stylesheet" type="text/css" href="./resources/css/ranking_style.css" media="all" />
+<link rel="stylesheet" type="text/css" href="${pageContext.request.contextPath}/resources/css/recipe_upload_header.css" media="all" />
+<link rel="stylesheet" type="text/css" href="${pageContext.request.contextPath}/resources/css/upload_write.css" media="all" />
+<link rel="stylesheet" type="text/css" href="${pageContext.request.contextPath}/resources/css/recipe_upload_ranking_min.css" media="all" />
+<link rel="stylesheet" type="text/css" href="${pageContext.request.contextPath}/resources/css/recipe_upload_ranking_style.css" media="all" />
+
+<link rel="stylesheet" type="text/css" href="${pageContext.request.contextPath}/resources/css/plugins/recipe_upload_magnific-popup.css" media="all" />
+<link rel="stylesheet" type="text/css" href="${pageContext.request.contextPath}/resources/css/plugins/recipe_upload_slick.css" media="all" />
+<link rel="stylesheet" type="text/css" href="${pageContext.request.contextPath}/resources/css/plugins/recipe_upload_slick-theme.css" media="all" />
+
+<!-- 
+<link rel="stylesheet" type="text/css" href="./resources/css/primary-skin.css" media="all" />
+<link rel="stylesheet" type="text/css" href="./resources/css/plugins/bootstrap.min.css" media="all" /> 
+<link rel="stylesheet" type="text/css" href="./resources/css/plugins/animate.min.css" media="all" />
+
 
 <link rel="stylesheet" type="text/css" href="${pageContext.request.contextPath}/resources/css/plugins/recipe_upload_magnific-popup.css" media="all" />
 <link rel="stylesheet" type="text/css" href="${pageContext.request.contextPath}/resources/css/plugins/recipe_upload_slick.css" media="all" />
@@ -359,7 +369,11 @@ $(function(){
 					
 			
 					<div id="divMainPhotoBox" is_over="0" align="right">
+<<<<<<< HEAD
 						<img id="write_photo" onclick="document.getElementById('q_main_file').click();" src="${pageContext.request.contextPath}/resources/image/class_write_img/photo_icon.png"
+=======
+						<img id="write_photo" onclick="document.getElementById('multifile_1').click();" src="${pageContext.request.contextPath}/resources/img/pic_none4.gif"
+>>>>>>> refs/remotes/origin/main
 							style=" cursor: pointer; float: right;">
 					</div>
 				</div>
@@ -369,34 +383,44 @@ $(function(){
 				
 				<div class="cont_line">
 					<p class="cont_tit4">레시피 제목</p>
-					<input type="text" name="cok_title" class="cok_title" id="cok_title" value=""
-						class="form-control" placeholder="예) 뽀모도로 파스타 만들기">
+					<input type="text" name="cok_title" id="cok_title" value=""
+						class="form-control" placeholder="예)뽀모도로 파스타 만들기"
+						style="width: 510px;">
 				</div>
-		
 				
-				<!--    클래스 소개  -->
+				
+				
+				<!--    레시피 소개  -->
 								
 				<div class="cont_line pad_b_25">
-					<p class="cont_tit4">레시피 내용</p>
+					<p class="cont_tit4">레시피 소개</p>
 					<textarea name="cok_intro" id="cok_intro"
 						class="form-control step_cont"
-						placeholder="예) 집에서 쉽게 만드는 뽀모도로 파스타 레시피 입니다"></textarea>
+						placeholder="예)집에서 쉽게 만드는 뽀모도로 파스타 입니다~"
+						style="height: 100px; width: 510px; resize: none;"></textarea>
 				</div>
 				
 
 				<!--   동영상   -->
 				
 				<div class="cont_line pad_b_25">
-					<p class="cont_tit4" >레시피 동영상</p>
+					<p class="cont_tit4" >동영상</p>
 					<input type="hidden" name="video_photo" id="video_photo" value="">
 					<input type="hidden" name="new_video_photo" id="new_video_photo" value=""> 
 					<input type="hidden" name="del_video_photo" id="del_video_photo" value="1"> <input type="hidden"
 						name="cok_video_src" id="cok_video_src" value="">
 						
 						
+<<<<<<< HEAD
 						<textarea name="cok_video_url" class="cok_video_url"  prev_url=""
 						placeholder="조리법 영상 주소를 입력하세요.(Youtube,네이버tvcast,다음tvpot 만 가능) 예)http://youtu.be/lA0Bxo3IZmM"
 						style=" resize: none;"></textarea>
+=======
+						<textarea name="cok_video_url" id="cok_video_url"
+						class="form-control step_cont"  prev_url=""
+						placeholder="동영상이 있으면 주소를 입력하세요.(Youtube,네이버tvcast,다음tvpot 만 가능) 예)http://youtu.be/lA0Bxo3IZmM"
+						style="height: 100px; width: 510px; resize: none;"></textarea>
+>>>>>>> refs/remotes/origin/main
 		
 						
 					<div style="position: absolute; left: -3000px">
@@ -641,6 +665,7 @@ $(function(){
 
 						<t1>종류</t1>						
 						<select name="tag_info_1"  text="종류">
+<<<<<<< HEAD
 							<option value="info1">한식</option>
 							<option value="info2">양식</option>
 							<option value="info3">일식</option>
@@ -650,9 +675,23 @@ $(function(){
 							<option value="info7">Quick Food</option>
 							<option value="info8">Dessert</option>
 							<option value="info9">기타</option>
+=======
+							<option value="info1">밑반찬</option>
+							<option value="info2">메인반찬</option>
+							<option value="info3">국/탕/찌개</option>
+							<option value="info4">면/만두</option>
+							<option value="info5">밥/죽/떡</option>
+							<option value="info6">김치/젓갈/장류</option>
+							<option value="info7">양념/소스/잼</option>
+							<option value="info8">양식</option>
+							<option value="info9">빵/과자/디저트</option>
+							<option value="info10">차/음료/술</option>
+							<option value="info11">기타</option>
+>>>>>>> refs/remotes/origin/main
 						</select>
 
 
+<<<<<<< HEAD
 						<t1>메인</t1>						
 						<select name="tag_info_2"  text="메인재료">
 							<option value="main_info1">돼지고기</option>
@@ -661,7 +700,21 @@ $(function(){
 							<option value="main_info4">해산물</option>					
 							<option value="main_info5">채소/과일류</option>					
 							<option value="main_info6">기타</option>					
+=======
+						<t1>상황</t1>						
+						<select name="tag_info_2"  text="상황">
+							<option value="situation1">일상</option>
+							<option value="situation2">초스피드</option>
+							<option value="situation3">손님접대</option>	
+							<option value="situation4">술안주</option>
+							<option value="situation5">다이어트</option>
+							<option value="situation6">간식</option>
+							<option value="situation7">야식</option>
+							<option value="situation8">이유식</option>
+							<option value="situation9">기타</option>					
+>>>>>>> refs/remotes/origin/main
 						</select>
+<<<<<<< HEAD
 						
 						<t1>테마별</t1>						
 						<select name="tag_info_3"  text="테마별">
@@ -671,6 +724,38 @@ $(function(){
 							<option value="second_info4">다이어트</option>					
 							<option value="second_info5">간식</option>					
 							<option value="second_info6">기타</option>					
+=======
+
+
+						<t1>메인 재료</t1>						
+						<select name="tag_info_3"  text="메인재료">
+							<option value="main_info1">소고기</option>
+							<option value="main_info2">돼지고기</option>
+							<option value="main_info3">닭고기</option>	
+							<option value="main_info4">육류</option>
+							<option value="main_info5">채소류/과일류</option>
+							<option value="main_info6">해물류</option>
+							<option value="main_info7">달걀/유제품</option>
+							<option value="main_info8">가공식품류</option>
+							<option value="main_info9">쌀/곡류/밀가루</option>	
+							<option value="main_info10">건어물류</option>
+							<option value="main_info11">기타</option>				
+						</select>
+
+
+						<t1>조리 방법</t1>						
+						<select name="tag_info_4"  text="조리방법">
+							<option value="method1">볶음/조림</option>
+							<option value="method2">끓이기</option>
+							<option value="method3">굽기/부침</option>	
+							<option value="method4">무침/비빔</option>
+							<option value="method5">찜</option>
+							<option value="method6">절임</option>
+							<option value="method7">튀김</option>
+							<option value="method8">삶기/데치기</option>
+							<option value="method9">회</option>	
+							<option value="method10">기타</option>				
+>>>>>>> refs/remotes/origin/main
 						</select>
 
 					</div>
@@ -725,12 +810,101 @@ $(function(){
   <section class="section light-bg bg-cover" style=" background-image:url('./resources/image/main/footBackImg_03.jpg')">
 
 
+<<<<<<< HEAD
+=======
+
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  <app-footer1>
+  
+  
+
+
+
+<!-- Newsletter start -->
+  <section class="section light-bg bg-cover" style="background-image:url('${pageContext.request.contextPath}/resources/img/bg/1.jpg')">
+    <div class="container">
+      <div class="section-title-wrap section-header text-center">
+        <h2 class="title">Subscribe to My Newsletter</h2>
+        <p class="subtitle">
+          Get access to my latest recipes by joining the weekly newsletter
+        </p>
+      </div>
+
+      <form class="ct-newsletter" method="post">
+        <input type="email" class="form-control" placeholder="Enter your email address" value="">
+        <button type="button" class="btn-custom primary" name="button"> Submit <i class="far fa-paper-plane"></i> </button>
+      </form>
+
+    </div>
+>>>>>>> refs/remotes/origin/main
   </section>
   <!-- Newsletter End -->
+<<<<<<< HEAD
   
+=======
+
+  <!-- Instagram Start -->
+  <div class="row no-gutters">
+    <div class="col-lg-2 col-md-4 col-sm-4 col-6 p-0">
+      <a href="javascript:void(0)" class="ct-ig-item">
+        <img src="${pageContext.request.contextPath}/resources/img/ig/1.jpg" alt="ig">
+      </a>
+    </div>
+    <div class="col-lg-2 col-md-4 col-sm-4 col-6 p-0">
+      <a href="javascript:void(0)" class="ct-ig-item">
+        <img src="${pageContext.request.contextPath}/resources/img/ig/2.jpg" alt="ig">
+      </a>
+    </div>
+    <div class="col-lg-2 col-md-4 col-sm-4 col-6 p-0">
+      <a href="javascript:void(0)" class="ct-ig-item">
+        <img src="${pageContext.request.contextPath}/resources/img/ig/3.jpg" alt="ig">
+      </a>
+    </div>
+    <div class="col-lg-2 col-md-4 col-sm-4 col-6 p-0">
+      <a href="javascript:void(0)" class="ct-ig-item">
+        <img src="${pageContext.request.contextPath}/resources/img/ig/4.jpg" alt="ig">
+      </a>
+    </div>
+    <div class="col-lg-2 col-md-4 col-sm-4 col-6 p-0">
+      <a href="javascript:void(0)" class="ct-ig-item">
+        <img src="${pageContext.request.contextPath}/resources/img/ig/5.jpg" alt="ig">
+      </a>
+    </div>
+    <div class="col-lg-2 col-md-4 col-sm-4 col-6 p-0">
+      <a href="javascript:void(0)" class="ct-ig-item">
+        <img src="${pageContext.request.contextPath}/resources/img/ig/6.jpg" alt="ig">
+      </a>
+    </div>
+  </div>
+  <!-- Instagram End -->
+>>>>>>> refs/remotes/origin/main
 
   <!-- Footer Start -->
   <footer class="ct-footer footer-2">
+<<<<<<< HEAD
   
   
   	<div class="raw align-items-center mt-70">
@@ -786,8 +960,38 @@ $(function(){
             </div>
   
     
+=======
+    <div class="container">
+      <div class="footer-widget">
+        <ul class="social-media">
+          <li> <a href="javascript:void(0)"> <i class="fab fa-facebook-f"></i> </a> </li>
+          <li> <a href="javascript:void(0)"> <i class="fab fa-twitter"></i> </a> </li>
+          <li> <a href="javascript:void(0)"> <i class="fab fa-pinterest-p"></i> </a> </li>
+          <li> <a href="javascript:void(0)"> <i class="fab fa-linkedin-in"></i> </a> </li>
+        </ul>
+      </div>
+      <div class="footer-widget">
+        <ul>
+          <li> <a href="javascript:void(0)">Breakfast</a> </li>
+          <li> <a href="javascript:void(0)">Desserts</a> </li>
+          <li> <a href="javascript:void(0)">Dinner</a> </li>
+          <li> <a href="javascript:void(0)">Dairy</a> </li>
+        </ul>
+      </div>
+      <div class="footer-bottom">
+        <div class="container">
+          <p class="m-0">&copy; Copyright 2020 - <a href="javascript:void(0)">AndroThemes</a> All Rights Reserved.</p>
+        </div>
+      </div>
+    </div>
+>>>>>>> refs/remotes/origin/main
   </footer>
   <!-- Footer End -->
+<<<<<<< HEAD
+=======
+
+
+>>>>>>> refs/remotes/origin/main
   
   
   

@@ -684,6 +684,7 @@ function addRecipeMaterial(group_idx, init_json, prev_step){
 							<option value="info3">일식</option>
 							<option value="info4">중식</option>
 							<option value="info5">아시안</option>
+<<<<<<< HEAD
 							<option value="info6">Vegan</option>
 							<option value="info7">Quick Food</option>
 							<option value="info8">Dessert</option>
@@ -710,6 +711,35 @@ function addRecipeMaterial(group_idx, init_json, prev_step){
 							<option value="second_info5">간식</option>					
 							<option value="second_info6">기타</option>					
 						</select>
+=======
+							<option value="info5">Vegan</option>
+							<option value="info5">Quick Food</option>
+							<option value="info5">Dessert</option>
+							<option value="info5">기타</option>
+						</select>
+
+
+						<t1>메인</t1>						
+						<select name="tag_info_2"  text="메인재료">
+							<option value="main_info1">돼지고기</option>
+							<option value="main_info2">소고기</option>
+							<option value="main_info2">닭고기</option>
+							<option value="main_info3">해산물</option>					
+							<option value="main_info3">채소/과일류</option>					
+							<option value="main_info3">기타</option>					
+						</select>
+						
+						<t1>테마별</t1>						
+						<select name="tag_info_2"  text="테마별">
+							<option value="second_info1">일상</option>
+							<option value="second_info2">손님접대</option>
+							<option value="second_info3">술안주</option>					
+							<option value="second_info3">다이어트</option>					
+							<option value="second_info3">간식</option>					
+							<option value="second_info3">기타</option>					
+						</select>
+
+>>>>>>> refs/remotes/origin/main
 					</div>
 	
 
