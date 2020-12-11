@@ -4,13 +4,8 @@
 <html lang="en">
 <head>
   <meta charset="utf-8">
-<<<<<<< HEAD
-  <title>Cookiteer</title>
 <!--   <base href="/"> -->
-=======
   <title>Recipe Site</title>
-
->>>>>>> refs/remotes/origin/main
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <link rel="icon" type="image/x-icon" href="./resources/img/favicon.ico">
   
