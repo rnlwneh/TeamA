@@ -505,88 +505,78 @@
   </div>
   <!-- Blog Posts End -->
   <app-footer1>
+    
   
-  <!-- Newsletter start -->
-  <section class="section light-bg bg-cover" style="background-image:url('assets/img/bg/1.jpg')">
+<!-- Newsletter start  -->
+  <app-footer1>
+  
+  
+  																<!--    이미지 변경하고 싶으면 footBackImg_06.png <--여기를 01~06중 골라쓰세요  -->
+  <section class="section light-bg bg-cover" style="background-image:url('./resources/image/main/footBackImg_05.png')">
+  
+  
     <div class="container">
       <div class="section-title-wrap section-header text-center">
-        <h2 class="title">Subscribe to My Newsletter</h2>
-        <p class="subtitle">
-          Get access to my latest recipes by joining the weekly newsletter
-        </p>
+        <d1 class="foot_title">Recipe Search</d1>       
       </div>
 
       <form class="ct-newsletter" method="post">
-        <input type="email" class="form-control" placeholder="Enter your email address" value="">
-        <button type="button" class="btn-custom primary" name="button"> Submit <i class="far fa-paper-plane"></i> </button>
+        <input type="email" class="form-control" placeholder="Search the recipe" value="">
+        <button type="button" class="btn-custom primary" name="button"> Search <i class="far fa-paper-plane"></i> </button>
       </form>
 
     </div>
   </section>
-  <!-- Newsletter End -->
-
-  <!-- Instagram Start -->
-  <div class="row no-gutters">
-    <div class="col-lg-2 col-md-4 col-sm-4 col-6 p-0">
-      <a href="javascript:void(0)" class="ct-ig-item">
-        <img src="./resources/img/ig/1.jpg" alt="ig">
-      </a>
-    </div>
-    <div class="col-lg-2 col-md-4 col-sm-4 col-6 p-0">
-      <a href="javascript:void(0)" class="ct-ig-item">
-        <img src="./resources/img/ig/2.jpg" alt="ig">
-      </a>
-    </div>
-    <div class="col-lg-2 col-md-4 col-sm-4 col-6 p-0">
-      <a href="javascript:void(0)" class="ct-ig-item">
-        <img src="./resources/img/ig/3.jpg" alt="ig">
-      </a>
-    </div>
-    <div class="col-lg-2 col-md-4 col-sm-4 col-6 p-0">
-      <a href="javascript:void(0)" class="ct-ig-item">
-        <img src="./resources/img/ig/4.jpg" alt="ig">
-      </a>
-    </div>
-    <div class="col-lg-2 col-md-4 col-sm-4 col-6 p-0">
-      <a href="javascript:void(0)" class="ct-ig-item">
-        <img src="./resources/img/ig/5.jpg" alt="ig">
-      </a>
-    </div>
-    <div class="col-lg-2 col-md-4 col-sm-4 col-6 p-0">
-      <a href="javascript:void(0)" class="ct-ig-item">
-        <img src="./resources/img/ig/6.jpg" alt="ig">
-      </a>
-    </div>
-  </div>
-  <!-- Instagram End -->
-
+ 
+ 
   <!-- Footer Start -->
   <footer class="ct-footer footer-2">
-    <div class="container">
-      <div class="footer-widget">
-        <ul class="social-media">
-          <li> <a href="javascript:void(0)"> <i class="fab fa-facebook-f"></i> </a> </li>
-          <li> <a href="javascript:void(0)"> <i class="fab fa-twitter"></i> </a> </li>
-          <li> <a href="javascript:void(0)"> <i class="fab fa-pinterest-p"></i> </a> </li>
-          <li> <a href="javascript:void(0)"> <i class="fab fa-linkedin-in"></i> </a> </li>
-        </ul>
-      </div>
-      <div class="footer-widget">
-        <ul>
-          <li> <a href="javascript:void(0)">Breakfast</a> </li>
-          <li> <a href="javascript:void(0)">Desserts</a> </li>
-          <li> <a href="javascript:void(0)">Dinner</a> </li>
-          <li> <a href="javascript:void(0)">Dairy</a> </li>
-        </ul>
-      </div>
-      <div class="footer-bottom">
-        <div class="container">
-          <p class="m-0">&copy; Copyright 2020 - <a href="javascript:void(0)">AndroThemes</a> All Rights Reserved.</p>
-        </div>
-      </div>
-    </div>
+  
+  
+   <div class="row align-items-center mt-70">
+                <!-- Single Cool Fact -->
+                <div class="col-12 col-sm-6 col-lg-3">
+                    <div class="single-cool-fact">
+                        <img src="./resources/image/core-img/salad.png" alt="">
+                        <h3><span class="counter">1287</span></h3>
+                        <h6>Recipe</h6>
+                    </div>
+                </div>
+
+                <!-- Single Cool Fact -->
+                <div class="col-12 col-sm-6 col-lg-3">
+                    <div class="single-cool-fact">
+                        <img src="./resources/image/core-img/hamburger.png" alt="">
+                        <h3><span class="counter">25</span></h3>
+                        <h6>Chef Recipe</h6>
+                    </div>
+                </div>
+
+                <!-- Single Cool Fact -->
+                <div class="col-12 col-sm-6 col-lg-3">
+                    <div class="single-cool-fact">
+                        <img src="./resources/image/core-img/rib.png" alt="">
+                        <h3><span class="counter">471</span></h3>
+                        <h6>Class</h6>
+                    </div>
+                </div>
+
+                <!-- Single Cool Fact -->
+                <div class="col-12 col-sm-6 col-lg-3">
+                    <div class="single-cool-fact">
+                        <img src="./resources/image/core-img/pancake.png" alt="">
+                        <h3><span class="counter">326</span></h3>
+                        <h6>Affiliates</h6>
+                    </div>
+                </div>
+            </div>
+  
+    
+    
   </footer>
   <!-- Footer End -->
+
+  
   
   </app-footer1>
   
