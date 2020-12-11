@@ -119,7 +119,7 @@
     <div class="row">
       <div class="col-lg-8 mb-4">
         <h3>레시피 등록</h3>
-        <br/>
+        <br/>ㄹ
         <form name="sentMessage" id="contactForm" novalidate>
           <div class="control-group form-group">
             <div class="controls">

@@ -244,30 +244,60 @@
 <!-- Login FormStart -->
   <section class="section auth-section bg-cover" style="background-image: url('assets/img/bg/3.jpg')">
     <div class="container">
-      <form class="auth-form light-bg" method="post" style="background-image: url('assets/img/bg/5.jpg')">
+      <form class="auth-form light-bg" action = "register" method="post" style="background-image: url('assets/img/bg/5.jpg')">
         <h1>Sign Up</h1>
         <div class="form-group">
-          <label>Username</label>
-          <input type="text" class="form-control" placeholder="Username" name="username" value="">
+          <label>MEM_NO</label>
+          <input type="text" class="form-control" placeholder="Username" name="MEM_NO" value="">
         </div>
         <div class="form-group">
-          <label>Email</label>
-          <input type="email" class="form-control" placeholder="Email Address" name="email" value="">
+          <label>Username</label>
+          <input type="text" class="form-control" placeholder="Username" name="MEM_NAME" value="">
+        </div>
+        <div class="form-group">
+          <label>Nickname</label>
+          <input type="text" class="form-control" placeholder="Nickname" name="MEM_NICKNAME" value="">
+        </div>
+        <div class="form-group">
+          <label>ID</label>
+          <input type="text" class="form-control" placeholder="ID" name="MEM_ID" value="">
         </div>
         <div class="form-group">
           <label>Password</label>
-          <input type="password" class="form-control" placeholder="Password" name="password" value="">
+          <input type="password" class="form-control" placeholder="Password" name="MEM_PWD" value="">
         </div>
+        <div class="form-group">
+          <label>주민번호</label>
+          <input type="text" class="form-control" placeholder="주민번호" name="MEM_JUMINNUM" value="">
+        </div>        
+        <div class="form-group">
+          <label>Email</label>
+          <input type="email" class="form-control" placeholder="Email Address" name="MEM_EMAIL" value="">
+        </div>
+        <div class="form-group">
+          <label>핸드폰번호</label>
+          <input type="text" class="form-control" placeholder="핸드폰번호" name="MEM_PHONE" value="">
+        </div>        
+        <div class="form-group">
+          <label>MEM_GRADE_NO</label>
+          <input type="text" class="form-control" placeholder="MEM_GRADE_NO" name="MEM_GRADE_NO" value="">
+        </div>
+        <div class="form-group">
+          <label>KIND_TAG_NO</label>
+          <input type="text" class="form-control" placeholder="KIND_TAG_NO" name="KIND_TAG_NO" value="">
+        </div>
+
+
         <div class="auth-controls form-group">
           <div class="custom-control custom-checkbox">
             <input type="checkbox" class="custom-control-input" id="rememberMe">
-            <label class="custom-control-label fw-400" for="rememberMe">Agree to our <a href="signup" class="btn-link">terms & conditions</a> </label>
+            <label class="custom-control-label fw-400" for="rememberMe">회원가입 규정에 <a href="signup" class="btn-link">동의합니다.</a> </label>
           </div>
         </div>
         <div class="form-group">
-          <button type="button" class="btn-custom primary btn-block">Sign Up</button>
+          <button type="submit" class="btn-custom primary btn-block">Sign Up</button>
         </div>
-        <p class="form-group text-center">Already have an account? <a href="login" class="btn-link">Login</a> </p>
+        <p class="form-group text-center">계정이 있으십니까? <a href="login" class="btn-link">Login</a> </p>
       </form>
     </div>
   </section>

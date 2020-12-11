@@ -265,7 +265,7 @@
                     <!--sidebar menu-->
                     <ul class="list-unstyled sidebar-menu pl-md-2 pr-md-0">
                         <li>
-                            <a class="sidebar-item active d-flex justify-content-between align-items-center" href="Mypage2">
+                            <a class="sidebar-item active d-flex justify-content-between align-items-center" href="Mypage">
                                 마이페이지
                                 <span class="fas fa-user"></span>
                             </a>
@@ -494,11 +494,19 @@
                                 <div class="tab-pane fade" id="pills-profile" role="tabpanel" aria-labelledby="pills-profile-tab">
                                     <div class="p-3 border mb-3">
                                         <a class="position-absolute" style="right: 25px" href="info_change" data-toggle="tooltip" data-placement="bottom" title="" data-original-title="Edit profile"><i class="fas fa-cog"></i></a>
-                                        <h3>김뫄뫄(아래에 회원정보 띄우기)</h3>
-                                        <p><b>Jobs:</b> Writter</p>
-                                        <p><b>About:</b> Hello my name is Jenifer, My passion is writting. I hope you enjoy with my article.</p>
-                                        <p><b>Address:</b> Street 12 vo 05, California, United States</p>
-                                        <p><b>Phone:</b> +1 987654321</p>
+                                        <h3>"${MypageProfile.MEM_ID}"님의 정보입니다.</h3>
+                                        
+                                        
+										
+										<p><b>아이디: </b>${MypageProfile.MEM_ID}</p>
+										<p><b>비밀번호: </b>${MypageProfile.MEM_PWD}</p>
+										<p><b>이름: </b>${MypageProfile.MEM_NAME}</p>
+										<p><b>닉네임: </b>${MypageProfile.MEM_NICKNAME}</p>
+										<p><b>주민번호: </b>${MypageProfile.MEM_JUMINNUM}</p>
+										<p><b>이메일: </b>${MypageProfile.MEM_EMAIL}</p>
+										<p><b>핸드폰번호: </b>${MypageProfile.MEM_PHONE}</p>									
+										<p><b>주소???: </b>${MypageProfile.MEM_PHONE}</p>
+
                                         
                                     </div>
                                 </div>
