@@ -4,34 +4,24 @@
 <html lang="en">
 <head>
   <meta charset="utf-8">
-  <title>채팅하기</title>
+  <title>마이페이지</title>
 <!--   <base href=""> -->
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <link rel="icon" type="image/x-icon" href="./resources/img/favicon.ico">
   
-<!-- 채팅 추가 -->  
-<link href="/maxcdn.bootstrapcdn.com/bootstrap/4.1.1/css/bootstrap.min.css" rel="stylesheet" id="bootstrap-css">
-<script src="//maxcdn.bootstrapcdn.com/bootstrap/4.1.1/js/bootstrap.min.js"></script>
-<script src="//cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
-<link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.css" type="text/css" rel="stylesheet">
 
-<link rel="stylesheet" type="text/css" href="./resources/css/chat_us2.css" media="all" />
-
-<script>
-$(document).ready(function(){
-	$('#action_menu_btn').click(function(){
-		$('.action_menu').toggle();
-	});
-		});
-</script>
-
-<!-- 채팅 추가끝 -->
 
 <link rel="stylesheet" type="text/css" href="./resources/css/header.css" media="all" />
 <link rel="stylesheet" type="text/css" href="./resources/css/main.css" media="all" />
 <link rel="stylesheet" type="text/css" href="./resources/css/style.css" media="all" />
 
 
+<!-- 추가 -->
+<link href="//maxcdn.bootstrapcdn.com/bootstrap/3.3.0/css/bootstrap.min.css" rel="stylesheet" id="bootstrap-css">
+<script src="//maxcdn.bootstrapcdn.com/bootstrap/3.3.0/js/bootstrap.min.js"></script>
+<script src="//code.jquery.com/jquery-1.11.1.min.js"></script>
+<link rel="stylesheet" type="text/css" href="./resources/css/Mypage_chef.css" media="all" />
+<!------ Include the above in your HEAD tag ---------->
  
 
 <!-- 
@@ -261,117 +251,106 @@ $(document).ready(function(){
  </app-header2>
 
 
+<!-- 마이페이지 Start -->
 
-
-<!-- Chat Start -->
 <div class="container">
-<h3 class=" text-center">고객센터 챗봇</h3>
-<div class="messaging">
-      <div class="inbox_msg">
-        <div class="inbox_people">
-          <div class="headind_srch">
-            <div class="recent_heading">
-              <h4>Recent</h4>
+    <div class="row profile">
+		<div class="col-md-3">
+			<div class="profile-sidebar">
+				<!-- SIDEBAR USERPIC -->
+				<div class="profile-userpic">
+					<img src="https://cdn.icon-icons.com/icons2/1904/PNG/512/profile_121261.png" class="img-responsive" alt="">
+				</div>
+				<!-- END SIDEBAR USERPIC -->
+				<!-- SIDEBAR USER TITLE -->
+				<div class="profile-usertitle">
+					<div class="profile-usertitle-name">
+						김쉐프
+					</div>
+					<div class="profile-usertitle-job">
+						한식/양식 전문
+					</div>
+				</div>
+				<!-- END SIDEBAR USER TITLE -->
+				<!-- SIDEBAR BUTTONS -->
+				<div class="profile-userbuttons">
+					<button type="button" class="btn btn-success btn-sm">구독</button>
+					<button type="button" class="btn btn-danger btn-sm">레시피보기</button>
+				</div>
+				<!-- END SIDEBAR BUTTONS -->
+				<!-- SIDEBAR MENU -->
+				<div class="profile-usermenu">
+					<ul class="nav">
+						<li class="active">
+							<a href="#">
+							<i class="glyphicon glyphicon-home"></i>
+							      회원방문기록_</a>
+						</li>
+						<li>
+							<a href="#">
+							<i class="glyphicon glyphicon-user"></i>
+							      쉐프정보수정_</a>
+						</li>
+						<li>
+							<a href="#">
+							<i class="glyphicon glyphicon-ok"></i>
+							      코멘트보기_____   </a>
+						</li>
+						<li>
+							<a href="#">
+							<i class="glyphicon glyphicon-flag"></i>
+							      고객센터_</a>
+						</li>
+					</ul>
+				</div>
+				<!-- END MENU -->
+			</div>
+		</div>
+		<div class="col-md-9">
+            <div class="profile-content">
+			   쉐프정보 내용들.
             </div>
-            <div class="srch_bar">
-              <div class="stylish-input-group">
-                <input type="text" class="search-bar"  placeholder="Search" >
-                <span class="input-group-addon">
-                <button type="button"> <i class="fa fa-search" aria-hidden="true"></i> </button>
-                </span> </div>
-            </div>
-          </div>
-          <div class="inbox_chat">
-            <div class="chat_list active_chat">
-              <div class="chat_people">
-                <div class="chat_img"> <img src="https://i.pinimg.com/736x/68/a6/70/68a670b78e9c71abb06b1a14ebb44afc.jpg" alt="sunil"> </div>
-                <div class="chat_ib">
-                  <h5>고객센터 챗봇 <span class="chat_date">Dec 25</span></h5>
-                  <p>회원가입 방법은 다음과 같습니다...</p>
-                </div>
-              </div>
-            </div>
-            <div class="chat_list">
-              <div class="chat_people">
-                <div class="chat_img"> <img src="https://ptetutorials.com/images/user-profile.png" alt="sunil"> </div>
-                <div class="chat_ib">
-                  <h5>김뫄뫄 <span class="chat_date">Dec 25</span></h5>
-                  <p>채팅 블라블라.....</p>
-                </div>
-              </div>
-            </div>
+		</div>
+	</div>
+</div>
 
-          </div>
-        </div>
-        <div class="mesgs">
-          <div class="msg_history">
-            <div class="incoming_msg">
-              <div class="incoming_msg_img"> <img src="https://i.pinimg.com/736x/68/a6/70/68a670b78e9c71abb06b1a14ebb44afc.jpg" alt="sunil"> </div>
-              <div class="received_msg">
-                <div class="received_withd_msg">
-                  <p>고객센터로 연락주셔서 감사합니다. 성심성의껏 답변해드릴께요.</p>
-                  <span class="time_date"> 11:01 AM    |    June 9</span></div>
-              </div>
-            </div>
-            <div class="outgoing_msg">
-              <div class="sent_msg">
-                <p>안녕?</p>
-                <span class="time_date"> 11:01 AM    |    June 9</span> </div>
-            </div>
-            <div class="incoming_msg">
-              <div class="incoming_msg_img"> <img src="https://i.pinimg.com/736x/68/a6/70/68a670b78e9c71abb06b1a14ebb44afc.jpg" alt="sunil"> </div>
-              <div class="received_msg">
-                <div class="received_withd_msg">
-                  <span class="time_date"> 11:01 AM    |    Yesterday</span></div>
-              </div>
-            </div>
-            <div class="outgoing_msg">
-              <div class="sent_msg">
-                <p>회원가입은 어떻게 해?</p>
-                <span class="time_date"> 11:01 AM    |    Today</span> </div>
-            </div>
-            <div class="incoming_msg">
-              <div class="incoming_msg_img"> <img src="https://i.pinimg.com/736x/68/a6/70/68a670b78e9c71abb06b1a14ebb44afc.jpg" alt="sunil"> </div>
-              <div class="received_msg">
-                <div class="received_withd_msg">
-                  <p>회원가입 방법은 다음과 같습니다. 1) 위쪽 상단의 로그인 버튼을 누른다. 2) 회원가입을 누른다. 3) 정보를 쓴다. 4) 가입완료</p>
-                  <span class="time_date"> 11:01 AM    |    Today</span></div>
-              </div>
-            </div>
-          </div>
-          <div class="type_msg">
-            <div class="input_msg_write">
-              <input type="text" class="write_msg" placeholder="Type a message" />
-              <button class="msg_send_btn" type="button"><i class="fa fa-paper-plane-o" aria-hidden="true"></i></button>
-            </div>
-          </div>
-        </div>
+
+
+
+ 
+  <!--마이페이지 End -->
+
+  
+  
+  
+  
+<!-- Newsletter start  -->
+  <app-footer1>
+  
+  
+  																<!--    이미지 변경하고 싶으면 footBackImg_06.png <--여기를 01~06중 골라쓰세요  -->
+  <section class="section light-bg bg-cover" style="background-image:url('./resources/image/main/footBackImg_05.png')">
+  
+  
+    <div class="container">
+      <div class="section-title-wrap section-header text-center">
+        <d1 class="foot_title">Recipe Search</d1>       
       </div>
+
+      <form class="ct-newsletter" method="post">
+        <input type="email" class="form-control" placeholder="Search the recipe" value="">
+        <button type="button" class="btn-custom primary" name="button"> Search <i class="far fa-paper-plane"></i> </button>
+      </form>
+
     </div>
-  </div> 
-  <!--Chat End -->
- 
- 
-  
-  
-
- 
- 
-<!--     ------------------   footer 영역    -------------------        -->
-
-<!-- Newsletter start -->
-  <section class="section light-bg bg-cover" style=" background-image:url('./resources/image/main/footBackImg_03.jpg')">
-
-
   </section>
-  <!-- Newsletter End -->
-  
-
+ 
+ 
   <!-- Footer Start -->
   <footer class="ct-footer footer-2">
   
   
-  	<div class="raw align-items-center mt-70">
+   <div class="row align-items-center mt-70">
                 <!-- Single Cool Fact -->
                 <div class="col-12 col-sm-6 col-lg-3">
                     <div class="single-cool-fact">
@@ -407,30 +386,12 @@ $(document).ready(function(){
                         <h6>Affiliates</h6>
                     </div>
                 </div>
-                
-                
-                <!-- Single Cool Fact -->
-                <div class="col-12 col-sm-6 col-lg-3">
-                    <div class="single-cool-fact">
-                    <a href="mailto:wandering_star@naver.com">
-                        <img src="./resources/image/core-img/mail.png" alt="">
-                    </a>                    
-                        <h6>쉐프등업</h6>
-                    </div>
-                </div>
-                
-                
-                
-                
-                
-                
-                
             </div>
   
     
+    
   </footer>
   <!-- Footer End -->
-  
 
   
   
