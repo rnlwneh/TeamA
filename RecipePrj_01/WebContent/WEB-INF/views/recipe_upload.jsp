@@ -507,7 +507,7 @@ function addRecipeMaterial(group_idx, init_json, prev_step){
 			
 			
 					<div id="divMainPhotoBox" is_over="0">
-						<img id="write_photo" onclick="document.getElementById('multifile_1').click();" src="./resources/image/class_write_img/photo_icon.png"
+						<img id="write_photo" onclick="document.getElementById('q_main_file').click();" src="./resources/image/class_write_img/photo_icon.png"
 							style=" cursor: pointer">
 					</div> 
 										
@@ -753,60 +753,36 @@ function addRecipeMaterial(group_idx, init_json, prev_step){
 
 						<t1>종류</t1>						
 						<select name="tag_info_1"  text="종류">
-							<option value="info1">밑반찬</option>
-							<option value="info2">메인반찬</option>
-							<option value="info3">국/탕/찌개</option>
-							<option value="info4">면/만두</option>
-							<option value="info5">밥/죽/떡</option>
-							<option value="info6">김치/젓갈/장류</option>
-							<option value="info7">양념/소스/잼</option>
-							<option value="info8">양식</option>
-							<option value="info9">빵/과자/디저트</option>
-							<option value="info10">차/음료/술</option>
-							<option value="info10">기타</option>
+							<option value="info1">한식</option>
+							<option value="info2">양식</option>
+							<option value="info3">일식</option>
+							<option value="info4">중식</option>
+							<option value="info5">아시안</option>
+							<option value="info6">Vegan</option>
+							<option value="info7">Quick Food</option>
+							<option value="info8">Dessert</option>
+							<option value="info9">기타</option>
 						</select>
 
 
-						<t1>상황</t1>						
-						<select name="tag_info_2"  text="상황">
-							<option value="main_info1">일상</option>
-							<option value="main_info2">초스피드</option>
-							<option value="main_info3">손님접대</option>	
-							<option value="main_info4">술안주</option>
-							<option value="main_info5">다이어트</option>
-							<option value="main_info6">간식</option>
-							<option value="main_info7">야식</option>
-							<option value="main_info8">이유식</option>
-							<option value="main_info9">기타</option>				
+						<t1>메인</t1>						
+						<select name="tag_info_2"  text="메인재료">
+							<option value="main_info1">돼지고기</option>
+							<option value="main_info2">소고기</option>
+							<option value="main_info3">닭고기</option>
+							<option value="main_info4">해산물</option>					
+							<option value="main_info5">채소/과일류</option>					
+							<option value="main_info6">기타</option>					
 						</select>
 						
-						<t1>메인재료</t1>						
-						<select name="tag_info_3"  text="메인재료">
-							<option value="second_info1">소고기</option>
-							<option value="second_info2">돼지고기</option>
-							<option value="second_info3">닭고기</option>
-							<option value="second_info4">육류</option>	
-							<option value="second_info5">채소류/과일류</option>	
-							<option value="second_info6">해물류</option>	
-							<option value="second_info7">달걀/유제품</option>	
-							<option value="second_info8">가공식품류</option>	
-							<option value="second_info9">쌀/곡류/밀가루</option>	
-							<option value="second_info10">건어물류</option>	
-							<option value="second_info11">기타</option>						
-						</select>
-						
-						<t1>조리방법</t1>						
-						<select name="tag_info_4"  text="조리방법">
-							<option value="second_info1">볶음/조림</option>
-							<option value="second_info2">끓이기</option>
-							<option value="second_info3">굽기/부침</option>
-							<option value="second_info4">무침/비빔</option>	
-							<option value="second_info5">찜</option>	
-							<option value="second_info6">절임</option>	
-							<option value="second_info7">튀김</option>	
-							<option value="second_info8">삶기/데치기</option>	
-							<option value="second_info9">회</option>	
-							<option value="second_info10">기타</option>					
+						<t1>테마별</t1>						
+						<select name="tag_info_3"  text="테마별">
+							<option value="second_info1">일상</option>
+							<option value="second_info2">손님접대</option>
+							<option value="second_info3">술안주</option>					
+							<option value="second_info4">다이어트</option>					
+							<option value="second_info5">간식</option>					
+							<option value="second_info6">기타</option>					
 						</select>
 
 					</div>
@@ -862,33 +838,21 @@ function addRecipeMaterial(group_idx, init_json, prev_step){
 
 
   
-<!-- Newsletter start  -->
-  <app-footer1>
-  
-  
-  																<!--    이미지 변경하고 싶으면 footBackImg_06.png <--여기를 01~06중 골라쓰세요  -->
-  <section class="section light-bg bg-cover" style="background-image:url('./resources/image/main/footBackImg_05.png')">
-  
-  
-    <div class="container">
-      <div class="section-title-wrap section-header text-center">
-        <d1 class="foot_title">Recipe Search</d1>       
-      </div>
+<!--     ------------------   footer 영역    -------------------        -->
 
-      <form class="ct-newsletter" method="post">
-        <input type="email" class="form-control" placeholder="Search the recipe" value="">
-        <button type="button" class="btn-custom primary" name="button"> Search <i class="far fa-paper-plane"></i> </button>
-      </form>
+<!-- Newsletter start -->
+  <section class="section light-bg bg-cover" style=" background-image:url('./resources/image/main/footBackImg_03.jpg')">
 
-    </div>
+
   </section>
- 
- 
+  <!-- Newsletter End -->
+  
+
   <!-- Footer Start -->
   <footer class="ct-footer footer-2">
   
   
-   <div class="row align-items-center mt-70">
+  	<div class="raw align-items-center mt-70">
                 <!-- Single Cool Fact -->
                 <div class="col-12 col-sm-6 col-lg-3">
                     <div class="single-cool-fact">
@@ -924,12 +888,30 @@ function addRecipeMaterial(group_idx, init_json, prev_step){
                         <h6>Affiliates</h6>
                     </div>
                 </div>
+                
+                
+                <!-- Single Cool Fact -->
+                <div class="col-12 col-sm-6 col-lg-3">
+                    <div class="single-cool-fact">
+                    <a href="mailto:wandering_star@naver.com">
+                        <img src="./resources/image/core-img/mail.png" alt="">
+                    </a>                    
+                        <h6>쉐프등업</h6>
+                    </div>
+                </div>
+                
+                
+                
+                
+                
+                
+                
             </div>
   
     
-    
   </footer>
   <!-- Footer End -->
+  
 
   
   

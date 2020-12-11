@@ -27,6 +27,16 @@
 <link rel="stylesheet" type="text/css" href="./resources/css/plugins/animate.min.css" media="all" />
 
 
+<link rel="stylesheet" type="text/css" href="${pageContext.request.contextPath}/resources/css/plugins/recipe_upload_magnific-popup.css" media="all" />
+<link rel="stylesheet" type="text/css" href="${pageContext.request.contextPath}/resources/css/plugins/recipe_upload_slick.css" media="all" />
+<link rel="stylesheet" type="text/css" href="${pageContext.request.contextPath}/resources/css/plugins/recipe_upload_slick-theme.css" media="all" />
+
+<!-- 
+<link rel="stylesheet" type="text/css" href="./resources/css/primary-skin.css" media="all" />
+<link rel="stylesheet" type="text/css" href="./resources/css/plugins/bootstrap.min.css" media="all" /> 
+<link rel="stylesheet" type="text/css" href="./resources/css/plugins/animate.min.css" media="all" />
+
+
 <link rel="stylesheet" type="text/css" href="./resources/css/plugins/magnific-popup.css" media="all" />
 <link rel="stylesheet" type="text/css" href="./resources/css/plugins/slick.css" media="all" />
 <link rel="stylesheet" type="text/css" href="./resources/css/plugins/slick-theme.css" media="all" />
@@ -358,10 +368,11 @@ $(function(){
 					</div>
 					
 			
-					<div id="divMainPhotoBox" is_over="0" align="right">
-						<img id="write_photo" onclick="document.getElementById('multifile_1').click();" src="${pageContext.request.contextPath}/resources/img/pic_none4.gif"
-							style=" cursor: pointer; float: right;">
-					</div>
+					<div id="divMainPhotoBox" is_over="0">
+					  <input type="file" name="file" id="multifile_1" file_gubun="step" style="display:none;" multiple="">
+						<img id="write_photo" onclick="document.getElementById('multifile_1').click();" src="./resources/image/class_write_img/photo_icon.png"
+							style=" cursor: pointer">
+					</div> 
 				</div>
 				
 				
@@ -397,10 +408,16 @@ $(function(){
 						name="cok_video_src" id="cok_video_src" value="">
 						
 						
+<<<<<<< HEAD
+						<textarea name="cok_video_url" class="cok_video_url"  prev_url=""
+						placeholder="조리법 영상 주소를 입력하세요.(Youtube,네이버tvcast,다음tvpot 만 가능) 예)http://youtu.be/lA0Bxo3IZmM"
+						style=" resize: none;"></textarea>
+=======
 						<textarea name="cok_video_url" id="cok_video_url"
 						class="form-control step_cont"  prev_url=""
 						placeholder="동영상이 있으면 주소를 입력하세요.(Youtube,네이버tvcast,다음tvpot 만 가능) 예)http://youtu.be/lA0Bxo3IZmM"
 						style="height: 100px; width: 510px; resize: none;"></textarea>
+>>>>>>> refs/remotes/origin/main
 		
 						
 					<div style="position: absolute; left: -3000px">
@@ -645,6 +662,17 @@ $(function(){
 
 						<t1>종류</t1>						
 						<select name="tag_info_1"  text="종류">
+<<<<<<< HEAD
+							<option value="info1">한식</option>
+							<option value="info2">양식</option>
+							<option value="info3">일식</option>
+							<option value="info4">중식</option>
+							<option value="info5">아시안</option>
+							<option value="info6">Vegan</option>
+							<option value="info7">Quick Food</option>
+							<option value="info8">Dessert</option>
+							<option value="info9">기타</option>
+=======
 							<option value="info1">밑반찬</option>
 							<option value="info2">메인반찬</option>
 							<option value="info3">국/탕/찌개</option>
@@ -656,9 +684,20 @@ $(function(){
 							<option value="info9">빵/과자/디저트</option>
 							<option value="info10">차/음료/술</option>
 							<option value="info11">기타</option>
+>>>>>>> refs/remotes/origin/main
 						</select>
 
 
+<<<<<<< HEAD
+						<t1>메인</t1>						
+						<select name="tag_info_2"  text="메인재료">
+							<option value="main_info1">돼지고기</option>
+							<option value="main_info2">소고기</option>
+							<option value="main_info3">닭고기</option>
+							<option value="main_info4">해산물</option>					
+							<option value="main_info5">채소/과일류</option>					
+							<option value="main_info6">기타</option>					
+=======
 						<t1>상황</t1>						
 						<select name="tag_info_2"  text="상황">
 							<option value="situation1">일상</option>
@@ -670,7 +709,19 @@ $(function(){
 							<option value="situation7">야식</option>
 							<option value="situation8">이유식</option>
 							<option value="situation9">기타</option>					
+>>>>>>> refs/remotes/origin/main
 						</select>
+<<<<<<< HEAD
+						
+						<t1>테마별</t1>						
+						<select name="tag_info_3"  text="테마별">
+							<option value="second_info1">일상</option>
+							<option value="second_info2">손님접대</option>
+							<option value="second_info3">술안주</option>					
+							<option value="second_info4">다이어트</option>					
+							<option value="second_info5">간식</option>					
+							<option value="second_info6">기타</option>					
+=======
 
 
 						<t1>메인 재료</t1>						
@@ -701,6 +752,7 @@ $(function(){
 							<option value="method8">삶기/데치기</option>
 							<option value="method9">회</option>	
 							<option value="method10">기타</option>				
+>>>>>>> refs/remotes/origin/main
 						</select>
 
 					</div>
@@ -747,8 +799,16 @@ $(function(){
  
 </form> 
 
+ 
+
+<!--     ------------------   footer 영역    -------------------        -->
+
+<!-- Newsletter start -->
+  <section class="section light-bg bg-cover" style=" background-image:url('./resources/image/main/footBackImg_03.jpg')">
 
 
+<<<<<<< HEAD
+=======
 
   
   
@@ -796,8 +856,12 @@ $(function(){
       </form>
 
     </div>
+>>>>>>> refs/remotes/origin/main
   </section>
   <!-- Newsletter End -->
+<<<<<<< HEAD
+  
+=======
 
   <!-- Instagram Start -->
   <div class="row no-gutters">
@@ -833,9 +897,67 @@ $(function(){
     </div>
   </div>
   <!-- Instagram End -->
+>>>>>>> refs/remotes/origin/main
 
   <!-- Footer Start -->
   <footer class="ct-footer footer-2">
+<<<<<<< HEAD
+  
+  
+  	<div class="raw align-items-center mt-70">
+                <!-- Single Cool Fact -->
+                <div class="col-12 col-sm-6 col-lg-3">
+                    <div class="single-cool-fact">
+                        <img src="./resources/image/core-img/salad.png" alt="">
+                        <h3><span class="counter">1287</span></h3>
+                        <h6>Recipe</h6>
+                    </div>
+                </div>
+
+                <!-- Single Cool Fact -->
+                <div class="col-12 col-sm-6 col-lg-3">
+                    <div class="single-cool-fact">
+                        <img src="./resources/image/core-img/hamburger.png" alt="">
+                        <h3><span class="counter">25</span></h3>
+                        <h6>Chef Recipe</h6>
+                    </div>
+                </div>
+
+                <!-- Single Cool Fact -->
+                <div class="col-12 col-sm-6 col-lg-3">
+                    <div class="single-cool-fact">
+                        <img src="./resources/image/core-img/rib.png" alt="">
+                        <h3><span class="counter">471</span></h3>
+                        <h6>Class</h6>
+                    </div>
+                </div>
+
+                <!-- Single Cool Fact -->
+                <div class="col-12 col-sm-6 col-lg-3">
+                    <div class="single-cool-fact">
+                        <img src="./resources/image/core-img/pancake.png" alt="">
+                        <h3><span class="counter">326</span></h3>
+                        <h6>Affiliates</h6>
+                    </div>
+                </div>
+                
+                
+                <!-- Single Cool Fact -->
+                <div class="col-12 col-sm-6 col-lg-3">
+                    <div class="single-cool-fact">
+                    <a href="mailto:wandering_star@naver.com">
+                        <img src="./resources/image/core-img/mail.png" alt="">
+                    </a>                    
+                        <h6>쉐프등업</h6>
+                    </div>
+                </div>
+                
+                
+                
+            </div>
+  
+    
+=======
     <div class="container">
       <div class="footer-widget">
         <ul class="social-media">
@@ -859,10 +981,14 @@ $(function(){
         </div>
       </div>
     </div>
+>>>>>>> refs/remotes/origin/main
   </footer>
   <!-- Footer End -->
+<<<<<<< HEAD
+=======
 
 
+>>>>>>> refs/remotes/origin/main
   
   
   
