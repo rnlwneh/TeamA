@@ -355,8 +355,11 @@ $(document).ready(function(){
   
   
 
- 
- 
+<!-- Newsletter start  -->
+  <app-footer1>
+  
+
+
 <!--     ------------------   footer 영역    -------------------        -->
 
 <!-- Newsletter start -->
@@ -435,6 +438,10 @@ $(document).ready(function(){
   
   
   </app-footer1>
+  
+ 
+
+
 
 
 
@@ -443,3 +450,4 @@ $(document).ready(function(){
  
 </body>
 </html>
+

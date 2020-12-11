@@ -4,7 +4,7 @@
 <html lang="en">
 <head>
   <meta charset="utf-8">
-  <title>blogMain_masonry</title>
+  <title>Myrecipe_list</title>
 <!--   <base href=""> -->
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <link rel="icon" type="image/x-icon" href="./resources/img/favicon.ico">
@@ -510,30 +510,23 @@
 <!-- Newsletter start  -->
   <app-footer1>
   
-  
-  																<!--    이미지 변경하고 싶으면 footBackImg_06.png <--여기를 01~06중 골라쓰세요  -->
-  <section class="section light-bg bg-cover" style="background-image:url('./resources/image/main/footBackImg_05.png')">
-  
-  
-    <div class="container">
-      <div class="section-title-wrap section-header text-center">
-        <d1 class="foot_title">Recipe Search</d1>       
-      </div>
 
-      <form class="ct-newsletter" method="post">
-        <input type="email" class="form-control" placeholder="Search the recipe" value="">
-        <button type="button" class="btn-custom primary" name="button"> Search <i class="far fa-paper-plane"></i> </button>
-      </form>
 
-    </div>
+<!--     ------------------   footer 영역    -------------------        -->
+
+<!-- Newsletter start -->
+  <section class="section light-bg bg-cover" style=" background-image:url('./resources/image/main/footBackImg_03.jpg')">
+
+
   </section>
- 
- 
+  <!-- Newsletter End -->
+  
+
   <!-- Footer Start -->
   <footer class="ct-footer footer-2">
   
   
-   <div class="row align-items-center mt-70">
+  	<div class="raw align-items-center mt-70">
                 <!-- Single Cool Fact -->
                 <div class="col-12 col-sm-6 col-lg-3">
                     <div class="single-cool-fact">
@@ -569,18 +562,44 @@
                         <h6>Affiliates</h6>
                     </div>
                 </div>
+                
+                
+                <!-- Single Cool Fact -->
+                <div class="col-12 col-sm-6 col-lg-3">
+                    <div class="single-cool-fact">
+                    <a href="mailto:wandering_star@naver.com">
+                        <img src="./resources/image/core-img/mail.png" alt="">
+                    </a>                    
+                        <h6>쉐프등업</h6>
+                    </div>
+                </div>
+                
+                
+                
+                
+                
+                
+                
             </div>
   
     
-    
   </footer>
   <!-- Footer End -->
+  
 
   
   
   </app-footer1>
   
+ 
+
+
+
+
+
+  
  </app-root> 
  
 </body>
 </html>
+
