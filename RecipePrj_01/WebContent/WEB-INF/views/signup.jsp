@@ -248,15 +248,36 @@
 <!-- Login FormStart -->
   <section class="section auth-section bg-cover" style="background-image: url('assets/img/bg/3.jpg')">
     <div class="container">
+<<<<<<< HEAD
       <form name = "userinput" id="userinput" class="auth-form light-bg" action = "register" method="post" style="background-image: url('assets/img/bg/5.jpg')">
+=======
+      <form class="auth-form light-bg" action = "register" method="post" style="background-image: url('assets/img/bg/5.jpg')">
+>>>>>>> refs/remotes/origin/main
         <h1>Sign Up</h1>
         <div class="form-group">
           <label>MEM_NO</label>
+<<<<<<< HEAD
           <input type="text" class="form-control" placeholder="MEM_NO" name="MEM_NO" value="">
+=======
+          <input type="text" class="form-control" placeholder="Username" name="MEM_NO" value="">
+>>>>>>> refs/remotes/origin/main
         </div>
         <div class="form-group">
+<<<<<<< HEAD
           <label>이름</label>
           <input type="text" class="form-control" placeholder="이름" name="MEM_NAME" value="">
+=======
+          <label>Username</label>
+          <input type="text" class="form-control" placeholder="Username" name="MEM_NAME" value="">
+        </div>
+        <div class="form-group">
+          <label>Nickname</label>
+          <input type="text" class="form-control" placeholder="Nickname" name="MEM_NICKNAME" value="">
+        </div>
+        <div class="form-group">
+          <label>ID</label>
+          <input type="text" class="form-control" placeholder="ID" name="MEM_ID" value="">
+>>>>>>> refs/remotes/origin/main
         </div>
         <div class="form-group">
           <label>별명</label>
@@ -298,13 +319,25 @@
         <div class="auth-controls form-group">
           <div class="custom-control custom-checkbox">
             <input type="checkbox" class="custom-control-input" id="rememberMe">
+<<<<<<< HEAD
             <label class="custom-control-label fw-400" for="rememberMe">회원가입 규정에 <a href="https://kto.visitkorea.or.kr/kor/helpDesk/policy/memberPolicy.kto" onclick="window.open(this.href,'_blank','toolbar=no,scrollbars=yes'); return false;" class="btn-link">동의합니다.</a> </label>
+=======
+            <label class="custom-control-label fw-400" for="rememberMe">회원가입 규정에 <a href="signup" class="btn-link">동의합니다.</a> </label>
+>>>>>>> refs/remotes/origin/main
           </div>
         </div>
         <div class="form-group">
+<<<<<<< HEAD
           <button type="submit" class="btn-custom primary btn-block">sign up</button>
+=======
+          <button type="submit" class="btn-custom primary btn-block">Sign Up</button>
+>>>>>>> refs/remotes/origin/main
         </div>
+<<<<<<< HEAD
         <p class="form-group text-center">계정이 있으십니까? <a href="login" class="btn-link">로그인</a> </p>
+=======
+        <p class="form-group text-center">계정이 있으십니까? <a href="login" class="btn-link">Login</a> </p>
+>>>>>>> refs/remotes/origin/main
       </form>
     </div>
   </section>
@@ -392,10 +425,22 @@
   <!-- Footer End -->
   
 
+<<<<<<< HEAD
+  
+  
+  </app-footer1>
+=======
+>>>>>>> refs/remotes/origin/main
   
   
   </app-footer1>
   
+ 
+
+
+
+
+
   
  </app-root> 
  

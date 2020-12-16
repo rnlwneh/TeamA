@@ -4,8 +4,26 @@
   "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
 
 <mapper namespace="mpp">
+
 	<select id="profile" resultType="kr.co.ikosmo.mvc.vo.MembershipVO">
 	select * from member_info where MEM_NO = 1
 	</select>
 	
+
+	<select id="profile" resultType="kr.co.ikosmo.mvc.vo.MypageVO">
+	
+	select * from member_info where MEM_NO = 1
+	</select>
+	
+	<insert id="signupInsert" parameterType="kr.co.ikosmo.mvc.vo.MypageVO">
+		<![CDATA[
+		INSERT INTO member_info(MEM_NO, MEM_NAME, MEM_NICKNAME, 
+		MEM_ID, MEM_PWD, MEM_JUMINNUM, MEM_EMAIL,MEM_PHONE,MEM_GRADE_NO,KIND_TAG_NO)
+		VALUES(#{MEM_NO},#{MEM_NAME},
+			#{MEM_NICKNAME},#{MEM_ID}, 
+			#{MEM_PWD}, #{MEM_JUMINNUM},#{MEM_EMAIL}, 
+			#{MEM_PHONE},#{MEM_GRADE_NO},#{KIND_TAG_NO})
+		]]>
+	</insert>
+
 </mapper>  
