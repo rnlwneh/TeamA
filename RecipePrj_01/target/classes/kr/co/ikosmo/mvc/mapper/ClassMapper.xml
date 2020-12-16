@@ -1,0 +1,247 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper
+  PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+  "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+  
+  
+  <mapper namespace="class">
+  
+ 
+  
+<resultMap type="classvo" id="classvo">
+<id property="kind_tag_no" column="kind_tag_no" javaType="int"/>
+<id property="material_tag_no" column="material_tag_no" javaType="int"/>
+<id property="theme_tag_no" column="theme_tag_no" javaType="int"/>
+<id property="mem_no" column="mem_no" javaType="int"/>
+<id property="review_no" column="review_no" javaType="int"/>
+<id property="mate_no" column="mate_no" javaType="int"/>
+<id property="step_no" column="step_no" javaType="int"/>
+<result property="class_no" column="class_no" />
+<result property="class_title" column="class_title" />
+<result property="class_thumbnail" column="class_thumbnail" />
+<result property="class_content" column="class_content" />
+<result property="class_intro_video" column="class_intro_video" />
+<result property="class_ingredient_video" column="class_ingredient_video" />
+<result property="class_recipe_video" column="class_recipe_video" />
+<result property="class_price" column="class_price" />
+<result property="class_period" column="class_period" />
+<result property="class_cooktime" column="class_cooktime" />
+<result property="class_price" column="class_price" />
+<result property="class_detail_title" column="class_detail_title" />
+<result property="class_detail_info" column="class_detail_info" />
+<result property="class_info_pic" column="class_info_pic" />
+<result property="class_detail_info" column="class_detail_info" />
+<result property="class_uploadtime" column="class_uploadtime" />
+
+
+
+
+<association property="kindtag" column="kind_tag_no" javaType="kindtagvo">
+		<id property="kind_tag_no" column="kind_tag_no"/>
+		<result property="kind_tag_name" column="kind_tag_name"/>	
+	</association>
+
+
+
+<association property="material" column="material_tag_no" javaType="materialtagvo">
+		<id property="material_tag_no" column="material_tag_no"/>
+		<result property="material_tag_name" column="material_tag_name"/>	
+	</association>
+
+
+<association property="themetag" column="theme_tag_no" javaType="themetagvo">
+		<id property="theme_tag_no" column="theme_tag_no"/>
+		<result property="theme_tag_name" column="theme_tag_name"/>	
+	</association>
+	
+	
+
+<association property="member" column="mem_no" javaType="membervo">
+		<id property="mem_no" column="mem_no"/>
+		<result property="mem_nickname" column="mem_nickname"/>	
+		<result property="mem_pic" column="mem_pic"/>
+	</association>		
+	
+	
+<association property="mate" column="mate_no" javaType="matevo">
+		<id property="mate_no" column="mate_no"/>	
+		<result property="mate_name" column="mate_name"/>
+		<result property="mate_cnt" column="mate_cnt"/>
+	</association>		
+	
+	
+
+<association property="step" column="step_no" javaType="stepvo">
+		<id property="step_no" column="step_no"/>		
+		<result property="step_cnt" column="step_cnt"/>	
+	</association>	
+	
+	
+		
+<association property="review" column="review_no" javaType="reviewvo">
+		<id property="review_no" column="review_no"/>
+		<id property="mem_no" column="mem_no"/>
+		<result property="star_rate" column="star_rate"/>	
+		<result property="review_content" column="review_content"/>
+		<result property="review_date" column="review_date"/>
+		<result property="review_declare" column="review_declare"/>
+	</association>	
+
+
+
+
+</resultMap>
+
+<select id="getClassList"  parameterType="classvo"  resultMap="classvo">
+
+
+
+select 
+
+*
+
+FROM
+        class_info c
+
+ JOIN member_info m
+    ON c.mem_no  = m.mem_no 
+ JOIN kind_tag k
+    ON k.kind_tag_no  = c.kind_tag_no 
+JOIN theme_tag t
+    ON t.theme_tag_no   = c.theme_tag_no  
+JOIN material_tag a
+    ON a.material_tag_no    = c.material_tag_no   
+JOIN review r
+    ON r.review_no    = c.review_no   
+JOIN mate b
+    ON b.mate_no    = c.mate_no
+JOIN step s
+    ON s.step_no    = c.step_no 
+
+ 
+
+</select>
+
+  
+  
+<select id="getClass"  resultMap="classvo" parameterType="classvo">
+
+ <![CDATA[
+
+
+
+select 
+
+c.class_no as class_no , c.mem_no as mem_no , c.class_title as class_title, c.class_thumbnail  as class_thumbnail  ,
+
+c.class_content  as class_content  , c.class_intro_video  as class_intro_video , c.class_recipe_video  as class_recipe_video ,
+
+c.class_price  as class_price  , c.class_period  as class_period  , c.class_cooktime  as class_cooktime , c.mate_no as mate_no ,
+
+c.step_no as step_no , c.class_detail_title  as class_detail_title , c.class_detail_info  as class_detail_info , c.class_info_pic  as class_info_pic ,
+
+c.kind_tag_no  as kind_tag_no , c.theme_tag_no  as theme_tag_no , c.material_tag_no  as material_tag_no ,c.review_no as review_no , c.class_uploadtime  as class_uploadtime  ,
+
+
+m.mem_id  as mem_id  , m.mem_nickname  as mem_nickname  , m.mem_pic  as mem_pic  ,
+
+
+k.kind_tag_name  as kind_tag_name, t.theme_tag_name as theme_tag_name, a.material_tag_name as material_tag_name, 
+
+
+r.star_rate  as star_rate  , r.review_content   as review_content  , r.review_date  as review_date,  
+
+
+replace( b.mate_name ,',', '<p>') as  mate_name,
+
+replace(  b.mate_cnt ,',', '<p>') as   mate_cnt,
+
+replace(  s.step_cnt ,',', '</p><d>') as   step_cnt
+
+
+FROM
+        class_info c
+
+ JOIN member_info m
+    ON c.mem_no  = m.mem_no 
+    
+ JOIN kind_tag k
+    ON k.kind_tag_no  = c.kind_tag_no 
+    
+JOIN theme_tag t
+    ON t.theme_tag_no   = c.theme_tag_no  
+    
+JOIN material_tag a
+    ON a.material_tag_no    = c.material_tag_no   
+    
+JOIN review r
+    ON r.review_no    = c.review_no  
+     
+JOIN mate b
+    ON b.mate_no    = c.mate_no
+    
+JOIN step s
+    ON s.step_no    = c.step_no  
+
+        
+    
+where c.class_no=#{class_no, jdbcType=INTEGER} 
+ 			
+								
+		
+   ]]>		
+		
+		
+				
+				
+</select>
+
+
+
+
+
+
+  
+<select id="getFood"  resultMap="classvo" parameterType="classvo">
+
+
+
+select 
+
+*
+
+FROM
+        class_info c
+
+ JOIN member_info m
+    ON c.mem_no  = m.mem_no 
+ JOIN kind_tag k
+    ON k.kind_tag_no  = c.kind_tag_no 
+JOIN theme_tag t
+    ON t.theme_tag_no   = c.theme_tag_no  
+JOIN material_tag a
+    ON a.material_tag_no    = c.material_tag_no   
+JOIN review r
+    ON r.review_no    = c.review_no   
+JOIN mate b
+    ON b.mate_no    = c.mate_no
+JOIN step s
+    ON s.step_no    = c.step_no  
+ 
+
+ 
+ where c.kind_tag_no = #{kind_tag_no, jdbcType=INTEGER}  
+				
+				
+								
+				
+</select>
+
+
+
+
+ 
+ 
+  
+  </mapper>
+

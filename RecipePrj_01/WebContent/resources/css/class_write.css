@@ -50,22 +50,38 @@ ul{
    
    
    
-#divMainPhotoBox {
+#divMainPhotoBox, #loadImg,#deloadImg {
 	
 	float: right;
 	
 }
 
    
-#write_photo{
+#write_photo, #loadImg,#deloadImg{
 		
 	border-radius: 25px;
-	width: 230px; 
-	height: 230px;
+	width: 240px; 
+	height: 240px;
 	
 }   
-   
+
+
+
+#file_btn,#defile_btn{
+	
+	background: transparent;
+	border: 1px solid transparent;
+	
+}
+
  
+#deloadImg{
+	
+	z-index:100;
+	margin: -250px 0 0 0;
+	
+}
+  
  #divVideoPhotoBox{
  
  display: inline-block;
@@ -129,7 +145,7 @@ ul{
 }
 
 
-.cont_line textarea{
+.cont_line textarea, #step_cnt{
 	
 	height: 150px;
     padding: 8px 15px;
@@ -142,10 +158,11 @@ ul{
     border-color: #e5e1dc;
     background-color: #F5F5F5;
     letter-spacing: 0.1px;
-    font-size: 15px;
-	
+    font-size: 15px;	
 	
 }
+
+
 
 
 
@@ -181,6 +198,7 @@ ul{
 
 
 
+
 button, input, select, textarea {
     font-family: inherit;
     font-size: inherit;
@@ -196,7 +214,7 @@ button, input, optgroup, select, textarea {
 }
 
 
-#cok_intro {
+.cok_intro {
 	
 	height: 150px;
     padding: 8px 15px;
@@ -254,12 +272,12 @@ button, input, optgroup, select, textarea {
 }
 
 
-#cok_time option:hover {
+.cok_time option:hover {
   color: red;
 }
 
 
-#cok_time option:focus {
+.cok_time option:focus {
   border-color: #aaa;
   box-shadow: 0 0 1px 3px rgba(59, 153, 252, 0.7);
   box-shadow: 0 0 0 3px -moz-mac-focusring;
@@ -267,7 +285,7 @@ button, input, optgroup, select, textarea {
   outline: none;
 }
 
-#cok_time option:disabled {
+.cok_time option:disabled {
   opacity: 0.5;
 }
 
@@ -305,6 +323,13 @@ t3{
 }
 
 
+
+
+
+
+
+
+
 /*  ------------------------- 재료 등록 ----------------------------  */
 
 
@@ -315,9 +340,9 @@ li{
 
 
 
-#cok_intro_title{
+.cok_intro_title{
 	
-	height: 80px;
+	height: 50px;
     padding: 8px 15px;
     border-radius: 8px;
     border: 1px solid #efefef;
@@ -335,7 +360,7 @@ li{
 
 
 
-#info_cont_area{
+.info_cont_area{
 	
 	height: 250px;
     padding: 8px 15px;
@@ -351,9 +376,82 @@ li{
     font-size: 15px;
     display: inline-block;
 	
+}/* 
+
+
+.recipeForm input[type="text"]{
+	
+	height: 250px;
+    padding: 8px 15px;
+    border-radius: 8px;
+    border: 1px solid #efefef;
+    width: 100%;
+    max-width: 670px;
+    min-height: 250px;
+    color: #6e6e6e;
+    border-color: #e5e1dc;
+    background-color: #F5F5F5;
+    letter-spacing: 0.1px;
+    font-size: 15px;
+    display: inline-block;
+	
+} */
+
+
+#mate_cnt{
+	
+	margin-left: 80px;
+	
+}
+
+#mate_name{
+	
+	margin-left: 80px;
+	
+}
+
+#mate_cnt,#mate_name[type="text"]{
+	
+	height: 50px;
+    padding: 8px 15px;
+    border-radius: 8px;
+    border: 1px solid #efefef;
+    width: 100%;
+    max-width: 670px;
+    color: #6e6e6e;
+    border-color: #e5e1dc;
+    background-color: #F5F5F5;
+    letter-spacing: 0.1px;
+    font-size: 15px;
+    display: inline-block;
+    
+	
 }
 
 
+
+
+
+   
+.mateForm ul{
+	
+	margin-left: 10%;
+	
+}   
+   
+.mateForm input[type="text"] {
+    background: #f5f5f5;
+    border: 1px solid #e1e1e1;
+    font-size: 16px;
+    padding: 8px 2px;
+    border-radius: 4px;
+   
+}
+   
+   
+   
+   
+   
    
 #divInfoPhotoBox {
 	
@@ -436,6 +534,8 @@ li{
 	
 	 border: 1px solid #ccc;
 	 background: transparent;
+	 display:inline-block;
+	 margin-left: -8%; 
 	
 }
 
@@ -511,6 +611,7 @@ t2{
 	margin-left: 250px;
 	
 }
+
 
 
 

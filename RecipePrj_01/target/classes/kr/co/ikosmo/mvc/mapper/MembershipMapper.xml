@@ -1,0 +1,68 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper
+  PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+  "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+
+<mapper namespace="membership">
+
+<!-- 아이디 체크 Ajax 에서 씀 -->
+<!-- 로그인 -->
+<select id="idcheck" parameterType="membership" resultType="membership">
+	<![CDATA[
+      SELECT MEM_ID,MEM_PWD  
+        FROM member_info
+       WHERE MEM_ID = #{MEM_ID}
+         AND MEM_PWD = #{MEM_PWD}
+		]]>
+</select>
+
+<!-- 이메일 확인 -->
+<select id="emailcheck" parameterType="membership" resultType="membership">
+	<![CDATA[
+		SELECT MEM_EMAIL
+		FROM member_info
+		WHERE MEM_EMAIL = #{MEM_EMAIL}
+		]]>
+</select>
+
+
+<!-- 회원가입 -->
+<insert id="memberinsert" parameterType="membership">
+		<![CDATA[
+		INSERT INTO member_info(MEM_NO, MEM_NAME, MEM_NICKNAME, 
+		MEM_ID, MEM_PWD, MEM_JUMINNUM, MEM_EMAIL,MEM_PHONE,MEM_GRADE_NO,KIND_TAG_NO)
+		VALUES(#{MEM_NO},#{MEM_NAME},
+			#{MEM_NICKNAME},#{MEM_ID}, 
+			#{MEM_PWD}, #{MEM_JUMINNUM},#{MEM_EMAIL}, 
+			#{MEM_PHONE},#{MEM_GRADE_NO},#{KIND_TAG_NO})
+		]]>
+</insert>
+
+<!-- 회원탈퇴 -->
+<delete id="memberdelete" parameterType="membership">
+	<![CDATA[
+		DELETE member_info WHERE MEM_NO = #{MEM_NO}
+		]]>
+</delete>
+
+<!-- 회원정보수정 -->
+<update id="memberupdate" parameterType="membership">
+	<![CDATA[
+		UPDATE member_info SET 
+		MEM_ID = #{MEM_ID}, 
+		MEM_PWD = #{MEM_PWD}, 
+		MEM_NAME = #{MEM_NAME}, 
+		MEM_NICKNAME = #{MEM_NICKNAME},
+	    MEM_EMAIL = #{MEM_EMAIL},
+		MEM_PHONE = #{MEM_PHONE}
+	    WHERE
+	    MEM_NO = #{MEM_NO}
+		]]>
+</update>
+	
+	
+	
+	
+	
+</mapper>  

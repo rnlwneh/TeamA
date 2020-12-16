@@ -1,5 +1,6 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
+<%@ taglib uri="http://java.sun.com/jstl/core_rt" prefix="c"%>
 <!doctype html>
 <html lang="en">
 <head>
@@ -345,19 +346,22 @@
      <span><img id="search_category_img" src="https://recipe1.ezmember.co.kr/img/icon_arrow9_up.gif"></span>
      </a><br/><br/>
     
-    
+    <form>
       <div class="row">
         <!-- Recipes Start -->
         <div class="col-lg-8">
+        <c:choose>
+        <c:when test="${!empty recipe_list}">
+        	<c:forEach items="${recipe_list}" var="row">
           <div class="recipe recipe-list">
             <div class="recipe-thumbnail">
-              <a href="recipe_detail">
-                <img src="${pageContext.request.contextPath}/resources/img/blog/10.jpg" alt="blog post">
+              <a href="recipe_detail?recipe_no=${row.recipe_no}">
+                <img src="${pageContext.request.contextPath}/resources/img/blog/${row.recipe_thumbnail}" alt="blog post">
               </a>
             </div>
             <div class="recipe-body">
-              <h5 class="recipe-title"> <a href="recipe_detail">버터와 타임을 이용한 구운 양고기</a> </h5>
-              <p class="recipe-text">Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s...</p>
+              <h5 class="recipe-title"><a href="recipe_detail?recipe_no=${row.recipe_no}">${row.recipe_title}</a> </h5>
+              <p class="recipe-text">${row.recipe_content}</p>
               <div class="recipe-meta">
                 <div class="recipe-difficulty">
                   <div class="recipe-difficulty-inner">
@@ -365,171 +369,38 @@
                     <span></span>
                     <span></span>
                   </div>
-                  <span>Amateur</span>
+                  <span>${row.recipe_level}</span>
                 </div>
                 <div class="recipe-steps">
-                  <span><i class="fas fa-concierge-bell"></i> 24 Scrap</span>
+                  <span><i class="fas fa-concierge-bell"></i>스크랩수 ${row.scrap_cnt}</span>
                 </div>
                 <div class="recipe-duration">
-                  <span><i class="fas fa-stopwatch"></i> 40 mins</span>
+                  <span><i class="fas fa-stopwatch"></i>${row.recipe_time}</span>
                 </div>
               </div>
             </div>
           </div>
-
-          <div class="recipe recipe-list">
-            <div class="recipe-thumbnail">
-              <a href="recipe_detail">
-                <img src="${pageContext.request.contextPath}/resources/img/blog/11.jpg" alt="blog post">
-              </a>
-            </div>
-            <div class="recipe-body">
-              <h5 class="recipe-title"> <a href="recipe_detail">달콤함으로 코팅된 무화과 라즈베리 케이크 </a> </h5>
-              <p class="recipe-text">Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s...</p>
-              <div class="recipe-meta">
-                <div class="recipe-difficulty">
-                  <div class="recipe-difficulty-inner">
-                    <span class="active"></span>
-                    <span class="active"></span>
-                    <span class="active"></span>
-                  </div>
-                  <span>Chef</span>
-                </div>
-                <div class="recipe-steps">
-                  <span><i class="fas fa-concierge-bell"></i> 66 Scrap</span>
-                </div>
-                <div class="recipe-duration">
-                  <span><i class="fas fa-stopwatch"></i> 120 mins</span>
-                </div>
-              </div>
-            </div>
-          </div>
-
-          <div class="recipe recipe-list">
-            <div class="recipe-thumbnail">
-              <a href="recipe_detail">
-                <img src="${pageContext.request.contextPath}/resources/img/blog/9.jpg" alt="blog post">
-              </a>
-            </div>
-            <div class="recipe-body">
-              <h5 class="recipe-title"> <a href="recipe_detail">Rare Tenderloine With Gravy, Tomatoes and Parsley </a> </h5>
-              <p class="recipe-text">Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s...</p>
-              <div class="recipe-meta">
-                <div class="recipe-difficulty">
-                  <div class="recipe-difficulty-inner">
-                    <span class="active"></span>
-                    <span class="active"></span>
-                    <span></span>
-                  </div>
-                  <span>Home Cook</span>
-                </div>
-                <div class="recipe-steps">
-                  <span><i class="fas fa-concierge-bell"></i> 42 Scrap</span>
-                </div>
-                <div class="recipe-duration">
-                  <span><i class="fas fa-stopwatch"></i> 50 mins</span>
-                </div>
-              </div>
-            </div>
-          </div>
-
-          <div class="recipe recipe-list">
-            <div class="recipe-thumbnail">
-              <a href="recipe_detail">
-                <img src="${pageContext.request.contextPath}/resources/img/blog/8.jpg" alt="blog post">
-              </a>
-            </div>
-            <div class="recipe-body">
-              <h5 class="recipe-title"> <a href="recipe_detail">Oat Pancakes with Strawberries and Blueberries</a> </h5>
-              <p class="recipe-text">Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s...</p>
-              <div class="recipe-meta">
-                <div class="recipe-difficulty">
-                  <div class="recipe-difficulty-inner">
-                    <span class="active"></span>
-                    <span class="active"></span>
-                    <span></span>
-                  </div>
-                  <span>Home Cook</span>
-                </div>
-                <div class="recipe-steps">
-                  <span><i class="fas fa-concierge-bell"></i> 42 Scrap</span>
-                </div>
-                <div class="recipe-duration">
-                  <span><i class="fas fa-stopwatch"></i> 50 mins</span>
-                </div>
-              </div>
-            </div>
-          </div>
-
-          <div class="recipe recipe-list">
-            <div class="recipe-thumbnail">
-              <a href="recipe_detail">
-                <img src="${pageContext.request.contextPath}/resources/img/blog/7.jpg" alt="blog post">
-              </a>
-            </div>
-            <div class="recipe-body">
-              <h5 class="recipe-title"> <a href="recipe_detail">Sugary Pancake toped with Raspberries, Mint and Cream</a> </h5>
-              <p class="recipe-text">Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s...</p>
-              <div class="recipe-meta">
-                <div class="recipe-difficulty">
-                  <div class="recipe-difficulty-inner">
-                    <span class="active"></span>
-                    <span class="active"></span>
-                    <span></span>
-                  </div>
-                  <span>Home Cook</span>
-                </div>
-                <div class="recipe-steps">
-                  <span><i class="fas fa-concierge-bell"></i> 42 Scrap</span>
-                </div>
-                <div class="recipe-duration">
-                  <span><i class="fas fa-stopwatch"></i> 50 mins</span>
-                </div>
-              </div>
-            </div>
-          </div>
-
-          <div class="recipe recipe-list">
-            <div class="recipe-thumbnail">
-              <a href="recipe_detail">
-                <img src="${pageContext.request.contextPath}/resources/img/blog/5.jpg" alt="blog post">
-              </a>
-            </div>
-            <div class="recipe-body">
-              <h5 class="recipe-title"> <a href="recipe_detail">Medium Rare Steak Garnished With Gravy, Tomatoes and Parsley</a> </h5>
-              <p class="recipe-text">Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s...</p>
-              <div class="recipe-meta">
-                <div class="recipe-difficulty">
-                  <div class="recipe-difficulty-inner">
-                    <span class="active"></span>
-                    <span class="active"></span>
-                    <span></span>
-                  </div>
-                  <span>Home Cook</span>
-                </div>
-                <div class="recipe-steps">
-                  <span><i class="fas fa-concierge-bell"></i> 42 Scrap</span>
-                </div>
-                <div class="recipe-duration">
-                  <span><i class="fas fa-stopwatch"></i> 50 mins</span>
-                </div>
-              </div>
-            </div>
-          </div>
-
+          	</c:forEach>
+          	</c:when>
+			</c:choose>
+			
           <!-- Pagination Start -->
+            
             <ul class="pagination">
-              <li class="page-item"><a class="page-link" routerLink="/recipe-archive">1</a></li>
-              <li class="page-item active">
-                <a class="page-link" routerLink="/recipe-archive">2 <span class="sr-only">(current)</span></a>
-              </li>
-              <li class="page-item"><a class="page-link" routerLink="/recipe-archive">3</a></li>
+          
+            <c:forEach var="p" items="${p_num}">
+                <li class="page-item">
+                <input type="submit" class="page-link" formaction="paging" name="page" value="${p}"/>
+                </li>
+            </c:forEach>   
+            
             </ul>
+                        
           <!-- Pagination End -->
 
-        </div>
-        <!-- Recipes End -->
-
+       		 </div>    
+       		 <!-- Recipes End -->
+	</form>
         <!-- Sidebar Start -->
         <div class="col-lg-4">
           <app-recipe-sidebar>

@@ -16,7 +16,13 @@
 <link rel="stylesheet" type="text/css" href="./resources/css/style.css" media="all" />
 
 
- 
+
+<!-- 따로 추가 -->
+<script src="//maxcdn.bootstrapcdn.com/bootstrap/4.1.1/js/bootstrap.min.js"></script>
+<script src="//cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+<link href="https://fonts.googleapis.com/css?family=Open+Sans:300,400,600,700" rel="stylesheet">
+<link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.3.1/css/all.min.css" rel="stylesheet">
+<!------ Include the above in your HEAD tag ---------->
 
 <!-- 
 <link rel="stylesheet" type="text/css" href="./resources/css/plugins/bootstrap.min.css" media="all" /> 
@@ -47,6 +53,7 @@
 
 
 
+<!-- 
 <script src="./resources/js/plugins/isotope.pkgd.min.js" type="text/javascript" charset="utf-8"></script>
 <script src="./resources/js/plugins/jquery.countdown.min.js" type="text/javascript" charset="utf-8"></script>
 <script src="./resources/js/plugins/jquery.magnific-popup.min.js" type="text/javascript" charset="utf-8"></script>
@@ -55,7 +62,8 @@
 <script src="./resources/js/plugins/jquery-3.4.1.min.js" type="text/javascript" charset="utf-8"></script>
 <script src="./resources/js/plugins/popper.min.js" type="text/javascript" charset="utf-8"></script>
 <script src="./resources/js/plugins/slick.min.js" type="text/javascript" charset="utf-8"></script>
-<script src="./resources/js/plugins/waypoint.js" type="text/javascript" charset="utf-8"></script>
+<script src="./resources/js/plugins/waypoint.js" type="text/javascript" charset="utf-8"></script> 
+-->
   
   
 <!--  
@@ -246,203 +254,382 @@
 
 
 <!-- 마이페이지 Start -->
-
-<!-- Subheader Start -->
-  <div class="subheader bg-cover dark-overlay dark-overlay-2" style="background-image: url('assets/img/subheader.jpg')">
+<section id="about-us" class="py-5">
     <div class="container">
-      <div class="subheader-inner">
-        <h1>My page</h1>
-        <nav aria-label="breadcrumb">
-          <ol class="breadcrumb">
-            <li class="breadcrumb-item"><a href="index">Home</a></li>
-            <li class="breadcrumb-item active" aria-current="page">Mypage</li>
-          </ol>
-        </nav>
-      </div>
+        <div class="row">
+             <!--left sidebar-->
+            <div class="col-md-3 pr-md-4">
+                <div class="sidebar-left">
+                    <!--sidebar menu-->
+                    <ul class="list-unstyled sidebar-menu pl-md-2 pr-md-0">
+                        <li>
+                            <a class="sidebar-item active d-flex justify-content-between align-items-center" href="Mypage">
+                                마이페이지
+                                <span class="fas fa-user"></span>
+                            </a>
+                        </li>
+                        <li>
+                            <a class="sidebar-item d-flex justify-content-between align-items-center"  href="My_bigdata">
+                           		 내 레시피 정보(빅데이터)
+                                <span class="fas fa-copy"></span>
+                            </a>
+                        </li>
+                        <li>
+                            <a class="sidebar-item d-flex justify-content-between align-items-center"  href="review">
+                                나에게 달린 코멘트
+                                <span class="side-notif" title="1 new comment"></span>
+                                <span class="fas fa-comment"></span>
+                            </a>
+                        </li>
+                        <li>
+                            <a class="sidebar-item d-flex justify-content-between align-items-center"  href="chat_us2">
+                                고객센터 챗봇
+                                <span class="side-notif" title="1 new messages"></span>
+                                <span class="fas fa-envelope"></span>
+                            </a>
+                        </li>
+                        <li>
+                            <a class="sidebar-item d-flex justify-content-between align-items-center"  href="">
+                                좋아요
+                                <span class="fas fa-heart"></span>
+                            </a>
+                        </li>
+                        <li>
+                            <a class="sidebar-item d-flex justify-content-between align-items-center"  href="info_change">
+                                설정
+                                <span class="fas fa-cog"></span>
+                            </a>
+                        </li>
+                        <li>
+                            <a class="sidebar-item d-flex justify-content-between align-items-center" href="">
+                                로그아웃
+                                <span class="fas fa-sign-out-alt"></span>
+                            </a>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+            
+            <!--Content-->
+            <div class="col-md-9">
+                <div class="dashboard-area">
+                    <div class="row">
+                        <div class="col-12">
+                            <div class="mb-3 bg-dark">
+                                <div class="row">
+                                    <div class="col-12">
+                                        <a class="position-absolute ml-3 mt-3 text-white" href="info_change" data-toggle="tooltip" data-placement="bottom" title="" data-original-title="Edit cover images"><i class="fas fa-cog"></i></a>
+                                        <div class="row">
+                                            <div class="col-md-6 ml-auto mr-auto">
+                                               <div class="profiles p-3 my-4 rounded text-center shadow-sm">
+                                                    <div class="avatars">
+                                                        <a href="info_change">
+                                                            <img src="https://demo.bootstrap.news/bootnews/assets/img/avatar/avatar1.png" alt="Circle Image" class="avatar-lg rounded-circle img-fluid" data-toggle="tooltip" data-placement="bottom" title="" data-original-title="Edit avatar images">
+                                                        </a>
+                                                    </div>
+                                                    <div class="names">
+                                                        <h3 class="title text-light">${sessionScope.login}님 환영합니다.</h3>
+                                                        <a href="#" class="btn btn-link btn-facebook"><i class="fab fa-facebook"></i></a>
+                                                        <a href="#" class="btn btn-link btn-twitter"><i class="fab fa-twitter"></i></a>
+                                                        <a href="#" class="btn btn-link btn-gplus"><i class="fab fa-google-plus"></i></a>
+                                                        <a href="#" class="btn btn-link btn-instagram"><i class="fab fa-instagram"></i></a>
+                                                        <a href="#" class="btn btn-link btn-youtube"><i class="fab fa-youtube"></i></a>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                     </div>
+                                 </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col-12">
+                            <ul class="nav nav-pills mb-3" id="pills-tab" role="tablist">
+                                <li class="nav-item">
+                                    <a class="nav-link active show" id="pills-home-tab" data-toggle="pill" href="#pills-home" role="tab" aria-controls="pills-home" aria-selected="true">Statistic</a>
+                                </li>
+                                <li class="nav-item">
+                                    <a class="nav-link" id="pills-profile-tab" data-toggle="pill" href="#pills-profile" role="tab" aria-controls="pills-profile" aria-selected="false">Profile</a>
+                                </li>
+                                <li class="nav-item">
+                                    <a class="nav-link" id="pills-contact-tab" data-toggle="pill" href="#pills-contact" role="tab" aria-controls="pills-contact" aria-selected="false">Latest post</a>
+                                </li>
+                            </ul>
+                            <div class="tab-content" id="pills-tabContent">
+                                <div class="tab-pane fade active show" id="pills-home" role="tabpanel" aria-labelledby="pills-home-tab">
+                                    <div class="row">
+                                        <div class="col-lg-4 col-sm-6">
+                                            <a class="member-item" href="">
+                                                <div class="card mb-2 mb-md-5 py-3">
+                                                    <div class="content">
+                                                        <div class="row">
+                                                            <div class="col-6 d-flex justify-content-center align-items-center">
+                                                                <div class="icon-big text-warning text-center">
+                                                                    <i class="fas fa-copy"></i>
+                                                                </div>
+                                                            </div>
+                                                            <div class="col-6 d-flex justify-content-center align-items-center">
+                                                                <div class="numbers">
+                                                                    <p>내 레시피</p>
+                                                                    112
+                                                                </div>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </a>
+                                        </div>
+                                        <div class="col-lg-4 col-sm-6">
+                                            <a class="member-item" href="">
+                                                <div class="card mb-2 mb-md-5 py-3">
+                                                    <div class="content">
+                                                        <div class="row">
+                                                            <div class="col-6 d-flex justify-content-center align-items-center">
+                                                                <div class="icon-big text-info text-center" title="1 new comment">
+                                                                    <div class="notif"></div>
+                                                                    <i class="fas fa-comment"></i>
+                                                                </div>
+                                                            </div>
+                                                            <div class="col-6 d-flex justify-content-center align-items-center">
+                                                                <div class="numbers">
+                                                                    <p>코멘트</p>
+                                                                    454
+                                                                </div>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </a>
+                                        </div>
+                                        <div class="col-lg-4 col-sm-6">
+                                            <a class="member-item" href="">
+                                                <div class="card mb-2 mb-md-5 py-3">
+                                                    <div class="content">
+                                                        <div class="row">
+                                                            <div class="col-6 d-flex justify-content-center align-items-center">
+                                                                <div class="icon-big text-danger text-center">
+                                                                    <i class="fas fa-heart"></i>
+                                                                </div>
+                                                            </div>
+                                                            <div class="col-6 d-flex justify-content-center align-items-center">
+                                                                <div class="numbers">
+                                                                    <p>좋아요</p>
+                                                                    56
+                                                                </div>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </a>
+                                        </div>
+                                        <div class="col-lg-4 col-sm-6">
+                                            <a class="member-item" href="">
+                                                <div class="card mb-2 mb-md-5 py-3">
+                                                    <div class="content">
+                                                        <div class="row">
+                                                            <div class="col-6 d-flex justify-content-center align-items-center">
+                                                                <div class="icon-big text-twitter text-center" title="1 new messages">
+                                                                    <div class="notif"></div>
+                                                                    <i class="fas fa-envelope"></i>
+                                                                </div>
+                                                            </div>
+                                                            <div class="col-6 d-flex justify-content-center align-items-center">
+                                                                <div class="numbers">
+                                                                    <p>메시지</p>
+                                                                    23
+                                                                </div>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </a>
+                                        </div>
+                                        <div class="col-lg-4 col-sm-6">
+                                            <a class="member-item" href="">
+                                                <div class="card mb-2 mb-md-5 py-3">
+                                                    <div class="content">
+                                                        <div class="row">
+                                                            <div class="col-6 d-flex justify-content-center align-items-center">
+                                                                <div class="icon-big text-facebook text-center">
+                                                                    <i class="fas fa-star"></i>
+                                                                </div>
+                                                            </div>
+                                                            <div class="col-6 d-flex justify-content-center align-items-center">
+                                                                <div class="numbers">
+                                                                    <p>구독자</p>
+                                                                    112
+                                                                </div>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </a>
+                                        </div>
+                                        <div class="col-lg-4 col-sm-6">
+                                            <a class="member-item" href="">
+                                                <div class="card mb-2 mb-md-5 py-3">
+                                                    <div class="content">
+                                                        <div class="row">
+                                                            <div class="col-6 d-flex justify-content-center align-items-center">
+                                                                <div class="icon-big text-success text-center">
+                                                                    <i class="fas fa-users"></i>
+                                                                </div>
+                                                            </div>
+                                                            <div class="col-6 d-flex justify-content-center align-items-center">
+                                                                <div class="numbers">
+                                                                    <p>구독한 쉐프</p>
+                                                                    1567
+                                                                </div>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </a>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="tab-pane fade" id="pills-profile" role="tabpanel" aria-labelledby="pills-profile-tab">
+                                    <div class="p-3 border mb-3">
+                                        <a class="position-absolute" style="right: 25px" href="info_change" data-toggle="tooltip" data-placement="bottom" title="" data-original-title="Edit profile"><i class="fas fa-cog"></i></a>
+                                        <h3>"${sessionScope.login}"님의 정보입니다.</h3>
+                                        
+                                        
+										<b>내용 로그인 세션마다 다르게 뜨게 하기</b>
+										<p><b>아이디: </b>${MypageProfile.MEM_ID}</p>
+										<p><b>비밀번호: </b>${MypageProfile.MEM_PWD}</p>
+										<p><b>이름: </b>${MypageProfile.MEM_NAME}</p>
+										<p><b>닉네임: </b>${MypageProfile.MEM_NICKNAME}</p>
+										<p><b>주민번호: </b>${MypageProfile.MEM_JUMINNUM}</p>
+										<p><b>이메일: </b>${MypageProfile.MEM_EMAIL}</p>
+										<p><b>핸드폰번호: </b>${MypageProfile.MEM_PHONE}</p>									
+										<p><b>주소???: </b>${MypageProfile.MEM_PHONE}</p>
+
+                                        
+                                    </div>
+                                </div>
+                                <div class="tab-pane fade" id="pills-contact" role="tabpanel" aria-labelledby="pills-contact-tab">
+                                    <div class="p-3 border mb-3">
+                                        <h5>등록한 레시피 보기</h5>
+                                        <div class="row">
+                                            <div class="col-12">
+                                                <ul class="list-unstyled statistics">
+                                                    <li>
+                                                        <span class="text-primary">Oct 20</span> <a class="h6" href="">Toyota Sienna rates marginal in passenger-side overlap crash test</a>
+                                                    </li>
+                                                    <li>
+                                                        <span class="text-primary">Oct 12</span> <a class="h6" href="">Ford reveals autonomous vehicle philosophies, priorities</a>
+                                                    </li>
+                                                    <li>
+                                                        <span class="text-primary">Oct 7</span> <a class="h6" href="">Offer Hints to How Dogs Became Domesticated</a>
+                                                    </li>
+                                                    <li>
+                                                        <span class="text-primary">Oct 6</span> <a class="h6" href="">Consumer apprehension grows over autonomous tech, study says</a>
+                                                    </li>
+                                                </ul>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
     </div>
-  </div>
-  <!-- Subheader End -->
-
-  <!-- Contact Info Start -->
-  <div class="section section-padding">
-    <div class="container">
-      <div class="row">
-        <div class="col-lg-6 col-md-6 col-sm-6">
-          <div class="ct-info-box">
-            <div class="ct-info-box-icon">
-              <i class="flaticon-call"></i>
-              <h5>내 레시피 페이지</h5>
-              <a href="blogMain_masonry">blogMain_masonry</a>
-            </div>
-          </div>
-        </div>
-        <div class="col-lg-6 col-md-6 col-sm-6">
-          <div class="ct-info-box">
-            <div class="ct-info-box-icon">
-              <i class="flaticon-email"></i>
-              <h5>고객센터 채팅1</h5>
-              <a href="chat_us">chat_us</a>
-            </div>
-          </div>
-        </div>
-      </div>
-
-      <div class="row">
-        <div class="col-lg-6 col-md-6 col-sm-6">
-          <div class="ct-info-box">
-            <div class="ct-info-box-icon">
-              <i class="flaticon-call"></i>
-              <h5>고객센터 채팅2</h5>
-              <a href="chat_us2">chat_us2</a>
-            </div>
-          </div>
-        </div>
-        <div class="col-lg-6 col-md-6 col-sm-6">
-          <div class="ct-info-box">
-            <div class="ct-info-box-icon">
-              <i class="flaticon-email"></i>
-              <h5>문의하기</h5>
-              <a href="contact_us">contact_us</a>
-            </div>
-          </div>
-        </div>        
-      </div>
-      
-      <div class="row">
-        <div class="col-lg-6 col-md-6 col-sm-6">
-          <div class="ct-info-box">
-            <div class="ct-info-box-icon">
-              <i class="flaticon-call"></i>
-              <h5>회원정보수정</h5>
-              <a href="info_change">info_change</a>
-            </div>
-          </div>
-        </div>
-        <div class="col-lg-6 col-md-6 col-sm-6">
-          <div class="ct-info-box">
-            <div class="ct-info-box-icon">
-              <i class="flaticon-email"></i>
-              <h5>로그인</h5>
-              <a href="login">login</a>
-            </div>
-          </div>
-        </div>
-      </div>
-
-      <div class="row">
-        <div class="col-lg-6 col-md-6 col-sm-6">
-          <div class="ct-info-box">
-            <div class="ct-info-box-icon">
-              <i class="flaticon-call"></i>
-              <h5>나에게 달린 유저 코멘트</h5>
-              <a href="review">review</a>
-            </div>
-          </div>
-        </div>
-        <div class="col-lg-6 col-md-6 col-sm-6">
-          <div class="ct-info-box">
-            <div class="ct-info-box-icon">
-              <i class="flaticon-email"></i>
-              <h5>회원가입</h5>
-              <a href="signup">signup</a>
-            </div>
-          </div>
-        </div>        
-      </div>
-    </div>
-  </div>
-  <!-- Contact Info End -->
-
-
-
- 
+</section>
   <!--마이페이지 End -->
- 
- 
+
+  
+  
+<!-- Newsletter start  -->
   <app-footer1>
+  
+
+
+<!--     ------------------   footer 영역    -------------------        -->
 
 <!-- Newsletter start -->
-  <section class="section light-bg bg-cover" style="background-image:url('./resources/img/bg/1.jpg')">
-    <div class="container">
-      <div class="section-title-wrap section-header text-center">
-        <h2 class="title">Subscribe to My Newsletter</h2>
-        <p class="subtitle">
-          Get access to my latest recipes by joining the weekly newsletter
-        </p>
-      </div>
+  <section class="section light-bg bg-cover" style=" background-image:url('./resources/image/main/footBackImg_03.jpg')">
 
-      <form class="ct-newsletter" method="post">
-        <input type="email" class="form-control" placeholder="Enter your email address" value="">
-        <button type="button" class="btn-custom primary" name="button"> Submit <i class="far fa-paper-plane"></i> </button>
-      </form>
 
-    </div>
   </section>
   <!-- Newsletter End -->
-
-  <!-- Instagram Start -->
-  <div class="row no-gutters">
-    <div class="col-lg-2 col-md-4 col-sm-4 col-6 p-0">
-      <a href="javascript:void(0)" class="ct-ig-item">
-        <img src="./resources/img/ig/1.jpg" alt="ig">
-      </a>
-    </div>
-    <div class="col-lg-2 col-md-4 col-sm-4 col-6 p-0">
-      <a href="javascript:void(0)" class="ct-ig-item">
-        <img src="./resources/img/ig/2.jpg" alt="ig">
-      </a>
-    </div>
-    <div class="col-lg-2 col-md-4 col-sm-4 col-6 p-0">
-      <a href="javascript:void(0)" class="ct-ig-item">
-        <img src="./resources/img/ig/3.jpg" alt="ig">
-      </a>
-    </div>
-    <div class="col-lg-2 col-md-4 col-sm-4 col-6 p-0">
-      <a href="javascript:void(0)" class="ct-ig-item">
-        <img src="./resources/img/ig/4.jpg" alt="ig">
-      </a>
-    </div>
-    <div class="col-lg-2 col-md-4 col-sm-4 col-6 p-0">
-      <a href="javascript:void(0)" class="ct-ig-item">
-        <img src="./resources/img/ig/5.jpg" alt="ig">
-      </a>
-    </div>
-    <div class="col-lg-2 col-md-4 col-sm-4 col-6 p-0">
-      <a href="javascript:void(0)" class="ct-ig-item">
-        <img src="./resources/img/ig/6.jpg" alt="ig">
-      </a>
-    </div>
-  </div>
-  <!-- Instagram End -->
+  
 
   <!-- Footer Start -->
   <footer class="ct-footer footer-2">
-    <div class="container">
-      <div class="footer-widget">
-        <ul class="social-media">
-          <li> <a href="javascript:void(0)"> <i class="fab fa-facebook-f"></i> </a> </li>
-          <li> <a href="javascript:void(0)"> <i class="fab fa-twitter"></i> </a> </li>
-          <li> <a href="javascript:void(0)"> <i class="fab fa-pinterest-p"></i> </a> </li>
-          <li> <a href="javascript:void(0)"> <i class="fab fa-linkedin-in"></i> </a> </li>
-        </ul>
-      </div>
-      <div class="footer-widget">
-        <ul>
-          <li> <a href="javascript:void(0)">Breakfast</a> </li>
-          <li> <a href="javascript:void(0)">Desserts</a> </li>
-          <li> <a href="javascript:void(0)">Dinner</a> </li>
-          <li> <a href="javascript:void(0)">Dairy</a> </li>
-        </ul>
-      </div>
-      <div class="footer-bottom">
-        <div class="container">
-          <p class="m-0">&copy; Copyright 2020 - <a href="javascript:void(0)">AndroThemes</a> All Rights Reserved.</p>
-        </div>
-      </div>
-    </div>
+  
+  
+  	<div class="raw align-items-center mt-70">
+                <!-- Single Cool Fact -->
+                <div class="col-12 col-sm-6 col-lg-3">
+                    <div class="single-cool-fact">
+                        <img src="./resources/image/core-img/salad.png" alt="">
+                        <h3><span class="counter">1287</span></h3>
+                        <h6>Recipe</h6>
+                    </div>
+                </div>
+
+                <!-- Single Cool Fact -->
+                <div class="col-12 col-sm-6 col-lg-3">
+                    <div class="single-cool-fact">
+                        <img src="./resources/image/core-img/hamburger.png" alt="">
+                        <h3><span class="counter">25</span></h3>
+                        <h6>Chef Recipe</h6>
+                    </div>
+                </div>
+
+                <!-- Single Cool Fact -->
+                <div class="col-12 col-sm-6 col-lg-3">
+                    <div class="single-cool-fact">
+                        <img src="./resources/image/core-img/rib.png" alt="">
+                        <h3><span class="counter">471</span></h3>
+                        <h6>Class</h6>
+                    </div>
+                </div>
+
+                <!-- Single Cool Fact -->
+                <div class="col-12 col-sm-6 col-lg-3">
+                    <div class="single-cool-fact">
+                        <img src="./resources/image/core-img/pancake.png" alt="">
+                        <h3><span class="counter">326</span></h3>
+                        <h6>Affiliates</h6>
+                    </div>
+                </div>
+                
+                
+                <!-- Single Cool Fact -->
+                <div class="col-12 col-sm-6 col-lg-3">
+                    <div class="single-cool-fact">
+                    <a href="mailto:wandering_star@naver.com">
+                        <img src="./resources/image/core-img/mail.png" alt="">
+                    </a>                    
+                        <h6>쉐프등업</h6>
+                    </div>
+                </div>
+                
+                
+                
+                
+                
+                
+                
+            </div>
+  
+    
   </footer>
   <!-- Footer End -->
+  
+
+  
+  
   </app-footer1>
+  
+ 
+
+
 
 
 

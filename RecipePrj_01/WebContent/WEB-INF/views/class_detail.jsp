@@ -1,5 +1,14 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
+    
+<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
+    
+  <%
+  request.setCharacterEncoding("UTF-8");
+%>
+    
+    
+    
 <!doctype html>
 <html lang="en">
 <head>
@@ -11,10 +20,10 @@
   
   
   
-<link rel="stylesheet" type="text/css" href="./resources/css/header.css" media="all" />
-<link href="./resources/css/chef_recipe_detail_ld.css" rel="stylesheet">
-<link rel="stylesheet" type="text/css" href="./resources/css/chef_recipe_detail_min_ld.css" media="all" /> 
-<link rel="stylesheet" type="text/css" href="./resources/css/chef_recipe_detail_style_ld.css" media="all" />
+<link rel="stylesheet" type="text/css" href="${pageContext.request.contextPath}/resources/css/header.css" media="all" />
+<link href="${pageContext.request.contextPath}/resources/css/class_detail.css" rel="stylesheet">
+<link rel="stylesheet" type="text/css" href="${pageContext.request.contextPath}/resources/css/class_detail_min.css" media="all" /> 
+<link rel="stylesheet" type="text/css" href="${pageContext.request.contextPath}/resources/css/class_detail_style.css" media="all" />
   
   
   
@@ -24,29 +33,17 @@
 
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
 <script src="https://cdn.jsdelivr.net/bxslider/4.2.12/jquery.bxslider.min.js"></script>
-<script src="./resources/js/main.js" type="text/javascript" charset="utf-8"></script>
+<script src="${pageContext.request.contextPath}/resources/js/main.js" type="text/javascript" charset="utf-8"></script>
 
-<script src="./resources/js/plugins/bootstrap.min.js" type="text/javascript" charset="utf-8"></script>
+<script src="${pageContext.request.contextPath}/resources/js/plugins/bootstrap.min.js" type="text/javascript" charset="utf-8"></script>
 
 
 
 
 <!-- Bootstrap core JavaScript -->
-<script src="./resources/js/jquery.min.js"></script>
-<script src="./resources/js/chef_recipe_detail_ld.js"></script>
-<script src="./resources/js/class_detail_bundle.js"></script>
-
-
-
-
-
-
-
-
-
-
-<!--           상세 정보  접기 / 펼치기  자스.     -->
-
+<script src="${pageContext.request.contextPath}/resources/js/jquery.min.js"></script>
+<script src="${pageContext.request.contextPath}/resources/js/class_detail.js"></script>
+<script src="${pageContext.request.contextPath}/resources/js/class_detail_bundle.js"></script>
 
 
 
@@ -54,6 +51,8 @@
 
 
 <script>
+
+/*   상세 정보  접기 / 펼치기  자스   */
 
 function openCloseToc() {
 	if (document.getElementById('toc-content').style.display === 'block') {
@@ -84,6 +83,7 @@ function openComment() {
 
 
 
+/*   이미지 처리    */
 
     function handlePhotoFiles(e){
     
@@ -133,16 +133,8 @@ function openComment() {
         reader.readAsDataURL(e.target.files[0]);
     }
 
-    function deleteImg()
-    {
-        if (confirm('이미지를 삭제하시겠습니까?')) {
-            $("#add_imgs").show();
-            $("#img_dd").hide();
-            $("#attach_imgs").attr("src",'about:blank');
-            $("#image").val('');
-            $("#old_image").val('');
-        }
-    }    
+    
+    
 
     $(function() {
         
@@ -152,33 +144,17 @@ function openComment() {
                 
     })        
     
+    
+    /* 후기 작성 부분 별표 처리 */
+    
     function doStar(star) {
         $('#score').val(star);
+        
         $('#star').html($('#star'+star).html())
-    }
-    var isSubmit = false;
-    function doSubmit() {
-        if (isSubmit)
-        {
-            alert('잠시만 기다려주세요.');
-            return;
-        }
-        isSubmit = true;
         
-        if($("#txComment").val().length < 5)
-        {
-            alert('내용을 5자 이상 입력해주세요.');
-            isSubmit = false;
-            return ;
-        }
-        
-        $('#insFrm').submit();            
+        $('input[name=star_rate]').attr('value',star);
         
     }
-    
-    
-    
-    
     
     
     
@@ -186,6 +162,10 @@ function openComment() {
   
   
   <style>
+  
+ /*  후기작성 style은 여기다 해줬음.. */
+  
+  
 #star img {
 	width: 12px;
 	margin: -1px 1px 0 0;
@@ -297,7 +277,7 @@ function openComment() {
 
 <!-- Aside (Mobile Navigation) -->
   <aside class="main-aside">
-  <!--   <a class="navbar-brand" href="index"> <img src="./resources/image/main/logo.png"> </a> -->
+ 
 
     <div class="aside-scroll">
       <ul>
@@ -323,14 +303,14 @@ function openComment() {
           <a href="contact_us">Contact Us</a>
         </li>
         <li class="menu-item">
-          <a href="login" class="loginBT"> <img src="./resources/image/main/signup_off.png"> 
+          <a href="login" class="loginBT"> <img src="${pageContext.request.contextPath}/resources/image/main/signup_off.png"> 
           </a>
            <ul class="submenu">
                 <li class="menu-item"> <a href="Mypage">My Page</a> </li>
             </ul>
         </li>
          <li class="menu-item">
-          <a href="class_write" class="loginBT"> <img src="./resources/image/main/class_writeBT.png">                    
+          <a href="class_write" class="loginBT"> <img src="${pageContext.request.contextPath}/resources/image/main/class_writeBT.png">                    
           </a>
          <ul class="submenu">
           	<li class="menu-item"> <a href="recipe_upload">Normal_Write</a> </li>
@@ -351,7 +331,7 @@ function openComment() {
     <nav class="navbar">
       <div class="container">
         <!-- Logo -->
-        <a class="navbar-brand" href="index"> <img src="./resources/image/main/logo.png"> </a>
+        <a class="navbar-brand" href="index"> <img src="${pageContext.request.contextPath}/resources/image/main/logo.png"> </a>
         <!-- Menu -->
         <ul class="navbar-nav">
           <li class="menu-item menu-item-has-children">
@@ -377,7 +357,7 @@ function openComment() {
           </li>
           
            <li class="menu-item">
-          <a href="login" class="loginBT"> <img src="./resources/image/main/signup_off.png">          
+          <a href="login" class="loginBT"> <img src="${pageContext.request.contextPath}/resources/image/main/signup_off.png">          
           </a>
             <ul class="submenu">
                 <li class="menu-item"> <a href="Mypage">My Page</a> </li>
@@ -385,12 +365,12 @@ function openComment() {
          </li>
         
          <li class="menu-item">
-          <a href="recipe_upload" class="loginBT"> <img src="./resources/image/main/Normal_writeBT.png">          
+          <a href="recipe_upload" class="loginBT"> <img src="${pageContext.request.contextPath}/resources/image/main/Normal_writeBT.png">          
           </a>          
         </li>        
         
          <li class="menu-item">
-          <a href="class_write" class="loginBT"> <img src="./resources/image/main/class_writeBT.png">          
+          <a href="class_write" class="loginBT"> <img src="${pageContext.request.contextPath}/resources/image/main/class_writeBT.png">          
           </a>
           <ul class="submenu">
                 <li class="menu-item"> <a href="chef_recipe_upload">Chef_Write</a> </li>
@@ -408,14 +388,14 @@ function openComment() {
               <i class="flaticon-shopping-basket"></i>
               <ul class="cart-dropdown">
                 <li class="cart-item">
-                  <img src="./resources/img/products/1.png" alt="product">
+                  <img src="${pageContext.request.contextPath}/resources/img/products/1.png" alt="product">
                   <div class="cart-item-body">
                     <a href="javascript:void(0)">Red Tea Pot With Black Handles</a>
                     <span class="custom-secondary">2x 18.00$</span>
                   </div>
                 </li>
                 <li class="cart-item">
-                  <img src="./resources/img/products/2.png" alt="product">
+                  <img src="${pageContext.request.contextPath}/resources/img/products/2.png" alt="product">
                   <div class="cart-item-body">
                     <a href="javascript:void(0)">Oak Wood Cutting Board</a>
                     <span class="custom-secondary">1x 24.25$</span>
@@ -474,7 +454,6 @@ function openComment() {
 
 
 
-
 <!-- Page Content -->
 	<div class="container">
 
@@ -482,44 +461,42 @@ function openComment() {
 
 		<!-- ------------------- Header content---------------------  -->
 		<header class="jumbotron my-4">
-			<h1 class="display-3">Class Title_제목</h1>
-
+			<h1 class="display-3">${classDe.class_title}</h1>
+					
 
 			<div class="detail_img">
-				<img src="./resources/image/food_Product/foodProduce_01.png" class="classProduct">
+				<img src="${pageContext.request.contextPath}/resources/image/FoodImg/${classDe.class_thumbnail}" class="classProduct">
 			<!-- 	<img src="./resources/image/detail_img/class_detail_01.jpg"> -->
 			</div>
 
-
 			<figure class="snip1425">
-				<img src="./resources/image/rank_img/product07.jpg"
+				<img src="${pageContext.request.contextPath}/resources/image/rank_img/${classDe.member.mem_pic}"
 					alt="sq-sample19" />
 				<figcaption>
 					<i class="ion-podium"></i>
-					<h4>이름</h4>
+					<h4>${classDe.member.mem_nickname}</h4>
 					<h2>Mypage</h2>
 				</figcaption>
 				<a href="#"></a>
 			</figure>
 
 
-			<p class="lead">클래스 설명. 클래스 설명. 레시피 가르칠 것 설명</p>
+			<p class="lead">${classDe.class_content}</p>
 
 			<p class="class_price">
-				<p4>1,100</p4><small>원</small>
+				<p4>${classDe.class_price}</p4><small>원</small>
 			</p>
 
 			<hr>
 
 			<div class="detail_time">
 				<div class="detail_icon_img">
-					<span> <img src="./resources/image/detail_img/clock.png">
-						<p1> 강의 시간 </p1> <p2> 10 </p2> <p3>분 </p3>
-					</span> <span> <img src="./resources/image/detail_img/calendar.png">
-						<p1> 수강 기간 </p1> <p2> 100  </p2>  <p3>일</p3>
+					<span> <img src="${pageContext.request.contextPath}/resources/image/detail_img/clock.png">
+						<p1>강의 시간</p1> <p2> ${classDe.class_cooktime} </p2> <p3>분 </p3>
+					</span> <span> <img src="${pageContext.request.contextPath}/resources/image/detail_img/calendar.png">
+						<p1>수강 기간</p1> <p2> ${classDe.class_period}  </p2>  <p3>일</p3>
 					</span>
-					
-					
+										
 				</div>
 
 			</div>
@@ -527,14 +504,6 @@ function openComment() {
 			<ul class="pagination">
               <li class="page-item"><a class="page-link" href="class_payment">Class 신청</a></li>
             </ul>
-			
-			
-			
-			
-			
-			
-
-		<!-- 	<a href="#" class="btn btn-primary btn-lg">Class 신청</a> -->
 
 		</header>
 
@@ -549,7 +518,7 @@ function openComment() {
 
 			<!--       강의 보기  헤드      -->
 			<div class="show_class">
-				<img src="./resources/image/detail_img/detail_icon_02.png">
+				<img src="${pageContext.request.contextPath}/resources/image/detail_img/detail_icon_02.png">
 				<p3>클래스 보기</p3>
 				<hr>
 			</div>
@@ -558,7 +527,7 @@ function openComment() {
 			<div class="show_class_secction">
 			
 				<div class="show_class_content">
-					<b>클래스 소개</b> <span>/ 05분이내</span>
+					<b>클래스 소개</b>
 				</div>
 
 				<div class="show_class_content_move">
@@ -576,7 +545,7 @@ function openComment() {
 					
 						<span class="video_cn"> 
 							<iframe width="560" height="315"
-									src="https://www.youtube.com/embed/rL-Po0VnjXk" frameborder="0"
+									src="${classDe.class_intro_video}" frameborder="0"
 									allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
 									allowfullscreen></iframe>
 						</span>
@@ -591,7 +560,7 @@ function openComment() {
 
 			<div class="show_class_secction">
 				<div class="show_class_content">
-					<b>재료 소개</b> <span>/  05분이내</span>
+					<b>재료 소개</b> 
 				</div>
 
 				<div class="show_class_content_move">
@@ -608,9 +577,48 @@ function openComment() {
 			
 					<div class="show_freeProp"> 					
 					
+					
 						<span class="video_cn"> 
 							<iframe width="560" height="315"
-							src="https://www.youtube.com/embed/zNwnQxqg1yA" frameborder="0"
+									src="${classDe.class_ingredient_video}" frameborder="0"
+									allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+									allowfullscreen></iframe>
+						</span>
+					
+					
+					
+					</div> <!-- show_freeVideo  -->
+										
+				</div>  <!--   show_class_content_video   -->
+			
+
+
+
+
+	<!--   ------------     section  ------------     -->
+
+			<div class="show_class_secction">
+				<div class="show_class_content">
+					<b>${classDe.class_title}</b> 
+				</div>
+
+				<div class="show_class_content_move">
+					<p4>
+					<span class="starClass">
+					 영상 보기</p4>
+					</span>
+				</div>
+			</div>
+
+			
+			
+			<div id="show_class_content_class">
+			
+					<div class="show_freeClass"> 					
+					
+						<span class="video_cn"> 
+							<iframe width="560" height="315"
+							src="${classDe.class_recipe_video }" frameborder="0"
 							allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
 							allowfullscreen></iframe>
 					</span>
@@ -621,124 +629,155 @@ function openComment() {
 			
 
 
+
+
+
 <!--   ------------     section  ------------     -->
-
-
 
 			<div class="show_class_secction">
 				<div class="show_class_content">
-					<b>푸팟퐁커리</b> <span>/ 10분이내</span>
+					<b>재료</b> 
 				</div>
 
-				<div class="show_class_content_start">
-					<li><p4>
-						<a href="#" class="start_icon"><img
-							src="./resources/image/detail_img/detailstart_on.png"></a></p4>
-					</li>		
-
-				</div>
-				<div class="show_class_content_menu">
-					<span id="show-toggle"> <p4>
-						<a href="#" class="prop_icon"><img
-							src="./resources/image/detail_img/detailmenu_on.png"></a></p4>
+				<div class="show_class_content_move">
+					<p4>
+					<span class="starMate">
+					&nbsp보기</p4>
 					</span>
 				</div>
-				
-				
-				
-				<div id ="show_classVideo">
-				
-				<div class="show_Video"> 					
+			</div>
+
+
+			
+							
+			<div id="show_class_content_mate">
+			
+					<div class="show_freeMate"> 	
+													
+														
+					 		<!--    section    -->
+						<c:choose> 
+							<c:when test="${!empty classList}">
+								<c:forEach var="list" items="${classList}">     	
+									
+									
+										
+									<div id="c_ing">
+									<span class="ing_l">${list.mate.mate_name}<d1></span>
+									</div>	
+								
+									<div id="c_inga"> 							
+									<span class="ing_r">${list.mate.mate_cnt}</span>
+									
+									</div>	
+													
+								
+									</c:forEach>
+							</c:when>
+						</c:choose>  
+															
 					
-						<span class="video_cn"> 
-							<iframe width="560" height="315"
-							src="https://www.youtube.com/embed/zNwnQxqg1yA" frameborder="0"
-							allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
-							allowfullscreen></iframe>
+					
+					</div> <!-- show_freeMate  -->
+										
+				</div>  <!--   show_class_content_mate   -->
+			
+		
+			
+			
+			
+
+			<!--   ------------     section  ------------     -->
+
+			<div class="show_class_secction">
+				<div class="show_class_content">
+					<b>조리법</b> 
+				</div>
+
+				<div class="show_class_content_move">
+					<p4>
+					<span class="starStep">
+					&nbsp보기</p4>
 					</span>
+				</div>
+			</div>
+
+			
+			
+			<div id="show_class_content_step">
+			
+					<div class="show_freeStep"> 					
+					
+						
+			<!--    section    -->
+				<c:choose> 
+					<c:when test="${!empty classList}">
+						<c:forEach var="list" items="${classList}">     	
+								
+							
+							<div id="c_step">
+								<div class="c_s">
+									<d>${list.step.step_cnt}
+								</div>
+									
+							</c:forEach>
+					</c:when>							
+													
+				</c:choose>	
+						
+						
+					
+					</div> <!-- show_freeVideo  -->
+										
+				</div>  <!--   show_class_content_video   -->
+			
+			
+			
+			
+				<%-- 
+							
+		<div id ="show_class_content_step">
+				
+				
+				<div class="showStep"> 					
+					
+					<div>
+							<span class="c_t2">조리순서</span>
+					</div>
+						
+						
+								<!--    section    -->
+				<c:choose> 
+					<c:when test="${!empty classList}">
+						<c:forEach var="list" items="${classList}">     	
+								
+							
+							<div id="c_step">
+								<div class="c_s">
+									<d>${list.step.step_cnt}
+								</div>
+									
+							</c:forEach>
+					</c:when>							
+													
+				</c:choose>	
+						
 					
 					</div> <!-- show_freeVideo  -->
 					
 				</div> <!--  show_classVideo   -->
-				
-	
-				
-
-				<!--     재료 소개       -->
+				 --%>
 			
-			<div class="show_class_prop_1" id="show_class_prop_1">
-
-					<div id="c_recipe">
-						<div>
-							<span class="c_t1">재료</span>
-							<a href="#" id="closeProp">×</a>
-						</div>
-						<div>
-							<span class="c_st1">[필수재료]</span>
-						</div>
-						<div id="c_ing">
-							<span class="ing_l">감자</span> <span class="ing_r">2개</span>
-						</div>
-						<div id="c_ing">
-							<span class="ing_l">양파</span> <span class="ing_r">1/2개</span>
-						</div>
-						<div id="c_ing">
-							<span class="ing_l">당근</span> <span class="ing_r">약간</span>
-						</div>
-						<div id="c_ing">
-							<span class="ing_l">소금</span> <span class="ing_r">1/3숟가락</span>
-						</div>
-						<div id="c_ing">
-							<span class="ing_l">후추</span> <span class="ing_r">약간</span>
-						</div>
-						<div id="c_ing">
-							<span class="ing_l">깨소금</span> <span class="ing_r">1숟가락</span>
-						</div>
-						<div id="c_ing">
-							<span class="ing_l">식용유</span> <span class="ing_r">4숟가락</span>
-						</div>
-						<div>
-							<span class="c_t2">조리순서</span>
-						</div>
-						
-						<div id="c_step">
-							<div class="c_s">
-								감자는 얇게 채 썰어 준비한다.<br> Tip) 감자는 약 0.2mm~0.3mm 정도로 잘라요. 너무
-								두꺼우면 익히는 시간도 오래걸려요.
-							</div>
-							<div class="c_s">
-								양파, 당근도 감자와 같은 크기로 채 썰어 준비한다.<br> Tip) 당근은 색감을 내기위해 사용하기도
-								하니 생략해도 좋아요.
-							</div>
-							<div class="c_s">감자는 찬물에 2~3번 헹궈내고 약 10분정도 담가 전분기를 제거한다.</div>
-							<div class="c_s">
-								물에 담가놓은 감자는 채반을 이용해 물기를 제거한다.<br> Tip) 키친타월을 이용해 물기를 더 닦아
-								주어도 좋아요.
-							</div>
-							<div class="c_s">
-								예열된 팬에 기름을 4숟가락 두르고 양파와 당근을 넣어 볶는다.<br> Tip) 센불로 약 1분간 볶아요.
-							</div>
-							<div class="c_s">
-								양파가 살짝 투명해 지면 감자를 넣어 볶는다.<br> Tip) 중불로 약 2분간 볶아요.
-							</div>
-							<div class="c_s">
-								소금, 후추로 간을 해 감자가 익을때 까지 약 2~3분간 더 볶는다.<br> Tip) 감자의 굵기에 따라
-								시간을 조절해 주세요.
-							</div>
-							<div class="c_s">마지막으로 깨소금을 뿌려 섞어 완성한다.</div>
-						</div>
-					</div>
-
-				</div>   <!--    show_class_prop    -->
-			
+	</div>
 </div>
 
 
-
-</div>
 
 
 <!--       강의 보기      -->
+
+
+
 
 
 
@@ -754,10 +793,10 @@ function openComment() {
 				<!--     second hader   -->
 				<span id="toc-toggle" onclick="openCloseToc()">
 					<div class="second_header">
-						<img src="./resources/image/detail_img/detail_icon.png">
+						<img src="${pageContext.request.contextPath}/resources/image/detail_img/detail_icon.png">
 						<p3>클래스 상세 정보</p3>
 						<p4>
-						<img src="./resources/image/detail_img/detail_on.png"
+						<img src="${pageContext.request.contextPath}/resources/image/detail_img/detail_on.png"
 							id="detail_more_IMG"></p4>
 						<hr>
 					</div>
@@ -769,9 +808,9 @@ function openComment() {
 
 					<div class="second_body">
 						<div class="sc_body_title">
-							<p5>현지의 맛과 향이 느껴지는 </br>
+							<p5>${classDe.class_title}</br>
 							</p5>
-							<p5>태국 요리 6가지를 배울 수 있어요.</p5>
+							<p5>${classDe.class_content}</p5>
 						</div>
 
 
@@ -781,85 +820,51 @@ function openComment() {
 						<div class="body_ct">
 							<div class="body_ct_img">
 								<span> <img
-									src="./resources/image/detail_img/detail_img_01.jpg">
+									src="${pageContext.request.contextPath}/resources/image/FoodImg/${classDe.class_info_pic}">
 								</span>
 							</div>
 
 							<div class="body_ct_title">
-								<span> <p6>태국 대표 볶음 요리 <팟타이></p6>
+								<span> <p6>${classDe.class_detail_title }</p6>
 								</span>
 							</div>
 							<div class="body_ct_content">
-								<span> <p7>달걀, 새우와 숙주, 쌀국수를 볶은 태국 태표 요리인 팟타이 <팟타이></p7>
+								<span> <p7>${classDe.class_detail_info}</p7>
 								</span>
 							</div>
 						</div>
 
 
-
-						<!--     second boby  secciton   -->
-						<div class="body_ct">
-							<div class="body_ct_img">
-								<span> <img
-									src="./resources/image/detail_img/detail_img_02.jpg">
-								</span>
-							</div>
-
-							<div class="body_ct_title">
-								<span> <p6>태국 전통 스프 <똠얌꿍></p6>
-								</span>
-							</div>
-							<div class="body_ct_content">
-								<span> <p7>새우 육수와 똠양 페이스트로 만들어 새콤한 맛의 똠얌꿍<팟타이></p7>
-								</span>
-							</div>
-						</div>
-
-
-
-						<!--     second boby  secciton   -->
-						<div class="body_ct">
-							<div class="body_ct_img">
-								<span> <img src="./resources/image/detail_img/detail_img_03.jpg">
-								</span>
-							</div>
-
-							<div class="body_ct_title">
-								<span> <p6>태국가면 꼭 먹어야 할 요리 <푸팟퐁커리></p6>
-								</span>
-							</div>
-							<div class="body_ct_content">
-								<span> <p7>튀긴 게와 옐로우커리의 만남! 무조건 먹는 태국 여행 1순위 메뉴
-									푸팟퐁커리 <팟타이></p7>
-								</span>
-							</div>
 							
 							<hr>
 							
 							
 						<!--  태그  -->	
 							<div class="body_tag">
-							<img src="./resources/image/detail_img/tag.png">
+							<img src="${pageContext.request.contextPath}/resources/image/detail_img/tag.png">
+							
 								<li class="tag_text">
 									<a href="#" >
-									<h7>#아시아</h7>									
+									<h7>#${classDe.kindtag.kind_tag_name}</h7>									
 									</a>								
 								</li>
+								
 								<li class="tag_text">
 									<a href="#" >
-									<h7>#해산물</h7>									
+									<h7>#${classDe.themetag.theme_tag_name}</h7>									
+									</a>								
+								</li>
+								
+								<li class="tag_text">
+									<a href="#" >
+									<h7>#${classDe.material.material_tag_name}</h7>									
 									</a>								
 								</li>
 							</div>
 							
 														
-							
-						</div>
-
-
-
-
-
+						<!-- 	
+						</div> -->
 
 
 
@@ -883,6 +888,7 @@ function openComment() {
 
 
 
+
 		<!-- ------------------- 취소 환불 부분   ---------------------  -->
 
 		<div class="jumbotron my-4">
@@ -891,7 +897,7 @@ function openComment() {
 
 				<!--     second hader   -->
 				<div class="second_header">
-					<img src="./resources/image/detail_img/detail_icon_03.png">
+					<img src="${pageContext.request.contextPath}/resources/image/detail_img/detail_icon_03.png">
 					<p3>취소 / 환불 안내</p3>
 					<hr>
 				</div>
@@ -941,8 +947,6 @@ function openComment() {
 
 
 
-
-
 		<!-- -------------------  수강 후기  ---------------------  -->
 
 		<div class="jumbotron my-4">
@@ -951,32 +955,34 @@ function openComment() {
 
 				<!--     second hader   -->
 				<div class="second_header">
-					<img src="./resources/image/detail_img/detail_icon_04.png">
+					<img src="${pageContext.request.contextPath}/resources/image/detail_img/detail_icon_04.png">
 					<p3>클래스 후기</p3>
 					<hr>
 				</div>
 
 
-
+		        
+		<!--    section    -->
+		
+		
+<!--    section    -->
+			<c:choose> 
+				<c:when test="${!empty classDe}">		
+					
 				<!--     후기  Section         -->
 				<section>
 					<div class="afterWord_Wrap">
 
 						<div class="media-left">
-							<a href="#"> <img
-								src="./resources/image/detail_img/profile.png">
-							</a> <b class="info_name_f"> 아이디 </b>
+							<a href="#"> 
+							<img src="${pageContext.request.contextPath}/resources/image/rank_img/${classDe.member.mem_pic}" class="profileIMG">
+							</a> <b class="info_name_f">${classDe.member.mem_nickname}</b>
 
-							<c class="info_date">2020-11-25 23:56:08 </c>
+							<c class="info_date">${classDe.review.review_date}</c>
 
 
-							<span class="info_star"> <img
-								src="./resources/image/detail_img/star.png"
-								class="afterWord_star"> <img
-								src="./resources/image/detail_img/star.png"
-								class="afterWord_star"> <img
-								src="./resources/image/detail_img/star.png"
-								class="afterWord_star">
+							<span class="info_star"> 
+							<img src="${pageContext.request.contextPath}/resources/image/detail_img/star_${classDe.review.star_rate}.png" class="afterWord_star">
 							</span>
 
 							<d class="info_delete">
@@ -985,7 +991,7 @@ function openComment() {
 						
 						
 						
-						<div class="info_content">후기후기 내용내용 후기후기 내용내용 후기후기 내용내용</div>
+						<div class="info_content">${classDe.review.review_content}</div>
 
 						<hr class="info_line">
 
@@ -994,49 +1000,11 @@ function openComment() {
 					<!--    afterWord_Wrap    -->
 
 				</section>
-
-
-
-
-
-
-				<!--     후기  Section         -->
-				<section>
-					<div class="afterWord_Wrap">
-
-						<div class="media-left">
-							<a href="#"> <img
-								src="./resources/image/detail_img/profile.png">
-							</a> <b class="info_name_f"> 아이디 </b>
-
-							<c class="info_date">2020-11-25 23:56:08 </c>
-
-
-							<span class="info_star"> <img
-								src="./resources/image/detail_img/star.png"
-								class="afterWord_star"> <img
-								src="./resources/image/detail_img/star.png"
-								class="afterWord_star"> <img
-								src="./resources/image/detail_img/star.png"
-								class="afterWord_star">
-							</span>
-
-							<d class="info_delete">
-							<a href="#">삭제</a></d>
-						</div>
-
-								
-
-						<div class="info_content">후기후기 내용내용 후기후기 내용내용 후기후기 내용내용</div>
-
-						<hr class="info_line">
-
-
-					</div>
-					<!--    afterWord_Wrap    -->
-
-				</section>
-
+				
+				</c:when>
+			</c:choose>
+			
+	
 
 				<span id="com-toggle" onclick="openComment()">
 				
@@ -1049,12 +1017,16 @@ function openComment() {
 
 
 
-
-
-
-
 				<!-- -    -----------------     후기작성  디테일  -------------------------       -->
 
+
+	<form action="insertClassReview" method="post"> 
+
+
+ <%
+  request.setCharacterEncoding("UTF-8");
+%>
+    
 
 
 				<div class="coment_write" id="coment_write">
@@ -1072,7 +1044,6 @@ function openComment() {
 					<div class="modal-body" style="max-height: 852px; height: 852px;">
 
 
-						<form name="commentFrom" id="commentFrom" method="" action="">
 
 							<!-- 	<input type="hidden" name="q_mode" value="insert">  -->
 
@@ -1094,12 +1065,15 @@ function openComment() {
 													<td class="star_mark">
 													<a id="" href="#" class="dropdown-toggle" data-toggle="dropdown"
 														aria-haspopup="true" role="button" aria-expanded="true">
+														
+														<input id="star_rate" name="star_rate" type="hidden" name="hide" value="">
+														
 															<div id="star" style="display: inline;">
-																<img src="./resources/image/detail_img/star.png">
-																<img src="./resources/image/detail_img/star.png">
-																<img src="./resources/image/detail_img/star.png">
-																<img src="./resources/image/detail_img/star.png">
-																<img src="./resources/image/detail_img/star.png">
+																<img src="${pageContext.request.contextPath}/resources/image/detail_img/star.png">
+																<img src="${pageContext.request.contextPath}/resources/image/detail_img/star.png">
+																<img src="${pageContext.request.contextPath}/resources/image/detail_img/star.png">
+																<img src="${pageContext.request.contextPath}/resources/image/detail_img/star.png">
+																<img src="${pageContext.request.contextPath}/resources/image/detail_img/star.png">
 															</div>
 															<!-- 
 															<span class="caret"></span> -->
@@ -1109,50 +1083,50 @@ function openComment() {
 															aria-labelledby="">
 															<li role="presentation" onclick="doStar(5)"><span
 																class="view2_review_star" id="star5"> <img
-																	src="./resources/image/detail_img/star.png"> <img
-																	src="./resources/image/detail_img/star.png"> <img
-																	src="./resources/image/detail_img/star.png"> <img
-																	src="./resources/image/detail_img/star.png"> <img
-																	src="./resources/image/detail_img/star.png">
+																	src="${pageContext.request.contextPath}/resources/image/detail_img/star.png"> <img
+																	src="${pageContext.request.contextPath}/resources/image/detail_img/star.png"> <img
+																	src="${pageContext.request.contextPath}/resources/image/detail_img/star.png"> <img
+																	src="${pageContext.request.contextPath}/resources/image/detail_img/star.png"> <img
+																	src="${pageContext.request.contextPath}/resources/image/detail_img/star.png">
 															</span></li>
 															<li role="presentation" onclick="doStar(4)"><span
 																class="view2_review_star" id="star4"> <img
-																	src="./resources/image/detail_img/star.png"> <img
-																	src="./resources/image/detail_img/star.png"> <img
-																	src="./resources/image/detail_img/star.png"> <img
-																	src="./resources/image/detail_img/star.png"> <img
-																	src="./resources/image/detail_img/star_off.png">
+																	src="${pageContext.request.contextPath}/resources/image/detail_img/star.png"> <img
+																	src="${pageContext.request.contextPath}/resources/image/detail_img/star.png"> <img
+																	src="${pageContext.request.contextPath}/resources/image/detail_img/star.png"> <img
+																	src="${pageContext.request.contextPath}/resources/image/detail_img/star.png"> <img
+																	src="${pageContext.request.contextPath}/resources/image/detail_img/star_off.png">
 															</span></li>
 															<li role="presentation" onclick="doStar(3)"><span
 																class="view2_review_star" id="star3"> <img
-																	src="./resources/image/detail_img/star.png"> <img
-																	src="./resources/image/detail_img/star.png"> <img
-																	src="./resources/image/detail_img/star.png"> <img
-																	src="./resources/image/detail_img/star_off.png">
-																	<img src="./resources/image/detail_img/star_off.png">
+																	src="${pageContext.request.contextPath}/resources/image/detail_img/star.png"> <img
+																	src="${pageContext.request.contextPath}/resources/image/detail_img/star.png"> <img
+																	src="${pageContext.request.contextPath}/resources/image/detail_img/star.png"> <img
+																	src="${pageContext.request.contextPath}/resources/image/detail_img/star_off.png">
+																	<img src="${pageContext.request.contextPath}/resources/image/detail_img/star_off.png">
 
 															</span></li>
 															<li role="presentation" onclick="doStar(2)"><span
 																class="view2_review_star" id="star2"> <img
-																	src="./resources/image/detail_img/star.png"> <img
-																	src="./resources/image/detail_img/star.png"> <img
-																	src="./resources/image/detail_img/star_off.png">
-																	<img src="./resources/image/detail_img/star_off.png">
-																	<img src="./resources/image/detail_img/star_off.png">
+																	src="${pageContext.request.contextPath}/resources/image/detail_img/star.png"> <img
+																	src="${pageContext.request.contextPath}/resources/image/detail_img/star.png"> <img
+																	src="${pageContext.request.contextPath}/resources/image/detail_img/star_off.png">
+																	<img src="${pageContext.request.contextPath}/resources/image/detail_img/star_off.png">
+																	<img src="${pageContext.request.contextPath}/resources/image/detail_img/star_off.png">
 															</span></li>
 															<li role="presentation" onclick="doStar(1)"><span
 																class="view2_review_star" id="star1"> <img
-																	src="./resources/image/detail_img/star.png"> <img
-																	src="./resources/image/detail_img/star_off.png">
-																	<img src="./resources/image/detail_img/star_off.png">
-																	<img src="./resources/image/detail_img/star_off.png">
-																	<img src="./resources/image/detail_img/star_off.png">
+																	src="${pageContext.request.contextPath}/resources/image/detail_img/star.png"> <img
+																	src="${pageContext.request.contextPath}/resources/image/detail_img/star_off.png">
+																	<img src="${pageContext.request.contextPath}/resources/image/detail_img/star_off.png">
+																	<img src="${pageContext.request.contextPath}/resources/image/detail_img/star_off.png">
+																	<img src="${pageContext.request.contextPath}/resources/image/detail_img/star_off.png">
 															</span></li>
 														</ul></td>
 												</tr>
 												<tr>
 													<td colspan="2" style="padding-left: 14px;">
-														<hr> <textarea id="txComment" class="form-control"
+														<hr> <textarea id="review_content" name="review_content" class="form-control"
 															placeholder="내용을 입력하세요."
 															style="height: 300px; resize: none; text-align: left;">
 													</textarea>
@@ -1164,34 +1138,13 @@ function openComment() {
 									<!--    order_table_box     -->
 
 
-								<!-- 	<hr>
- -->
-
-
-								<!-- 	<div class="story_write_pic" style="padding: 0px 0px 0px;">
-
-										<div id="add_imgs" class="complete_pic">
-											<img src="https://recipe1.ezmember.co.kr/img/pic_none3.gif"
-												alt="파일첨부" width="150" height="150"
-												onclick="document.getElementById('file_1').click();"
-												style="cursor: pointer;">
-										</div>
-
-
-										<div id="img_dd" class="complete_pic" style="display: none;">
-											<img id="attach_imgs"
-												src="data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7"
-												width="150" height="150">
-										</div>
-									</div>
-									   story_write_pic    -->
 
 
 									<p style="text-align: center; border-top: 1px solid #e2e2e2">
 										<button type="button" class="cmbt cmbt-primary"
 											style="width: 15%;" id="comment_BT_close">취소</button>
-										<button type="button" onclick="doSubmit()"
-											class="cmbt cmbt-primary" style="width: 15%;" id="comment_BT">저장</button>
+										 <button type="submit" 
+											class="cmbt cmbt-primary" style="width: 15%;" id="comment_BT"> 저장 </button>
 									</p>
 
 
@@ -1206,7 +1159,6 @@ function openComment() {
 								vspace=0></iframe>
 
 
-						</form>
 						<!--   commentFrom     -->
 
 					</div>
@@ -1229,21 +1181,18 @@ function openComment() {
 
 	</div>
 	<!-- /.container -->
-	
-
-  
-  
-  
 
 
 
 
+
+</form>
 
 
 <!--     ------------------   footer 영역    -------------------        -->
 
 <!-- Newsletter start -->
-  <section class="section light-bg bg-cover" style=" background-image:url('./resources/image/main/footBackImg_03.jpg')">
+  <section class="section light-bg bg-cover" style=" background-image:url('${pageContext.request.contextPath}/resources/image/main/footBackImg_03.jpg')">
 
 
   </section>
@@ -1258,7 +1207,7 @@ function openComment() {
                 <!-- Single Cool Fact -->
                 <div class="col-12 col-sm-6 col-lg-3">
                     <div class="single-cool-fact">
-                        <img src="./resources/image/core-img/salad.png" alt="">
+                        <img src="${pageContext.request.contextPath}/resources/image/core-img/salad.png" alt="">
                         <h3><span class="counter">1287</span></h3>
                         <h6>Recipe</h6>
                     </div>
@@ -1267,7 +1216,7 @@ function openComment() {
                 <!-- Single Cool Fact -->
                 <div class="col-12 col-sm-6 col-lg-3">
                     <div class="single-cool-fact">
-                        <img src="./resources/image/core-img/hamburger.png" alt="">
+                        <img src="${pageContext.request.contextPath}/resources/image/core-img/hamburger.png" alt="">
                         <h3><span class="counter">25</span></h3>
                         <h6>Chef Recipe</h6>
                     </div>
@@ -1276,7 +1225,7 @@ function openComment() {
                 <!-- Single Cool Fact -->
                 <div class="col-12 col-sm-6 col-lg-3">
                     <div class="single-cool-fact">
-                        <img src="./resources/image/core-img/rib.png" alt="">
+                        <img src="${pageContext.request.contextPath}/resources/image/core-img/rib.png" alt="">
                         <h3><span class="counter">471</span></h3>
                         <h6>Class</h6>
                     </div>
@@ -1285,7 +1234,7 @@ function openComment() {
                 <!-- Single Cool Fact -->
                 <div class="col-12 col-sm-6 col-lg-3">
                     <div class="single-cool-fact">
-                        <img src="./resources/image/core-img/pancake.png" alt="">
+                        <img src="${pageContext.request.contextPath}/resources/image/core-img/pancake.png" alt="">
                         <h3><span class="counter">326</span></h3>
                         <h6>Affiliates</h6>
                     </div>
@@ -1296,16 +1245,11 @@ function openComment() {
                 <div class="col-12 col-sm-6 col-lg-3">
                     <div class="single-cool-fact">
                     <a href="mailto:wandering_star@naver.com">
-                        <img src="./resources/image/core-img/mail.png" alt="">
+                        <img src="${pageContext.request.contextPath}/resources/image/core-img/mail.png" alt="">
                     </a>                    
                         <h6>쉐프등업</h6>
                     </div>
                 </div>
-                
-                
-                
-                
-                
                 
                 
             </div>

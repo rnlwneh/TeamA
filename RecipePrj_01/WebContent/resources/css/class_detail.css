@@ -811,6 +811,8 @@ figure.snip1425.hover:after {
 }
 
 
+
+
 .show_class p3{
 	font-family: 'Playfair Display', serif;
 	font-size: 18px;
@@ -851,7 +853,7 @@ figure.snip1425.hover:after {
 }
 
 
-#show_class_content_video, #show_class_content_prop{
+#show_class_content_video, #show_class_content_prop, #show_class_content_class{
 	
 	display: table-cell;
 	background:white;	
@@ -865,6 +867,25 @@ figure.snip1425.hover:after {
 	text-aling: center;		
 	
 }
+
+
+#show_class_content_mate,#show_class_content_step{
+	
+
+display: table-cell;
+	background:white;	
+	height: auto;
+	width: 1050px;
+	max-height: auto;
+ 	max-width: 1050px; 
+	border-radius: 10px;	
+	border:1px solid #d2d4d6;
+	padding: 12px;	
+	text-aling: center;		
+
+
+}
+
 
 #show_classVideo{
 	
@@ -882,6 +903,12 @@ display: table-cell; */
 
 
 }
+
+
+
+
+
+
 
 
 .show_class_content b{
@@ -904,7 +931,11 @@ display: table-cell; */
 
 
 
-.show_class_content_move{	
+
+
+
+
+.show_class_content_move, .show_class_mate_move{	
 	display: table-cell;	
 	background:white;	
 	height: 48px;
@@ -918,6 +949,10 @@ display: table-cell; */
 	text-aling: center;
 		
 }
+
+
+
+
 
 
 .show_class_content_move p4{
@@ -1109,7 +1144,7 @@ display: table-cell; */
  
 }
 
-
+/* 
 
 #c_ing span.ing_l {
     width: 49%;
@@ -1126,19 +1161,67 @@ display: table-cell; */
     width: 49%;
     display: inline-block;
     padding: 7px 0;
-    margin: 0;
+    margin: 0 0 0 5px;
     text-align: right;
     border-bottom:1px dashed #d2d4d6;
     margin-top: 8px;
 }
+ */
+
+
+
+
+#c_ing span.ing_l {
+    width: 49%;
+    float: left;
+    padding: 7px 0;
+    margin: 0;   
+    margin-top: 8px;
+  
+   
+}
+
+
+
+#c_inga span.ing_r {
+    width: 49%;
+    float: right;
+    padding: 7px 0;
+    margin: 0 0 0 10px;
+    text-align: right;   
+    margin-top: 8px;
+    
+}
+
+
+
+
 
 
 #c_recipe .c_t2 {
     font-weight: bold;
-    display: block;
-    margin: 20px 0 0 0;
-    font-size: 16px;
+    float: left;
+    /* margin: 80px 0 0 0;    */
+    padding: 10px;
+    color: black;
+    font-size: 19px;
+    text-decoration: none;
+    width: 97%;
 }
+
+
+/* 
+#c_recipe .c_t2 {
+    font-weight: bold;
+    display: block;
+    margin: 80px 0 0 0;   
+    padding: 10px;
+    color: black;
+    font-size: 19px;
+    text-decoration: none;
+    width: 97%;
+} */
+
 
 
 
@@ -1164,16 +1247,16 @@ display: table-cell; */
 }
 
 
-
-#c_step div.c_s {
+#c_step div.c_s d{
     text-align: top;
     padding: 0 0 0 30px;
-    margin: 20px 0;
+    margin: 0 0 0 20px ;
     font-size: 17px;
     background: url('../image/detail_img/detail_icon_05.png') no-repeat 0 3px;
     background-size: 20px;
     
 }
+
 
 
 
@@ -1372,7 +1455,7 @@ list-style:none;
 
 /*   --------------------       후기 부분   -------------------      */
 
-.media-left img {
+.profileIMG {
 	
     width: 65px;
     height: 65px;
@@ -1430,8 +1513,8 @@ list-style:none;
 
 .info_star img{
 	
-	width: 20px;
-	height: 20px;
+	width: 100px;
+	height: 20px; 
 	margin-left: 10px;
 	margin-top: 1px;
 }
@@ -1511,6 +1594,26 @@ list-style:none;
 	
 	
 }
+
+
+
+.body_ct_title p6{
+	
+	font-size: 20px;
+	font-weight: 700;
+	
+	
+}
+
+
+.body_ct_title p7{
+	
+	font-size: 17px;
+	font-weight: 500;
+	
+	
+}
+
 
 
 

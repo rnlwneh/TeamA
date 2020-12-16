@@ -256,13 +256,34 @@ function addRecipeMaterial(group_idx, init_json, prev_step){
         handle: $('.btn-lineup')
     });
     //$( "ul, li" ).disableSelection();
+    
+    
+    
 }
 
 
 
 
 
+function fileUpload(fis) {
 
+    var str = fis.value;
+
+    $('#new_main_photo').text(fis.value.substring(str.lastIndexOf("\\")+1));
+
+    // 이미지를 변경한다.
+
+      var reader = new FileReader();
+
+  reader.onload = function(e){
+
+	$('#write_photo').attr('src',e.target.result);
+
+  }
+
+reader.readAsDataURL(fis.files[0]);
+
+}
 
 
 
@@ -468,7 +489,7 @@ function addRecipeMaterial(group_idx, init_json, prev_step){
 
   
   
-  <form class="writeForm" action="class_main">
+  <form class="writeForm" action="insertrecipe" method="post">
   <!-- Page Content -->
   <div class="container">
   
@@ -493,22 +514,15 @@ function addRecipeMaterial(group_idx, init_json, prev_step){
 			<div class="cont_box pad_l_60">
 			
 				<div id="divMainPhotoUpload" class="cont_pic2">
-					<input type="hidden" name="main_photo" id="main_photo" value="">
-					<input type="hidden" name="new_main_photo" id="new_main_photo"
-						value=""> <input type="hidden" name="del_main_photo"
-						id="del_main_photo" value="">
-					<div style="position: absolute; left: -3000px">
-						<input type="file" name="q_main_file" id="q_main_file"
-							file_gubun="main" accept="jpeg,png,gif"
-							style="display:; width: 0px; height: 0px; font-size: 0px;"
-							text="">
-					</div>
 					
 			
 			
 					<div id="divMainPhotoBox" is_over="0">
-						<img id="write_photo" onclick="document.getElementById('q_main_file').click();" src="./resources/image/class_write_img/photo_icon.png"
-							style=" cursor: pointer">
+						<input type="file" name="q_main_file" id="q_main_file"
+							file_gubun="main" 
+							style="display:none;" multiple="" onchange="fileUpload(this);">
+						<img id="write_photo" onclick="document.getElementById('q_main_file').click();" src="./resources/image/class_write_img/photo_icon.png" style=" cursor: pointer;">
+						<input type="hidden" name="new_main_photo" id="new_main_photo">
 					</div> 
 										
 					
@@ -531,7 +545,7 @@ function addRecipeMaterial(group_idx, init_json, prev_step){
 					<p class="cont_tit4">레시피 내용</p>
 					<textarea name="cok_intro" id="cok_intro"
 						class="form-control step_cont"
-						placeholder="예) 집에서 쉽게 만드는 뽀모도로 파스타 레시피 입니다"></textarea>
+						placeholder="예) 집에서 쉽게 만드는 뽀모도로 파스타 레시피 입니다" style=" resize: none;"></textarea>
 				</div>
 				
 
@@ -626,13 +640,7 @@ function addRecipeMaterial(group_idx, init_json, prev_step){
 						<div class="mag_b_25 ui-sortable" id="divMaterialGroupArea">
 						
 							<li id="liMaterialGroup_1">
-								<p class="cont_tit6 st2 mag_r_15">
-								
-										<a href="#" class="btn-lineup ui-sortable-handle" data-original-title="" title=""></a>
-										<input type="text" name="material_group_title_1" id="material_group_title_1"
-											value="재료" class="form-control"
-											style="font-weight: bold; font-size: 18px; width: 210px;">
-								</p>								
+																
 								<ul id="divMaterialArea_1" class="ui-sortable">
 								
 									<li id="liMaterial_1_1">
@@ -666,16 +674,7 @@ function addRecipeMaterial(group_idx, init_json, prev_step){
 						</div>
 
 
-						<div class="noti">
-						
-							<t2> ※ 양념, 양념장, 소스, 드레싱, 토핑, 시럽, 육수 밑간 등으로 구분해서 작성해주세요. </t2>
-							<div class="noti_btn">
-								<button type="button" onclick="addMaterialGroup('',[],null,'1')" class="btn-lg btn-default">				
-								<img src="./resources/image/class_write_img/head_icon04.png" >
-									<span class="glyphicon glyphicon-plus"></span> 재료/양념 묶음 추가
-								</button>
-							</div>
-						</div>  <!--  noti    -->
+						  <!--  noti    -->
 						
 				
 				
@@ -808,11 +807,6 @@ function addRecipeMaterial(group_idx, init_json, prev_step){
 			 <button type="button" class="saveBT" onClick="location.href='class_main'">
 		    	  <span class="saveBTsp"></span> 
 		    	 	저장
-		    </button>
-		    
-		     <button type="button" class="writeBT" onClick="location.href='class_main'">
-		    	  <span class="saveBTsp"></span> 
-		    	 	저장 후 등록
 		    </button>
 		    
 		     <button type="button" class="closeBT">

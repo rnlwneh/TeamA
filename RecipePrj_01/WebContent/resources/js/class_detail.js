@@ -9,10 +9,15 @@ $('.show_class_prop_1').hide();
  
 $('.show_video').hide();
 
-$('#show_class_content_video').hide();
- 
+$('#show_class_content_video').hide(); 
  
 $('#show_class_content_prop').hide();
+
+$('#show_class_content_class').hide();
+
+$('#show_class_content_mate').hide();
+
+$('#show_class_content_step').hide();
 
 
  $("#show_classVideo").hide();
@@ -58,12 +63,45 @@ $('.starFree').click(function(){
 
 
 
+
+$('.starClass').click(function(){
+	$("#show_class_content_class").fadeToggle(600, 'linear');
+ 	 event.preventDefault();
+ 	 
+
+ })
+
+
+
 $('.starProp').click(function(){
 	$("#show_class_content_prop").fadeToggle(600, 'linear');
  	 event.preventDefault();
  	 
 
  })
+
+
+
+
+
+$('.starMate').click(function(){
+	$("#show_class_content_mate").fadeToggle(600, 'linear');
+ 	 event.preventDefault();
+ 	 
+
+ })
+
+
+
+
+
+$('.starStep').click(function(){
+	$("#show_class_content_step").fadeToggle(600, 'linear');
+ 	 event.preventDefault();
+ 	 
+
+ })
+
 
 
   	
@@ -74,6 +112,7 @@ $('.start_icon').click(function(){
 
  })
    	
+
 
 $('#closeProp').click(function(){
 	$(".show_class_prop_1").slideToggle('slow');

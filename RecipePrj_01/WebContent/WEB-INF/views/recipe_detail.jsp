@@ -1,5 +1,6 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
+<%@ taglib uri="http://java.sun.com/jstl/core_rt" prefix="c"%>
 <!doctype html>
 <html lang="en">
 <head>
@@ -363,9 +364,9 @@
           <!-- Content Start -->
           <article class="post-single">
             <div class="post-thumbnail">
-              <img src="${pageContext.request.contextPath}/resources/img/blog/1.jpg" alt="post">
+              <img src="${pageContext.request.contextPath}/resources/img/blog/${detail.recipe_thumbnail}" alt="post">
               <div class="video-player-trigger">
-                <a href="https://www.youtube.com/watch?v=4bdFyM-z8g8" class="popup-youtube">
+                <a href="${detail.recipe_video}" class="popup-youtube">
                   <i class="fas fa-play"></i>
                   <div class="video-player-icons">
                     <i class="flaticon-pot"></i>
@@ -378,72 +379,40 @@
               </div>
             </div>
             <div class="post-categories">
-              <a href="#">스크랩하기</a>
+              <a href="#">스크랩하기</a><!-- 나중에 a 태그에 컨트롤러 연결해서 insert -->
             </div>
-            <h2 class="title">Puffy Pancakes Glazed With Caramel Topped With Fruits</h2>
-            <span><h5> 폭신폭신 우리집이 브런치 카페! 부드러운 수플레 팬케이크 만들어 먹기 :)</h5></span>
+            <h2 class="title">${detail.recipe_title}</h2>
+            <span><h5>${detail.recipe_content}</h5></span>
             <div class="post-meta">
-              <span><i class="fas fa-concierge-bell"></i> 13 Scrap 스크랩수</span>
-              <span> <i class="far fa-user"></i> Posted by (글쓴이)</span>
+              <span><i class="fas fa-concierge-bell"></i> ${detail.scrap_cnt} Scrap</span>
+              <span> <i class="far fa-user"></i> Posted by ${detail.mem_nickname}</span>
               <div class="recipe-duration">
-                  <span><i class="fas fa-stopwatch"></i>요리시간 50 mins</span>
+                  <span><i class="fas fa-stopwatch"></i>요리시간 ${detail.recipe_time}</span>
               </div>
-              <span> <i class="far fa-level"></i>난이도 Hard</span>
+              <span> <i class="far fa-level"></i>난이도 ${detail.recipe_level}</span>
             </div>
+            <c:forEach var="list" items="${recipe}">
             <div class="post-content">
               <div class="recipe-ingredients">
-                <h4>Ingredients</h4>
+                <h4>재료 준비</h4>
                 <ul class="ct-list">
-                  <li>2 cups flour (125 g)</li>
-                  <li>¼ cup sugar (50 g), or sweetener of choice</li>
-                  <li>4 teaspoons baking powder</li>
-                  <li>¼ teaspoon baking soda</li>
-                  <li>½ teaspoon salt</li>
-                  <li>1 ½ cups milk (355 mL), plus more if needed</li>
-                  <li>¼ cup butter (57 g), melted</li>
-                  <li>2 teaspoons vanilla</li>
-                  <li>1 egg</li>
-                  <li>1 cup pumpkin puree (225 g)</li>
+                   <li>${list.mate_name}&nbsp;&nbsp;${list.mate_cnt}</li> 
                 </ul>
               </div>
               <div class="recipe-instructions">
-                <h4>Instructions</h4>
+                <h4>조리 방법</h4>
                 <ul>
                   <li>
                     <h5>Step 1</h5>
                     <p>
-                      Combine together the flour, sugar (or sweetener), baking powder, baking soda, and salt in a large-sized bowl.
+                       ${list.step_cnt} 
                     </p>
                   </li>
-                  <li>
-                    <h5>Step 2</h5>
-                    <p>
-                      Make a well in the centre and whisk in the milk, slightly cooled melted butter, vanilla and egg. Whisk in the pumpkin puree until smooth.
-                    </p>
-                  </li>
-                  <li>
-                    <h5>Step 3</h5>
-                    <p>
-                      Heat a nonstick pan or griddle over low-medium heat and wipe over with a little butter to lightly grease pan.
-                    </p>
-                  </li>
-                  <li>
-                    <h5>Step 4</h5>
-                    <p>
-                      Pour 1⁄4 cup of batter onto the pan and spread out gently into a round shape with the back of your ladle or measuring cup. When the underside is golden and bubbles begin to
-                      appear on the surface, flip with a spatula and cook until golden. Repeat with remaining batter.
-                    </p>
-                  </li>
-                  <li>
-                    <h5>Step 5</h5>
-                    <p>
-                      Serve with your choice of topping.
-                    </p>
-                  </li>
+                  
                 </ul>
               </div>
-
             </div>
+            </c:forEach>
           </article>
           <!-- Content End -->
 

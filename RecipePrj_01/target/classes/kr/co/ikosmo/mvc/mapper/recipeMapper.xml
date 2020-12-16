@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper
+  PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+  "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="recipe">
+	
+	<!-- 레시피목록 셀렉트 -->
+	<select id="getRecipeList" resultType="recipe">
+	<![CDATA[
+	select * from recipe_list2 order by recipe_no desc
+	]]>
+	</select>
+	
+	<select id="getRecipe" parameterType="recipe" resultType="recipe">
+	<![CDATA[
+	select * from recipe_list 
+	where recipe_no = #{recipe_no}
+	]]>
+	</select>
+	
+	<insert id="insertRecipe" parameterType="recipe">
+	<![CDATA[
+	insert into recipe_list () values()
+	]]>
+	</insert>
+	
+</mapper>

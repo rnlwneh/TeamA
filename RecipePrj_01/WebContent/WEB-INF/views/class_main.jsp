@@ -1,5 +1,7 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
+<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
+    
 <!doctype html>
 <html lang="en">
 <head>
@@ -7,18 +9,16 @@
   <title>Class_Main</title>
 
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <link rel="icon" type="image/x-icon" href="./resources/img/favicon.ico">
+  <link rel="icon" type="image/x-icon" href="${pageContext.request.contextPath}/resources/img/favicon.ico">
   
-  
 
+<link rel="stylesheet" type="text/css" href="${pageContext.request.contextPath}/resources/css/header.css" media="all" />
+<link rel="stylesheet" type="text/css" href="${pageContext.request.contextPath}/resources/css/main.css" media="all" />
+<link rel="stylesheet" type="text/css" href="${pageContext.request.contextPath}/resources/css/class_main_style.css" media="all" />
 
-<link rel="stylesheet" type="text/css" href="./resources/css/header.css" media="all" />
-<link rel="stylesheet" type="text/css" href="./resources/css/main.css" media="all" />
-<link rel="stylesheet" type="text/css" href="./resources/css/class_main_style.css" media="all" />
-
-<link rel="stylesheet" type="text/css" href="./resources/css/plugins/magnific-popup.css" media="all" />
-<link rel="stylesheet" type="text/css" href="./resources/css/plugins/slick.css" media="all" />
-<link rel="stylesheet" type="text/css" href="./resources/css/plugins/slick-theme.css" media="all" />
+<link rel="stylesheet" type="text/css" href="${pageContext.request.contextPath}/resources/css/plugins/magnific-popup.css" media="all" />
+<link rel="stylesheet" type="text/css" href="${pageContext.request.contextPath}/resources/css/plugins/slick.css" media="all" />
+<link rel="stylesheet" type="text/css" href="${pageContext.request.contextPath}/resources/css/plugins/slick-theme.css" media="all" />
 
 
 
@@ -29,27 +29,15 @@
 <script src="https://cdn.jsdelivr.net/bxslider/4.2.12/jquery.bxslider.min.js"></script>
 <script src="./resources/js/main.js" type="text/javascript" charset="utf-8"></script>
 
-<script src="./resources/js/plugins/bootstrap.min.js" type="text/javascript" charset="utf-8"></script>
+<script src="${pageContext.request.contextPath}/resources/js/plugins/bootstrap.min.js" type="text/javascript" charset="utf-8"></script>
 
-<!-- 
-
-<script src="./resources/js/plugins/isotope.pkgd.min.js" type="text/javascript" charset="utf-8"></script>
-<script src="./resources/js/plugins/jquery.countdown.min.js" type="text/javascript" charset="utf-8"></script>
-<script src="./resources/js/plugins/jquery.magnific-popup.min.js" type="text/javascript" charset="utf-8"></script>
-<script src="./resources/js/plugins/jquery.slimScroll.min.js" type="text/javascript" charset="utf-8"></script>
-<script src="./resources/js/plugins/jquery.steps.min.js" type="text/javascript" charset="utf-8"></script>
-<script src="./resources/js/plugins/jquery-3.4.1.min.js" type="text/javascript" charset="utf-8"></script>
-<script src="./resources/js/plugins/popper.min.js" type="text/javascript" charset="utf-8"></script>
-<script src="./resources/js/plugins/slick.min.js" type="text/javascript" charset="utf-8"></script>
-<script src="./resources/js/plugins/waypoint.js" type="text/javascript" charset="utf-8"></script> -->
-  
  
   
 </head>
 <body>
  
   
-  <app-root>
+<app-root>
   
 <app-header2> 
 
@@ -57,7 +45,7 @@
 
 <!-- Aside (Mobile Navigation) -->
   <aside class="main-aside">
-    <a class="navbar-brand" href="index"> <img src="./resources/image/main/logo.png"> </a>
+    <a class="navbar-brand" href="index"> <img src="${pageContext.request.contextPath}/resources/image/main/logo.png"> </a>
 
     <div class="aside-scroll">
       <ul>
@@ -83,14 +71,14 @@
           <a href="contact_us">Contact Us</a>
         </li>
         <li class="menu-item">
-          <a href="login" class="loginBT"> <img src="./resources/image/main/signup_off.png"> 
+          <a href="login" class="loginBT"> <img src="${pageContext.request.contextPath}/resources/image/main/signup_off.png"> 
           </a>
            <ul class="submenu">
                 <li class="menu-item"> <a href="Mypage">My Page</a> </li>
             </ul>
         </li>
          <li class="menu-item">
-          <a href="class_write" class="loginBT"> <img src="./resources/image/main/class_writeBT.png">                    
+          <a href="class_write" class="loginBT"> <img src="${pageContext.request.contextPath}/resources/image/main/class_writeBT.png">                    
           </a>
          <ul class="submenu">
           	<li class="menu-item"> <a href="recipe_upload">Normal_Write</a> </li>
@@ -111,7 +99,7 @@
     <nav class="navbar">
       <div class="container">
         <!-- Logo -->
-        <a class="navbar-brand" href="index"> <img src="./resources/image/main/logo.png"> </a>
+        <a class="navbar-brand" href="index"> <img src="${pageContext.request.contextPath}/resources/image/main/logo.png"> </a>
         <!-- Menu -->
         <ul class="navbar-nav">
           <li class="menu-item menu-item-has-children">
@@ -137,7 +125,7 @@
           </li>
           
            <li class="menu-item">
-          <a href="login" class="loginBT"> <img src="./resources/image/main/signup_off.png">          
+          <a href="login" class="loginBT"> <img src="${pageContext.request.contextPath}/resources/image/main/signup_off.png">          
           </a>
             <ul class="submenu">
                 <li class="menu-item"> <a href="Mypage">My Page</a> </li>
@@ -145,12 +133,12 @@
          </li>
         
          <li class="menu-item">
-          <a href="recipe_upload" class="loginBT"> <img src="./resources/image/main/Normal_writeBT.png">          
+          <a href="recipe_upload" class="loginBT"> <img src="${pageContext.request.contextPath}/resources/image/main/Normal_writeBT.png">          
           </a>          
         </li>        
         
          <li class="menu-item">
-          <a href="class_write" class="loginBT"> <img src="./resources/image/main/class_writeBT.png">          
+          <a href="class_write" class="loginBT"> <img src="${pageContext.request.contextPath}/resources/image/main/class_writeBT.png">          
           </a>
           <ul class="submenu">
                 <li class="menu-item"> <a href="chef_recipe_upload">Chef_Write</a> </li>
@@ -168,14 +156,14 @@
               <i class="flaticon-shopping-basket"></i>
               <ul class="cart-dropdown">
                 <li class="cart-item">
-                  <img src="./resources/img/products/1.png" alt="product">
+                  <img src="${pageContext.request.contextPath}/resources/img/products/1.png" alt="product">
                   <div class="cart-item-body">
                     <a href="javascript:void(0)">Red Tea Pot With Black Handles</a>
                     <span class="custom-secondary">2x 18.00$</span>
                   </div>
                 </li>
                 <li class="cart-item">
-                  <img src="./resources/img/products/2.png" alt="product">
+                  <img src="${pageContext.request.contextPath}/resources/img/products/2.png" alt="product">
                   <div class="cart-item-body">
                     <a href="javascript:void(0)">Oak Wood Cutting Board</a>
                     <span class="custom-secondary">1x 24.25$</span>
@@ -231,26 +219,21 @@
 <!--   ------------------------------클래스 메인 부분 -------------------------------   -->
 
 <!-- Subheader Start -->
-<div class="subheader bg-cover dark-overlay dark-overlay-2" style="background-image: url('./resources/image/class_main/class_main_header.png')">
+<div class="subheader bg-cover dark-overlay dark-overlay-2" style="background-image: url('${pageContext.request.contextPath}/resources/image/class_main/class_main_header.png')">
   
    
    
     <div class="container">
       <div class="subheader-inner">
-        <h1>Class_Main</h1>
-       <!--  <nav aria-label="breadcrumb">
-          <ol class="breadcrumb">
-            <li class="breadcrumb-item"><a routerLink="/recipe-archive">Home</a></li>
-            <li class="breadcrumb-item"><a routerLink="/recipe-archive">Recipes</a></li>
-            <li class="breadcrumb-item active" aria-current="page">Recipe Archive</li>
-          </ol>
-        </nav> -->
+        <h1>Class_Main</h1>      
       </div>
     </div>
   </div>
   <!-- Subheader End -->
 
 
+<form>
+		
 
   <!-- Recipes Start -->
   <section class="section">
@@ -259,235 +242,56 @@
       <div class="row">
         <!-- Recipes Start -->
         <div class="col-lg-8">
-        
-        
-        <!--    section    -->
-          <div class="recipe recipe-list">
-            <div class="recipe-thumbnail">
-              <a href="class_detail">
-                <img src="./resources/image/food_Product/foodProduce_01.png" alt="blog post">
-              </a>
-            </div>
-            <div class="recipe-body">
-              <h5 class="recipe-title"> <a routerLink="/recipe-detail">Class Name  클래스 제목</a> </h5>
-              <p class="recipe-text">클래스 소개글, Dumy Text </p>
-              <div class="recipe-meta">
-                <div class="recipe-difficulty">
-                  <div class="recipe-difficulty-inner">
-                    <span class="active"></span>
-                    <span></span>
-                    <span></span>
-                  </div>
-                  <span>Chef Name</span>
-                </div>               
-                <div class="recipe-duration">
-                  <span><i class="fas fa-stopwatch"></i> 40 mins</span>
-                </div>
-              </div>
-            </div>
-          </div>
+		        
+		        
+		        
+		<!--    section    -->
+			<c:choose> 
+				<c:when test="${!empty class_main}">
+					<c:forEach var="list" items="${class_main}">      
+				          <div class="recipe recipe-list">
+				            <div class="recipe-thumbnail">				            
+				           <input type="hidden" name="class_no" id="class_no" value="${list.class_no}"/>
+				              <a href="class_detail?class_no=${list.class_no}">
+				                <img src="${pageContext.request.contextPath}/resources/image/FoodImg/${list.class_thumbnail}" alt="blog post">
+				              </a>
+				            </div>
+				            <div class="recipe-body">
+				              <h5 class="recipe-title"> <a routerLink="/recipe-detail">${list.class_title}</a> </h5>
+				              <p class="recipe-text">${list.class_content}</p>
+				              <div class="recipe-meta">
+				                <div class="recipe-difficulty">
+				                  <div class="recipe-difficulty-inner">
+				                    <span class="active"></span>
+				                    <span></span>
+				                    <span></span>
+				                  </div>
+				                  <span>${list.member.mem_nickname}</span>
+				                </div>               
+				                <div class="recipe-duration">
+				                  <span><i class="fas fa-stopwatch"></i>${list.class_period}</span>
+				                </div>
+				              </div>
+				            </div>
+				          </div>
+					</c:forEach>
+				</c:when>
+			</c:choose>
 
-
-	<!--    section    -->
-          <div class="recipe recipe-list">
-            <div class="recipe-thumbnail">
-             <a href="class_detail">
-                <img src="./resources/image/food_Product/foodProduce_02.png" alt="blog post">
-              </a>
-            </div>
-            <div class="recipe-body">
-              <h5 class="recipe-title"> <a routerLink="/recipe-detail">Class Name  클래스 제목</a> </h5>
-              <p class="recipe-text">클래스 소개글, Dumy Text </p>  <div class="recipe-meta">
-                <div class="recipe-difficulty">
-                  <div class="recipe-difficulty-inner">
-                    <span class="active"></span>
-                    <span class="active"></span>
-                    <span class="active"></span>
-                  </div>
-                  <span>Chef</span>
-                </div>              
-                <div class="recipe-duration">
-                  <span><i class="fas fa-stopwatch"></i> 120 mins</span>
-                </div>
-              </div>
-            </div>
-          </div>
-
-          
-        <!--    section    -->
-          <div class="recipe recipe-list">
-            <div class="recipe-thumbnail">
-              <a href="class_detail">
-                <img src="./resources/image/food_Product/foodProduce_03.png" alt="blog post">
-              </a>
-            </div>
-            <div class="recipe-body">
-              <h5 class="recipe-title"> <a routerLink="/recipe-detail">Class Name  클래스 제목</a> </h5>
-              <p class="recipe-text">클래스 소개글, Dumy Text </p>
-              <div class="recipe-meta">
-                <div class="recipe-difficulty">
-                  <div class="recipe-difficulty-inner">
-                    <span class="active"></span>
-                    <span></span>
-                    <span></span>
-                  </div>
-                  <span>Chef Name</span>
-                </div>               
-                <div class="recipe-duration">
-                  <span><i class="fas fa-stopwatch"></i> 40 mins</span>
-                </div>
-              </div>
-            </div>
-          </div>
-
-
-           
-        <!--    section    -->
-          <div class="recipe recipe-list">
-            <div class="recipe-thumbnail">
-              <a href="class_detail">
-                <img src="./resources/image/food_Product/foodProduce_04.png" alt="blog post">
-              </a>
-            </div>
-            <div class="recipe-body">
-              <h5 class="recipe-title"> <a routerLink="/recipe-detail">Class Name  클래스 제목</a> </h5>
-              <p class="recipe-text">클래스 소개글, Dumy Text </p>
-              <div class="recipe-meta">
-                <div class="recipe-difficulty">
-                  <div class="recipe-difficulty-inner">
-                    <span class="active"></span>
-                    <span></span>
-                    <span></span>
-                  </div>
-                  <span>Chef Name</span>
-                </div>               
-                <div class="recipe-duration">
-                  <span><i class="fas fa-stopwatch"></i> 40 mins</span>
-                </div>
-              </div>
-            </div>
-          </div>
 
 
           
-        <!--    section    -->
-          <div class="recipe recipe-list">
-            <div class="recipe-thumbnail">
-              <a href="class_detail">
-                <img src="./resources/image/food_Product/foodProduce_05.png" alt="blog post">
-              </a>
-            </div>
-            <div class="recipe-body">
-              <h5 class="recipe-title"> <a routerLink="/recipe-detail">Class Name  클래스 제목</a> </h5>
-              <p class="recipe-text">클래스 소개글, Dumy Text </p>
-              <div class="recipe-meta">
-                <div class="recipe-difficulty">
-                  <div class="recipe-difficulty-inner">
-                    <span class="active"></span>
-                    <span></span>
-                    <span></span>
-                  </div>
-                  <span>Chef Name</span>
-                </div>               
-                <div class="recipe-duration">
-                  <span><i class="fas fa-stopwatch"></i> 40 mins</span>
-                </div>
-              </div>
-            </div>
-          </div>
-
-
-          
-        <!--    section    -->
-          <div class="recipe recipe-list">
-            <div class="recipe-thumbnail">
-              <a href="class_detail">
-                <img src="./resources/image/food_Product/foodProduce_06.png" alt="blog post">
-              </a>
-            </div>
-            <div class="recipe-body">
-              <h5 class="recipe-title"> <a routerLink="/recipe-detail">Class Name  클래스 제목</a> </h5>
-              <p class="recipe-text">클래스 소개글, Dumy Text </p>
-              <div class="recipe-meta">
-                <div class="recipe-difficulty">
-                  <div class="recipe-difficulty-inner">
-                    <span class="active"></span>
-                    <span></span>
-                    <span></span>
-                  </div>
-                  <span>Chef Name</span>
-                </div>               
-                <div class="recipe-duration">
-                  <span><i class="fas fa-stopwatch"></i> 40 mins</span>
-                </div>
-              </div>
-            </div>
-          </div>
-          
-            <!--    section    -->
-          <div class="recipe recipe-list">
-            <div class="recipe-thumbnail">
-              <a href="class_detail">
-                <img src="./resources/image/food_Product/foodProduce_07.png" alt="blog post">
-              </a>
-            </div>
-            <div class="recipe-body">
-              <h5 class="recipe-title"> <a routerLink="/recipe-detail">Class Name  클래스 제목</a> </h5>
-              <p class="recipe-text">클래스 소개글, Dumy Text </p>
-              <div class="recipe-meta">
-                <div class="recipe-difficulty">
-                  <div class="recipe-difficulty-inner">
-                    <span class="active"></span>
-                    <span></span>
-                    <span></span>
-                  </div>
-                  <span>Chef Name</span>
-                </div>               
-                <div class="recipe-duration">
-                  <span><i class="fas fa-stopwatch"></i> 40 mins</span>
-                </div>
-              </div>
-            </div>
-          </div>
-
-            <!--    section    -->
-          <div class="recipe recipe-list">
-            <div class="recipe-thumbnail">
-              <a href="class_detail">
-                <img src="./resources/image/food_Product/foodProduce_08.png" alt="blog post">
-              </a>
-            </div>
-            <div class="recipe-body">
-              <h5 class="recipe-title"> <a routerLink="/recipe-detail">Class Name  클래스 제목</a> </h5>
-              <p class="recipe-text">클래스 소개글, Dumy Text </p>
-              <div class="recipe-meta">
-                <div class="recipe-difficulty">
-                  <div class="recipe-difficulty-inner">
-                    <span class="active"></span>
-                    <span></span>
-                    <span></span>
-                  </div>
-                  <span>Chef Name</span>
-                </div>               
-                <div class="recipe-duration">
-                  <span><i class="fas fa-stopwatch"></i> 40 mins</span>
-                </div>
-              </div>
-            </div>
-          </div>
-          
-          
-<!--   ---- 페이지 많아지면 번호 생김   ----    -->
-
+<!--   ---- 페이징   ----    -->
 
 
           <!-- Pagination Start -->
-          
-          
+                    
             <ul class="pagination">
-              <li class="page-item"><a class="page-link" routerLink="/recipe-archive">1</a></li>
-              <li class="page-item"><a class="page-link" routerLink="/recipe-archive">2</a></li>             
-         
+          
+				<c:forEach var="p" items="${p_num}">
+					 <li class="page-item"><input type="submit" class="page-link" formaction="paginged" name="page" value="${p}"/></li>
+				</c:forEach>	
+				
             </ul>
                         
           <!-- Pagination End -->
@@ -495,27 +299,28 @@
         </div>    <!-- Recipes End -->
 
 
-
-
+ </form> 
 
 <!--   ------------------------------오른쪽 부분  -------------------------------   -->
 
 
-        <!-- Sidebar Start -->
-        <div class="col-lg-4">
-          <app-recipe-sidebar>
+ <!-- Sidebar Start -->
+<div class="col-lg-4">
+        
+<app-recipe-sidebar>
           
-          
+            
   
-  
+ <form>
   <div class="sidebar">
 
             <div class="sidebar-widget">
               <h5>나에게 맞는 클래스</h5>
-              
+ 
+          
               <!--  section  -->
               <article class="media">
-                <a href="class_detail"><img src="./resources/image/food_Product/foodProduce_08.png" alt="post"></a>
+                <a href="class_detail"><img src="${pageContext.request.contextPath}/resources/image/food_Product/foodProduce_08.png" alt="post"></a>
                 <div class="media-body">
                   <h6> <a routerLink="/blog-single-v2">Class Name</a> </h6>
                   <p>Chef ID</p>
@@ -525,7 +330,7 @@
               
               <!--  section  -->
               <article class="media">
-                <a href="class_detail"><img src="./resources/image/food_Product/foodProduce_02.png" alt="post"></a>
+                <a href="class_detail"><img src="${pageContext.request.contextPath}/resources/image/food_Product/foodProduce_02.png" alt="post"></a>
                 <div class="media-body">
                   <h6> <a routerLink="/blog-single-v2">Class Name</a> </h6>
                   <p>Chef ID</p>
@@ -535,7 +340,7 @@
               
               <!--  section  -->
               <article class="media">
-                <a href="class_detail"><img src="./resources/image/food_Product/foodProduce_10.png" alt="post"></a>
+                <a href="class_detail"><img src="${pageContext.request.contextPath}/resources/image/food_Product/foodProduce_10.png" alt="post"></a>
                 <div class="media-body">
                   <h6> <a routerLink="/blog-single-v2">Class Name</a> </h6>
                   <p>Chef ID</p>
@@ -545,7 +350,7 @@
               
               <!--  section  -->
               <article class="media">
-                 <a href="class_detail"><img src="./resources/image/food_Product/foodProduce_11.png" alt="post"></a>
+                 <a href="class_detail"><img src="${pageContext.request.contextPath}/resources/image/food_Product/foodProduce_11.png" alt="post"></a>
                 <div class="media-body">
                   <h6> <a routerLink="/blog-single-v2">Class Name</a> </h6>
                   <p>Chef ID</p>
@@ -567,7 +372,7 @@
               <div class="recipe featured-recipe">
                 <div class="recipe-thumbnail">
                   <a href="class_detail">
-                    <img src="./resources/image/food_Product/foodProduce_01.png" alt="blog post">
+                    <img src="${pageContext.request.contextPath}/resources/image/food_Product/foodProduce_01.png" alt="blog post">
                   </a>
                 </div>
                 <div class="recipe-body">
@@ -591,7 +396,7 @@
               <div class="recipe featured-recipe">
                 <div class="recipe-thumbnail">
                   <a href="class_detail">
-                    <img src="./resources/image/food_Product/foodProduce_05.png" alt="blog post">
+                    <img src="${pageContext.request.contextPath}/resources/image/food_Product/foodProduce_05.png" alt="blog post">
                   </a>
                 </div>
                 <div class="recipe-body">
@@ -626,32 +431,24 @@
             </div>
 
           </div>
+ 
+ 	<form>
   
-          
-          
-          
-          
-          </app-recipe-sidebar>
-        </div>
-        <!-- Sidebar End -->
+ </app-recipe-sidebar>
+ </div> <!-- Sidebar End -->
+
+
+</div>
 
 
 
 
+</div>
+</section>  <!-- Recipes End -->
+  
 
 
-      </div>
 
-    </div>
-  </section>
-  <!-- Recipes End -->
-  
-  
-  
-  
-    
-  
-  
 
 
 
@@ -664,7 +461,7 @@
 <!--     ------------------   footer 영역    -------------------        -->
 
 <!-- Newsletter start -->
-  <section class="section light-bg bg-cover" style=" background-image:url('./resources/image/main/footBackImg_03.jpg')">
+  <section class="section light-bg bg-cover" style=" background-image:url('${pageContext.request.contextPath}/resources/image/main/footBackImg_03.jpg')">
 
 
   </section>
@@ -679,7 +476,7 @@
                 <!-- Single Cool Fact -->
                 <div class="col-12 col-sm-6 col-lg-3">
                     <div class="single-cool-fact">
-                        <img src="./resources/image/core-img/salad.png" alt="">
+                        <img src="${pageContext.request.contextPath}/resources/image/core-img/salad.png" alt="">
                         <h3><span class="counter">1287</span></h3>
                         <h6>Recipe</h6>
                     </div>
@@ -688,7 +485,7 @@
                 <!-- Single Cool Fact -->
                 <div class="col-12 col-sm-6 col-lg-3">
                     <div class="single-cool-fact">
-                        <img src="./resources/image/core-img/hamburger.png" alt="">
+                        <img src="${pageContext.request.contextPath}/resources/image/core-img/hamburger.png" alt="">
                         <h3><span class="counter">25</span></h3>
                         <h6>Chef Recipe</h6>
                     </div>
@@ -697,7 +494,7 @@
                 <!-- Single Cool Fact -->
                 <div class="col-12 col-sm-6 col-lg-3">
                     <div class="single-cool-fact">
-                        <img src="./resources/image/core-img/rib.png" alt="">
+                        <img src="${pageContext.request.contextPath}/resources/image/core-img/rib.png" alt="">
                         <h3><span class="counter">471</span></h3>
                         <h6>Class</h6>
                     </div>
@@ -706,7 +503,7 @@
                 <!-- Single Cool Fact -->
                 <div class="col-12 col-sm-6 col-lg-3">
                     <div class="single-cool-fact">
-                        <img src="./resources/image/core-img/pancake.png" alt="">
+                        <img src="${pageContext.request.contextPath}/resources/image/core-img/pancake.png" alt="">
                         <h3><span class="counter">326</span></h3>
                         <h6>Affiliates</h6>
                     </div>
@@ -717,15 +514,11 @@
                 <div class="col-12 col-sm-6 col-lg-3">
                     <div class="single-cool-fact">
                     <a href="mailto:wandering_star@naver.com">
-                        <img src="./resources/image/core-img/mail.png" alt="">
+                        <img src="${pageContext.request.contextPath}/resources/image/core-img/mail.png" alt="">
                     </a>                    
                         <h6>쉐프등업</h6>
                     </div>
                 </div>
-                
-                
-                
-                
                 
                 
                 
@@ -735,17 +528,9 @@
   </footer>
   <!-- Footer End -->
   
-
-  
   
   </app-footer1>
   
- 
-
-
-
-
-
   
  </app-root> 
  

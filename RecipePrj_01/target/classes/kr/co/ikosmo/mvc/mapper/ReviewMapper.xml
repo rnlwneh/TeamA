@@ -1,0 +1,53 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper
+  PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+  "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+  
+  <mapper namespace="review">
+  
+ 
+  
+<resultMap type="classvo" id="classvo">
+<id property="review_no" column="review_no" javaType="int"/>
+ 
+ 
+<association property="member" column="mem_no" javaType="membervo">
+		<id property="mem_no" column="mem_no"/>
+	</association>		
+		 
+  
+<association property="review" column="review_no" javaType="reviewvo">
+		<id property="review_no" column="review_no"/>
+		<id property="mem_no" column="mem_no"/>
+		<result property="star_rate" column="star_rate"/>	
+		<result property="review_content" column="review_content"/>
+		<result property="review_date" column="review_date"/>
+		<result property="review_declare" column="review_declare"/>
+	</association>	
+</resultMap>
+
+  
+  
+
+
+<insert id="insertClassReview" parameterType="reviewvo">
+
+
+
+
+INSERT INTO review( review_no, star_rate, review_content, review_date, mem_no)
+
+VALUES(review_seq.nextval,#{star_rate},#{review_content},sysdate,2)
+				
+		
+		
+		
+</insert>
+
+
+ 
+
+
+
+  
+  </mapper>

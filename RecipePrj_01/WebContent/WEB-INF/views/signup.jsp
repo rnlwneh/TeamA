@@ -9,6 +9,9 @@
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <link rel="icon" type="image/x-icon" href="./resources/img/favicon.ico">
 
+<script type="text/javascript" src="./resources/js/jquery-1.7.1.js"></script>
+<script  src="./resources/js/Membership.js"></script>
+
 
 <link rel="stylesheet" type="text/css" href="./resources/css/header.css" media="all" />
 <link rel="stylesheet" type="text/css" href="./resources/css/main.css" media="all" />
@@ -22,6 +25,7 @@
 <link rel="stylesheet" type="text/css" href="./resources/css/primary-skin.css" media="all" />
 <link rel="stylesheet" type="text/css" href="./resources/css/plugins/bootstrap.min.css" media="all" /> 
 <link rel="stylesheet" type="text/css" href="./resources/css/plugins/animate.min.css" media="all" />
+
 
 
 <link rel="stylesheet" type="text/css" href="./resources/css/plugins/magnific-popup.css" media="all" />
@@ -244,70 +248,204 @@
 <!-- Login FormStart -->
   <section class="section auth-section bg-cover" style="background-image: url('assets/img/bg/3.jpg')">
     <div class="container">
-      <form class="auth-form light-bg" method="post" style="background-image: url('assets/img/bg/5.jpg')">
+      <form name = "userinput" id="userinput" class="auth-form light-bg" action = "register" method="post" style="background-image: url('assets/img/bg/5.jpg')">
         <h1>Sign Up</h1>
         <div class="form-group">
-          <label>Username</label>
-          <input type="text" class="form-control" placeholder="Username" name="username" value="">
+          <label>MEM_NO</label>
+          <input type="text" class="form-control" placeholder="MEM_NO" name="MEM_NO" value="">
         </div>
         <div class="form-group">
-          <label>Email</label>
-          <input type="email" class="form-control" placeholder="Email Address" name="email" value="">
+          <label>이름</label>
+          <input type="text" class="form-control" placeholder="이름" name="MEM_NAME" value="">
         </div>
+        <div class="form-group">
+          <label>별명</label>
+          <input type="text" class="form-control" placeholder="별명" name="MEM_NICKNAME" value="">
+        </div>
+        <div class="form-group">
+          <label>ID</label>
+          <input type="text" class="form-control" placeholder="ID" name="MEM_ID" value="">
+        </div>
+                      	
+		<input type="button" value="중복확인" id="idChkBtn" style="width: 150px; font-size: 10px; height: 30px;">
+        
         <div class="form-group">
           <label>Password</label>
-          <input type="password" class="form-control" placeholder="Password" name="password" value="">
+          <input type="password" class="form-control" placeholder="Password" name="MEM_PWD" value="">
         </div>
+        <div class="form-group">
+          <label>주민번호</label>
+          <input type="text" class="form-control" placeholder="주민번호" name="MEM_JUMINNUM" value="">
+        </div>        
+        <div class="form-group">
+          <label>Email</label>
+          <input type="email" class="form-control" placeholder="Email Address" name="MEM_EMAIL" value="">
+        </div>
+        <div class="form-group">
+          <label>핸드폰번호</label>
+          <input type="text" class="form-control" placeholder="핸드폰번호" name="MEM_PHONE" value="">
+        </div>        
+        <div class="form-group">
+          <label>MEM_GRADE_NO</label>
+          <input type="text" class="form-control" placeholder="MEM_GRADE_NO" name="MEM_GRADE_NO" value="">
+        </div>
+        <div class="form-group">
+          <label>KIND_TAG_NO</label>
+          <input type="text" class="form-control" placeholder="KIND_TAG_NO" name="KIND_TAG_NO" value="">
+        </div>
+
+
         <div class="auth-controls form-group">
           <div class="custom-control custom-checkbox">
             <input type="checkbox" class="custom-control-input" id="rememberMe">
-            <label class="custom-control-label fw-400" for="rememberMe">Agree to our <a href="signup" class="btn-link">terms & conditions</a> </label>
+            <label class="custom-control-label fw-400" for="rememberMe">회원가입 규정에 <a href="https://kto.visitkorea.or.kr/kor/helpDesk/policy/memberPolicy.kto" onclick="window.open(this.href,'_blank','toolbar=no,scrollbars=yes'); return false;" class="btn-link">동의합니다.</a> </label>
           </div>
         </div>
         <div class="form-group">
-          <button type="button" class="btn-custom primary btn-block">Sign Up</button>
+          <button type="submit" class="btn-custom primary btn-block">sign up</button>
         </div>
-        <p class="form-group text-center">Already have an account? <a href="login" class="btn-link">Login</a> </p>
+        <p class="form-group text-center">계정이 있으십니까? <a href="login" class="btn-link">로그인</a> </p>
       </form>
     </div>
   </section>
   <!-- Login Form End -->
 
-  <app-footer4>
+    
+  
+<!-- Newsletter start  -->
+  <app-footer1>
+  
+
+
+<!--     ------------------   footer 영역    -------------------        -->
+
+<!-- Newsletter start -->
+  <section class="section light-bg bg-cover" style=" background-image:url('./resources/image/main/footBackImg_03.jpg')">
+
+
+  </section>
+  <!-- Newsletter End -->
+  
+
   <!-- Footer Start -->
   <footer class="ct-footer footer-2">
-    <div class="container">
-      <div class="footer-widget">
-        <ul class="social-media">
-          <li> <a href="javascript:void(0)"> <i class="fab fa-facebook-f"></i> </a> </li>
-          <li> <a href="javascript:void(0)"> <i class="fab fa-twitter"></i> </a> </li>
-          <li> <a href="javascript:void(0)"> <i class="fab fa-pinterest-p"></i> </a> </li>
-          <li> <a href="javascript:void(0)"> <i class="fab fa-linkedin-in"></i> </a> </li>
-        </ul>
-      </div>
-      <div class="footer-widget">
-        <ul>
-          <li> <a href="javascript:void(0)">Breakfast</a> </li>
-          <li> <a href="javascript:void(0)">Desserts</a> </li>
-          <li> <a href="javascript:void(0)">Dinner</a> </li>
-          <li> <a href="javascript:void(0)">Dairy</a> </li>
-        </ul>
-      </div>
-      <div class="footer-bottom">
-        <div class="container">
-          <p class="m-0">&copy; Copyright 2020 - <a href="javascript:void(0)">AndroThemes</a> All Rights Reserved.</p>
-        </div>
-      </div>
-    </div>
+  
+  
+  	<div class="raw align-items-center mt-70">
+                <!-- Single Cool Fact -->
+                <div class="col-12 col-sm-6 col-lg-3">
+                    <div class="single-cool-fact">
+                        <img src="./resources/image/core-img/salad.png" alt="">
+                        <h3><span class="counter">1287</span></h3>
+                        <h6>Recipe</h6>
+                    </div>
+                </div>
+
+                <!-- Single Cool Fact -->
+                <div class="col-12 col-sm-6 col-lg-3">
+                    <div class="single-cool-fact">
+                        <img src="./resources/image/core-img/hamburger.png" alt="">
+                        <h3><span class="counter">25</span></h3>
+                        <h6>Chef Recipe</h6>
+                    </div>
+                </div>
+
+                <!-- Single Cool Fact -->
+                <div class="col-12 col-sm-6 col-lg-3">
+                    <div class="single-cool-fact">
+                        <img src="./resources/image/core-img/rib.png" alt="">
+                        <h3><span class="counter">471</span></h3>
+                        <h6>Class</h6>
+                    </div>
+                </div>
+
+                <!-- Single Cool Fact -->
+                <div class="col-12 col-sm-6 col-lg-3">
+                    <div class="single-cool-fact">
+                        <img src="./resources/image/core-img/pancake.png" alt="">
+                        <h3><span class="counter">326</span></h3>
+                        <h6>Affiliates</h6>
+                    </div>
+                </div>
+                
+                
+                <!-- Single Cool Fact -->
+                <div class="col-12 col-sm-6 col-lg-3">
+                    <div class="single-cool-fact">
+                    <a href="mailto:wandering_star@naver.com">
+                        <img src="./resources/image/core-img/mail.png" alt="">
+                    </a>                    
+                        <h6>쉐프등업</h6>
+                    </div>
+                </div>
+                
+                
+                
+                
+                
+                
+                
+            </div>
+  
+    
   </footer>
   <!-- Footer End -->
-  </app-footer4>
+  
 
-
-
+  
+  
+  </app-footer1>
   
   
  </app-root> 
  
+    <!-- 제이쿼리를 가져오자. -->
+   <!-- // jQury에서 id => #, class => . Element => E-->
+   <script src = "http://code.jquery.com/jquery-3.5.1.min.js"></script>
+   <!-- 콘솔창에 띄워보자. 크롬 F12 누르기 -->
+   <script>
+	   $(function(){
+		 //console.log("해인")
+	   	   
+		   //기능이 잘 되는지 확인
+		   //$ajax({
+			//   url: 'mydemo1/idChk?id=ss',
+			//   success : function(data){ //성공된 데이터일 경우에는 success 함수가 호출되면서 서버의 데이터를 받는다.
+			//	   console.log(data)
+			//   }
+		   //});
+		   
+		   
+		//확인 다 했으니 버튼에 기능을 입혀보자.
+		      //jQury에서 id => #, class => . Element => E
+		      $('#idChkBtn').click(function(){
+		         // 아이디 값이 있는 지 없는지 if문 확인 return
+		      $.ajax({
+		        url:'/mydemo1/idChk?id='+$('#id').val(),
+		        success: function(data){
+		            //console.log(data);
+		            
+		            //$.trim : 공백제거 함수
+				   //== 안씀. === 쓴다.
+		            var msg = '';
+		            if($.trim(data)==='1'){
+		               msg = "<span style='color:red'>중복된 아이디입니다.</span>";
+		            }
+		            else{
+		                  msg = "<span style='color:blue'>사용가능한 아이디입니다.</span>";
+		               }
+		               console.log(msg)
+		               $('#target').html(msg);
+		            
+		            }
+		        });
+		      });
+		    
+		       });
+	   
+   
+   </script>
+ 
 </body>
 </html>
+

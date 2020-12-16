@@ -7,21 +7,21 @@
   <title>Class_Payment</title>
 
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <link rel="icon" type="image/x-icon" href="./resources/img/favicon.ico">
+  <link rel="icon" type="image/x-icon" href="${pageContext.request.contextPath}/resources/img/favicon.ico">
   
   
 
-<link rel="stylesheet" type="text/css" href="./resources/css/header.css" media="all" />
-<link rel="stylesheet" type="text/css" href="./resources/css/class_payment.css" media="all" />
-<link rel="stylesheet" type="text/css" href="./resources/css/class_payment_min.css" media="all" />
-<link rel="stylesheet" type="text/css" href="./resources/css/class_payment_style.css" media="all" />
+<link rel="stylesheet" type="text/css" href="${pageContext.request.contextPath}/resources/css/header.css" media="all" />
+<link rel="stylesheet" type="text/css" href="${pageContext.request.contextPath}/resources/css/class_payment.css" media="all" />
+<link rel="stylesheet" type="text/css" href="${pageContext.request.contextPath}/resources/css/class_payment_min.css" media="all" />
+<link rel="stylesheet" type="text/css" href="${pageContext.request.contextPath}/resources/css/class_payment_style.css" media="all" />
 
 
 
 
   <!-- Bootstrap core JavaScript -->
-  <script src="./resources/js/jquery.min.js"></script>
-  <script src="./resources/js/class_payment.js"></script>
+  <script src="${pageContext.request.contextPath}/resources/js/jquery.min.js"></script>
+  <script src="${pageContext.request.contextPath}/resources/js/class_payment.js"></script>
 
 
   
@@ -29,9 +29,9 @@
 
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
 <script src="https://cdn.jsdelivr.net/bxslider/4.2.12/jquery.bxslider.min.js"></script>
-<script src="./resources/js/main.js" type="text/javascript" charset="utf-8"></script>
+<script src="${pageContext.request.contextPath}/resources/js/main.js" type="text/javascript" charset="utf-8"></script>
 
-<script src="./resources/js/plugins/bootstrap.min.js" type="text/javascript" charset="utf-8"></script>
+<script src="${pageContext.request.contextPath}/resources/js/plugins/bootstrap.min.js" type="text/javascript" charset="utf-8"></script>
 
     
   
@@ -48,7 +48,7 @@
 
 <!-- Aside (Mobile Navigation) -->
   <aside class="main-aside">
-    <a class="navbar-brand" href="index"> <img src="./resources/image/main/logo.png"> </a>
+    <a class="navbar-brand" href="index"> <img src="${pageContext.request.contextPath}/resources/image/main/logo.png"> </a>
 
     <div class="aside-scroll">
       <ul>
@@ -74,14 +74,14 @@
           <a href="contact_us">Contact Us</a>
         </li>
         <li class="menu-item">
-          <a href="login" class="loginBT"> <img src="./resources/image/main/signup_off.png"> 
+          <a href="login" class="loginBT"> <img src="${pageContext.request.contextPath}/resources/image/main/signup_off.png"> 
           </a>
            <ul class="submenu">
                 <li class="menu-item"> <a href="Mypage">My Page</a> </li>
             </ul>
         </li>
          <li class="menu-item">
-          <a href="class_write" class="loginBT"> <img src="./resources/image/main/class_writeBT.png">                    
+          <a href="class_write" class="loginBT"> <img src="${pageContext.request.contextPath}/resources/image/main/class_writeBT.png">                    
           </a>
          <ul class="submenu">
           	<li class="menu-item"> <a href="recipe_upload">Normal_Write</a> </li>
@@ -102,7 +102,7 @@
     <nav class="navbar">
       <div class="container">
         <!-- Logo -->
-        <a class="navbar-brand" href="index"> <img src="./resources/image/main/logo.png"> </a>
+        <a class="navbar-brand" href="index"> <img src="${pageContext.request.contextPath}/resources/image/main/logo.png"> </a>
         <!-- Menu -->
         <ul class="navbar-nav">
           <li class="menu-item menu-item-has-children">
@@ -128,7 +128,7 @@
           </li>
           
            <li class="menu-item">
-          <a href="login" class="loginBT"> <img src="./resources/image/main/signup_off.png">          
+          <a href="login" class="loginBT"> <img src="${pageContext.request.contextPath}/resources/image/main/signup_off.png">          
           </a>
             <ul class="submenu">
                 <li class="menu-item"> <a href="Mypage">My Page</a> </li>
@@ -136,12 +136,12 @@
          </li>
         
          <li class="menu-item">
-          <a href="recipe_upload" class="loginBT"> <img src="./resources/image/main/Normal_writeBT.png">          
+          <a href="recipe_upload" class="loginBT"> <img src="${pageContext.request.contextPath}/resources/image/main/Normal_writeBT.png">          
           </a>          
         </li>        
         
          <li class="menu-item">
-          <a href="class_write" class="loginBT"> <img src="./resources/image/main/class_writeBT.png">          
+          <a href="class_write" class="loginBT"> <img src="${pageContext.request.contextPath}/resources/image/main/class_writeBT.png">          
           </a>
           <ul class="submenu">
                 <li class="menu-item"> <a href="chef_recipe_upload">Chef_Write</a> </li>
@@ -159,14 +159,14 @@
               <i class="flaticon-shopping-basket"></i>
               <ul class="cart-dropdown">
                 <li class="cart-item">
-                  <img src="./resources/img/products/1.png" alt="product">
+                  <img src="${pageContext.request.contextPath}/resources/img/products/1.png" alt="product">
                   <div class="cart-item-body">
                     <a href="javascript:void(0)">Red Tea Pot With Black Handles</a>
                     <span class="custom-secondary">2x 18.00$</span>
                   </div>
                 </li>
                 <li class="cart-item">
-                  <img src="./resources/img/products/2.png" alt="product">
+                  <img src="${pageContext.request.contextPath}/resources/img/products/2.png" alt="product">
                   <div class="cart-item-body">
                     <a href="javascript:void(0)">Oak Wood Cutting Board</a>
                     <span class="custom-secondary">1x 24.25$</span>
@@ -235,7 +235,7 @@
 		 <!--     클래스 정보     -->	
  
 		<div class="show_class">
-				<img src="./resources/image/class_payment/py_header_icon.png" >
+				<img src="${pageContext.request.contextPath}/resources/image/class_payment/py_header_icon.png" >
 				 <p3>클래스 신청</p3>
 				 <hr>				
 		</div>
@@ -249,7 +249,7 @@
 		
 		
 		<dd class="class_pay_list">
-               <div class="class_pay_list_pic"><img src="./resources/image/food_Product/foodProduce_11.png"></div>
+               <div class="class_pay_list_pic"><img src="${pageContext.request.contextPath}/resources/image/food_Product/foodProduce_11.png"></div>
                     <div class="class_pay_list_cont">
                         <div class="common_sp_caption_tit line2">요리 초보를 위한 길잡이! 요리 내비게이션 [밀푀유나베]</div>
 	                        <div class="common_sp_caption_price_box">
@@ -263,21 +263,18 @@
 	</div>  <!--    paymentWrap   -->
 		
 		
-		
-		
+				
 		
 			<div class="payOkWrap">
-					<img src="./resources/image/class_payment/pay_ok.png" class="okImg">
+					<img src="${pageContext.request.contextPath}/resources/image/class_payment/pay_ok.png" class="okImg">
 					
 					<h1> 클래스 신청이 완료되었습니다. </h1>
 			</div>
-			
-			
+						
 		
 		
 		<hr class="line1">
 			
-	
 	
 				<div class="btn_pay_wrap"> 
 	               <button type="submit">확인</button>
@@ -294,10 +291,6 @@
 </form> 
  
  
-  
-
-
-
 
   
 <!-- Newsletter start  -->
@@ -311,7 +304,7 @@
 <!--     ------------------   footer 영역    -------------------        -->
 
 <!-- Newsletter start -->
-  <section class="section light-bg bg-cover" style=" background-image:url('./resources/image/main/footBackImg_03.jpg')">
+  <section class="section light-bg bg-cover" style=" background-image:url('${pageContext.request.contextPath}/resources/image/main/footBackImg_03.jpg')">
 
 
   </section>
@@ -326,7 +319,7 @@
                 <!-- Single Cool Fact -->
                 <div class="col-12 col-sm-6 col-lg-3">
                     <div class="single-cool-fact">
-                        <img src="./resources/image/core-img/salad.png" alt="">
+                        <img src="${pageContext.request.contextPath}/resources/image/core-img/salad.png" alt="">
                         <h3><span class="counter">1287</span></h3>
                         <h6>Recipe</h6>
                     </div>
@@ -335,7 +328,7 @@
                 <!-- Single Cool Fact -->
                 <div class="col-12 col-sm-6 col-lg-3">
                     <div class="single-cool-fact">
-                        <img src="./resources/image/core-img/hamburger.png" alt="">
+                        <img src="${pageContext.request.contextPath}/resources/image/core-img/hamburger.png" alt="">
                         <h3><span class="counter">25</span></h3>
                         <h6>Chef Recipe</h6>
                     </div>
@@ -344,7 +337,7 @@
                 <!-- Single Cool Fact -->
                 <div class="col-12 col-sm-6 col-lg-3">
                     <div class="single-cool-fact">
-                        <img src="./resources/image/core-img/rib.png" alt="">
+                        <img src="${pageContext.request.contextPath}/resources/image/core-img/rib.png" alt="">
                         <h3><span class="counter">471</span></h3>
                         <h6>Class</h6>
                     </div>
@@ -353,7 +346,7 @@
                 <!-- Single Cool Fact -->
                 <div class="col-12 col-sm-6 col-lg-3">
                     <div class="single-cool-fact">
-                        <img src="./resources/image/core-img/pancake.png" alt="">
+                        <img src="${pageContext.request.contextPath}/resources/image/core-img/pancake.png" alt="">
                         <h3><span class="counter">326</span></h3>
                         <h6>Affiliates</h6>
                     </div>
@@ -364,16 +357,11 @@
                 <div class="col-12 col-sm-6 col-lg-3">
                     <div class="single-cool-fact">
                     <a href="mailto:wandering_star@naver.com">
-                        <img src="./resources/image/core-img/mail.png" alt="">
+                        <img src="${pageContext.request.contextPath}/resources/image/core-img/mail.png" alt="">
                     </a>                    
                         <h6>쉐프등업</h6>
                     </div>
                 </div>
-                
-                
-                
-                
-                
                 
                 
             </div>
@@ -382,7 +370,6 @@
   </footer>
   <!-- Footer End -->
   
-
   
   
   </app-footer1>

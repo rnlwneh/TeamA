@@ -18,10 +18,10 @@ public class BoardController {
 	@Autowired
 	private BoardDao dao;
 	
-	@RequestMapping("/{step}")
-	public String viewPage(@PathVariable String step) {
-		return step;
-	}
+	/*
+	 * @RequestMapping("/{step}") public String viewPage(@PathVariable String step)
+	 * { return step; }
+	 */
 	
 	@GetMapping(value = "/boardlist")
 	public String boardList(Model m) {

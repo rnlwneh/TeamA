@@ -7,14 +7,14 @@
   <title>Recipe Site</title>
 
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <link rel="icon" type="image/x-icon" href="./resources/img/favicon.ico">
+  <link rel="icon" type="image/x-icon" href="${pageContext.request.contextPath}/resources/img/favicon.ico">
   
   
 
 
-<link rel="stylesheet" type="text/css" href="./resources/css/header.css" media="all" />
-<link rel="stylesheet" type="text/css" href="./resources/css/main.css" media="all" />
-<link rel="stylesheet" type="text/css" href="./resources/css/style_main.css" media="all" />
+<link rel="stylesheet" type="text/css" href="${pageContext.request.contextPath}/resources/css/header.css" media="all" />
+<link rel="stylesheet" type="text/css" href="${pageContext.request.contextPath}/resources/css/main.css" media="all" />
+<link rel="stylesheet" type="text/css" href="${pageContext.request.contextPath}/resources/css/style_main.css" media="all" />
 
 
 
@@ -25,13 +25,9 @@
 <script src="https://cdn.jsdelivr.net/bxslider/4.2.12/jquery.bxslider.min.js"></script>
 <!-- <script src="./resources/js/main.js" type="text/javascript" charset="utf-8"></script>
  -->
-<script src="./resources/js/plugins/bootstrap.min.js" type="text/javascript" charset="utf-8"></script>
+<script src="${pageContext.request.contextPath}/resources/js/plugins/bootstrap.min.js" type="text/javascript" charset="utf-8"></script>
 
-
-
-
- 
-  <script src="http://cdnjs.cloudflare.com/ajax/libs/waypoints/2.0.3/waypoints.min.js"></script>
+<script src="http://cdnjs.cloudflare.com/ajax/libs/waypoints/2.0.3/waypoints.min.js"></script>
 <script src="jquery.counterup.min.js"></script>
   
   
@@ -52,7 +48,7 @@
 			<div _ngcontent-efm-c6="" class="container">
 				<a _ngcontent-efm-c6="" routerlink="/" class="navbar-brand"
 					href="/themes/angular/cookiteer/"> 
-					<img _ngcontent-efm-c6="" src="./resources/image/main/logo.png"></a>
+					<img _ngcontent-efm-c6="" src="${pageContext.request.contextPath}/resources/image/main/logo.png"></a>
 				<ul _ngcontent-efm-c6="" class="navbar-nav">
 					<li _ngcontent-efm-c6="" class="menu-item menu-item-has-children">
 						<a _ngcontent-efm-c6="" href="index" class="headText">Main</a>					
@@ -80,17 +76,17 @@
 						_ngcontent-efm-c6="" routerlink="/contactus"
 						href="contact_us" class="headText">Contact Us</a></li>
 					<li _ngcontent-efm-c6="" class="menu-item">
-					<a ngcontent-efm-c6="" href="signup" class="loginBT"> <img src="./resources/image/main/signup_off_white.png"></a>
+					<a ngcontent-efm-c6="" href="signup" class="loginBT"> <img src="${pageContext.request.contextPath}/resources/image/main/signup_off_white.png"></a>
 						<ul _ngcontent-efm-c6="" class="submenu">
 							<li _ngcontent-efm-c6="" class="menu-item"><a
 								_ngcontent-efm-c6="" href="Mypage">MyPage</a></li>
 						</ul>
 					</li>					
 					<li _ngcontent-efm-c6="" class="menu-item menu-item-has-children"><a
-						_ngcontent-efm-c6="" href="recipe_upload"><img src="./resources/image/main/Normal_writeBT_white.png"></a>
+						_ngcontent-efm-c6="" href="recipe_upload"><img src="${pageContext.request.contextPath}/resources/image/main/Normal_writeBT_white.png"></a>
 					</li>
 					<li _ngcontent-efm-c6="" class="menu-item">
-					<a ngcontent-efm-c6="" href="signup" class="loginBT"> <img src="./resources/image/main/class_writeBT_white.png"></a>
+					<a ngcontent-efm-c6="" href="signup" class="loginBT"> <img src="${pageContext.request.contextPath}/resources/image/main/class_writeBT_white.png"></a>
 						<ul _ngcontent-efm-c6="" class="submenu">
 							<li _ngcontent-efm-c6="" class="menu-item"><a
 								_ngcontent-efm-c6="" href="chef_recipe_upload">Chef_Write</a></li>
@@ -124,7 +120,7 @@
 <!-- Banner Start -->
   <div class="banner banner-video dark-overlay">
     <video autoplay muted loop id="myVideo">
-      <source src="./resources//vids/video04.mp4" type="video/mp4">
+      <source src="${pageContext.request.contextPath}/resources//vids/video04.mp4" type="video/mp4">
     </video>
     <div class="container">
 
@@ -150,12 +146,11 @@
       <div class="row">
       
       
-	<!--     section    -->
+		<!--     section    -->
         <div class="col-lg-3 col-md-4 col-sm-6">
-          <a href="recipe_detail" class="ct-category">
-          
+          <a href="getFood?kind_tag_no=10" class="ct-category">
             <div class="ct-category-img">
-              <img src="./resources/image/main/mainProduct_01.png" alt="category">
+              <img src="${pageContext.request.contextPath}/resources/image/main/mainProduct_01.png" alt="category">
               <span>17 Recipes</span>   <!--    이 부분 나중에  한식 갯수  -->
             </div>
             <div class="ct-category-info">
@@ -169,14 +164,14 @@
         
 	<!--     section    -->
         <div class="col-lg-3 col-md-4 col-sm-6">
-          <a routerLink="/recipe-archive" class="ct-category">
+          <a href="getFood?kind_tag_no=20" class="ct-category">
             <div class="ct-category-img">
-              <img src="./resources/image/main/mainProduct_02.png" alt="category">
-              <span>27 Recipes</span>
+              <img src="${pageContext.request.contextPath}/resources/image/main/mainProduct_02.png" alt="category">
+              <span>17 Recipes</span>   <!--    이 부분 나중에  한식 갯수  -->
             </div>
             <div class="ct-category-info">
               <h5>양식</h5>
-              <p>Delve into the world of fast food with my recipes</p>
+              <p>Who said breakfast can't be delicious</p>
             </div>
           </a>
         </div>
@@ -185,9 +180,9 @@
         
 	<!--     section    -->
         <div class="col-lg-3 col-md-4 col-sm-6">
-          <a routerLink="/recipe-archive" class="ct-category">
+            <a href="getFood?kind_tag_no=30" class="ct-category">
             <div class="ct-category-img">
-              <img src="./resources/image/main/mainProduct_03.png" alt="category">
+              <img src="${pageContext.request.contextPath}/resources/image/main/mainProduct_03.png" alt="category">
               <span>13 Recipes</span>
             </div>
             <div class="ct-category-info">
@@ -200,9 +195,9 @@
         
 	<!--     section    -->
         <div class="col-lg-3 col-md-4 col-sm-6">
-          <a routerLink="/recipe-archive" class="ct-category">
+           <a href="getFood?kind_tag_no=40" class="ct-category">
             <div class="ct-category-img">
-              <img src="./resources/image/main/mainProduct_04.png" alt="category">
+              <img src="${pageContext.request.contextPath}/resources/image/main/mainProduct_04.png" alt="category">
               <span>21 Recipes</span>
             </div>
             <div class="ct-category-info">
@@ -215,9 +210,9 @@
         
 	<!--     section    -->        
         <div class="col-lg-3 col-md-4 col-sm-6">
-          <a routerLink="/recipe-archive" class="ct-category">
+           <a href="getFood?kind_tag_no=50" class="ct-category">
             <div class="ct-category-img">
-              <img src="./resources/image/main/mainProduct_05.png" alt="category">
+              <img src="${pageContext.request.contextPath}/resources/image/main/mainProduct_05.png" alt="category">
               <span>12 Recipes</span>
             </div>
             <div class="ct-category-info">
@@ -230,9 +225,9 @@
         
 	<!--     section    -->        
         <div class="col-lg-3 col-md-4 col-sm-6">
-          <a routerLink="/recipe-archive" class="ct-category">
+           <a href="getFood?kind_tag_no=60" class="ct-category">
             <div class="ct-category-img">
-              <img src="./resources/image/main/mainProduct_06.png" alt="category">
+              <img src="${pageContext.request.contextPath}/resources/image/main/mainProduct_06.png" alt="category">
               <span>75 Recipes</span>
             </div>
             <div class="ct-category-info">
@@ -245,9 +240,9 @@
         
 	<!--     section    -->        
         <div class="col-lg-3 col-md-4 col-sm-6">
-          <a routerLink="/recipe-archive" class="ct-category">
+           <a href="getFood?kind_tag_no=70" class="ct-category">
             <div class="ct-category-img">
-              <img src="./resources/image/main/mainProduct_07.png" alt="category">
+              <img src="${pageContext.request.contextPath}/resources/image/main/mainProduct_07.png" alt="category">
               <span>44 Recipes</span>
             </div>
             <div class="ct-category-info">
@@ -260,9 +255,9 @@
         
 	<!--     section    -->        
         <div class="col-lg-3 col-md-4 col-sm-6">
-          <a routerLink="/recipe-archive" class="ct-category">
+           <a href="getFood?kind_tag_no=80" class="ct-category">
             <div class="ct-category-img">
-              <img src="./resources/image/main/mainProduct_08.png" alt="category">
+              <img src="${pageContext.request.contextPath}/resources/image/main/mainProduct_08.png" alt="category">
               <span>32 Recipes</span>
             </div>
             <div class="ct-category-info">
@@ -303,7 +298,7 @@
         <div class="col-lg-6 col-md-6 masonry-item">
           <article class="post">
             <div class="post-thumbnail">
-              <a routerLink="/blog-single-v1"><img src="./resources/image/main/product_01.png" alt="blog post"></a>
+              <a routerLink="/blog-single-v1"><img src="${pageContext.request.contextPath}/resources/image/main/product_01.png" alt="blog post"></a>
               <div class="post-meta">
                 <span>January 22, 2020</span>
                 <span>Posted by ID</span>
@@ -327,7 +322,7 @@
         <div class="col-lg-6 col-md-6 masonry-item">
           <article class="post">
             <div class="post-thumbnail">
-              <a routerLink="/blog-single-v1"><img src="./resources/image/main/product_02.png" alt="blog post"></a>
+              <a routerLink="/blog-single-v1"><img src="${pageContext.request.contextPath}/resources/image/main/product_02.png" alt="blog post"></a>
               <div class="post-meta">
                 <span>January 24, 2020</span>
                 <span>Posted by ID</span>
@@ -351,23 +346,11 @@
         <div class="col-lg-6 col-md-6 masonry-item">
           <article class="post post-format-video">
             <div class="post-thumbnail">
-              <a routerLink="/blog-single-v1"><img src="./resources/image/main/product_09.png" alt="blog post"></a>
+              <a routerLink="/blog-single-v1"><img src="${pageContext.request.contextPath}/resources/image/main/product_09.png" alt="blog post"></a>
               <div class="post-meta">
                 <span>January 22, 2020</span>
                 <span>Posted by Jonathan Pick</span>
-              </div>
-            <!--    <div class="video-player-trigger">
-                <a href="https://www.youtube.com/watch?v=TKnufs85hXk" class="popup-youtube">
-                 <i class="fas fa-play"></i>
-                  <div class="video-player-icons">
-                    <i class="flaticon-pot"></i>
-                    <i class="flaticon-taco"></i>
-                    <i class="flaticon-bread"></i>
-                    <i class="flaticon-chef"></i>
-                    <i class="flaticon-diet"></i>
-                  </div> 
-                </a>
-              </div>-->
+              </div>          
             </div>
             <div class="post-categories">
               <a routerLink="/homepage5">해산물</a>
@@ -388,7 +371,7 @@
         <div class="col-lg-6 col-md-6 masonry-item">
           <article class="post">
             <div class="post-thumbnail">
-              <a routerLink="/blog-single-v1"><img src="./resources/image/main/product_03.png" alt="blog post"></a>
+              <a routerLink="/blog-single-v1"><img src="${pageContext.request.contextPath}/resources/image/main/product_03.png" alt="blog post"></a>
               <div class="post-meta">
                 <span>April 26, 2020</span>
                 <span>Posted by Jonathan Pick</span>
@@ -406,25 +389,22 @@
         <!-- Post End -->
       
 
-
-
       </div>
     </div>
   </section>
   <!-- Blog Posts End -->
- <!--  <app-footer1></app-footer1> -->
   
-
-
-
-
-
-
-
+  
+  
+  
+  
+  
 <!--     ------------------   footer 영역    -------------------        -->
+ <app-footer1>
+ 
 
 <!-- Newsletter start -->
-  <section class="section light-bg bg-cover" style=" background-image:url('./resources/image/main/footBackImg_03.jpg')">
+  <section class="section light-bg bg-cover" style=" background-image:url('${pageContext.request.contextPath}/resources/image/main/footBackImg_03.jpg')">
 
 
   </section>
@@ -439,7 +419,7 @@
                 <!-- Single Cool Fact -->
                 <div class="col-12 col-sm-6 col-lg-3">
                     <div class="single-cool-fact">
-                        <img src="./resources/image/core-img/salad.png" alt="">
+                        <img src="${pageContext.request.contextPath}/resources/image/core-img/salad.png" alt="">
                         <h3><span class="counter">1287</span></h3>
                         <h6>Recipe</h6>
                     </div>
@@ -448,7 +428,7 @@
                 <!-- Single Cool Fact -->
                 <div class="col-12 col-sm-6 col-lg-3">
                     <div class="single-cool-fact">
-                        <img src="./resources/image/core-img/hamburger.png" alt="">
+                        <img src="${pageContext.request.contextPath}/resources/image/core-img/hamburger.png" alt="">
                         <h3><span class="counter">25</span></h3>
                         <h6>Chef Recipe</h6>
                     </div>
@@ -457,7 +437,7 @@
                 <!-- Single Cool Fact -->
                 <div class="col-12 col-sm-6 col-lg-3">
                     <div class="single-cool-fact">
-                        <img src="./resources/image/core-img/rib.png" alt="">
+                        <img src="${pageContext.request.contextPath}/resources/image/core-img/rib.png" alt="">
                         <h3><span class="counter">471</span></h3>
                         <h6>Class</h6>
                     </div>
@@ -466,7 +446,7 @@
                 <!-- Single Cool Fact -->
                 <div class="col-12 col-sm-6 col-lg-3">
                     <div class="single-cool-fact">
-                        <img src="./resources/image/core-img/pancake.png" alt="">
+                        <img src="${pageContext.request.contextPath}/resources/image/core-img/pancake.png" alt="">
                         <h3><span class="counter">326</span></h3>
                         <h6>Affiliates</h6>
                     </div>
@@ -477,34 +457,25 @@
                 <div class="col-12 col-sm-6 col-lg-3">
                     <div class="single-cool-fact">
                     <a href="mailto:wandering_star@naver.com">
-                        <img src="./resources/image/core-img/mail.png" alt="">
+                        <img src="${pageContext.request.contextPath}/resources/image/core-img/mail.png" alt="">
                     </a>                    
                         <h6>쉐프등업</h6>
                     </div>
                 </div>
                 
                 
-                
-                
-                
-                
-                
             </div>
   
     
   </footer>
+  
+ </app-footer1> 
+ 
+ 
   <!-- Footer End -->
   
   
-  
-  
-  
-  
  </app-root> 
- 
- 
- 
- 
  
  
  

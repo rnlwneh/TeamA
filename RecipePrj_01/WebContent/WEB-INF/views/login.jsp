@@ -246,66 +246,142 @@
 <!-- Login FormStart -->
   <section class="section auth-section bg-cover" style="background-image: url('assets/img/bg/3.jpg')">
     <div class="container">
-      <form class="auth-form light-bg" method="post" style="background-image: url('assets/img/bg/5.jpg')">
+      <form name="form" class="auth-form light-bg" method="post" action ="login.do" style="background-image: url('assets/img/bg/5.jpg')">
         <h1>Login</h1>
         <div class="form-group">
-          <label>Username</label>
-          <input type="text" class="form-control" placeholder="Username" name="username" value="">
+          <label>ID</label>
+          <input type="text" class="form-control" placeholder="ID" name="MEM_ID" value="">
         </div>
         <div class="form-group">
           <label>Password</label>
-          <input type="password" class="form-control" placeholder="Password" name="password" value="">
+          <input type="password" class="form-control" placeholder="Password" name="MEM_PWD" value="">
         </div>
         <div class="auth-controls form-group">
-          <div class="custom-control custom-checkbox">
+<!--           <div class="custom-control custom-checkbox">
             <input type="checkbox" class="custom-control-input" id="rememberMe">
             <label class="custom-control-label fw-400" for="rememberMe">Remember Me</label>
-          </div>
-          <a href="info_change" class="btn-link fw-400">Forgot Password?(수정예정)</a>
-        </div>
+          </div> -->
+<!--           <a href="info_change" class="btn-link fw-400">Forgot Password?(수정예정)</a>
+        </div> -->
         <div class="form-group">
-          <button type="button" class="btn-custom primary btn-block">Login</button>
+          <button type="submit" id="loginSubmit" name="loginSubmit" class="btn-custom primary btn-block">login</button>
         </div>
-        <p class="form-group text-center">Don't have an account? <a href="signup" class="btn-link">Create One</a> </p>
+        <p class="form-group text-center">계정이 없으십니까? <a href="signup" class="btn-link">회원가입</a> </p>
       </form>
     </div>
   </section>
   <!-- Login Form End -->
-  <app-footer4>
-  <!-- Footer Start -->
-  <footer class="ct-footer footer-2">
-    <div class="container">
-      <div class="footer-widget">
-        <ul class="social-media">
-          <li> <a href="javascript:void(0)"> <i class="fab fa-facebook-f"></i> </a> </li>
-          <li> <a href="javascript:void(0)"> <i class="fab fa-twitter"></i> </a> </li>
-          <li> <a href="javascript:void(0)"> <i class="fab fa-pinterest-p"></i> </a> </li>
-          <li> <a href="javascript:void(0)"> <i class="fab fa-linkedin-in"></i> </a> </li>
-        </ul>
-      </div>
-      <div class="footer-widget">
-        <ul>
-          <li> <a href="javascript:void(0)">Breakfast</a> </li>
-          <li> <a href="javascript:void(0)">Desserts</a> </li>
-          <li> <a href="javascript:void(0)">Dinner</a> </li>
-          <li> <a href="javascript:void(0)">Dairy</a> </li>
-        </ul>
-      </div>
-      <div class="footer-bottom">
-        <div class="container">
-          <p class="m-0">&copy; Copyright 2020 - <a href="javascript:void(0)">AndroThemes</a> All Rights Reserved.</p>
-        </div>
-      </div>
-    </div>
-  </footer>
-  <!-- Footer End -->
-  </app-footer4>
-
-
 
   
+  
+<!-- Newsletter start  -->
+  <app-footer1>
+  
+
+
+<!--     ------------------   footer 영역    -------------------        -->
+
+<!-- Newsletter start -->
+  <section class="section light-bg bg-cover" style=" background-image:url('./resources/image/main/footBackImg_03.jpg')">
+
+
+  </section>
+  <!-- Newsletter End -->
+  
+
+  <!-- Footer Start -->
+  <footer class="ct-footer footer-2">
+  
+  
+  	<div class="raw align-items-center mt-70">
+                <!-- Single Cool Fact -->
+                <div class="col-12 col-sm-6 col-lg-3">
+                    <div class="single-cool-fact">
+                        <img src="./resources/image/core-img/salad.png" alt="">
+                        <h3><span class="counter">1287</span></h3>
+                        <h6>Recipe</h6>
+                    </div>
+                </div>
+
+                <!-- Single Cool Fact -->
+                <div class="col-12 col-sm-6 col-lg-3">
+                    <div class="single-cool-fact">
+                        <img src="./resources/image/core-img/hamburger.png" alt="">
+                        <h3><span class="counter">25</span></h3>
+                        <h6>Chef Recipe</h6>
+                    </div>
+                </div>
+
+                <!-- Single Cool Fact -->
+                <div class="col-12 col-sm-6 col-lg-3">
+                    <div class="single-cool-fact">
+                        <img src="./resources/image/core-img/rib.png" alt="">
+                        <h3><span class="counter">471</span></h3>
+                        <h6>Class</h6>
+                    </div>
+                </div>
+
+                <!-- Single Cool Fact -->
+                <div class="col-12 col-sm-6 col-lg-3">
+                    <div class="single-cool-fact">
+                        <img src="./resources/image/core-img/pancake.png" alt="">
+                        <h3><span class="counter">326</span></h3>
+                        <h6>Affiliates</h6>
+                    </div>
+                </div>
+                
+                
+                <!-- Single Cool Fact -->
+                <div class="col-12 col-sm-6 col-lg-3">
+                    <div class="single-cool-fact">
+                    <a href="mailto:wandering_star@naver.com">
+                        <img src="./resources/image/core-img/mail.png" alt="">
+                    </a>                    
+                        <h6>쉐프등업</h6>
+                    </div>
+                </div>
+                
+            </div>
+  
+    
+  </footer>
+  <!-- Footer End -->
+  
+
+  
+  
+  </app-footer1>
+  
+ 
+
+
+
+
+
   
  </app-root> 
  
 </body>
+<script>
+	window.onload = function(){
+		document.getElementById('loginSubmit').onclick = check;	
+	}
+	
+	function check(){
+		if(document.form.MEM_ID.value==""){
+			alert("ID를 입력하세요.")
+			document.form.MEM_ID.focus();
+			return false;
+		}
+		
+		if(document.form.MEM_PWD.value==""){
+			alert("비밀번호를 입력하세요.")
+			document.form.MEM_PWD.focus();
+			return false;
+		}
+		document.form.submit();//전송
+		
+	}
+</script>
 </html>
+
