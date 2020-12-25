@@ -2,11 +2,14 @@ package kr.co.ikosmo.mvc.vo;
 
 
 /*
- REVIEW_NO	NUMBER(5,0)
+REVIEW_NO	NUMBER(5,0)
+MEM_NO	NUMBER(5,0)
+CLASS_NO	NUMBER(5,0)
+RECIPE_NO	NUMBER(4,0)
+TYPE	VARCHAR2(10 BYTE)
 STAR_RATE	NUMBER(1,0)
 REVIEW_CONTENT	VARCHAR2(80 BYTE)
 REVIEW_DATE	DATE
-MEM_NO	NUMBER(5,0)
 REVIEW_DECLARE	NUMBER(3,0)
  * 
  */
@@ -16,33 +19,16 @@ REVIEW_DECLARE	NUMBER(3,0)
 public class ReviewVO {
 	
 	
-	private int review_no,mem_no,review_declare;
+	private int review_no  ,mem_no  ,class_no,recipe_no  ,star_rate ,review_declare    ;
 	
-	private String review_content,review_date,star_rate;
+	private String type , review_content  ,review_date ;
 
-	
-	
-	
 	public int getReview_no() {
 		return review_no;
 	}
 
 	public void setReview_no(int review_no) {
 		this.review_no = review_no;
-	}
-
-	
-	
-	
-	
-	
-
-	public String getStar_rate() {
-		return star_rate;
-	}
-
-	public void setStar_rate(String star_rate) {
-		this.star_rate = star_rate;
 	}
 
 	public int getMem_no() {
@@ -53,12 +39,44 @@ public class ReviewVO {
 		this.mem_no = mem_no;
 	}
 
+	public int getClass_no() {
+		return class_no;
+	}
+
+	public void setClass_no(int class_no) {
+		this.class_no = class_no;
+	}
+
+	public int getRecipe_no() {
+		return recipe_no;
+	}
+
+	public void setRecipe_no(int recipe_no) {
+		this.recipe_no = recipe_no;
+	}
+
+	public int getStar_rate() {
+		return star_rate;
+	}
+
+	public void setStar_rate(int star_rate) {
+		this.star_rate = star_rate;
+	}
+
 	public int getReview_declare() {
 		return review_declare;
 	}
 
 	public void setReview_declare(int review_declare) {
 		this.review_declare = review_declare;
+	}
+
+	public String getType() {
+		return type;
+	}
+
+	public void setType(String type) {
+		this.type = type;
 	}
 
 	public String getReview_content() {
@@ -76,6 +94,9 @@ public class ReviewVO {
 	public void setReview_date(String review_date) {
 		this.review_date = review_date;
 	}
+
+	
+	
 	
 	
 	

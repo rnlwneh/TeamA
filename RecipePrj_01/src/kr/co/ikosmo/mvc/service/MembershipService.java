@@ -10,14 +10,11 @@ public interface MembershipService {
 
 	public int insertmembership (MembershipVO vo); //회원가입
 	
-	public int updatemembership (MembershipVO vo); // 회원정보수정
-	
-	public int deletemembership (MembershipVO vo); // 회원탈퇴
-	
-	public MembershipVO idCheck_Login( MembershipVO vo); // 로그인+아이디확인
-	
-	public MembershipVO emailCheck( MembershipVO vo); // 로그인+아이디확인
+	public MembershipVO loginmembership( MembershipVO vo);//로그인
 
-	public List<MembershipVO> memberList(MembershipVO vo); // 회원 리스트
+	//로그인 회원가입 완료 ---------------------------------------------------
+	public void updateMember(MembershipVO vo);
+
+	//public void memberUpdate(MembershipVO vo) throws Exception;//회원정보수정-> 안됨
 }
 

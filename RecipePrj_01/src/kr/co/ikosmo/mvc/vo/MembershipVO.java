@@ -15,71 +15,70 @@ KIND_TAG_NO	NUMBER(2,0)
 */
 
 public class MembershipVO {
-	private int MEM_NO, KIND_TAG_NO;
-	private String MEM_ID,MEM_PWD,MEM_NAME,MEM_NICKNAME,MEM_JUMINNUM,MEM_EMAIL,MEM_PHONE, MEM_GRADE_NO;
+	private int mem_no;
+	private String mem_id,mem_pwd,mem_name,mem_nickname,
+	mem_juminnum,mem_email,mem_phone,mem_regdate,mem_pic;
+	public int getMem_no() {
+		return mem_no;
+	}
+	public void setMem_no(int mem_no) {
+		this.mem_no = mem_no;
+	}
+	public String getMem_id() {
+		return mem_id;
+	}
+	public void setMem_id(String mem_id) {
+		this.mem_id = mem_id;
+	}
+	public String getMem_pwd() {
+		return mem_pwd;
+	}
+	public void setMem_pwd(String mem_pwd) {
+		this.mem_pwd = mem_pwd;
+	}
+	public String getMem_name() {
+		return mem_name;
+	}
+	public void setMem_name(String mem_name) {
+		this.mem_name = mem_name;
+	}
+	public String getMem_nickname() {
+		return mem_nickname;
+	}
+	public void setMem_nickname(String mem_nickname) {
+		this.mem_nickname = mem_nickname;
+	}
+	public String getMem_juminnum() {
+		return mem_juminnum;
+	}
+	public void setMem_juminnum(String mem_juminnum) {
+		this.mem_juminnum = mem_juminnum;
+	}
+	public String getMem_email() {
+		return mem_email;
+	}
+	public void setMem_email(String mem_email) {
+		this.mem_email = mem_email;
+	}
+	public String getMem_phone() {
+		return mem_phone;
+	}
+	public void setMem_phone(String mem_phone) {
+		this.mem_phone = mem_phone;
+	}
+	public String getMem_regdate() {
+		return mem_regdate;
+	}
+	public void setMem_regdate(String mem_regdate) {
+		this.mem_regdate = mem_regdate;
+	}
+	public String getMem_pic() {
+		return mem_pic;
+	}
+	public void setMem_pic(String mem_pic) {
+		this.mem_pic = mem_pic;
+	}
 	
 	
-
-
-	public int getMEM_NO() {
-		return MEM_NO;
-	}
-	public void setMEM_NO(int mEM_NO) {
-		MEM_NO = mEM_NO;
-	}
-	public String getMEM_ID() {
-		return MEM_ID;
-	}
-	public void setMEM_ID(String mEM_ID) {
-		MEM_ID = mEM_ID;
-	}
-	public String getMEM_PWD() {
-		return MEM_PWD;
-	}
-	public void setMEM_PWD(String mEM_PWD) {
-		MEM_PWD = mEM_PWD;
-	}
-	public String getMEM_NAME() {
-		return MEM_NAME;
-	}
-	public void setMEM_NAME(String mEM_NAME) {
-		MEM_NAME = mEM_NAME;
-	}
-	public String getMEM_NICKNAME() {
-		return MEM_NICKNAME;
-	}
-	public void setMEM_NICKNAME(String mEM_NICKNAME) {
-		MEM_NICKNAME = mEM_NICKNAME;
-	}
-	public String getMEM_JUMINNUM() {
-		return MEM_JUMINNUM;
-	}
-	public void setMEM_JUMINNUM(String mEM_JUMINNUM) {
-		MEM_JUMINNUM = mEM_JUMINNUM;
-	}
-	public String getMEM_EMAIL() {
-		return MEM_EMAIL;
-	}
-	public void setMEM_EMAIL(String mEM_EMAIL) {
-		MEM_EMAIL = mEM_EMAIL;
-	}
-	public String getMEM_PHONE() {
-		return MEM_PHONE;
-	}
-	public void setMEM_PHONE(String mEM_PHONE) {
-		MEM_PHONE = mEM_PHONE;
-	}
-	public String getMEM_GRADE_NO() {
-		return MEM_GRADE_NO;
-	}
-	public void setMEM_GRADE_NO(String mEM_GRADE_NO) {
-		MEM_GRADE_NO = mEM_GRADE_NO;
-	}
-	public int getKIND_TAG_NO() {
-		return KIND_TAG_NO;
-	}
-	public void setKIND_TAG_NO(int kIND_TAG_NO) {
-		KIND_TAG_NO = kIND_TAG_NO;
-	}
 
 }

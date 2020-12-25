@@ -18,17 +18,54 @@ $('#show_class_content_class').hide();
 $('#show_class_content_mate').hide();
 
 $('#show_class_content_step').hide();
-
-
- $("#show_classVideo").hide();
+   
+$(".report-content").hide();
  
- 
+ $(".popBT").hide();
+  
 
-$(".hover").mouseleave(
-  function () {
-    $(this).removeClass("hover");
-  }
-);
+
+
+  $('.reportBT').hover(function(){
+        $(".popBT").css('display','block');
+    }, function() {
+        $(".popBT").css('display','none');
+    });
+
+
+
+
+
+
+  $('.reportBT').hover(function(){
+        $(".popBT").css('display','block');
+    }, function() {
+        $(".popBT").css('display','none');
+    });
+
+
+
+
+$('.reportXBT').click(function(){
+						
+					 $('.report-content').css({	
+							
+						'display':'none' });
+						 event.preventDefault();
+						
+		}); 
+
+
+
+
+$('.reportBT').click(function(){
+						
+					 $('.report-content').css({	
+							
+						'display':'block' });
+						 event.preventDefault();
+						
+		}); 
 
 
 
@@ -54,13 +91,44 @@ $('#comment_BT_close').click(function(){
 
 
 
+ $("#show_classVideo").hide();
+ 
+ 
+ 
+
+$(".hover").mouseleave(
+  function () {
+    $(this).removeClass("hover");
+  }
+);
+
+
+
+$('.close').click(function(){
+						
+					 $('.coment_write').css({	
+							
+						'display':'none' });
+						
+		}); 
+
+
+
+$('#comment_BT_close').click(function(){
+						
+					 $('.coment_write').css({	
+							
+						'display':'none' });
+						
+		}); 
+
+
 $('.starFree').click(function(){
 	$("#show_class_content_video").fadeToggle(600, 'linear');
  	 event.preventDefault();
  	 
 
  })
-
 
 
 

@@ -35,6 +35,7 @@ public class ClassMemberVO {
 	
 	
 	
+	
 	public int getMem_no() {
 		return mem_no;
 	}

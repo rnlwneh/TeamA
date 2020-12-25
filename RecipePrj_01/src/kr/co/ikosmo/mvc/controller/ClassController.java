@@ -1,21 +1,32 @@
 package kr.co.ikosmo.mvc.controller;
 
+import java.awt.PageAttributes.MediaType;
 import java.io.File;
+import java.io.IOException;
 import java.util.ArrayList;
 import java.util.List;
 import java.util.Map;
+import java.util.UUID;
 
 import javax.servlet.http.HttpServletRequest;
+import javax.servlet.http.HttpServletResponse;
 import javax.servlet.http.HttpSession;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
+import org.springframework.ui.ModelMap;
+import org.springframework.util.FileCopyUtils;
+import org.springframework.validation.BindingResult;
 import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
+import org.springframework.web.bind.annotation.PutMapping;
+import org.springframework.web.bind.annotation.RequestHeader;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
+import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.ResponseBody;
 import org.springframework.web.multipart.MultipartFile;
 import org.springframework.web.multipart.MultipartHttpServletRequest;
@@ -24,18 +35,19 @@ import org.springframework.web.servlet.mvc.support.RedirectAttributes;
 
 
 import kr.co.ikosmo.mvc.dao.ClassDAO;
-import kr.co.ikosmo.mvc.dao.indexDAO;
+import kr.co.ikosmo.mvc.dao.IndexDAO;
 import kr.co.ikosmo.mvc.service.ClassService;
-import kr.co.ikosmo.mvc.vo.BoardVO;
+import kr.co.ikosmo.mvc.vo.ClassPayInfoVO;
 import kr.co.ikosmo.mvc.vo.ClassVO;
 import kr.co.ikosmo.mvc.vo.KindTagVO;
-import kr.co.ikosmo.mvc.vo.MateVO;
 import kr.co.ikosmo.mvc.vo.ReviewVO;
-import kr.co.ikosmo.mvc.vo.StepVO;
+
+
 
 
 @Controller
 public class ClassController {
+
 
 	private List<ClassVO> page_list;
 
@@ -43,31 +55,56 @@ public class ClassController {
 	private ClassDAO classdao;
 
 	@Autowired
-	private indexDAO indexdao;
+	private IndexDAO indexdao;
+	
 	
 	@Autowired
-	private ClassService service;
+	private ClassService classservice;
+	
 	
 
+	@RequestMapping("/{step}")
+	public String viewPage(@PathVariable String step) {
+		return "tiles/"+step;
+	}
+	
+	
+	
+	  @RequestMapping("/index") 
+	  
+	  public String doindex(Model model) { 		  		  
+		  
+		  return  "aaa/bbb/index"; 
+		  
+	  }
+	
+	
 	
 
-	/* 클래스 메인 */
+	/* ===============  class_main 처리===============   */
 
 	@RequestMapping("/class_main")
-	public String getBoardList(HttpSession session, RedirectAttributes redirectAttribute) throws Exception {
-
+	public String getClassList(HttpSession session, RedirectAttributes redirectAttribute) throws Exception {
+		
+		session.removeAttribute("classSearch_keyword");
+		session.removeAttribute("classSearch_key");
+		
 		List<ClassVO> classlist = classdao.getClassList();
-		System.out.println("getBoardList 호출호출!");
+		System.out.println("getClassList 호출호출!");
 		redirectAttribute.addFlashAttribute("list", classlist);
-
+		
+		
 		page_list = classlist;
 
-		return "redirect:/paginged";
+		return "redirect:/paging";
 	}
+	
 
-	// 클래스 메인 페이징
-	@RequestMapping("/paginged")
-	public String paginged(HttpServletRequest request, Model model, String page) {
+
+	/* ===============  class_main 페이징 ===============   */ 
+	
+	@RequestMapping("/paging")
+	public String paging(HttpServletRequest request, Model model, String page) throws Exception {
 
 		List<ClassVO> paginglist = (List) model.asMap().get("list");
 		if (paginglist != null) {
@@ -75,25 +112,30 @@ public class ClassController {
 		}
 
 		List<ClassVO> setPage = new ArrayList<ClassVO>();
-		int page_size = 2; // 글 몇개로 나눌건지. 현재 6개로 할 예정.
+		int page_size = 6;
 
 		try {
 
 			if (page == null) {
 				for (int i = 0; i < page_size; i++) {
+					
 					ClassVO vo = page_list.get(i);
+					
 					setPage.add(vo);
 				}
 			} else {
 
 				int paramPage = Integer.parseInt(page);
 				if (page_list.size() > page_size * paramPage) {
+					
 					for (int i = (page_size * paramPage - page_size); i < page_size * paramPage; i++) {
+						
 						ClassVO vo = page_list.get(i);
 						setPage.add(vo);
 					}
 				} else {
 					for (int i = (page_size * paramPage - page_size); i < page_list.size(); i++) {
+						
 						ClassVO vo = page_list.get(i);
 						setPage.add(vo);
 					}
@@ -120,54 +162,277 @@ public class ClassController {
 		}
 
 		model.addAttribute("class_main", setPage);
+		
 		model.addAttribute("p_num", p_num);
-
-		return "class_main";
+		
+		
+		
+		List<ClassVO> popularClassList = classdao.popularClass();	
+				
+		model.addAttribute("poplist", popularClassList);	
+				
+				
+		return "tiles/class_main";
 	}
 
-	
-	
-	// class_detail 처리.
-	
-	@RequestMapping(value = "/class_detail", method = { RequestMethod.GET, RequestMethod.POST })
-	public void class_detail(HttpSession session, ClassVO vo, Model model, int class_no) {
-		
-		ClassVO valueOne = classdao.getClass(vo);
-		
-		System.out.println("class_detail 실행");
-
-		model.addAttribute("classDe", valueOne);   // 얘는 vo 객체 불러오기 
-
-		session.setAttribute("classno", valueOne.getClass_no()); // pID값 가져오는 애
-		
-		List<ClassVO> classList = new ArrayList<ClassVO>();
-		
-		classList.add(valueOne);
-		
-		session.setAttribute("classList", classList);
-		
 		
 
+	
+	/* ===============  class_main 검색 처리 ===============   */ 
+	@RequestMapping("/classSearch")
+	public String classSearch(HttpServletRequest request, HttpSession session) {
+		
+			
+		String classSearch_key = request.getParameter("classSearch_key");
+		
+		String classSearch_keyword = request.getParameter("classSearch_keyword");
+		
+				
+		if (classSearch_key.equals("재료를입력해요")) {	
+			
+			page_list=classdao.classContentSearch(classSearch_keyword);	
+			
+		}else {			
+			
+			page_list=classdao.classSubjectSearch(classSearch_keyword);
+		}
+		
+		session.setAttribute("classSearch_keyword", classSearch_keyword); 
+		
+		session.setAttribute("classSearch_key",classSearch_key);
+				
+		return"redirect:/paging";
+		
+		
 	}
 	
 	
+	/* ===============  class_detail ===============   */ 
+	
+		@RequestMapping("/class_detail")
+		
+		public String class_detail(ClassVO vo, Model model, HttpSession session,@RequestParam int class_no) throws Exception {
+			
+			ClassVO valueOne = classdao.getClass(vo);			
+			
+			model.addAttribute("classDe", valueOne);
+		
+			
+			
+			List<ClassVO> classList = new ArrayList<ClassVO>();
+			
+			classList.add(valueOne);
+			
+			model.addAttribute("classList",classList);	
+			
+			
+			
+			classservice.classViewCnt(class_no, session);  /* 조회수 */ 
+			
+			return "tiles/class_detail";
+			
+		}
+		
+		
+		
+		/* ===============  class_detail 리뷰 작성 ===============   */ 
+		
+			@RequestMapping(value = "/insertClassReview", method = RequestMethod.POST)
+			
+			public String insertClassReview(ReviewVO vo) throws Exception {
+				
+				classdao.insertClassReview(vo);
+
+				return "redirect:/review"; 
+			}
+
+			
+			
 	
 
-	// class_detail 리뷰 작성
-	@RequestMapping(value = "/insertClassReview", method = RequestMethod.POST)
-	public String insertClassReview(ReviewVO vo) throws Exception {
-		classdao.insertClassReview(vo);
+		/* ===============  class_write ===============   */ 
+		
+	 @RequestMapping("/insertClass") 
+			 
+		 public String insertClass(ClassVO vo, HttpSession session, MultipartHttpServletRequest file) throws Exception {
+		 
+		System.out.println(vo.getMem_no()); System.out.println("insert호출!");
+		 
+		 System.out.println(session.getAttribute("memNo").toString());
+		 
+		  int memNo = Integer.parseInt(session.getAttribute("memNo").toString());
+		 
+		 vo.setMem_no(memNo);
+		 
+		 classservice.insertClass(vo);
+		 
+		 
+		    UUID uuid = UUID.randomUUID();
+		    
+		    List<MultipartFile> fileList = file.getFiles("file");
+		    
+		    		    
+		    String path = "D:\\bigdata\\workspace\\RecipePrj_01\\WebContent\\resources\\image\\FoodImg\\";
 
-		return "redirect:/review"; // 작성이 완료된 후, 마이페이지로...
-	}
+		    for (MultipartFile mf : fileList) {
+		    	
+	            String originFileName = mf.getOriginalFilename(); 
+	            
+	            	            
+	            long fileSize = mf.getSize();
 
+	            System.out.println("originFileName : " + originFileName);
+	            
+	            System.out.println("fileSize : " + fileSize);
+
+	            String safeFile = path + originFileName;
+	            
+	            vo.setClass_thumbnail(originFileName);
+	           	            
+	            
+	            try {
+	            	
+	                mf.transferTo(new File(safeFile));
+	                
+	            } catch (IllegalStateException e) {
+	           
+	                e.printStackTrace();
+	            } catch (IOException e) {
+	         
+	                e.printStackTrace();
+	            }
+	        }
+
+
+		    return "redirect:/class_main";
+		}
+		
+	 
+	 
+	 
+	 
+		/* ===============  class_update ===============   */ 
+	 
+	 @RequestMapping(value = "/class_update")
+	 public String classUpdateFrom(ClassVO vo, Model model,MultipartHttpServletRequest mtfRequest) throws Exception {
+	        		 
+		ClassVO upValue = classdao.getClass(vo); 
+				
+		model.addAttribute("classUpDe", upValue);  
+		
+		
+	     return "tiles/class_update";
+	 }
+	 
+
+			@RequestMapping("/updateClass")
+			public String updateClass(@ModelAttribute("classvo") ClassVO vo, MultipartHttpServletRequest file) throws Exception {				
+				
+				classservice.updateClass(vo);
+				
+				 // 파일 이름 변경
+			    UUID uuid = UUID.randomUUID();
+			    
+			    List<MultipartFile> fileList = file.getFiles("file");
+			    
+			    		    
+			    String path = "D:\\bigdata\\workspace\\RecipePrj_01\\WebContent\\resources\\image\\FoodImg\\";
+
+			    for (MultipartFile mf : fileList) {
+			    	
+		            String originFileName = mf.getOriginalFilename(); // 원본 파일 명
+		            
+		            	            
+		            long fileSize = mf.getSize(); // 파일 사이즈
+
+		            System.out.println("originFileName : " + originFileName);
+		            
+		            System.out.println("fileSize : " + fileSize);
+
+		            String safeFile = path + originFileName;
+		            
+		            vo.setClass_thumbnail(originFileName);
+		           	            
+		            
+		            try {
+		            	
+		                mf.transferTo(new File(safeFile));
+		                
+		            } catch (IllegalStateException e) {
+		           
+		                e.printStackTrace();
+		            } catch (IOException e) {
+		         
+		                e.printStackTrace();
+		            }
+		        }
+
+			    return "redirect:class_main";
+			}
+			
+	  
+			 
+			/* ===============  클래스 삭제 ===============   */ 
+			
+						
+			@RequestMapping("deleteClass")
+			
+			public String deleteClass(@RequestParam int class_no) throws Exception{
+				
+				classservice.deleteClass(class_no);
+				
+				return "redirect:class_main";
+				
+			}
+		
+
+
+			/* ===============  class_payment ===============   */ 
+			
+			
+				@RequestMapping("/class_payment")
+				
+				public String class_payment(ClassVO co, Model model, HttpSession session,@RequestParam int class_no) throws Exception {
+					
+					int memNo = Integer.parseInt(session.getAttribute("memNo").toString());
+						 
+					co.setMem_no(memNo);						 
+					
+					ClassVO payValue = classdao.getClass(co);
+					
+					model.addAttribute("classPay", payValue);					
+													
+					classservice.classViewCnt(class_no, session);
+					
+				    return "tiles/class_payment";
+										
+				}
+				
+				 
+				 @RequestMapping(value = "/insertPayClass", method = RequestMethod.POST)
+				
+				 public String insertPayClass(ClassPayInfoVO vo) throws Exception {
+				 
+				classdao.insertPayClass(vo);
+				
+				return "redirect:/class_payment_ok";
+				
+				 
+				 }
+			
+			
+			
+	
+	
 	/* index 페이지 두번째 섹션 연결 */
 
 	@RequestMapping("/getFood")
-	public String getFood(ClassVO vo, HttpSession session, RedirectAttributes redirectAttribute) throws Exception {
+	public String getFood(ClassVO vo, RedirectAttributes redirectAttribute) throws Exception {
 
 		List<ClassVO> classlist = indexdao.getFood(vo);
+		
 		System.out.println(" getFood 호출");
+		
 		redirectAttribute.addFlashAttribute("list", classlist);
 
 		page_list = classlist;
@@ -177,11 +442,6 @@ public class ClassController {
 	
 	
 
-	
-	
-	
-	
-	
 	
 	
 

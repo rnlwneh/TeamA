@@ -56,7 +56,10 @@ function checkForm(){
      			 
      			 
      			 
-     			  if($("#class_intro_video").val() == "" | $("#class_ingredient_video").val() == "" | $("#class_recipe_video").val() == "" ){
+     			 var regExp = new RegExp(  /^[a-z][a-z0-9_]{6,14}$/ );
+     			 
+     			 
+     			  if($("#class_recipe_video").val() == "" ){
 			 
        			 alert("동영상 주소를 입력해주세요!");
        			 
@@ -65,6 +68,20 @@ function checkForm(){
      			   return false;
      			   
      			 }
+     			 
+     			 
+     			if( regExp.test(class_intro_video)==false  ){		
+			
+				
+				alert("동영상 주소는 영소문자로만 이루어져있어야 합니다.");
+				
+				
+				 $("#class_intro_video").focus();
+				
+				
+				 return false;
+				}
+			
      			 
      			      			 
 				
@@ -90,7 +107,8 @@ function checkForm(){
      			 }
      			 
    
-		
+				var regType1 = /^[A-Za-z0-9+]*$/; 
+
 			 
 			   if($("#class_price").val() == ""){
 			 
@@ -102,6 +120,20 @@ function checkForm(){
      			   
      			 }
 
+					
+				if( regType1.test(class_price)==false  ){		
+			
+				
+				alert("가격은 숫자만 입력하세요");
+				
+				
+				 $("#class_price").focus();
+				
+				
+				 return false;
+				}
+				
+					
 					
 
 

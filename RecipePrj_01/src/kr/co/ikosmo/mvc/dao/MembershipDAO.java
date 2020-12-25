@@ -7,18 +7,10 @@ import kr.co.ikosmo.mvc.vo.MembershipVO;
 public interface MembershipDAO {
 	
 	
-	MembershipVO idcheck(MembershipVO vo);
+	MembershipVO memberlogin(MembershipVO vo);
+	public int memberInsert(MembershipVO vo);
+	//로그인 회원가입 완료 -------------------------------------------------------
+	public int memberIdchk(String mem_id); // 아이디 중복 처리 
 
-	MembershipVO emailcheck(MembershipVO vo);
-	
-	int memberInsert(MembershipVO vo);
-	
-	int memberDelete(MembershipVO vo);
-	
-	int memberUpdate(MembershipVO vo);
-	
-	MembershipVO login(MembershipVO vo);
-	
-	List<MembershipVO> memberList(MembershipVO vo);
-	
+	public void updateMember(MembershipVO vo);//회원정보수정
 }

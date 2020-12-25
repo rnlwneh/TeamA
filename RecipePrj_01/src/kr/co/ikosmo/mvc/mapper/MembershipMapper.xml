@@ -6,63 +6,45 @@
 
 <mapper namespace="membership">
 
-<!-- 아이디 체크 Ajax 에서 씀 -->
-<!-- 로그인 -->
-<select id="idcheck" parameterType="membership" resultType="membership">
-	<![CDATA[
-      SELECT MEM_ID,MEM_PWD  
-        FROM member_info
-       WHERE MEM_ID = #{MEM_ID}
-         AND MEM_PWD = #{MEM_PWD}
-		]]>
-</select>
+<!-- member_info 테이블
+	private int mem_no;
+	private String mem_id,mem_pwd,mem_name,mem_nickname,
+	mem_juminnum,mem_email,mem_phone,mem_regdate,mem_pic;
+ -->
 
-<!-- 이메일 확인 -->
-<select id="emailcheck" parameterType="membership" resultType="membership">
-	<![CDATA[
-		SELECT MEM_EMAIL
-		FROM member_info
-		WHERE MEM_EMAIL = #{MEM_EMAIL}
-		]]>
+<!-- 로그인 -->
+<select id="memberlogin" parameterType="membership" resultType="membership">
+      SELECT * 
+        FROM member_info
+       WHERE mem_id = #{mem_id}
+         AND mem_pwd = #{mem_pwd}
 </select>
 
 
 <!-- 회원가입 -->
 <insert id="memberinsert" parameterType="membership">
-		<![CDATA[
-		INSERT INTO member_info(MEM_NO, MEM_NAME, MEM_NICKNAME, 
-		MEM_ID, MEM_PWD, MEM_JUMINNUM, MEM_EMAIL,MEM_PHONE,MEM_GRADE_NO,KIND_TAG_NO)
-		VALUES(#{MEM_NO},#{MEM_NAME},
-			#{MEM_NICKNAME},#{MEM_ID}, 
-			#{MEM_PWD}, #{MEM_JUMINNUM},#{MEM_EMAIL}, 
-			#{MEM_PHONE},#{MEM_GRADE_NO},#{KIND_TAG_NO})
-		]]>
+		INSERT INTO member_info 
+		VALUES(member_info_seq.nextval,#{mem_id},#{mem_pwd}, #{mem_name},#{mem_nickname},
+				#{mem_juminnum},#{mem_email}, #{mem_phone},sysdate,0,0,0,0,0)
 </insert>
 
-<!-- 회원탈퇴 -->
-<delete id="memberdelete" parameterType="membership">
-	<![CDATA[
-		DELETE member_info WHERE MEM_NO = #{MEM_NO}
-		]]>
-</delete>
 
-<!-- 회원정보수정 -->
-<update id="memberupdate" parameterType="membership">
-	<![CDATA[
+<!-- 아이디체크 -->
+<select id="idchk" resultType="int" parameterType="String">
+   select count(*) cnt from member_info where mem_id=#{mem_id}
+</select>
+	<!--  로그인 회원가입 완료  -->
+
+
+	
+<!-- 회원정보수정 -->   	
+	<update id="updateMember" parameterType="membership">
 		UPDATE member_info SET 
-		MEM_ID = #{MEM_ID}, 
-		MEM_PWD = #{MEM_PWD}, 
-		MEM_NAME = #{MEM_NAME}, 
-		MEM_NICKNAME = #{MEM_NICKNAME},
-	    MEM_EMAIL = #{MEM_EMAIL},
-		MEM_PHONE = #{MEM_PHONE}
-	    WHERE
-	    MEM_NO = #{MEM_NO}
-		]]>
-</update>
-	
-	
-	
+		mem_name=#{mem_name}, mem_nickname = #{mem_nickname} ,
+ 	   mem_email = #{mem_email}, mem_phone =  #{mem_phone},
+ 	   mem_pwd = #{mem_pwd},mem_juminnum = #{mem_juminnum}, mem_pic = #{mem_pic}		 
+		WHERE mem_id=#{mem_id}
+	</update> 
 	
 	
 </mapper>  

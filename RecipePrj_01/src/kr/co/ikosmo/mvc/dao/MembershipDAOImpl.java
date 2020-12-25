@@ -1,12 +1,8 @@
 package kr.co.ikosmo.mvc.dao;
 
-import java.util.List;
-
-
 import org.mybatis.spring.SqlSessionTemplate;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Repository;
-
 
 import kr.co.ikosmo.mvc.vo.MembershipVO;
 
@@ -15,46 +11,33 @@ public class MembershipDAOImpl implements MembershipDAO {
 	
 	
 	@Autowired 
-	private SqlSessionTemplate mybatis;
+	private SqlSessionTemplate ss;
 		
 
 	
 	@Override
-	public MembershipVO idcheck(MembershipVO vo) {
-		MembershipVO mv = mybatis.selectOne("membership.idcheck", vo);
-		return mv;
-	}
-
-	@Override
-	public MembershipVO emailcheck(MembershipVO vo) {
-		MembershipVO mv = mybatis.selectOne("membership.emailcheck", vo);
+	public MembershipVO memberlogin(MembershipVO vo) {
+		MembershipVO mv = ss.selectOne("membership.memberlogin", vo);
 		return mv;
 	}
 
 	@Override
 	public int memberInsert(MembershipVO vo) {
-		return mybatis.insert("membership.memberinsert", vo);
+		return ss.insert("membership.memberinsert", vo);
 	}
+	//로그인 회원가입 완료 -------------------------------------------------------
 
 	@Override
-	public int memberDelete(MembershipVO vo) {
-		return mybatis.delete("membership.memberdelete", vo);
+	public int memberIdchk(String mem_id) {
+		return ss.selectOne("membership.idchk",mem_id);
 	}
-
+	
+	//회원정보수정
 	@Override
-	public int memberUpdate(MembershipVO vo) {
-		return mybatis.update("membership.memberupdate", vo);
-	}
-
-	@Override
-	public MembershipVO login(MembershipVO vo) {
-		return mybatis.selectOne("membership.idCheck", vo);
-	}
-
-	@Override
-	public List<MembershipVO> memberList(MembershipVO vo) {
-		return mybatis.selectList("membership.memberlist", vo);
+	public void updateMember(MembershipVO vo) {
+		ss.update("membership.updateMember", vo); 
 	}
 	
 
+	
 }

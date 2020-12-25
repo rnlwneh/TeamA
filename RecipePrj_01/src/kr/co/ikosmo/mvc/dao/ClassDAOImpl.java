@@ -7,14 +7,13 @@ import javax.servlet.http.HttpServletRequest;
 import org.mybatis.spring.SqlSessionTemplate;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Repository;
+import org.springframework.transaction.annotation.Isolation;
+import org.springframework.transaction.annotation.Transactional;
 
-
-import kr.co.ikosmo.mvc.vo.BoardVO;
+import kr.co.ikosmo.mvc.vo.ClassPayInfoVO;
 import kr.co.ikosmo.mvc.vo.ClassVO;
-import kr.co.ikosmo.mvc.vo.KindTagVO;
-import kr.co.ikosmo.mvc.vo.MateVO;
 import kr.co.ikosmo.mvc.vo.ReviewVO;
-import kr.co.ikosmo.mvc.vo.StepVO;
+
 
 
 
@@ -27,54 +26,118 @@ public class ClassDAOImpl implements ClassDAO{
 	private SqlSessionTemplate mybatis;
 	
 
-	
+	/*  class_main 처리 */
 	@Override
-	public List<ClassVO> getClassList() {
-		System.out.println("===> Mybatis getClassList() 호출");
+	public List<ClassVO> getClassList() throws Exception {
+		System.out.println("===> Mybatis getClassList() 출력처리 ");
 		List<ClassVO> classlist = mybatis.selectList("class.getClassList");
 		return classlist;
 	}	
 	
 	
-	 
+	/* class_detail 처리 */
 	  @Override 
-	  public ClassVO getClass(ClassVO vo) {
-	  System.out.println("===> Mybatis getClass() 호출"); 
+	  public ClassVO getClass(ClassVO vo) throws Exception {
+	  System.out.println("===> Mybatis getClass() 출력처리"); 
 	  return mybatis.selectOne("class.getClass", vo);
 	  
-	  	  
-	  }
+	  }	  
 	  
 	  
 	  
+	  /*  class_detail  후기 서치 처리 */
+		@Override
+		public List<ClassVO> getReviewDetail() throws Exception {
+			System.out.println("===> Mybatis getReviewDetail() 출력처리 ");
+			List<ClassVO> reviewlist = mybatis.selectList("class.getReviewDetail");
+			return reviewlist;
+		}	
+		
+	  
+	  
+	 /* class_write 처리 */
+	 @Override
+		public int insertClass(ClassVO vo) throws Exception {
+			System.out.println("===> Mybatis insertClass() 출력처리");
+			return mybatis.insert("class.insertClass", vo);
+		}
+
 	  
 	 
-	 @Override public void insertClassReview(ReviewVO vo) {
-	  System.out.println("===> Mybatis insertClassReview() 호출");
-	  mybatis.insert("review.insertClassReview", vo); }
+	 /* 수정 처리 */ 
+	 @Override
+		public void updateClass(ClassVO vo) throws Exception {
+			System.out.println("===> Mybatis updateClass() 출력처리");
+			mybatis.update("class.updateClass", vo);
+		}
 	  
-	  
+	 
+	 /* 삭제 처리 */
+	 
+	 @Override
+		public void deleteClass(int class_no) throws Exception {
+			System.out.println("===> Mybatis deleteClass() 출력처리");
+				mybatis.delete("class.deleteClass",class_no);
+		}
+	 
+
+	 /* 조회수 증가 처리 */
+	 
+	 @Override
+		public void classViewCnt(int class_no) throws Exception {
+		 mybatis.update("class.classViewCnt", class_no);
+		
+			
+		}
+		  
+	 
+	  /* class_detail 리뷰 후기 등록 처리 */  
+	 @Override 
+	  public void insertClassReview(ReviewVO vo) throws Exception {
+		  System.out.println("===> Mybatis insertClassReview() 출력처리");
+		  mybatis.insert("review.insertClassReview", vo); }
+
+
 	
-	 
-	 
-	 @Override public void insertClass(ClassVO vo) {
-		  System.out.println("===> Mybatis insertClass() 호출");
-		  mybatis.insert("class.insertClass", vo); }
+
+		/*  popular Class 처리 */
+		@Override
+		public List<ClassVO> popularClass() throws Exception {
+			System.out.println("===> Mybatis popularClass() 출력처리 ");
+			List<ClassVO> popularClasslist = mybatis.selectList("class.popularClass");
+			return popularClasslist;
+		}	
 	 
 	 
 	 
 
-	 @Override public void insertStep(StepVO so) {
-		  System.out.println("===> Mybatis insertStep() 호출");
-		  mybatis.insert("class.insertStep", so); }
-	 
-	 
-
-	 @Override public void insertMate(MateVO mo) {
-		  System.out.println("===> Mybatis insertMate() 호출");
-		  mybatis.insert("class.insertMate", mo); }
-	 
-	 
-	 
+		 /* 검색 처리 */ 
+		
 	
+		@Override
+		public List<ClassVO> classSubjectSearch(String classSearch_keyword) {
+			System.out.println("===> Mybatis classSubjectSearch() 출력처리");
+			List<ClassVO> scList = mybatis.selectList("class.classSubjectSearch",classSearch_keyword);
+			return scList;		
+		}
+		@Override
+		public List<ClassVO> classContentSearch(String classSearch_keyword) {
+			System.out.println("===> Mybatis classContentSearch() 출력처리");
+			List<ClassVO> scList = mybatis.selectList("class.classContentSearch",classSearch_keyword);
+			return scList;		
+		}
+		
+		
+		
+
+		 /* 클래스 결제 처리 */
+		 @Override
+			public int insertPayClass(ClassPayInfoVO co) throws Exception {
+				System.out.println("===> Mybatis insertPayClass() 출력처리");
+				return mybatis.insert("class.insertPayClass", co);
+			}
+		
+		  
+		  
+	 
 }

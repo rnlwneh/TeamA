@@ -598,10 +598,10 @@ pre code {
 
 
 .display-3 {
-	font-size: 2.5rem;
+	font-size: 1.3rem;
 	font-weight: 700;
 	line-height: 1.2;
-	margin-left: 30%;
+/* 	float: left; */
 	margin-top: -35px;
 	padding: 10px;
 	font-family: 'Playfair Display', serif;
@@ -708,8 +708,8 @@ pre code {
 figure.snip1425 {
   font-family: 'Raleway', Arial, sans-serif;
   position: absolute;
-  top: 650px;
-  left: 46%;
+  top: 720px;
+  left: 48%;
   overflow: hidden;
   margin: 10px;
   min-width: 110px;
@@ -734,6 +734,9 @@ figure.snip1425 img {
   max-width: 100%;
   vertical-align: top;
 }
+
+
+
 figure.snip1425 figcaption {
   top: 50%;
   left: 20px;
@@ -744,6 +747,8 @@ figure.snip1425 figcaption {
   -webkit-transform: translate(-10%, -70%);
   transform: translate(-10%, -70%);
 }
+
+
 figure.snip1425 h2,
 figure.snip1425 h4 {
   margin: 0;
@@ -1144,29 +1149,6 @@ display: table-cell; */
  
 }
 
-/* 
-
-#c_ing span.ing_l {
-    width: 49%;
-    display: inline-block;
-    padding: 7px 0;
-    margin: 0;
-    border-bottom:1px dashed #d2d4d6;
-    margin-top: 8px;
-}
-
-
-
-#c_ing span.ing_r {
-    width: 49%;
-    display: inline-block;
-    padding: 7px 0;
-    margin: 0 0 0 5px;
-    text-align: right;
-    border-bottom:1px dashed #d2d4d6;
-    margin-top: 8px;
-}
- */
 
 
 
@@ -1208,20 +1190,6 @@ display: table-cell; */
     text-decoration: none;
     width: 97%;
 }
-
-
-/* 
-#c_recipe .c_t2 {
-    font-weight: bold;
-    display: block;
-    margin: 80px 0 0 0;   
-    padding: 10px;
-    color: black;
-    font-size: 19px;
-    text-decoration: none;
-    width: 97%;
-} */
-
 
 
 
@@ -1386,6 +1354,195 @@ list-style:none;
  color: #5191c4; 
 	
 }
+
+
+.btWrap{
+	
+	 margin-left: 40%;
+}
+
+
+ 
+#saveBT  {
+	
+	color: #1D2228;
+    border: 0;
+    background-color: #ded9ce;
+    font-size: 15px;
+    font-weight: 600;
+    padding: 12px 15px;
+	border-radius: 8px;
+	
+	
+}
+
+
+ .deleteWrap{
+ 
+ 	color: #1D2228;
+    border: 0;
+    background-color: #ded9ce;
+    font-size: 15px;
+    font-weight: 600;
+    padding: 15px 20px;
+	border-radius: 8px;
+   
+ }
+
+.deleteWrap a{
+	
+		color: #1D2228;
+	
+}
+
+#saveBT:hover, .deleteWrap:hover {
+    color: #85B72C;
+    text-decoration: none;
+    -webkit-transition: .3s;
+    -o-transition: .3s;
+    transition: .3s;
+}
+
+
+
+
+
+
+/* -------------------신고 작성 ------------------*/
+
+ 
+ 
+ 
+ .report-content{
+ 
+ 	position: absolute;	
+	background: white;
+	height: 450px;
+    width: 550px;
+	border-radius: 15px;
+	border-left: 1px solid #c3d0e3;
+	border-right: 1px solid #c3d0e3;
+	border-bottom: 1px solid #c3d0e3;	
+	transform: translate(10%, 0%);
+	z-index:100;
+	
+ } 
+ 
+
+ 
+.report-header {
+    min-height: 16.43px;
+    padding: 15px 17px 14px;
+    border-bottom: 1px solid #b4b4b4;
+    background: #efefef;
+    border-radius: 10px 10px 0 0;
+} 
+
+
+
+.report-body{
+	position: relative;
+	-ms-flex: 1 1 auto;
+	flex: 1 1 auto;
+	padding: 1rem
+		
+	
+}
+	
+
+.report-title {
+	float: left;
+    font-size: 20px;
+    font-weight: bold;
+}
+.report-title {
+    margin: 0;
+    line-height: 1.42857143;
+}
+
+
+.reportXBT{
+	
+	background-color: transparent !important;
+    background-image: none !important;
+    border-color: transparent;
+    font-size: 20px;   
+  /*   float: right; */
+  margin: 0 0 0 50%;
+	
+}
+
+.reportXBT:hover{
+	
+	color: #6b5858;
+	
+}
+
+/* 
+.reportcloseBT{
+	
+  display: inline-block;
+  padding: 3px 12px;
+  color: #dde3ed;
+  background-color: #b4b4b4;
+  border-radius: 8px;
+  font-weight: 600;
+  margin: 0 0 0 0;
+  font-size: 13px;
+  border-color: transparent;
+ 
+	
+} */
+
+
+.reportcloseBT{
+	
+	 margin: 0 0 0 40%;	
+	 color: #dde3ed;
+  background-color: #b4b4b4;
+  border-radius: 8px;
+  font-weight: 600; 
+  font-size: 13px;
+   border-color: transparent;
+   width: 55px;
+   height: 40px;
+ 
+	
+	}
+
+.reportsubmitBT{
+	
+	
+	 color: #dde3ed;
+  background-color: #b4b4b4;
+  border-radius: 8px;
+  font-weight: 600; 
+  font-size: 13px;
+   border-color: transparent;
+     width: 55px;
+   height: 40px;  
+	
+}
+
+.reportcloseBT:hover, .reportsubmitBT:hover{
+	 background-color: #c5c7c9;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 /*   --------------------       취소 부분   -------------------      */
@@ -3758,6 +3915,15 @@ textarea.form-control {
 
 
 /*  -----------------------------------------   버튼 ----------------------------------------- */
+
+
+.popBT{
+	
+	position: absolute;
+	left: 500px;
+}
+
+
 
 
 

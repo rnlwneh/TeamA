@@ -124,4 +124,19 @@ $('.tabMN3').click(function(){
 
 
 
+//상하슬라이딩 
+setInterval(function(){ 
+
+$('#slide2>ul').delay(2500); 
+
+$('#slide2>ul').animate({marginTop: "-500px"})
+
+ $('#slide2>ul').delay(2500); 
+  
+$('#slide2>ul').animate({marginTop: "-100px"})
+
+ $('#slide2>ul').delay(2500); $('#slide2>ul').animate({marginTop: "0px"}) });
+
+
+
 });

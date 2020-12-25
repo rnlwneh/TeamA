@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper
+  PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+  "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<mapper namespace="mppc">
+	
+
+
+<!-- 페이징 처리 -->
+<select id="listc" resultType="recipeinfo" parameterType="hashMap">
+ select * from (select rownum r_num, a.* from (select * from recipe_info 
+ where recipe_info.mem_no=(select mem_no from member_info where mem_no=#{sessionNo} )order by recipe_no desc ) a) 
+   where r_num between #{start} and #{end} 
+</select><!-- 시작점과 끝점(한페이지에 몇개의 목록만 나올것인지 -->
+<!-- 페이징 처리 할 때 몇개씩 끊을지 갯수 세기 -->
+<select id="totalCountc" resultType="int">
+  		select count(*) cnt from recipe_info
+ </select> 
+
+
+
+	
+</mapper>  

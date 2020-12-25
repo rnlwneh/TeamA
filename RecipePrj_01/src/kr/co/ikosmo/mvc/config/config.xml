@@ -4,26 +4,18 @@
   "http://mybatis.org/dtd/mybatis-3-config.dtd">
 <configuration>
 <typeAliases>
-<typeAlias type="kr.co.ikosmo.mvc.vo.BoardVO" alias="bvo"/>
-<typeAlias type="kr.co.ikosmo.mvc.vo.RecipeVO" alias="recipe"/>
+
+<typeAlias alias="recipeinfo" type="kr.co.ikosmo.mvc.vo.Recipe_infoVO" />
+<typeAlias alias="scrapvo" type="kr.co.ikosmo.mvc.vo.ScrapVO"/>
 <typeAlias alias="membership" type="kr.co.ikosmo.mvc.vo.MembershipVO"/>
-
-<typeAlias alias="bvo" type="kr.co.ikosmo.mvc.vo.BoardVO"/>
-
+<typeAlias alias="pvo" type="kr.co.ikosmo.mvc.vo.Mypage_ingVO"/>
+<typeAlias alias="classpayinfovo" type="kr.co.ikosmo.mvc.vo.ClassPayInfoVO"/>
 <typeAlias alias="classvo" type="kr.co.ikosmo.mvc.vo.ClassVO"/>
-
 <typeAlias alias="kindtagvo" type="kr.co.ikosmo.mvc.vo.KindTagVO"/>
-
 <typeAlias alias="materialtagvo" type="kr.co.ikosmo.mvc.vo.MaterialTagVO"/>
-
 <typeAlias alias="themetagvo" type="kr.co.ikosmo.mvc.vo.ThemeTagVO"/>
-
 <typeAlias alias="membervo" type="kr.co.ikosmo.mvc.vo.ClassMemberVO"/>
-
-<typeAlias alias="matevo" type="kr.co.ikosmo.mvc.vo.MateVO"/>
-
-<typeAlias alias="stepvo" type="kr.co.ikosmo.mvc.vo.StepVO"/>
-
 <typeAlias alias="reviewvo" type="kr.co.ikosmo.mvc.vo.ReviewVO"/>
+
 </typeAliases>
 </configuration>

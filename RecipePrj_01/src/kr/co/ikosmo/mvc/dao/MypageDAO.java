@@ -20,6 +20,7 @@ public class MypageDAO {
 	/*회원정보 보기*/
 	public MembershipVO getMypage_profile(){
 		return mybatis.selectOne("mpp.profile");
-	} //회원정보 띄우기
+	} //회원정보 띄우기 -> 1만띄워짐 안됨
 	
 }
+
